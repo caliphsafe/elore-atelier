@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
 import { useCart } from "@/components/cart/cart-provider";
 
@@ -10,16 +10,23 @@ type RelatedProductCardProps = {
 };
 
 export function RelatedProductCard({ product, index }: RelatedProductCardProps) {
+  const router = useRouter();
   const { addItem } = useCart();
 
   return (
-    <article className="group relative overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft transition sm:rounded-luxe">
-      <Link
-        href={`/shop/${product.handle}`}
-        className="absolute inset-0 z-10"
-        aria-label={`View ${product.title}`}
-      />
-
+    <article
+      role="link"
+      tabIndex={0}
+      onClick={() => router.push(`/shop/${product.handle}`)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          router.push(`/shop/${product.handle}`);
+        }
+      }}
+      className="group cursor-pointer overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft transition sm:rounded-luxe"
+      aria-label={`View ${product.title}`}
+    >
       <div className="lift-card">
         <div
           className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
@@ -50,7 +57,8 @@ export function RelatedProductCard({ product, index }: RelatedProductCardProps) 
                 e.stopPropagation();
                 addItem(product.handle);
               }}
-              className="relative z-20 inline-flex min-h-[36px] items-center justify-center rounded-full bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:bg-brand-mocha sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
+              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-brand-ink bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:border-brand-olive hover:bg-brand-olive hover:text-white sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
+              aria-label={`Add ${product.title} to cart`}
             >
               Add
             </button>
