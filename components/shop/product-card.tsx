@@ -2,7 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
-import { useCart } from "@/components/cart/cart-provider";
+import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
+import { WishlistButton } from "@/components/wishlist/wishlist-button";
 
 type ProductCardProps = {
   product: Product;
@@ -11,7 +12,6 @@ type ProductCardProps = {
 
 export function ProductCard({ product, index }: ProductCardProps) {
   const router = useRouter();
-  const { addItem } = useCart();
 
   return (
     <article
@@ -28,15 +28,25 @@ export function ProductCard({ product, index }: ProductCardProps) {
       aria-label={`View ${product.title}`}
     >
       <div className="lift-card">
-        <div
-          className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
-            index % 3 === 0
-              ? "image-panel"
-              : index % 3 === 1
-              ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-              : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
-          }`}
-        />
+        <div className="relative">
+          <div
+            className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
+              index % 3 === 0
+                ? "image-panel"
+                : index % 3 === 1
+                ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
+                : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
+            }`}
+          />
+
+          <div className="absolute right-3 top-3 z-20">
+            <WishlistButton handle={product.handle} compact />
+          </div>
+
+          <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block">
+            <AddFeedbackButton handle={product.handle} compact />
+          </div>
+        </div>
 
         <div className="p-3 sm:p-5">
           <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
@@ -51,23 +61,17 @@ export function ProductCard({ product, index }: ProductCardProps) {
             {product.description}
           </p>
 
-          <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5">
+          <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5 md:hidden">
             <span className="text-[12px] text-brand-ink sm:text-sm">
               {product.price}
             </span>
+            <AddFeedbackButton handle={product.handle} compact />
+          </div>
 
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                addItem(product.handle);
-              }}
-              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-brand-ink bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:border-brand-olive hover:bg-brand-olive hover:text-white sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
-              aria-label={`Add ${product.title} to cart`}
-            >
-              Add
-            </button>
+          <div className="mt-3 hidden items-center justify-between gap-2 sm:mt-5 md:flex">
+            <span className="text-[12px] text-brand-ink sm:text-sm">
+              {product.price}
+            </span>
           </div>
         </div>
       </div>
