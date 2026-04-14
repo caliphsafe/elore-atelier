@@ -28,50 +28,49 @@ export default function ShopPage() {
           {mockProducts.map((product, i) => (
             <article
               key={product.id}
-              className="group lift-card overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft sm:rounded-luxe"
+              className="group relative overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft transition sm:rounded-luxe"
             >
-              <div
-                className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
-                  i % 3 === 0
-                    ? "image-panel"
-                    : i % 3 === 1
-                    ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                    : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
-                }`}
+              <Link
+                href={`/shop/${product.handle}`}
+                className="absolute inset-0 z-10"
+                aria-label={`View ${product.title}`}
               />
 
-              <div className="p-3 sm:p-5">
-                <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
-                  {product.category}
-                </p>
+              <div className="lift-card">
+                <div
+                  className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
+                    i % 3 === 0
+                      ? "image-panel"
+                      : i % 3 === 1
+                      ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
+                      : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
+                  }`}
+                />
 
-                <h3 className="serif-display mt-2 text-lg leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
-                  {product.title}
-                </h3>
+                <div className="p-3 sm:p-5">
+                  <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
+                    {product.category}
+                  </p>
 
-                <p className="mt-2 line-clamp-3 text-[12px] leading-5 text-brand-ink/72 sm:mt-3 sm:text-sm sm:leading-7">
-                  {product.description}
-                </p>
+                  <h3 className="serif-display mt-2 text-lg leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
+                    {product.title}
+                  </h3>
 
-                <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5">
-                  <span className="text-[12px] text-brand-ink sm:text-sm">
-                    {product.price}
-                  </span>
+                  <p className="mt-3 hidden text-sm leading-7 text-brand-ink/72 sm:block">
+                    {product.description}
+                  </p>
 
-                  <div className="flex items-center gap-2">
+                  <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5">
+                    <span className="text-[12px] text-brand-ink sm:text-sm">
+                      {product.price}
+                    </span>
+
                     <button
                       type="button"
-                      className="rounded-full bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:bg-brand-mocha sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
+                      className="relative z-20 rounded-full bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:bg-brand-mocha sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
                     >
                       Add
                     </button>
-
-                    <Link
-                      href={`/shop/${product.handle}`}
-                      className="text-[10px] uppercase tracking-[0.2em] text-brand-mocha transition hover:text-brand-ink sm:text-[11px] sm:tracking-[0.26em]"
-                    >
-                      View
-                    </Link>
                   </div>
                 </div>
               </div>
