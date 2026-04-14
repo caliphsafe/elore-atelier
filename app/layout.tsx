@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "ELÖRE Atelier",
@@ -14,9 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="luxury-shell bg-brand-white text-brand-ink">
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
