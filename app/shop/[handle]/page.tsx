@@ -100,53 +100,64 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       </section>
 
       <section className="section-pad pt-0">
-        <div className="editorial-container">
-          <div className="mb-8 fade-up">
-            <p className="eyebrow">Related Pieces</p>
-            <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              Continue exploring the collection.
-            </h2>
+  <div className="editorial-container">
+    <div className="mb-8 fade-up">
+      <p className="eyebrow">Related Pieces</p>
+      <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
+        Continue exploring the collection.
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
+      {relatedProducts.map((related, i) => (
+        <article
+          key={related.id}
+          className="group lift-card overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft sm:rounded-luxe"
+        >
+          <div
+            className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
+              i % 2 === 0
+                ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
+                : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
+            }`}
+          />
+
+          <div className="p-3 sm:p-5">
+            <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
+              {related.category}
+            </p>
+
+            <h3 className="serif-display mt-2 text-lg leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
+              {related.title}
+            </h3>
+
+            <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5">
+              <span className="text-[12px] text-brand-ink sm:text-sm">
+                {related.price}
+              </span>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  className="rounded-full bg-brand-ink px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-white transition hover:bg-brand-mocha sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
+                >
+                  Add
+                </button>
+
+                <Link
+                  href={`/shop/${related.handle}`}
+                  className="text-[10px] uppercase tracking-[0.2em] text-brand-mocha transition hover:text-brand-ink sm:text-[11px] sm:tracking-[0.26em]"
+                >
+                  View
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {relatedProducts.map((related, i) => (
-              <article
-                key={related.id}
-                className="group lift-card overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
-              >
-                <div
-                  className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
-                    i % 2 === 0
-                      ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                      : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
-                  }`}
-                />
-
-                <div className="p-5">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                    {related.category}
-                  </p>
-
-                  <h3 className="serif-display mt-3 text-2xl leading-tight text-brand-ink md:text-3xl">
-                    {related.title}
-                  </h3>
-
-                  <div className="mt-5 flex items-center justify-between gap-3">
-                    <span className="text-sm text-brand-ink">{related.price}</span>
-
-                    <Link
-                      href={`/shop/${related.handle}`}
-                      className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
-                    >
-                      View
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* MOBILE STICKY ADD TO CART BAR */}
       <div className="mobile-product-bar md:hidden">
