@@ -34,10 +34,10 @@ export function AtelierStory() {
               Read About ELÖRE
             </Link>
             <Link
-              href="/haymaker"
+              href="/studio"
               className="rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
             >
-              Meet Haymaker
+              Enter the Studio
             </Link>
           </div>
         </div>
