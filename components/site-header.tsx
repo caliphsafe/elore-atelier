@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { CartButton } from "@/components/cart/cart-button";
+import { WishlistLink } from "@/components/wishlist/wishlist-link";
 
 const desktopLinks = [
   { href: "/shop", label: "Shop" },
@@ -52,6 +53,10 @@ export function SiteHeader({ onOpenCart }: Props) {
           >
             Start Custom Order
           </Link>
+
+          <div className="hidden md:block">
+            <WishlistLink />
+          </div>
 
           {onOpenCart ? <CartButton onClick={onOpenCart} /> : null}
 
