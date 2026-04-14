@@ -16,7 +16,8 @@ const desktopLinks = [
 const mobileQuickLinks = [
   { href: "/shop", label: "Shop" },
   { href: "/lookbook", label: "Looks" },
-  { href: "/custom", label: "Custom" }
+  { href: "/custom", label: "Custom" },
+  { href: "/wishlist", label: "Saved" }
 ];
 
 type Props = {
@@ -69,7 +70,7 @@ export function SiteHeader({ onOpenCart }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 border-t thin-border bg-white md:hidden">
+      <div className="grid grid-cols-4 border-t thin-border bg-white md:hidden">
         {mobileQuickLinks.map((link) => (
           <Link
             key={link.href}
