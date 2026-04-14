@@ -22,7 +22,7 @@ export function SiteFooter() {
             <Link href="/shop">Shop</Link>
             <Link href="/lookbook">Lookbook</Link>
             <Link href="/about">About</Link>
-            <Link href="/haymaker">Haymaker</Link>
+            <Link href="/studio">Studio</Link>
             <Link href="/custom">Custom Experience</Link>
             <Link href="/contact">Contact</Link>
           </div>
