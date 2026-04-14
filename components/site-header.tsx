@@ -3,10 +3,19 @@
 import Link from "next/link";
 import { CartButton } from "@/components/cart/cart-button";
 
-const links = [
+const desktopLinks = [
+  { href: "/shop", label: "Shop" },
+  { href: "/lookbook", label: "Lookbook" },
+  { href: "/about", label: "About" },
+  { href: "/studio", label: "Studio" },
+  { href: "/custom", label: "Custom" },
+  { href: "/contact", label: "Contact" }
+];
+
+const mobileQuickLinks = [
   { href: "/shop", label: "Shop" },
   { href: "/lookbook", label: "Looks" },
-  { href: "/custom", label: "Custom" },
+  { href: "/custom", label: "Custom" }
 ];
 
 type Props = {
@@ -19,39 +28,49 @@ export function SiteHeader({ onOpenCart }: Props) {
       <div className="editorial-container flex items-center justify-between px-4 py-4 md:px-8 lg:px-12">
         <Link
           href="/"
-          className="serif-display text-2xl tracking-[0.22em] text-brand-ink"
+          className="serif-display text-2xl font-semibold tracking-[0.22em] text-brand-ink"
         >
           ELÖRE
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          <Link href="/shop">Shop</Link>
-          <Link href="/lookbook">Lookbook</Link>
-          <Link href="/about">About</Link>
-          <Link href="/studio">Studio</Link>
-          <Link href="/custom">Custom</Link>
-          <Link href="/contact">Contact</Link>
+          {desktopLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-[11px] uppercase tracking-[0.24em] text-brand-ink/80 transition hover:text-brand-mocha"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-3">
+          <Link
+            href="/custom"
+            className="hidden rounded-full border border-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha md:inline-flex"
+          >
+            Start Custom Order
+          </Link>
+
           {onOpenCart ? <CartButton onClick={onOpenCart} /> : null}
 
           <Link
             href="/shop"
-            className="rounded-full bg-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-white"
+            className="rounded-full bg-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
           >
             Shop
           </Link>
         </div>
       </div>
 
-      {/* MOBILE QUICK NAV */}
+      {/* MOBILE QUICK NAV ONLY */}
       <div className="grid grid-cols-3 border-t thin-border bg-white md:hidden">
-        {links.map((link) => (
+        {mobileQuickLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="py-3 text-center text-[11px] uppercase tracking-[0.24em] text-brand-ink/75"
+            className="py-3 text-center text-[11px] uppercase tracking-[0.24em] text-brand-ink/75 transition hover:text-brand-mocha"
           >
             {link.label}
           </Link>
