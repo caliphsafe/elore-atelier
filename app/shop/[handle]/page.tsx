@@ -27,7 +27,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     <>
       <section className="section-pad pt-12 md:pt-16">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
-          <div className="grid gap-5">
+          <div className="grid gap-5 fade-up">
             <div className="image-panel aspect-[4/5] rounded-luxe border thin-border shadow-soft" />
             <div className="grid grid-cols-3 gap-4">
               <div className="aspect-[4/5] rounded-[1.25rem] border thin-border bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]" />
@@ -36,7 +36,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </div>
           </div>
 
-          <div className="lg:sticky lg:top-28">
+          <div className="fade-up lg:sticky lg:top-28">
             <p className="eyebrow">{product.category}</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-6xl">
               {product.title}
@@ -48,7 +48,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               {product.description}
             </p>
 
-            <div className="mt-8 grid gap-3">
+            <div className="mt-8 grid gap-3 border-t thin-border bg-white p-4 md:static md:border-0 md:bg-transparent md:p-0">
               <button
                 type="button"
                 className="rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
@@ -101,7 +101,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <section className="section-pad pt-0">
         <div className="editorial-container">
-          <div className="mb-8">
+          <div className="mb-8 fade-up">
             <p className="eyebrow">Related Pieces</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
               Continue exploring the collection.
@@ -112,10 +112,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             {relatedProducts.map((related, i) => (
               <article
                 key={related.id}
-                className="group overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
+                className="group lift-card overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
               >
                 <div
-                  className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.02] ${
+                  className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
                     i % 2 === 0
                       ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
                       : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
@@ -127,11 +127,11 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     {related.category}
                   </p>
 
-                  <h3 className="serif-display mt-3 text-3xl leading-tight text-brand-ink">
+                  <h3 className="serif-display mt-3 text-2xl leading-tight text-brand-ink md:text-3xl">
                     {related.title}
                   </h3>
 
-                  <div className="mt-5 flex items-center justify-between">
+                  <div className="mt-5 flex items-center justify-between gap-3">
                     <span className="text-sm text-brand-ink">{related.price}</span>
 
                     <Link
