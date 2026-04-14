@@ -18,38 +18,46 @@ export default function ShopPage() {
           </div>
 
           <div className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-            48 Product Catalog Ready
+            {mockProducts.length} Featured Mock Products
           </div>
         </div>
       </section>
 
       <section className="section-pad pt-0">
         <div className="editorial-container grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {mockProducts.map((product, i) => (
             <article
-              key={i}
+              key={product.id}
               className="group overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
             >
-              <div className="image-panel aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.02]" />
+              <div
+                className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.02] ${
+                  i % 3 === 0
+                    ? "image-panel"
+                    : i % 3 === 1
+                    ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
+                    : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
+                }`}
+              />
 
               <div className="p-5">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                  ELÖRE Collection
+                  {product.category}
                 </p>
 
                 <h3 className="serif-display mt-3 text-3xl leading-tight text-brand-ink">
-                  Signature Hat {i + 1}
+                  {product.title}
                 </h3>
 
                 <p className="mt-3 text-sm leading-7 text-brand-ink/72">
-                  Sculpted form with refined detail and timeless character.
+                  {product.description}
                 </p>
 
                 <div className="mt-5 flex items-center justify-between">
-                  <span className="text-sm text-brand-ink">$850</span>
+                  <span className="text-sm text-brand-ink">{product.price}</span>
 
                   <Link
-                    href="#"
+                    href={`/shop/${product.handle}`}
                     className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
                   >
                     View
