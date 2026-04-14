@@ -6,7 +6,7 @@ export default function ShopPage() {
     <>
       <section className="section-pad pt-12 md:pt-16">
         <div className="editorial-container flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl fade-up">
             <p className="eyebrow">Shop</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
               Signature forms, refined silhouettes, and future icons.
@@ -17,7 +17,7 @@ export default function ShopPage() {
             </p>
           </div>
 
-          <div className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+          <div className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha fade-up">
             {mockProducts.length} Featured Mock Products
           </div>
         </div>
@@ -28,10 +28,10 @@ export default function ShopPage() {
           {mockProducts.map((product, i) => (
             <article
               key={product.id}
-              className="group overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
+              className="group lift-card overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
             >
               <div
-                className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.02] ${
+                className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
                   i % 3 === 0
                     ? "image-panel"
                     : i % 3 === 1
@@ -45,7 +45,7 @@ export default function ShopPage() {
                   {product.category}
                 </p>
 
-                <h3 className="serif-display mt-3 text-3xl leading-tight text-brand-ink">
+                <h3 className="serif-display mt-3 text-2xl leading-tight text-brand-ink md:text-3xl">
                   {product.title}
                 </h3>
 
@@ -53,7 +53,7 @@ export default function ShopPage() {
                   {product.description}
                 </p>
 
-                <div className="mt-5 flex items-center justify-between">
+                <div className="mt-5 flex items-center justify-between gap-3">
                   <span className="text-sm text-brand-ink">{product.price}</span>
 
                   <Link
