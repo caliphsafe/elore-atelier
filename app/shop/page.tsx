@@ -1,5 +1,5 @@
 import { mockProducts } from "@/lib/shopify/mock-data";
-import { ProductCard } from "@/components/shop/product-card";
+import { ShopGrid } from "@/components/shop/shop-grid";
 
 export default function ShopPage() {
   return (
@@ -23,13 +23,7 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <section className="section-pad pt-0">
-        <div className="editorial-container grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
-          {mockProducts.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
-        </div>
-      </section>
+      <ShopGrid products={mockProducts} />
     </>
   );
 }
