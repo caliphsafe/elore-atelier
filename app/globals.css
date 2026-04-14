@@ -105,3 +105,22 @@ img {
 .muted-copy {
   color: rgba(34, 31, 30, 0.72);
 }
+
+.section-fade {
+  position: relative;
+}
+
+.section-fade::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(34, 31, 30, 0.08) 20%,
+    rgba(34, 31, 30, 0.08) 80%,
+    transparent 100%
+  );
+}
