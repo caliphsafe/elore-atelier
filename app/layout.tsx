@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: "ELÖRE Atelier",
-  description: "Luxury headless Shopify storefront for ELÖRE Atelier."
+  description: "Luxury fashion e-commerce experience for handcrafted hats."
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="luxury-shell bg-brand-white text-brand-ink">
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
