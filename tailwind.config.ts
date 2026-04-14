@@ -8,10 +8,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sand: "#ede6dc",
-        espresso: "#241a14",
-        bronze: "#8a6a45",
-        stone: "#cdbda8"
+        brand: {
+          ink: "#221F1E",
+          mocha: "#563D39",
+          sand: "#D3BA9D",
+          olive: "#344200",
+          black: "#000000",
+          white: "#FFFFFF"
+        }
+      },
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
+        sans: ['"Inter"', "Arial", "sans-serif"]
+      },
+      maxWidth: {
+        "8xl": "90rem"
+      },
+      letterSpacing: {
+        luxe: "0.18em",
+        hero: "-0.04em"
+      },
+      boxShadow: {
+        soft: "0 10px 30px rgba(34, 31, 30, 0.08)"
+      },
+      borderRadius: {
+        luxe: "2rem"
       }
     }
   },
