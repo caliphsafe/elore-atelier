@@ -25,7 +25,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
+      <section className="section-pad product-page-shell pt-12 md:pt-16">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div className="grid gap-5 fade-up">
             <div className="image-panel aspect-[4/5] rounded-luxe border thin-border shadow-soft" />
@@ -48,7 +48,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               {product.description}
             </p>
 
-            <div className="mt-8 grid gap-3 border-t thin-border bg-white p-4 md:static md:border-0 md:bg-transparent md:p-0">
+            <div className="mt-8 hidden gap-3 md:grid">
               <button
                 type="button"
                 className="rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
@@ -147,6 +147,25 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </div>
         </div>
       </section>
+
+      {/* MOBILE STICKY ADD TO CART BAR */}
+      <div className="mobile-product-bar md:hidden">
+        <div className="mobile-product-bar__inner">
+          <div className="min-w-0">
+            <p className="truncate text-[11px] uppercase tracking-[0.22em] text-brand-mocha">
+              {product.title}
+            </p>
+            <p className="mt-1 text-sm text-brand-ink">{product.price}</p>
+          </div>
+
+          <button
+            type="button"
+            className="shrink-0 rounded-full bg-brand-ink px-5 py-3 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
     </>
   );
 }
