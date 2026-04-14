@@ -1,6 +1,7 @@
 "use client";
 
-import { mockCart } from "@/lib/shopify/mock-data";
+import Link from "next/link";
+import { useCart } from "@/components/cart/cart-provider";
 
 type CartDrawerProps = {
   open: boolean;
@@ -8,6 +9,9 @@ type CartDrawerProps = {
 };
 
 export function CartDrawer({ open, onClose }: CartDrawerProps) {
+  const { items, estimatedTotal, addItem, decrementItem, removeItem, totalItems } =
+    useCart();
+
   return (
     <>
       <div
@@ -29,69 +33,114 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               <h2 className="serif-display mt-2 text-3xl text-brand-ink">
                 Your Selection
               </h2>
+              <p className="mt-2 text-sm text-brand-ink/60">
+                {totalItems} {totalItems === 1 ? "item" : "items"}
+              </p>
             </div>
 
             <button
               type="button"
               onClick={onClose}
-              className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha transition hover:text-brand-ink"
+              className="inline-flex min-h-[44px] items-center justify-center text-[11px] uppercase tracking-[0.24em] text-brand-mocha transition hover:text-brand-ink"
             >
               Close
             </button>
           </div>
 
           <div className="flex-1 overflow-y-auto px-6 py-6">
-            <div className="grid gap-4">
-              {mockCart.map((item, index) => (
-                <div
-                  key={item.id}
-                  className="grid grid-cols-[84px_1fr] gap-4 rounded-[1.5rem] border thin-border bg-white p-4"
-                >
+            {items.length === 0 ? (
+              <div className="rounded-[1.5rem] border thin-border bg-[#f7f1ea] p-6">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
+                  Cart Empty
+                </p>
+                <p className="mt-3 text-sm leading-7 text-brand-ink/72">
+                  Add pieces from the collection to begin building your selection.
+                </p>
+              </div>
+            ) : (
+              <div className="grid gap-4">
+                {items.map((item, index) => (
                   <div
-                    className={`aspect-[4/5] rounded-[1rem] ${
-                      index % 2 === 0
-                        ? "image-panel"
-                        : "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                    }`}
-                  />
+                    key={item.handle}
+                    className="grid grid-cols-[84px_1fr] gap-4 rounded-[1.5rem] border thin-border bg-white p-4"
+                  >
+                    <div
+                      className={`aspect-[4/5] rounded-[1rem] ${
+                        index % 2 === 0
+                          ? "image-panel"
+                          : "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
+                      }`}
+                    />
 
-                  <div>
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
-                      ELÖRE Atelier
-                    </p>
-                    <h3 className="serif-display mt-2 text-2xl leading-tight text-brand-ink">
-                      {item.productTitle}
-                    </h3>
-                    <div className="mt-3 flex items-center justify-between text-sm text-brand-ink/72">
-                      <span>{item.price}</span>
-                      <span>Qty {item.quantity}</span>
+                    <div className="min-w-0">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
+                        ELÖRE Atelier
+                      </p>
+
+                      <h3 className="serif-display mt-2 text-2xl leading-tight text-brand-ink">
+                        {item.productTitle}
+                      </h3>
+
+                      <div className="mt-3 flex items-center justify-between text-sm text-brand-ink/72">
+                        <span>{item.price}</span>
+                        <span>Qty {item.quantity}</span>
+                      </div>
+
+                      <div className="mt-4 flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => decrementItem(item.handle)}
+                          className="inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded-full border border-brand-ink text-sm text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
+                          aria-label={`Decrease quantity of ${item.productTitle}`}
+                        >
+                          −
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => addItem(item.handle)}
+                          className="inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded-full border border-brand-ink text-sm text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
+                          aria-label={`Increase quantity of ${item.productTitle}`}
+                        >
+                          +
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => removeItem(item.handle)}
+                          className="ml-2 text-[11px] uppercase tracking-[0.24em] text-brand-mocha transition hover:text-brand-ink"
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="border-t thin-border px-6 py-6">
             <div className="mb-5 flex items-center justify-between text-sm text-brand-ink/72">
               <span>Estimated Total</span>
-              <span>$1,660</span>
+              <span>{estimatedTotal}</span>
             </div>
 
             <div className="grid gap-3">
               <button
                 type="button"
-                className="rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
               >
                 Checkout
               </button>
 
-              <button
-                type="button"
-                className="rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
+              <Link
+                href="/cart"
+                onClick={onClose}
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
               >
                 View Cart
-              </button>
+              </Link>
             </div>
           </div>
         </div>
