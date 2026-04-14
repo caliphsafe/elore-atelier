@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { CartButton } from "@/components/cart/cart-button";
 
 const links = [
   { href: "/shop", label: "Shop" },
@@ -9,7 +12,11 @@ const links = [
   { href: "/contact", label: "Contact" }
 ];
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  onOpenCart?: () => void;
+};
+
+export function SiteHeader({ onOpenCart }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b thin-border bg-white/80 backdrop-blur-xl">
       <div className="editorial-container flex items-center justify-between px-5 py-4 md:px-8 lg:px-12">
@@ -39,6 +46,8 @@ export function SiteHeader() {
           >
             Start Custom Order
           </Link>
+
+          {onOpenCart ? <CartButton onClick={onOpenCart} /> : null}
 
           <Link
             href="/shop"
