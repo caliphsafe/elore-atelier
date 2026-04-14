@@ -48,7 +48,7 @@ export function SiteHeader({ onOpenCart }: Props) {
         <div className="flex items-center gap-2 md:gap-3">
           <Link
             href="/custom"
-            className="hidden rounded-full border border-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha md:inline-flex"
+            className="hidden min-h-[44px] items-center justify-center rounded-full border border-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha md:inline-flex"
           >
             Start Custom Order
           </Link>
@@ -57,20 +57,19 @@ export function SiteHeader({ onOpenCart }: Props) {
 
           <Link
             href="/shop"
-            className="rounded-full bg-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-5 py-2 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
           >
             Shop
           </Link>
         </div>
       </div>
 
-      {/* MOBILE QUICK NAV ONLY */}
       <div className="grid grid-cols-3 border-t thin-border bg-white md:hidden">
         {mobileQuickLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            className="py-3 text-center text-[11px] uppercase tracking-[0.24em] text-brand-ink/75 transition hover:text-brand-mocha"
+            className="inline-flex min-h-[44px] items-center justify-center py-3 text-center text-[11px] uppercase tracking-[0.24em] text-brand-ink/75 transition hover:text-brand-mocha"
           >
             {link.label}
           </Link>
