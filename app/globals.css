@@ -124,3 +124,92 @@ img {
     transparent 100%
   );
 }
+
+/* PREMIUM MOTION */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+button:active,
+a:active {
+  transform: scale(0.98);
+}
+
+/* SMOOTH FADE UP */
+
+.fade-up {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PREMIUM SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 31, 30, 0.18);
+  border-radius: 999px;
+}
+
+/* MOBILE SPACING */
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    letter-spacing: -0.04em;
+  }
+
+  .serif-display {
+    line-height: 0.95;
+  }
+}
+
+/* TOUCH TARGETS */
+
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+  }
+}
+
+/* IMAGE PARALLAX READY */
+
+.lift-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-4px);
+}
