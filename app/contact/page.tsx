@@ -42,67 +42,106 @@ export default function ContactPage() {
       <main className="page-wrap">
         <section className="page-hero">
           <p className="page-hero__eyebrow">Contact</p>
-          <h1 className="page-hero__title">Start A Conversation</h1>
+          <h1 className="page-hero__title">Start A Project</h1>
           <p className="page-hero__text">
-            This page is designed to make inquiries feel direct, premium, and
-            approachable. It combines a simple contact form with visible brand
-            contact details and room for future inquiry routing.
+            Reach out for production, photography, videography, creative
+            direction, brand work, collaborations, or general inquiries.
           </p>
         </section>
 
-        <section className="contact-grid">
-          <div className="glass-card contact-card">
-            <p className="page-section__eyebrow">Inquiry Form</p>
-            <h2 className="page-section__title">Tell Us About Your Project</h2>
+        <section className="contact-layout">
+          <div className="glass-card page-section">
+            <p className="page-section__eyebrow">Contact Info</p>
+            <h2 className="page-section__title">Get In Touch</h2>
             <p className="page-section__text">
-              For now this is a styled frontend form. We can connect it to
-              Formspree, Resend, or another email handler after the full build
-              is in place.
+              Use the information below for direct inquiries while the form
+              handles general project requests.
             </p>
+
+            <div className="contact-info-list">
+              <div className="contact-info-item">
+                <p className="contact-info-item__label">Email</p>
+                <a
+                  className="contact-info-item__value"
+                  href="mailto:info@midasbks.com"
+                >
+                  info@midasbks.com
+                </a>
+              </div>
+
+              <div className="contact-info-item">
+                <p className="contact-info-item__label">Instagram</p>
+                <a
+                  className="contact-info-item__value"
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @midasbks
+                </a>
+              </div>
+
+              <div className="contact-info-item">
+                <p className="contact-info-item__label">Location</p>
+                <p className="contact-info-item__value">Boston, MA</p>
+              </div>
+
+              <div className="contact-info-item">
+                <p className="contact-info-item__label">Availability</p>
+                <p className="contact-info-item__value">
+                  Available for select projects worldwide
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card page-section">
+            <p className="page-section__eyebrow">Inquiry Form</p>
+            <h2 className="page-section__title">Tell Us About The Project</h2>
 
             <form className="contact-form">
               <div className="contact-form__grid">
-                <label className="field">
-                  <span className="field__label">Name</span>
+                <label className="contact-form__field">
+                  <span>Name</span>
                   <input type="text" name="name" placeholder="Your name" />
                 </label>
 
-                <label className="field">
-                  <span className="field__label">Email</span>
-                  <input type="email" name="email" placeholder="Your email" />
+                <label className="contact-form__field">
+                  <span>Email</span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                  />
                 </label>
               </div>
 
-              <label className="field">
-                <span className="field__label">Subject</span>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="What are you reaching out about?"
-                />
-              </label>
+              <div className="contact-form__grid">
+                <label className="contact-form__field">
+                  <span>Company / Artist Name</span>
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Brand, artist, or company"
+                  />
+                </label>
 
-              <label className="field">
-                <span className="field__label">Project Type</span>
-                <select name="projectType" defaultValue="">
-                  <option value="" disabled>
-                    Select project type
-                  </option>
-                  <option value="music-video">Music Video</option>
-                  <option value="photography">Photography</option>
-                  <option value="creative-direction">Creative Direction</option>
-                  <option value="brand-campaign">Brand Campaign</option>
-                  <option value="event-coverage">Event Coverage</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
+                <label className="contact-form__field">
+                  <span>Project Type</span>
+                  <input
+                    type="text"
+                    name="projectType"
+                    placeholder="Music video, campaign, photo shoot..."
+                  />
+                </label>
+              </div>
 
-              <label className="field">
-                <span className="field__label">Message</span>
+              <label className="contact-form__field">
+                <span>Message</span>
                 <textarea
                   name="message"
                   rows={7}
-                  placeholder="Share your vision, timeline, and anything important."
+                  placeholder="Tell us about your project, goals, timing, and any links we should review."
                 />
               </label>
 
@@ -111,58 +150,16 @@ export default function ContactPage() {
               </button>
             </form>
           </div>
-
-          <div className="contact-side">
-            <div className="glass-card contact-info-card">
-              <p className="page-section__eyebrow">Direct Contact</p>
-              <h2 className="page-section__title">Reach Midas B.K.S</h2>
-
-              <div className="contact-info-list">
-                <div className="contact-info-item">
-                  <span className="contact-info-item__label">Email</span>
-                  <span className="contact-info-item__value">info@midasbks.com</span>
-                </div>
-
-                <div className="contact-info-item">
-                  <span className="contact-info-item__label">Instagram</span>
-                  <span className="contact-info-item__value">@midasbks</span>
-                </div>
-
-                <div className="contact-info-item">
-                  <span className="contact-info-item__label">Location</span>
-                  <span className="contact-info-item__value">Boston, Massachusetts</span>
-                </div>
-
-                <div className="contact-info-item">
-                  <span className="contact-info-item__label">Availability</span>
-                  <span className="contact-info-item__value">
-                    Select projects, campaigns, and collaborations
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card contact-note-card">
-              <p className="page-section__eyebrow">What To Include</p>
-              <h2 className="page-section__title">Helpful Details For Inquiries</h2>
-              <ul className="simple-list">
-                <li>Project type and overall creative goal</li>
-                <li>Desired timeline or launch window</li>
-                <li>Location and production needs</li>
-                <li>Budget range or scope expectations</li>
-              </ul>
-            </div>
-          </div>
         </section>
       </main>
 
       <footer className="site-footer">
         <div className="site-footer__inner">
           <span>Midas B.K.S</span>
-          <span>Contact</span>
+          <span>Contact / Inquiries</span>
           <span>Boston, MA</span>
         </div>
       </footer>
     </div>
   );
-}}
+}
