@@ -20,7 +20,7 @@ export default function HomePage() {
       <div className="landing-page__frame">
         <div className="landing-page__top">
           <div className="landing-page__brand">
-            <p className="landing-page__brand-mark">MIDAS B.K.S.F</p>
+            <p className="landing-page__brand-mark">MIDAS B.K.S.F.</p>
           </div>
 
           <div className="landing-page__contact">
