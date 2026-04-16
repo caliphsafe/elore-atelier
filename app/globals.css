@@ -562,3 +562,224 @@ a:active {
     padding: 20px;
   }
 }
+
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  background: #050505;
+  overflow: hidden;
+}
+
+.landing-page__media {
+  position: absolute;
+  inset: 0;
+}
+
+.landing-page__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landing-page__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.36) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.08) 48%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.landing-page__frame {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 26px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.landing-page__top,
+.landing-page__bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.landing-page__brand,
+.landing-page__contact,
+.landing-page__about,
+.landing-page__locations,
+.landing-page__nav {
+  max-width: 420px;
+}
+
+.landing-page__brand-mark,
+.landing-page__small-mark,
+.landing-page__contact a,
+.landing-page__locations p,
+.landing-page__nav-link,
+.landing-page__eyebrow {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.landing-page__brand-mark,
+.landing-page__small-mark {
+  font-weight: 700;
+}
+
+.landing-page__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.landing-page__contact a {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.landing-page__middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 48px 0;
+}
+
+.landing-page__headline-wrap {
+  width: 100%;
+  max-width: 860px;
+  text-align: center;
+}
+
+.landing-page__eyebrow {
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.landing-page__headline {
+  margin: 0;
+  font-size: clamp(2.6rem, 5.4vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.landing-page__bottom {
+  align-items: flex-end;
+}
+
+.landing-page__about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.landing-page__about-text {
+  margin: 0;
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.85;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.landing-page__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.landing-page__nav-link {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.landing-page__nav-link:hover {
+  opacity: 0.72;
+  transform: translateY(-1px);
+}
+
+.landing-page__locations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .landing-page__frame {
+    padding: 18px 18px 20px;
+  }
+
+  .landing-page__top,
+  .landing-page__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .landing-page__contact,
+  .landing-page__locations {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .landing-page__middle {
+    align-items: center;
+    justify-content: flex-end;
+    padding: 64px 0 44px;
+  }
+
+  .landing-page__headline-wrap {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .landing-page__headline {
+    font-size: clamp(2.2rem, 10vw, 4rem);
+  }
+
+  .landing-page__nav {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .landing-page__about-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-page__brand-mark,
+  .landing-page__small-mark,
+  .landing-page__contact a,
+  .landing-page__locations p,
+  .landing-page__nav-link,
+  .landing-page__eyebrow,
+  .landing-page__about-text {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .landing-page__headline {
+    font-size: clamp(2rem, 11vw, 3.4rem);
+    line-height: 0.98;
+  }
+}
