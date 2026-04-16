@@ -1,5 +1,5 @@
 import Link from "next/link";
- 
+
 export default function HomePage() {
   return (
     <main className="landing-page">
@@ -25,11 +25,7 @@ export default function HomePage() {
 
           <div className="landing-page__contact">
             <a href="mailto:info@midasbks.com">info@midasbks.com</a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
               @midasbks
             </a>
           </div>
@@ -39,8 +35,7 @@ export default function HomePage() {
           <div className="landing-page__headline-wrap">
             <p className="landing-page__eyebrow">Production Reel 2025</p>
             <h1 className="landing-page__headline">
-              A Production Company For Brands And Artists Who Value Authentic
-              Expression.
+              Visual Storytelling For Brands And Artists
             </h1>
           </div>
         </div>
