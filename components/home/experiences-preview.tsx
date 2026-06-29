@@ -16,7 +16,7 @@ const offerings = [
   }
 ];
 
-export function CustomJourney() {
+export function ExperiencesPreview() {
   return (
     <section className="px-5 py-16 md:px-8 md:py-24 lg:px-12">
       <div className="editorial-container">
