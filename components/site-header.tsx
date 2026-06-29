@@ -9,7 +9,7 @@ const desktopLinks = [
   { href: "/lookbook", label: "Lookbook" },
   { href: "/about", label: "About" },
   { href: "/studio", label: "Studio" },
-  { href: "/custom", label: "Custom" },
+  { href: "/experiences", label: "Experiences" },
   { href: "/contact", label: "Contact" }
 ];
 
@@ -48,10 +48,10 @@ export function SiteHeader({ onOpenCart }: Props) {
 
         <div className="flex items-center gap-2 md:gap-3">
           <Link
-            href="/custom"
+            href="/experiences"
             className="hidden min-h-[44px] items-center justify-center rounded-full border border-brand-ink px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha md:inline-flex"
           >
-            Start Custom Order
+            Book Experience
           </Link>
 
           {/* DESKTOP WISHLIST */}
