@@ -50,8 +50,7 @@ export function FeaturedCollections() {
             <Link
               key={collection.title}
               href={collection.href}
-              className={`group relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px] ${
-                index === 1 ? "md:mt-10" : ""
+              className="group relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]"
               }`}
             >
               <Image
