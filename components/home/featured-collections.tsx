@@ -48,11 +48,10 @@ export function FeaturedCollections() {
         <div className="grid gap-5 md:grid-cols-3">
           {collections.map((collection, index) => (
             <Link
-              key={collection.title}
-              href={collection.href}
-              className="group relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]"
-              }`}
-            >
+  key={collection.title}
+  href={collection.href}
+  className="group relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[640px]"
+>
               <Image
                 src={collection.image}
                 alt={collection.alt}
