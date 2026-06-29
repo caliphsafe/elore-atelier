@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const pillars = [
@@ -55,13 +56,13 @@ export default function AboutPage() {
             <p>
               Rather than functioning as a conventional storefront alone, the
               site is meant to reflect the atmosphere of an atelier—where craft,
-              visual storytelling, and personal style meet with intention.
+              visual storytelling, and personal sƒtyle meet with intention.
             </p>
           </div>
 
-          <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#eadbca_0%,#d3ba9d_55%,#b89976_100%)] shadow-soft">
-            <div className="aspect-[4/5] w-full rounded-luxe" />
-          </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-luxe border thin-border shadow-soft">
+  <Image src="/images/about/about-story.jpg"  alt="ELÖRE Atelier brand story"  fill   className="object-cover"  />
+</div>
         </div>
       </section>
 
@@ -95,7 +96,9 @@ export default function AboutPage() {
       <section className="section-pad">
         <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
           <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
-            <div className="rounded-[1.5rem] olive-panel min-h-[320px]" />
+            <div className="relative min-h-[320px] overflow-hidden rounded-[1.5rem]">
+  <Image src="/images/about/about-perspective.jpg"   alt="ELÖRE Atelier visual perspective"   fill    className="object-cover"  />
+</div>
 
             <div className="flex flex-col justify-center">
               <p className="eyebrow">The ELÖRE Perspective</p>
