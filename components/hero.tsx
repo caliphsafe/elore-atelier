@@ -6,7 +6,7 @@ export function Hero() {
     <section className="px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12 lg:px-12">
       <div className="editorial-container">
         <div className="grid gap-8 lg:min-h-[78vh] lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
-          <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:p-10">
+          <div className="order-2 flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-10">
             <div>
               <p className="eyebrow">Luxury Hat Atelier</p>
 
@@ -29,10 +29,10 @@ export function Hero() {
                 </Link>
 
                 <Link
-                  href="/custom"
+                  href="/experiences"
                   className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
-                  Begin a Custom Hat
+                  Book an Experience
                 </Link>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[640px] lg:min-h-full">
+          <div className="order-1 relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[640px] lg:order-2 lg:min-h-full">
             <Image
               src="/images/home/hero/hero.jpg"
               alt="ELÖRE Atelier hero"
@@ -104,10 +104,10 @@ export function Hero() {
 
           <div className="olive-panel rounded-luxe p-6 text-brand-white shadow-soft">
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-              Custom Orders
+              Experiences
             </p>
             <p className="serif-display mt-4 text-3xl leading-tight md:text-4xl">
-              From consultation to final shape, every detail carries intention.
+              From workshop to finished form, every detail carries intention.
             </p>
           </div>
         </div>
