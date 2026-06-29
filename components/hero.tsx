@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Hero() {
@@ -64,7 +65,10 @@ export function Hero() {
         </div>
 
         <div className="grid gap-5">
-          <div className="image-panel aspect-[4/5] rounded-luxe border thin-border shadow-soft" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-luxe border thin-border shadow-soft">
+          <Image src="/images/home/hero/hero.jpg" alt="ELÖRE Atelier hero" fill priority className="object-cover transition duration-700 hover:scale-[1.02]"/>
+
+</div>
 
           <div className="grid gap-5 sm:grid-cols-[1fr_1.2fr]">
             <div className="soft-panel rounded-luxe border thin-border p-5 shadow-soft">
