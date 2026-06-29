@@ -1,45 +1,89 @@
+import Image from "next/image";
 import Link from "next/link";
 
-const panels = [
-  "bg-[linear-gradient(135deg,#d9c4ab_0%,#b79774_100%)]",
-  "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]",
-  "bg-[linear-gradient(135deg,#4a5c0a_0%,#273300_100%)]",
+const images = [
+  "/images/home/lookbook/lookbook-1.jpg",
+  "/images/home/lookbook/lookbook-2.jpg",
+  "/images/home/lookbook/lookbook-3.jpg",
 ];
 
 export function LookbookPreview() {
   return (
-    <section className="section-pad">
+    <section className="px-5 py-14 md:px-8 md:py-20 lg:px-12">
       <div className="editorial-container">
-        <div className="mb-8 max-w-2xl">
+        <div className="mb-10 max-w-3xl">
           <p className="eyebrow">Lookbook</p>
-          <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-            Editorial presentation with depth, restraint, and texture.
+
+          <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
+            Fashion imagery designed to create atmosphere before a word is read.
           </h2>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
+            The ELÖRE lookbook is more than product photography—it is a visual
+            narrative built from silhouette, texture, movement, and quiet
+            confidence.
+          </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
-          <div className={`rounded-luxe border thin-border shadow-soft ${panels[0]}`}>
-            <div className="aspect-[5/6] w-full rounded-luxe" />
+        <div className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
+          <div className="relative min-h-[620px] overflow-hidden rounded-luxe border thin-border shadow-soft">
+            <Image
+              src={images[0]}
+              alt="ELÖRE editorial lookbook"
+              fill
+              sizes="(max-width:1024px) 100vw, 65vw"
+              className="object-cover transition duration-700 hover:scale-[1.02]"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
+                Editorial Campaign
+              </p>
+
+              <h3 className="serif-display mt-3 max-w-lg text-4xl leading-tight text-white md:text-5xl">
+                Every image should feel worthy of a magazine spread.
+              </h3>
+            </div>
           </div>
 
           <div className="grid gap-5">
-            <div className={`rounded-luxe border thin-border shadow-soft ${panels[1]}`}>
-              <div className="aspect-[5/3] w-full rounded-luxe" />
+            <div className="relative min-h-[300px] overflow-hidden rounded-luxe border thin-border shadow-soft">
+              <Image
+                src={images[1]}
+                alt="ELÖRE portrait"
+                fill
+                sizes="(max-width:1024px) 100vw, 35vw"
+                className="object-cover transition duration-700 hover:scale-[1.02]"
+              />
+
+              <div className="absolute inset-0 bg-black/15" />
             </div>
 
-            <div className="rounded-luxe olive-panel p-8 shadow-soft">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-                Visual Direction
-              </p>
-              <p className="serif-display mt-4 max-w-md text-3xl leading-tight text-white md:text-4xl">
-                Collection imagery should feel cinematic, tactile, and quietly bold.
-              </p>
-              <Link
-                href="/lookbook"
-                className="mt-6 inline-flex text-[11px] uppercase tracking-[0.26em] text-white/80 transition hover:text-white"
-              >
-                View Lookbook
-              </Link>
+            <div className="relative min-h-[300px] overflow-hidden rounded-luxe border thin-border shadow-soft">
+              <Image
+                src={images[2]}
+                alt="ELÖRE detail"
+                fill
+                sizes="(max-width:1024px) 100vw, 35vw"
+                className="object-cover transition duration-700 hover:scale-[1.02]"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
+                  Lookbook
+                </p>
+
+                <Link
+                  href="/lookbook"
+                  className="mt-3 inline-flex text-[11px] uppercase tracking-[0.26em] text-white transition hover:text-white/80"
+                >
+                  Explore the Editorial Collection
+                </Link>
+              </div>
             </div>
           </div>
         </div>
