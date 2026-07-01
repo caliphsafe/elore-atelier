@@ -1,134 +1,159 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const experiences = [
+const offerings = [
   {
     title: "Hat-Making Experience",
-    label: "Introductory Experience",
-    text: "A guided hands-on session where guests are introduced to the craft of shaping, finishing, and personalizing their own hat.",
+    label: "Introductory Session",
+    duration: "Single-session format",
+    capacity: "Individuals or small groups",
+    outcome: "Create and personalize your own hat",
+    description:
+      "A hands-on experience designed for guests who want to step inside the atelier, learn the basics of hat making, and leave with something personal.",
     image: "/images/experiences/hat-making.jpg",
     alt: "ELÖRE hat-making experience"
   },
   {
     title: "Two-Day Hat-Making Workshop",
     label: "Immersive Training",
-    text: "A deeper training experience where participants learn the process over two days and leave with two completed hats: one felt and one straw.",
+    duration: "Two-day format",
+    capacity: "Up to 15 participants",
+    outcome: "Leave with one felt hat and one straw hat",
+    description:
+      "A deeper workshop for guests who want to learn the process in a more complete way, from material direction and shaping to finishing details.",
     image: "/images/experiences/two-day-workshop.jpg",
     alt: "ELÖRE two-day hat-making workshop"
   },
   {
     title: "Private Atelier Experience",
-    label: "Private + Group Booking",
-    text: "A tailored private experience for individuals, groups, creative teams, special events, and intimate gatherings of up to 15 people.",
+    label: "Private Booking",
+    duration: "Custom format",
+    capacity: "Individuals, groups, teams, and events",
+    outcome: "A tailored creative experience",
+    description:
+      "A private atelier experience for special occasions, creative teams, intimate gatherings, brand activations, or guests seeking a more personal format.",
     image: "/images/experiences/private-atelier.jpg",
     alt: "ELÖRE private atelier experience"
   }
 ];
 
-const details = [
+const workshopAgenda = [
   {
-    title: "Group Size",
-    text: "Workshops can accommodate up to 15 participants depending on the format and booking needs."
+    day: "Day One",
+    title: "Foundation, Material, and Shape",
+    points: [
+      "Introduction to hat-making tools and materials",
+      "Felt and straw material overview",
+      "Understanding crown, brim, proportion, and silhouette",
+      "Beginning the first hat form"
+    ]
   },
   {
-    title: "What Guests Make",
-    text: "Two-day workshop participants leave with two hats: one felt hat and one straw hat."
-  },
-  {
-    title: "Booking Options",
-    text: "Guests can inquire directly through the site or book through Airbnb Experiences once the listing is active."
+    day: "Day Two",
+    title: "Finishing, Detail, and Final Presentation",
+    points: [
+      "Refining shape and fit",
+      "Trim, band, and finishing decisions",
+      "Final shaping and styling guidance",
+      "Guests leave with one felt hat and one straw hat"
+    ]
   }
+];
+
+const included = [
+  "Guided instruction inside the atelier",
+  "Hands-on making and finishing process",
+  "Material and silhouette guidance",
+  "One felt hat and one straw hat for two-day workshop participants",
+  "Private and group formats available",
+  "Airbnb Experiences booking option once active"
 ];
 
 export default function ExperiencesPage() {
   return (
     <>
-      <section className="px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12 lg:px-12">
+      <section className="px-5 pb-10 pt-10 md:px-8 md:pb-14 md:pt-14 lg:px-12">
         <div className="editorial-container">
-          <div className="grid gap-8 lg:min-h-[78vh] lg:grid-cols-[0.85fr_1.15fr] lg:items-stretch">
-            <div className="order-2 flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-10">
-              <div>
-                <p className="eyebrow">Experiences</p>
+          <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end">
+            <div className="max-w-4xl">
+              <p className="eyebrow">Experiences</p>
 
-                <h1 className="serif-display mt-5 max-w-3xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.6rem]">
-                  Step inside the atelier and experience the craft firsthand.
-                </h1>
+              <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+                Learn the craft of hat making inside the atelier.
+              </h1>
 
-                <p className="mt-6 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                  ELÖRE offers hands-on hat-making experiences, private workshops,
-                  and immersive training designed for guests seeking a deeper
-                  connection to the craft.
-                </p>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                  <Link
-                    href="/contact"
-                    className="inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
-                  >
-                    Inquire to Book
-                  </Link>
-
-                  <a
-                    href="#"
-                    className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                  >
-                    Airbnb Experiences
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-10 grid gap-4 border-t thin-border pt-6 sm:grid-cols-3 lg:mt-12">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                    Hands-On
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                    Guests learn by shaping, finishing, and creating.
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                    Up to 15
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                    Workshop formats can support intimate group sessions.
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                    2 Hats
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                    Two-day guests leave with one felt and one straw hat.
-                  </p>
-                </div>
-              </div>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
+                ELÖRE Experiences are designed for guests who want more than a
+                finished product. Through workshops, private sessions, and
+                immersive training, visitors are invited into the process of
+                shaping, finishing, and creating a hat by hand.
+              </p>
             </div>
 
-            <div className="order-1 relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[640px] lg:order-2 lg:min-h-full">
-              <Image
-                src="/images/experiences/hero.jpg"
-                alt="ELÖRE Atelier hat-making experience"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 58vw"
-                className="object-cover"
-              />
+            <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft">
+              <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+                Experience Snapshot
+              </p>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
-                <div className="max-w-md rounded-[1.5rem] border border-white/20 bg-white/12 p-5 text-white shadow-soft backdrop-blur-md">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/75">
-                    Hat-Making Experience
-                  </p>
-                  <p className="serif-display mt-3 text-2xl leading-tight md:text-3xl">
-                    A craft-centered experience designed to be memorable, tactile,
-                    and personal.
-                  </p>
+              <div className="mt-5 grid gap-5 text-sm leading-7 text-brand-ink/72">
+                <div>
+                  <p className="text-brand-ink">Workshop Capacity</p>
+                  <p>Up to 15 participants</p>
                 </div>
+
+                <div>
+                  <p className="text-brand-ink">Two-Day Workshop Outcome</p>
+                  <p>Each guest leaves with one felt hat and one straw hat</p>
+                </div>
+
+                <div>
+                  <p className="text-brand-ink">Booking Paths</p>
+                  <p>Direct inquiry and Airbnb Experiences</p>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+                >
+                  Inquire to Book
+                </Link>
+
+                <a
+                  href="#"
+                  className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
+                >
+                  Airbnb Experiences
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-8 md:px-8 md:py-12 lg:px-12">
+        <div className="editorial-container">
+          <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]">
+            <Image
+              src="/images/experiences/hero.jpg"
+              alt="ELÖRE Atelier hat-making experience"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+              <div className="max-w-2xl">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
+                  Inside the Atelier
+                </p>
+                <h2 className="serif-display mt-4 text-4xl leading-tight text-white md:text-6xl">
+                  A tactile, personal, and memorable introduction to the craft.
+                </h2>
               </div>
             </div>
           </div>
@@ -138,46 +163,57 @@ export default function ExperiencesPage() {
       <section className="px-5 py-14 md:px-8 md:py-20 lg:px-12">
         <div className="editorial-container">
           <div className="mb-10 max-w-3xl">
-            <p className="eyebrow">Offerings</p>
+            <p className="eyebrow">Choose Your Format</p>
+
             <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-              Choose the experience that fits the moment.
+              Experiences built for guests, groups, and deeper creative learning.
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              From a single hands-on session to a two-day workshop, each offering
-              is designed to bring guests closer to the making process while
-              preserving the elevated feel of the ELÖRE world.
-            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-3">
-            {experiences.map((experience) => (
+            {offerings.map((offering) => (
               <article
-                key={experience.title}
+                key={offering.title}
                 className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
               >
-                <div className="relative min-h-[420px] overflow-hidden">
+                <div className="relative min-h-[360px] overflow-hidden">
                   <Image
-                    src={experience.image}
-                    alt={experience.alt}
+                    src={offering.image}
+                    alt={offering.alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover transition duration-700 hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
                 <div className="p-6 md:p-7">
                   <p className="text-[10px] uppercase tracking-[0.3em] text-brand-mocha">
-                    {experience.label}
+                    {offering.label}
                   </p>
 
                   <h3 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
-                    {experience.title}
+                    {offering.title}
                   </h3>
 
                   <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                    {experience.text}
+                    {offering.description}
                   </p>
+
+                  <div className="mt-6 grid gap-3 border-t thin-border pt-5 text-sm leading-6 text-brand-ink/72">
+                    <p>
+                      <span className="text-brand-ink">Duration:</span>{" "}
+                      {offering.duration}
+                    </p>
+                    <p>
+                      <span className="text-brand-ink">Capacity:</span>{" "}
+                      {offering.capacity}
+                    </p>
+                    <p>
+                      <span className="text-brand-ink">Outcome:</span>{" "}
+                      {offering.outcome}
+                    </p>
+                  </div>
                 </div>
               </article>
             ))}
@@ -187,41 +223,100 @@ export default function ExperiencesPage() {
 
       <section className="px-5 py-14 md:px-8 md:py-20 lg:px-12">
         <div className="editorial-container">
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-            <div className="relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft">
-              <Image
-                src="/images/experiences/materials.jpg"
-                alt="ELÖRE hat-making materials"
-                fill
-                sizes="(max-width: 1024px) 100vw, 48vw"
-                className="object-cover"
-              />
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="eyebrow">Two-Day Workshop</p>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
-            </div>
-
-            <div className="flex flex-col justify-center rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft md:p-8 lg:p-10">
-              <p className="eyebrow">The Workshop Format</p>
-
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Designed for learning, making, and leaving with something real.
+              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
+                A deeper training experience with a finished result.
               </h2>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                The two-day workshop is built as an immersive training experience.
-                Guests are introduced to the materials, tools, shaping process,
-                finishing details, and creative decisions involved in making a
-                hat from start to finish.
+                The two-day workshop is the most complete experience format.
+                It gives guests time to understand the materials, learn the
+                process, and leave with two completed pieces: one felt hat and
+                one straw hat.
               </p>
 
-              <div className="mt-8 grid gap-4">
-                {details.map((detail) => (
-                  <div key={detail.title} className="border-t thin-border pt-5">
-                    <h3 className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                      {detail.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-brand-ink/72 md:text-base">
-                      {detail.text}
+              <div className="mt-8 rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+                  Workshop Limit
+                </p>
+                <p className="serif-display mt-3 text-4xl leading-tight text-brand-ink">
+                  Up to 15 people
+                </p>
+                <p className="mt-3 text-sm leading-7 text-brand-ink/72">
+                  The experience is intentionally limited to keep the format
+                  hands-on, personal, and manageable for each participant.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-6">
+              {workshopAgenda.map((agenda) => (
+                <div
+                  key={agenda.day}
+                  className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8"
+                >
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+                    {agenda.day}
+                  </p>
+
+                  <h3 className="serif-display mt-3 text-4xl leading-tight text-brand-ink">
+                    {agenda.title}
+                  </h3>
+
+                  <div className="mt-6 grid gap-3">
+                    {agenda.points.map((point) => (
+                      <div
+                        key={point}
+                        className="flex gap-3 border-t thin-border pt-3 text-sm leading-7 text-brand-ink/72 md:text-base"
+                      >
+                        <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-mocha" />
+                        <p>{point}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft">
+                <Image
+                  src="/images/experiences/materials.jpg"
+                  alt="ELÖRE hat-making materials"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-14 md:px-8 md:py-20 lg:px-12">
+        <div className="editorial-container">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+            <div className="rounded-luxe border thin-border olive-panel p-6 text-white shadow-soft md:p-8 lg:p-10">
+              <p className="text-[11px] uppercase tracking-[0.3em] text-white/70">
+                What Is Included
+              </p>
+
+              <h2 className="serif-display mt-4 text-4xl leading-tight md:text-5xl">
+                Everything needed to enter the craft with confidence.
+              </h2>
+            </div>
+
+            <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-10">
+              <div className="grid gap-4">
+                {included.map((item) => (
+                  <div
+                    key={item}
+                    className="border-b thin-border pb-4 last:border-none last:pb-0"
+                  >
+                    <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
+                      {item}
                     </p>
                   </div>
                 ))}
@@ -237,14 +332,16 @@ export default function ExperiencesPage() {
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
               <div>
                 <p className="eyebrow">Booking</p>
+
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
                   Book directly or through Airbnb Experiences.
                 </h2>
+
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Visitors can inquire through the ELÖRE website for private
-                  bookings, workshops, and custom group formats. Once the Airbnb
-                  Experiences listing is active, guests will also be able to book
-                  through Airbnb.
+                  Guests can inquire directly through the ELÖRE website for
+                  workshops, private sessions, and group bookings. Once the
+                  Airbnb Experiences listing is active, visitors will also be
+                  able to book there.
                 </p>
               </div>
 
@@ -267,7 +364,7 @@ export default function ExperiencesPage() {
                   href="/studio"
                   className="inline-flex w-fit text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
                 >
-                  Learn about the Studio
+                  Learn About the Studio
                 </Link>
               </div>
             </div>
