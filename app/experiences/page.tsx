@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { WorkshopBookingForm } from "@/components/experiences/workshop-booking-form";
 
 const offerings = [
   {
@@ -11,7 +12,8 @@ const offerings = [
     description:
       "A private hands-on workshop for one guest. No experience is needed; Salome guides the process from material direction to finishing details.",
     image: "/images/experiences/hat-making.jpg",
-    alt: "ELÖRE private hat-making workshop"
+    alt: "ELÖRE private hat-making workshop",
+    bookingHref: "/experiences?workshop=private#workshop-booking"
   },
   {
     title: "Couples Workshop",
@@ -22,7 +24,8 @@ const offerings = [
     description:
       "A creative session for two people to explore material, color, silhouette, and the process of shaping a hat by hand.",
     image: "/images/experiences/two-day-workshop.jpg",
-    alt: "ELÖRE couples workshop"
+    alt: "ELÖRE couples workshop",
+    bookingHref: "/experiences?workshop=couples#workshop-booking"
   },
   {
     title: "Group Workshop",
@@ -33,7 +36,8 @@ const offerings = [
     description:
       "A guided workshop for groups, creative teams, gatherings, and special occasions. Pricing varies based on custom hat costs.",
     image: "/images/experiences/private-atelier.jpg",
-    alt: "ELÖRE group workshop"
+    alt: "ELÖRE group workshop",
+    bookingHref: "/experiences?workshop=group#workshop-booking"
   }
 ];
 
@@ -90,10 +94,10 @@ export default function ExperiencesPage() {
 
               <div className="mt-6 grid gap-3">
                 <Link
-                  href="/contact"
+                  href="#workshop-booking"
                   className="inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
                 >
-                  Inquire to Book
+                  Book a Workshop
                 </Link>
               </div>
             </div>
@@ -156,7 +160,7 @@ export default function ExperiencesPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
 
-                <div className="p-6 md:p-7">
+                <div className="flex h-full flex-col p-6 md:p-7">
                   <p className="text-[10px] uppercase tracking-[0.3em] text-brand-mocha">
                     {offering.label}
                   </p>
@@ -183,6 +187,13 @@ export default function ExperiencesPage() {
                       {offering.outcome}
                     </p>
                   </div>
+
+                  <Link
+                    href={offering.bookingHref}
+                    className="mt-6 inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+                  >
+                    Book This Workshop
+                  </Link>
                 </div>
               </article>
             ))}
@@ -254,42 +265,7 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-20 pt-8 md:px-8 md:pb-24 lg:px-12">
-        <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-            <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
-              <div>
-                <p className="eyebrow">Booking</p>
-
-                <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Inquire directly with the atelier.
-                </h2>
-
-                <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Guests can inquire through Elöre Atelier for private, couples,
-                  and group workshops.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex w-fit justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
-                >
-                  Inquire to Book
-                </Link>
-
-                <Link
-                  href="/studio"
-                  className="inline-flex w-fit text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
-                >
-                  Learn About the Studio
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <WorkshopBookingForm />
     </>
   );
 }
