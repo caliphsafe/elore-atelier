@@ -3,11 +3,10 @@ import Link from "next/link";
 
 export function HomeCta() {
   return (
-    <section className="px-5 pb-20 pt-8 md:px-8 md:pb-28 lg:px-12">
+    <section className="px-5 pb-20 pt-7 md:px-8 md:pb-24 lg:px-12">
       <div className="editorial-container">
         <div className="relative overflow-hidden rounded-luxe border thin-border shadow-soft">
-
-          <div className="relative min-h-[620px] md:min-h-[760px]">
+          <div className="relative min-h-[520px] md:min-h-[640px]">
             <Image
               src="/images/home/closing/closing.jpg"
               alt="ELÖRE Atelier"
@@ -19,25 +18,23 @@ export function HomeCta() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
 
             <div className="absolute inset-0 flex items-end">
-              <div className="w-full p-6 md:p-10 lg:p-14">
-
+              <div className="w-full p-6 md:p-10 lg:p-12">
                 <div className="max-w-3xl">
-
                   <p className="text-[11px] uppercase tracking-[0.30em] text-white/70">
                     ELÖRE Atelier
                   </p>
 
                   <h2 className="serif-display mt-5 text-5xl leading-[0.92] text-white md:text-7xl">
-                    Move forward with craft.
+                    Every piece begins with a story.
                   </h2>
 
                   <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-                    Explore the collection, discover the studio, or step into a
-                    guided experience shaped by hand, material, and intention.
+                    Explore the collection, discover the studio, or step inside
+                    a guided workshop. Each path begins with craftsmanship and
+                    moves toward something personal.
                   </p>
 
                   <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-
                     <Link
                       href="/shop"
                       className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:bg-[#efe5d8]"
@@ -51,16 +48,11 @@ export function HomeCta() {
                     >
                       Book an Experience
                     </Link>
-
                   </div>
-
                 </div>
-
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "ELÖRE Atelier",
-  description: "Boston-based handcrafted hat atelier redefining modern millinery."
+  description: "Boston-based handcrafted hat atelier by founder and designer Salome Kopasz."
 };
 
 export default function RootLayout({

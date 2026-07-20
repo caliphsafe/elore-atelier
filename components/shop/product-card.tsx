@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
 import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
@@ -10,7 +11,7 @@ type ProductCardProps = {
   index: number;
 };
 
-export function ProductCard({ product, index }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
 
   return (
@@ -28,15 +29,14 @@ export function ProductCard({ product, index }: ProductCardProps) {
       aria-label={`View ${product.title}`}
     >
       <div className="lift-card">
-        <div className="relative">
-          <div
-            className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
-              index % 3 === 0
-                ? "image-panel"
-                : index % 3 === 1
-                ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
-            }`}
+        <div className="relative overflow-hidden bg-[#f7f1ea]">
+          <Image
+            src={product.image}
+            alt={product.title}
+            width={900}
+            height={1125}
+            sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
+            className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
 
           <div className="absolute right-3 top-3 z-20">

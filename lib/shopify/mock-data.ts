@@ -6,9 +6,9 @@ export const mockProducts: Product[] = [
     handle: "signature-fedora-noir",
     title: "Signature Fedora Noir",
     description:
-      "A sculpted statement piece defined by refined proportion, tonal trim, and a quietly bold silhouette.",
+      "A sculpted piece defined by refined proportion, tonal trim, and a quietly bold silhouette.",
     price: "$850",
-    image: "/placeholder.jpg",
+    image: "/images/products/signature-fedora-noir-1.jpg",
     category: "Signature Collection"
   },
   {
@@ -18,7 +18,7 @@ export const mockProducts: Product[] = [
     description:
       "A grounded, expressive form with deep character and an elegant sense of restraint.",
     price: "$920",
-    image: "/placeholder.jpg",
+    image: "/images/products/atelier-brim-olive-1.jpg",
     category: "Signature Collection"
   },
   {
@@ -28,7 +28,7 @@ export const mockProducts: Product[] = [
     description:
       "Soft tonal warmth, structured lines, and a silhouette shaped to feel timeless.",
     price: "$790",
-    image: "/placeholder.jpg",
+    image: "/images/products/desert-crown-sand-1.jpg",
     category: "Summer Collection"
   },
   {
@@ -38,7 +38,7 @@ export const mockProducts: Product[] = [
     description:
       "A darker, more formal expression with clean edge work and a tailored finish.",
     price: "$980",
-    image: "/placeholder.jpg",
+    image: "/images/products/midnight-brim-classic-1.jpg",
     category: "Signature Collection"
   },
   {
@@ -48,7 +48,7 @@ export const mockProducts: Product[] = [
     description:
       "A piece led by texture and detail, balancing softness with visual authority.",
     price: "$875",
-    image: "/placeholder.jpg",
+    image: "/images/products/heritage-band-felt-1.jpg",
     category: "Signature Collection"
   },
   {
@@ -56,9 +56,9 @@ export const mockProducts: Product[] = [
     handle: "custom-atelier-form",
     title: "Custom Atelier Form",
     description:
-      "A custom design preview shaped around one-of-one proportion, material, and personal expression.",
+      "A custom design presentation piece shaped around material, proportion, and personal story.",
     price: "$1,250",
-    image: "/placeholder.jpg",
+    image: "/images/products/custom-atelier-form-1.jpg",
     category: "Custom Design"
   },
   {
@@ -68,7 +68,7 @@ export const mockProducts: Product[] = [
     description:
       "Warm, understated, and shaped with a natural softness that gives it effortless presence.",
     price: "$810",
-    image: "/placeholder.jpg",
+    image: "/images/products/soft-brim-tobacco-1.jpg",
     category: "Summer Collection"
   },
   {
@@ -76,9 +76,9 @@ export const mockProducts: Product[] = [
     handle: "studio-crown-ivory",
     title: "Studio Crown Ivory",
     description:
-      "Minimal and polished, with subtle contrast and a carefully finished presence.",
+      "Minimal and polished, with subtle contrast and a quiet, refined finish.",
     price: "$895",
-    image: "/placeholder.jpg",
+    image: "/images/products/studio-crown-ivory-1.jpg",
     category: "Signature Collection"
   }
 ];

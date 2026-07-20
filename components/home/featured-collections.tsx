@@ -3,40 +3,37 @@ import Link from "next/link";
 
 const collections = [
   {
-    label: "Summer",
     title: "Summer Collection",
-    subtitle: "Natural straw forms and warm-weather silhouettes shaped with ease and character.",
+    subtitle: "Handcrafted pieces shaped for warm days, movement, and ease.",
     href: "/shop",
     image: "/images/home/collections/signature.jpg",
     alt: "ELÖRE summer hat collection"
   },
   {
-    label: "Signature",
     title: "Signature Collection",
-    subtitle: "Recognizable Elöre silhouettes shaped on custom blocks unique to the atelier.",
+    subtitle: "Recognizable silhouettes shaped on custom blocks unique to Elöre.",
     href: "/shop",
     image: "/images/home/collections/studio-editions.jpg",
     alt: "ELÖRE signature hat collection"
   },
   {
-    label: "Custom",
     title: "Custom Design",
-    subtitle: "A guided one-of-one process shaped around material, fit, and personal expression.",
+    subtitle: "One-of-one pieces guided by material, proportion, and personal story.",
     href: "/custom",
     image: "/images/home/collections/custom.jpg",
-    alt: "ELÖRE custom hat commission"
-  }
+    alt: "ELÖRE custom hat design"
+  },
 ];
 
 export function FeaturedCollections() {
   return (
-    <section className="px-5 py-14 md:px-8 md:py-20 lg:px-12">
+    <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
       <div className="editorial-container">
         <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <p className="eyebrow">Featured Collections</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-6xl">
-              Collections shaped through season, signature form, and custom design.
+              Handcrafted hats shaped for identity, presence, and everyday meaning.
             </h2>
           </div>
 
@@ -51,10 +48,10 @@ export function FeaturedCollections() {
         <div className="grid gap-5 md:grid-cols-3">
           {collections.map((collection) => (
             <Link
-  key={collection.title}
-  href={collection.href}
-  className="group relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[640px]"
->
+              key={collection.title}
+              href={collection.href}
+              className="group relative min-h-[410px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]"
+            >
               <Image
                 src={collection.image}
                 alt={collection.alt}
@@ -66,11 +63,7 @@ export function FeaturedCollections() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/18 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-7">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
-                  {collection.label}
-                </p>
-
-                <h3 className="serif-display mt-3 text-4xl leading-tight md:text-5xl">
+                <h3 className="serif-display text-4xl leading-tight md:text-5xl">
                   {collection.title}
                 </h3>
 

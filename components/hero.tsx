@@ -3,21 +3,21 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12 lg:px-12">
+    <section className="px-5 pb-12 pt-7 md:px-8 md:pb-16 md:pt-10 lg:px-12">
       <div className="editorial-container">
-        <div className="grid gap-8 lg:min-h-[78vh] lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
-          <div className="order-2 flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-10">
+        <div className="grid gap-6 lg:min-h-[72vh] lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
+          <div className="order-2 flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-9">
             <div>
-              <p className="eyebrow">Modern Millinery Atelier</p>
+              <p className="eyebrow">Modern Millinery</p>
 
-              <h1 className="serif-display mt-5 max-w-3xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.8rem]">
-                Handcrafted hats shaped by story, material, and intention.
+              <h1 className="serif-display mt-5 max-w-3xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.4rem]">
+                Crafted for presence, shaped with intention.
               </h1>
 
               <p className="mt-6 max-w-xl text-base leading-8 muted-copy md:text-lg">
-                ELÖRE Atelier is a Boston-based handcrafted hat brand redefining
-                modern millinery through signature forms, natural materials, and
-                a thoughtful connection between tradition and what comes next.
+                Elöre Atelier is a Boston-based handcrafted hat brand redefining
+                the art of modern millinery through tradition, storytelling, and
+                intentional design.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -37,7 +37,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mt-10 grid gap-4 border-t thin-border pt-6 sm:grid-cols-3 lg:mt-12">
+            <div className="mt-8 grid gap-4 border-t thin-border pt-6 sm:grid-cols-3 lg:mt-10">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
                   Handcrafted
@@ -49,25 +49,25 @@ export function Hero() {
 
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Millinery
+                  Story
                 </p>
                 <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                  Traditional techniques meet a contemporary point of view.
+                  Every hat begins with a feeling, memory, landscape, or texture.
                 </p>
               </div>
 
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Custom
+                  Studio
                 </p>
                 <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                  Signature blocks and guided commissions create one-of-one forms.
+                  Traditional craft moves forward through modern form.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="order-1 relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[640px] lg:order-2 lg:min-h-full">
+          <div className="order-1 relative min-h-[460px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[590px] lg:order-2 lg:min-h-full">
             <Image
               src="/images/home/hero/hero.jpg"
               alt="ELÖRE Atelier hero"
@@ -85,7 +85,7 @@ export function Hero() {
                   Atelier Ethos
                 </p>
                 <p className="serif-display mt-3 text-2xl leading-tight md:text-3xl">
-                  Tradition carried forward through craft, texture, silhouette, and individuality.
+                  Tradition is carried forward through shape, material, and story.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export function Hero() {
               Studio Ethos
             </p>
             <p className="serif-display mt-4 text-3xl leading-tight text-brand-ink">
-              Creating by hand is an experience worth preserving.
+              Material, proportion, and patience guide the work.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export function Hero() {
               Experiences
             </p>
             <p className="serif-display mt-4 text-3xl leading-tight md:text-4xl">
-              Workshops invite guests into the craft of shaping a hat by hand.
+              Guided workshops invite guests into the process of making by hand.
             </p>
           </div>
         </div>

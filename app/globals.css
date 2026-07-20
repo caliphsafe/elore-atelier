@@ -68,7 +68,7 @@ img {
 }
 
 .section-pad {
-  @apply px-5 py-16 md:px-8 md:py-24 lg:px-12;
+  @apply px-5 py-14 md:px-8 md:py-20 lg:px-12;
 }
 
 .editorial-container {
@@ -178,8 +178,8 @@ a:active {
 
 @media (max-width: 768px) {
   .section-pad {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }

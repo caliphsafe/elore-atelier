@@ -4,27 +4,24 @@ import Link from "next/link";
 const offerings = [
   {
     title: "Private Workshop",
-    text: "A guided one-on-one atelier experience for guests who want to shape a custom hat with personal direction."
+    text: "A guided one-on-one atelier experience for guests who want to create a custom hat with personal direction."
   },
   {
     title: "Couples Workshop",
-    text: "A two-person workshop built around shared creativity, hands-on making, and a memorable finished piece."
+    text: "A shared creative session for two people, shaped around material, color, silhouette, and the making process."
   },
   {
     title: "Group Workshop",
-    text: "A guided studio experience for groups of 5–10 people. No previous hat-making experience is needed."
+    text: "A guided studio experience for groups of 5–10 people. No previous experience is needed."
   }
 ];
 
 export function ExperiencesPreview() {
   return (
-    <section className="px-5 py-16 md:px-8 md:py-24 lg:px-12">
+    <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
       <div className="editorial-container">
-        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
-
-          {/* IMAGE */}
-
-          <div className="relative min-h-[560px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[720px]">
+        <div className="grid gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+          <div className="relative min-h-[500px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px]">
             <Image
               src="/images/home/experiences/experience.jpg"
               alt="ELÖRE Atelier Experiences"
@@ -42,32 +39,28 @@ export function ExperiencesPreview() {
               </p>
 
               <h2 className="serif-display mt-4 max-w-lg text-4xl leading-tight text-white md:text-6xl">
-                Step inside the craft of hat making.
+                Learn the craft inside the studio.
               </h2>
             </div>
           </div>
 
-          {/* CONTENT */}
-
-          <div className="flex flex-col rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-10">
-
+          <div className="flex flex-col rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-9">
             <div>
               <p className="eyebrow">Experiences</p>
 
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Guided workshops in the atelier.
+                Guided workshops for individuals, couples, and groups.
               </h2>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                ELÖRE invites guests into the making process through guided
-                workshops for individuals, couples, and small groups. Each
-                experience is hands-on, welcoming, and shaped around material,
-                creativity, and care.
+                Elöre Atelier invites guests into the process through hands-on
+                workshops where every hat is shaped with patience, precision,
+                and care. Pricing varies based on custom hat costs and material
+                direction.
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5">
-
+            <div className="mt-9 grid gap-5">
               {offerings.map((offering) => (
                 <div
                   key={offering.title}
@@ -82,11 +75,9 @@ export function ExperiencesPreview() {
                   </p>
                 </div>
               ))}
-
             </div>
 
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/experiences"
                 className="inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
@@ -94,21 +85,18 @@ export function ExperiencesPreview() {
                 Explore Experiences
               </Link>
 
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
               >
-                Contact the Atelier
-              </a>
-
+                Inquire to Book
+              </Link>
             </div>
 
             <p className="mt-6 text-xs uppercase tracking-[0.28em] text-brand-mocha">
-              Private • Couples • Group Workshops
+              No Experience Needed • Guided Workshop • Custom Hat Costs Vary
             </p>
-
           </div>
-
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { ShopGrid } from "@/components/shop/shop-grid";
 export default function ShopPage() {
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
+      <section className="section-pad pt-12 md:pt-14">
         <div className="editorial-container flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl fade-up">
             <p className="eyebrow">Shop</p>
@@ -12,8 +12,8 @@ export default function ShopPage() {
               Signature forms, refined silhouettes, and handcrafted pieces.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              Explore selected hats from Elöre Atelier, shaped through material,
-              proportion, and intentional design.
+              Explore Elöre pieces shaped through natural materials, intentional
+              design, and the art of modern millinery.
             </p>
           </div>
 

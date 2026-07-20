@@ -1,80 +1,93 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const looks = [
   {
-    title: "Summer Collection",
-    subtitle: "Warm-weather forms shaped through natural texture and ease.",
-    panel: "bg-[linear-gradient(135deg,#ead8c4_0%,#c9ae90_100%)]"
+    title: "Look One",
+    subtitle: "Structured silhouette with soft tonal contrast.",
+    image: "/images/lookbook/look-1.jpg",
+    alt: "ELÖRE Atelier look one"
   },
   {
-    title: "Signature Collection",
-    subtitle: "Recognizable Elöre silhouettes with sculptural character.",
-    panel: "bg-[linear-gradient(135deg,#f3e8db_0%,#dcc6aa_100%)]"
+    title: "Look Two",
+    subtitle: "A quieter form built around texture and restraint.",
+    image: "/images/lookbook/look-2.jpg",
+    alt: "ELÖRE Atelier look two"
   },
   {
-    title: "Custom Design",
-    subtitle: "One-of-one pieces shaped through personal direction and craft.",
-    panel: "bg-[linear-gradient(135deg,#53660b_0%,#253000_100%)]"
+    title: "Look Three",
+    subtitle: "A deeper mood shaped through shadow and line.",
+    image: "/images/lookbook/look-3.jpg",
+    alt: "ELÖRE Atelier look three"
   },
   {
-    title: "Studio Detail",
-    subtitle: "Material, trim, and finishing moments from the atelier.",
-    panel: "bg-[linear-gradient(135deg,#d8c0a3_0%,#b3916c_100%)]"
+    title: "Look Four",
+    subtitle: "Refined proportions with a modern editorial tone.",
+    image: "/images/lookbook/look-4.jpg",
+    alt: "ELÖRE Atelier look four"
   },
   {
-    title: "Favorite Forms",
-    subtitle: "Selected hats presented through presence, proportion, and style.",
-    panel: "bg-[linear-gradient(135deg,#f5ede3_0%,#d9c0a2_100%)]"
+    title: "Look Five",
+    subtitle: "Minimal styling that lets silhouette lead.",
+    image: "/images/lookbook/look-5.jpg",
+    alt: "ELÖRE Atelier look five"
   }
 ];
 
 export default function LookbookPage() {
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
+      <section className="section-pad pt-12 md:pt-14">
         <div className="editorial-container">
           <div className="max-w-4xl">
             <p className="eyebrow">Lookbook</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              Selected hats, silhouettes, and details from Elöre Atelier.
+              Favorite pieces, silhouettes, and details from Elöre Atelier.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The lookbook presents favorite pieces through styling, proportion,
-              texture, and presence, offering a closer view of the collection and
-              the craft behind it.
+              The lookbook brings the collection into focus through styled
+              portraits, details, movement, texture, and the quiet character of
+              each piece.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad pt-6">
         <div className="editorial-container grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#e8d6c2_0%,#b79571_100%)] shadow-soft">
-            <div className="aspect-[5/6] w-full rounded-luxe" />
+          <div className="relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[640px]">
+            <Image
+              src="/images/lookbook/hero.jpg"
+              alt="ELÖRE Atelier lookbook hero"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 58vw"
+              className="object-cover"
+            />
           </div>
 
           <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
             <div>
-              <p className="eyebrow">The Edit</p>
+              <p className="eyebrow">Collection View</p>
               <h2 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
-                A curated view of the collection through form, texture, and style.
+                Hats shaped through feeling, memory, texture, landscape, and story.
               </h2>
               <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                Each image offers a different way into the work: the silhouette,
-                the material, the finish, and the relationship between the hat
-                and the person wearing it.
+                From there, Salome translates emotion into form — balancing
+                sculptural silhouettes with timeless elegance to create pieces
+                that feel both contemporary and enduring.
               </p>
             </div>
 
             <div className="mt-8 border-t thin-border pt-6">
               <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                Featured Here
+                Elöre Atelier
               </p>
               <div className="mt-4 grid gap-3 text-sm leading-7 text-brand-ink/72">
-                <p>Selected hats from the collection</p>
-                <p>Styled portraits and full looks</p>
-                <p>Close details of material and trim</p>
-                <p>Signature silhouettes unique to Elöre</p>
+                <p>Handcrafted hats shaped from beginning to end</p>
+                <p>Signature forms unique to the brand</p>
+                <p>Natural materials selected for beauty and character</p>
+                <p>Details completed with patience and care</p>
               </div>
             </div>
           </div>
@@ -86,7 +99,7 @@ export default function LookbookPage() {
           <div className="mb-8 max-w-2xl">
             <p className="eyebrow">Featured Looks</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              Favorite pieces from the atelier.
+              A curated view of the collection.
             </h2>
           </div>
 
@@ -98,7 +111,16 @@ export default function LookbookPage() {
                   index === 2 ? "olive-panel text-white" : "bg-white"
                 }`}
               >
-                <div className={`aspect-[4/5] w-full ${index === 2 ? "" : look.panel}`} />
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src={look.image}
+                    alt={look.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 hover:scale-[1.03]"
+                  />
+                  {index === 2 ? <div className="absolute inset-0 bg-black/20" /> : null}
+                </div>
                 <div className="p-6">
                   <p
                     className={`text-[11px] uppercase tracking-[0.28em] ${
@@ -125,53 +147,36 @@ export default function LookbookPage() {
         <div className="editorial-container grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="rounded-luxe olive-panel p-6 shadow-soft md:p-8">
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-              Collection Mood
+              Design Philosophy
             </p>
             <h2 className="serif-display mt-4 text-3xl leading-tight text-white md:text-4xl">
-              Sculptural hats shaped for presence, character, and personal expression.
+              Every hat begins with a feeling.
             </h2>
             <p className="mt-5 text-sm leading-7 text-white/80 md:text-base md:leading-8">
-              The lookbook brings together favorite pieces selected for their
-              proportions, textures, and ability to carry a distinct point of view.
+              A memory. A texture. A landscape. A story waiting to be told.
+              The goal is to create something that becomes part of the person
+              who wears it.
             </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#f2e7da_0%,#d2b89a_100%)] shadow-soft">
-              <div className="aspect-[4/5] w-full rounded-luxe" />
+            <div className="relative min-h-[360px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[460px]">
+              <Image
+                src="/images/lookbook/styling-1.jpg"
+                alt="ELÖRE Atelier styled hat detail"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
             </div>
-            <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#d8c2a8_0%,#9f8160_100%)] shadow-soft">
-              <div className="aspect-[4/5] w-full rounded-luxe" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad pt-0">
-        <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_1fr] lg:p-12">
-            <div>
-              <p className="eyebrow">Selected by Salomé</p>
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Favorite hats, details, and silhouettes gathered in one place.
-              </h2>
-            </div>
-
-            <div className="grid gap-4 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-              <p>
-                Each look reflects the language of Elöre: handcrafted form,
-                thoughtful materials, and a silhouette that becomes part of the
-                person wearing it.
-              </p>
-              <p>
-                The collection is presented through moments of scale, texture,
-                movement, and detail, allowing each piece to be experienced from
-                more than one perspective.
-              </p>
-              <p>
-                As new favorites are selected, the lookbook can continue to grow
-                with the atelier, the collection, and the stories carried by each hat.
-              </p>
+            <div className="relative min-h-[360px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[460px]">
+              <Image
+                src="/images/lookbook/styling-2.jpg"
+                alt="ELÖRE Atelier styled look"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -180,15 +185,15 @@ export default function LookbookPage() {
       <section className="section-pad pt-0">
         <div className="editorial-container">
           <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-            <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+            <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
               <div>
                 <p className="eyebrow">Continue Exploring</p>
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Move from the lookbook into the collection or a custom commission.
+                  Move from the lookbook into the collection or a custom design.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Explore finished pieces, discover the studio, or begin a custom
-                  design conversation shaped around your own story.
+                  Explore finished pieces, discover the studio process, or begin
+                  a design conversation shaped around your own story.
                 </p>
               </div>
 

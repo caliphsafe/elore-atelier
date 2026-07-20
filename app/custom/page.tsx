@@ -1,20 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const steps = [
   {
     number: "01",
     title: "Consultation",
-    text: "We begin with your references, fit preferences, intended use, and personal style."
+    text: "We begin with your references, fit preferences, intended use, and personal direction."
   },
   {
     number: "02",
     title: "Design Direction",
-    text: "Shape, materials, trim, color, and details are selected to create a personal direction."
+    text: "Shape, materials, trim, color, and details are selected to create a unique vision."
   },
   {
     number: "03",
     title: "Craftsmanship",
-    text: "Your piece is shaped, refined, and finished through a careful handmade process."
+    text: "Your piece is shaped, refined, and finished through a considered making process."
   },
   {
     number: "04",
@@ -26,22 +27,32 @@ const steps = [
 export default function CustomPage() {
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
-        <div className="editorial-container">
+      <section className="section-pad pt-12 md:pt-14">
+        <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div className="max-w-4xl">
             <p className="eyebrow">Custom Hat Experience</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
               A one-of-one hat shaped around your own visual language.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The custom process is guided by material, proportion, personal
-              expression, and the story the finished piece is created to carry.
+              The custom process is designed for clients seeking something
+              personal, intentional, and impossible to replicate.
             </p>
+          </div>
+
+          <div className="relative min-h-[360px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[460px]">
+            <Image
+              src="/images/custom/hero.jpg"
+              alt="ELÖRE custom hat design"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad pt-0">
         <div className="editorial-container grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {steps.map((step) => (
             <div
@@ -62,7 +73,7 @@ export default function CustomPage() {
 
       <section className="section-pad pt-0">
         <div className="editorial-container overflow-hidden rounded-luxe border thin-border olive-panel shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_1fr] lg:p-12">
+          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_1fr] lg:p-10">
             <div>
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
                 Commission Inquiry
@@ -71,7 +82,8 @@ export default function CustomPage() {
                 Begin your custom consultation.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/80">
-                Share your vision, references, timeline, and any fit needs. We’ll guide the next steps.
+                Share your vision, references, timeline, and fit needs. The
+                atelier will guide the next steps.
               </p>
             </div>
 

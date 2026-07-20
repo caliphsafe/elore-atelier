@@ -29,10 +29,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <section className="section-pad product-page-shell pt-12 md:pt-16">
+      <section className="section-pad product-page-shell pt-12 md:pt-14">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div className="fade-up">
-            <ProductGallery title={product.title} />
+            <ProductGallery title={product.title} handle={product.handle} />
           </div>
 
           <div className="fade-up lg:sticky lg:top-28">
@@ -52,15 +52,15 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               <WishlistButton handle={product.handle} />
             </div>
 
-            <div className="mt-10 border-t thin-border pt-6">
+            <div className="mt-9 border-t thin-border pt-6">
               <div className="grid gap-5 text-sm leading-7 text-brand-ink/72">
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
                     Craft Notes
                   </p>
                   <p className="mt-2">
-                    Presented as part of the ELÖRE collection with an emphasis on silhouette,
-                    proportion, material, and refined detail.
+                    Shaped through proportion, material character, and refined
+                    detail as part of the Elöre collection.
                   </p>
                 </div>
 
@@ -69,7 +69,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     Availability
                   </p>
                   <p className="mt-2">
-                    Availability, sizing, and final purchase details can be confirmed through the atelier.
+                    Final product availability, sizing, and inventory will update
+                    once Shopify is connected.
                   </p>
                 </div>
               </div>
