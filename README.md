@@ -4,8 +4,8 @@ This is the full updated site build for ELÖRE Atelier.
 
 ## What changed in this build
 
-- Updated homepage, About, Studio, Lookbook, Experiences, and Contact copy using the client notes.
-- Removed client-facing use of the word the client did not want emphasized.
+- Restored the pre-copy-update page structure while keeping the client-approved copy updates.
+- Removed internal planning/directional language from public-facing copy.
 - Reframed the brand around modern millinery, handcrafted process, tradition, storytelling, and intentional design.
 - Added an Experiences page for private, couples, and group workshops.
 - Preserved the storefront UX work already built: shop grid, product pages, cart drawer, full cart page, wishlist, search, filters, and gallery interaction.
@@ -17,7 +17,7 @@ This is the full updated site build for ELÖRE Atelier.
 2. Open the existing GitHub repo.
 3. Use **Add file → Upload files**.
 4. Drag all files/folders from this build into the repo.
-5. Commit with: `43 Build copy and UX update`.
+5. Commit with: `43 Build restore structure with client copy`.
 6. Vercel will automatically redeploy.
 
 ## Shopify credentials still needed

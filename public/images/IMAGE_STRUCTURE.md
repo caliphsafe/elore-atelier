@@ -1,6 +1,6 @@
 # ELÖRE Atelier Image Structure
 
-Upload final approved images using these exact paths and filenames.
+Place client-approved images in these exact paths.
 
 ## Home Page
 - /public/images/home-hero.jpg
@@ -45,13 +45,11 @@ Upload final approved images using these exact paths and filenames.
 ## Contact Page
 - /public/images/contact-studio.jpg
 
-## Product Images
-Use the product handle followed by the image number.
-
-Example:
+## Product / Shop Images
+Each product supports four images in the product gallery:
 - /public/images/products/signature-fedora-noir-1.jpg
 - /public/images/products/signature-fedora-noir-2.jpg
 - /public/images/products/signature-fedora-noir-3.jpg
 - /public/images/products/signature-fedora-noir-4.jpg
 
-Use the same pattern for each product handle.
+Repeat the same pattern for each product handle.
