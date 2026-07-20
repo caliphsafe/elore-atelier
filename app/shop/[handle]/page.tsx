@@ -32,7 +32,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <section className="section-pad product-page-shell pt-12 md:pt-16">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div className="fade-up">
-            <ProductGallery title={product.title} />
+            <ProductGallery title={product.title} handle={product.handle} />
           </div>
 
           <div className="fade-up lg:sticky lg:top-28">
@@ -68,7 +68,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     Availability
                   </p>
                   <p className="mt-2">
-                    Live inventory and variant details will appear here once Shopify is connected.
+                    Availability may vary by piece. For custom direction, contact the studio.
                   </p>
                 </div>
               </div>

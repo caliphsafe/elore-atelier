@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ImageSlot } from "@/components/common/image-slot";
 
 const pillars = [
   {
@@ -53,9 +54,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#eadbca_0%,#d3ba9d_55%,#b89976_100%)] shadow-soft">
-            <div className="aspect-[4/5] w-full rounded-luxe" />
-          </div>
+          <ImageSlot
+            src="/images/about-founder.jpg"
+            label="Salomé Kopasz, founder and designer of Elöre Atelier"
+            className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+          />
         </div>
       </section>
 
@@ -89,18 +92,19 @@ export default function AboutPage() {
       <section className="section-pad">
         <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
           <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
-            <div className="rounded-[1.5rem] olive-panel min-h-[320px]" />
+            <ImageSlot
+              src="/images/about-brand.jpg"
+              label="Elöre Atelier handcrafted hat"
+              className="min-h-[320px] rounded-[1.5rem]"
+            />
 
             <div className="flex flex-col justify-center">
-              <p className="eyebrow">The Elöre Perspective</p>
+              <p className="eyebrow">Elöre Atelier</p>
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Tradition is not left behind. It moves forward.
+                Tradition carried forward through creativity and community.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                Elöre is guided by the belief that craft can hold memory while still making room for new silhouettes, new stories, and new forms of connection.
-              </p>
-              <p className="mt-4 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                The work is personal, material, and carefully considered — created to become part of the person who wears it.
+                Elöre represents the belief that tradition is not something we leave behind, but something we carry with us as we create what comes next.
               </p>
             </div>
           </div>
@@ -114,25 +118,25 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">Continue Exploring</p>
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Visit the studio, browse the collection, or explore a guided workshop.
+                  Explore the collection, the studio, and the experiences.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The site is built to introduce the brand, reveal the process, and guide visitors toward the piece or experience that fits them.
+                  Elöre creates a space where tradition, creativity, and community move forward together.
                 </p>
               </div>
 
               <div className="flex flex-col justify-center gap-4">
                 <Link
-                  href="/studio"
+                  href="/shop"
                   className="inline-flex w-fit rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
                 >
-                  Enter the Studio
+                  Shop the Collection
                 </Link>
                 <Link
-                  href="/shop"
+                  href="/studio"
                   className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
-                  Shop the Collection
+                  Enter the Studio
                 </Link>
                 <Link
                   href="/experiences"

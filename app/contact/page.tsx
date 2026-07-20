@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { ImageSlot } from "@/components/common/image-slot";
 
 export default function ContactPage() {
   return (
     <>
       <section className="section-pad pt-12 md:pt-16">
-        <div className="editorial-container">
+        <div className="editorial-container grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-4xl">
             <p className="eyebrow">Contact</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
@@ -14,6 +15,12 @@ export default function ContactPage() {
               For workshops, custom inquiries, collaborations, press, or general questions, the studio welcomes thoughtful notes.
             </p>
           </div>
+
+          <ImageSlot
+            src="/images/contact-studio.jpg"
+            label="Elöre Atelier studio in Boston"
+            className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+          />
         </div>
       </section>
 

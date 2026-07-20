@@ -204,3 +204,12 @@ a:active {
     margin: 0 auto;
   }
 }
+
+/* IMAGE SLOTS */
+.image-slot {
+  width: 100%;
+  background-color: #d3ba9d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
