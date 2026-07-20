@@ -12,19 +12,27 @@ export function LookbookPreview() {
           </h2>
         </div>
 
-        <div className="grid w-full min-w-0 gap-5 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
+        <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <ImageSlot
             src="/images/home-lookbook-1.jpg"
-            label="Elöre Atelier lookbook image"
-            className="w-full min-w-0 aspect-[5/6] rounded-luxe border thin-border shadow-soft"
+            label="Elöre Atelier lookbook"
+            className="aspect-[5/6] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
           />
 
           <div className="grid w-full min-w-0 gap-5">
-            <ImageSlot
-              src="/images/home-lookbook-2.jpg"
-              label="Elöre Atelier lookbook detail"
-              className="w-full min-w-0 aspect-[5/3] rounded-luxe border thin-border shadow-soft"
-            />
+            <div className="grid w-full min-w-0 gap-5 sm:grid-cols-2">
+              <ImageSlot
+                src="/images/home-lookbook-2.jpg"
+                label="Elöre Atelier lookbook"
+                className="aspect-[4/5] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
+              />
+
+              <ImageSlot
+                src="/images/home-lookbook-3.jpg"
+                label="Elöre Atelier lookbook"
+                className="aspect-[4/5] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
+              />
+            </div>
 
             <div className="w-full min-w-0 rounded-luxe olive-panel p-6 shadow-soft md:p-8">
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
