@@ -1,67 +1,36 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export function HomeCta() {
   return (
-    <section className="px-5 pb-20 pt-8 md:px-8 md:pb-28 lg:px-12">
+    <section className="section-pad pt-0">
       <div className="editorial-container">
-        <div className="relative overflow-hidden rounded-luxe border thin-border shadow-soft">
+        <div className="overflow-hidden rounded-luxe olive-panel px-6 py-12 shadow-soft md:px-10 md:py-16">
+          <div className="max-w-3xl">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-white/70">
+              ELÖRE Atelier
+            </p>
+            <h2 className="serif-display mt-4 text-4xl leading-tight text-white md:text-6xl">
+              Tradition carried forward through shape, story, and handwork.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/78 md:text-lg">
+              Explore the collection, learn about the studio, or step into a guided experience shaped around craft and personal expression.
+            </p>
 
-          <div className="relative min-h-[620px] md:min-h-[760px]">
-            <Image
-              src="/images/home/closing/closing.jpg"
-              alt="ELÖRE Atelier"
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-
-            <div className="absolute inset-0 flex items-end">
-              <div className="w-full p-6 md:p-10 lg:p-14">
-
-                <div className="max-w-3xl">
-
-                  <p className="text-[11px] uppercase tracking-[0.30em] text-white/70">
-                    ELÖRE Atelier
-                  </p>
-
-                  <h2 className="serif-display mt-5 text-5xl leading-[0.92] text-white md:text-7xl">
-                    Every piece begins with a story.
-                  </h2>
-
-                  <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-                    Explore the collection, discover the atelier, or step inside
-                    one of our immersive experiences. Every journey begins with
-                    craftsmanship and ends with something uniquely yours.
-                  </p>
-
-                  <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-
-                    <Link
-                      href="/shop"
-                      className="inline-flex justify-center rounded-full bg-white px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:bg-[#efe5d8]"
-                    >
-                      Shop Collection
-                    </Link>
-
-                    <Link
-                      href="/experiences"
-                      className="inline-flex justify-center rounded-full border border-white/60 px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:border-white hover:bg-white/10"
-                    >
-                      Book an Experience
-                    </Link>
-
-                  </div>
-
-                </div>
-
-              </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/shop"
+                className="rounded-full bg-white px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:bg-[#f1e6d8]"
+              >
+                Shop Now
+              </Link>
+              <Link
+                href="/experiences"
+                className="rounded-full border border-white/60 px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:border-white hover:bg-white/10"
+              >
+                Explore Experiences
+              </Link>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>

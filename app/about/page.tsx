@@ -1,22 +1,21 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const pillars = [
   {
     title: "Craftsmanship",
-    text: "Every piece is presented with an emphasis on form, finish, and the quiet power of detail."
+    text: "Every Elöre piece is shaped through handwork, patience, and respect for the material."
   },
   {
-    title: "Individuality",
-    text: "ELÖRE is shaped for people drawn to pieces that feel personal, distinctive, and lasting."
+    title: "Forward Motion",
+    text: "Elöre means to move forward: carrying tradition with us as we create what comes next."
   },
   {
-    title: "Timeless Presence",
-    text: "The brand balances modern perspective with silhouettes and textures that endure beyond trend."
+    title: "Storytelling",
+    text: "Each hat holds a sense of memory, identity, and the person it is ultimately made for."
   },
   {
-    title: "Intentional Design",
-    text: "From visual direction to product presentation, every element is meant to feel considered."
+    title: "Community",
+    text: "Through collaborations and workshops, the studio creates space for craft to be shared."
   }
 ];
 
@@ -26,14 +25,12 @@ export default function AboutPage() {
       <section className="section-pad pt-12 md:pt-16">
         <div className="editorial-container">
           <div className="max-w-4xl">
-            <p className="eyebrow">About ELÖRE</p>
+            <p className="eyebrow">About Elöre</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A luxury hat brand shaped by craft, presence, and personal expression.
+              A Boston-based handcrafted hat brand redefining modern millinery.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              ELÖRE Atelier is envisioned as a refined fashion destination where
-              handcrafted hats are presented through an editorial lens—elevating
-              each piece beyond product and into identity, atmosphere, and story.
+              Founded by designer Salomé Kopasz, Elöre Atelier is rooted in craftsmanship, storytelling, and intentional design.
             </p>
           </div>
         </div>
@@ -43,26 +40,22 @@ export default function AboutPage() {
         <div className="editorial-container grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-6 text-base leading-8 text-brand-ink/75 md:text-lg">
             <p>
-              ELÖRE is rooted in the belief that a hat can do more than complete
-              a look. It can carry character, frame presence, and communicate a
-              sense of individuality before a word is spoken.
+              Salomé Kopasz is the founder and designer behind Elöre Atelier, a Boston-based handcrafted hat brand redefining the art of modern millinery. After studying Fashion Design in Boston, Salomé discovered her passion for hat-making during a short class in New York — a moment that transformed her creative path.
             </p>
             <p>
-              The brand is designed to live at the intersection of timeless form
-              and modern expression. Through a restrained visual language,
-              elevated presentation, and a focus on shape and texture, ELÖRE
-              creates a world that feels both intimate and aspirational.
+              Captivated by the hands-on artistry of shaping felt, she pursued formal training at Schola Academy in Florence, Italy, where her love for craftsmanship deepened. What began as a personal creative pursuit became a mission to preserve and reimagine a dying art form.
             </p>
             <p>
-              Rather than functioning as a conventional storefront alone, the
-              site is meant to reflect the atmosphere of an atelier—where craft,
-              visual storytelling, and personal sƒtyle meet with intention.
+              Meaning “to move forward,” Elöre embodies Salomé’s commitment to innovation, storytelling, and intentional design. It represents the belief that tradition is not something we leave behind, but something we carry with us as we create what comes next.
+            </p>
+            <p>
+              Each Elöre piece is shaped on custom signature blocks unique to the brand, blending artistry and identity. Through collaborations and workshops, Salomé continues to share her craft — creating a space where tradition, creativity, and community move forward together.
             </p>
           </div>
 
-          <div className="relative aspect-[4/5] overflow-hidden rounded-luxe border thin-border shadow-soft">
-  <Image src="/images/about/about-story.jpg"  alt="ELÖRE Atelier brand story"  fill   className="object-cover"  />
-</div>
+          <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#eadbca_0%,#d3ba9d_55%,#b89976_100%)] shadow-soft">
+            <div className="aspect-[4/5] w-full rounded-luxe" />
+          </div>
         </div>
       </section>
 
@@ -71,7 +64,7 @@ export default function AboutPage() {
           <div className="mb-8 max-w-2xl">
             <p className="eyebrow">Brand Pillars</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              Built around a clear point of view.
+              Built around movement, memory, and the handmade.
             </h2>
           </div>
 
@@ -96,23 +89,18 @@ export default function AboutPage() {
       <section className="section-pad">
         <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
           <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
-            <div className="relative min-h-[320px] overflow-hidden rounded-[1.5rem]">
-  <Image src="/images/about/about-perspective.jpg"   alt="ELÖRE Atelier visual perspective"   fill    className="object-cover"  />
-</div>
+            <div className="rounded-[1.5rem] olive-panel min-h-[320px]" />
 
             <div className="flex flex-col justify-center">
-              <p className="eyebrow">The ELÖRE Perspective</p>
+              <p className="eyebrow">The Elöre Perspective</p>
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Fashion, atmosphere, and form presented with restraint.
+                Tradition is not left behind. It moves forward.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                The visual world of ELÖRE is meant to feel polished without
-                excess—luxurious, grounded, and emotionally resonant. Every page,
-                image, and product moment should reinforce that sense of depth.
+                Elöre is guided by the belief that craft can hold memory while still making room for new silhouettes, new stories, and new forms of connection.
               </p>
               <p className="mt-4 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                It is this combination of intentional design and refined
-                presentation that gives the brand its signature tone.
+                The work is personal, material, and carefully considered — created to become part of the person who wears it.
               </p>
             </div>
           </div>
@@ -124,35 +112,33 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
               <div>
-                <p className="eyebrow">Next Steps</p>
+                <p className="eyebrow">Continue Exploring</p>
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Explore the collection or begin a bespoke commission.
+                  Visit the studio, browse the collection, or explore a guided workshop.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Whether entering through the ready-to-shop collection or a
-                  custom order, the experience should feel elevated, clear, and
-                  personal from the very first interaction.
+                  The site is built to introduce the brand, reveal the process, and guide visitors toward the piece or experience that fits them.
                 </p>
               </div>
 
               <div className="flex flex-col justify-center gap-4">
                 <Link
-                  href="/shop"
+                  href="/studio"
                   className="inline-flex w-fit rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
+                >
+                  Enter the Studio
+                </Link>
+                <Link
+                  href="/shop"
+                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
                   Shop the Collection
                 </Link>
                 <Link
-                  href="/custom"
-                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                >
-                  Begin a Custom Hat
-                </Link>
-                <Link
-                  href="/studio"
+                  href="/experiences"
                   className="inline-flex w-fit text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
                 >
-                  Enter the Studio
+                  View Experiences
                 </Link>
               </div>
             </div>

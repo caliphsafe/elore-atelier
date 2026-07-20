@@ -16,7 +16,7 @@ const desktopLinks = [
 const mobileQuickLinks = [
   { href: "/shop", label: "Shop" },
   { href: "/lookbook", label: "Looks" },
-  { href: "/custom", label: "Custom" }
+  { href: "/experiences", label: "Experiences" }
 ];
 
 type Props = {
@@ -54,13 +54,7 @@ export function SiteHeader({ onOpenCart }: Props) {
             Book Experience
           </Link>
 
-          {/* DESKTOP WISHLIST */}
           <div className="hidden md:block">
-            <WishlistLink />
-          </div>
-
-          {/* MOBILE WISHLIST */}
-          <div className="md:hidden">
             <WishlistLink />
           </div>
 

@@ -14,7 +14,7 @@ export function WishlistPageContent() {
     <>
       <section className="section-pad pt-12 md:pt-16">
         <div className="editorial-container">
-          <p className="eyebrow">Wishlist</p>
+          <p className="eyebrow">Saved Pieces</p>
           <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
             Pieces saved for later.
           </h1>

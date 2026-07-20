@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "ELÖRE Atelier",
-  description: "Luxury fashion e-commerce experience for handcrafted hats."
+  description: "A Boston-based handcrafted hat brand and modern millinery studio."
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="luxury-shell bg-brand-white text-brand-ink">
+      <body className="brand-shell bg-brand-white text-brand-ink">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

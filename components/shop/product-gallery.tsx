@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 type ProductGalleryProps = {
   title: string;
@@ -15,7 +15,6 @@ const galleryPanels = [
 
 export function ProductGallery({ title }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
 
   function previous() {
     setActiveIndex((current) =>
@@ -29,36 +28,11 @@ export function ProductGallery({ title }: ProductGalleryProps) {
     );
   }
 
-  function handleTouchStart(e: React.TouchEvent<HTMLDivElement>) {
-    touchStartX.current = e.touches[0]?.clientX ?? null;
-  }
-
-  function handleTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
-    if (touchStartX.current === null) return;
-
-    const endX = e.changedTouches[0]?.clientX ?? 0;
-    const deltaX = endX - touchStartX.current;
-
-    if (Math.abs(deltaX) > 40) {
-      if (deltaX < 0) {
-        next();
-      } else {
-        previous();
-      }
-    }
-
-    touchStartX.current = null;
-  }
-
   return (
     <div className="grid gap-5">
-      <div
-        className="relative overflow-hidden rounded-luxe"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="relative">
         <div
-          className={`aspect-[4/5] rounded-luxe border thin-border shadow-soft transition-all duration-300 ${galleryPanels[activeIndex]}`}
+          className={`aspect-[4/5] rounded-luxe border thin-border shadow-soft ${galleryPanels[activeIndex]}`}
           aria-label={`${title} image ${activeIndex + 1}`}
         />
 
@@ -67,20 +41,14 @@ export function ProductGallery({ title }: ProductGalleryProps) {
             type="button"
             onClick={previous}
             className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
-            aria-label="Previous image"
           >
             ‹
           </button>
-
-          <div className="rounded-full border border-white/70 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-brand-ink">
-            {activeIndex + 1} / {galleryPanels.length}
-          </div>
 
           <button
             type="button"
             onClick={next}
             className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
-            aria-label="Next image"
           >
             ›
           </button>

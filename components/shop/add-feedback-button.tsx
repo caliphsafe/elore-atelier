@@ -37,7 +37,7 @@ export function AddFeedbackButton({
       } uppercase ${
         added
           ? "border-brand-olive bg-brand-olive text-white"
-          : "border-brand-ink bg-brand-ink text-white hover:border-brand-olive hover:bg-brand-olive hover:text-white"
+          : "border-brand-ink bg-brand-ink text-white hover:border-brand-sand hover:bg-brand-sand hover:text-brand-ink"
       }`}
       aria-label="Add to cart"
     >

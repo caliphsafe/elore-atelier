@@ -9,8 +9,7 @@ export function SiteFooter() {
             ELÖRE
           </p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-brand-ink/70">
-            Handcrafted luxury hats shaped through craftsmanship, personal expression,
-            and a modern editorial point of view.
+            A Boston-based handcrafted hat brand carrying tradition forward through modern millinery, storytelling, and intentional design.
           </p>
         </div>
 
@@ -33,8 +32,7 @@ export function SiteFooter() {
             Atelier Notes
           </p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-brand-ink/70">
-            Built as a custom headless storefront with editorial storytelling,
-            bespoke ordering flow, and scalable commerce architecture.
+            Each piece begins with natural materials, signature blocks, and the belief that making by hand is an experience worth preserving.
           </p>
         </div>
       </div>

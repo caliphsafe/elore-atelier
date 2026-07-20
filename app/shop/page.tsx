@@ -12,8 +12,7 @@ export default function ShopPage() {
               Signature forms, refined silhouettes, and future icons.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The collection is presented through a premium storefront experience.
-              Shopify products will populate here once connected.
+              The collection is presented through a custom storefront experience. Shopify products will populate here once connected.
             </p>
           </div>
 

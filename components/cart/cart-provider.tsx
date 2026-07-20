@@ -3,6 +3,7 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useState,
   ReactNode,
@@ -28,6 +29,7 @@ type CartContextValue = {
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
+const STORAGE_KEY = "elore_cart";
 
 function parsePrice(price: string) {
   return Number(price.replace(/[^0-9.]/g, "")) || 0;
@@ -35,6 +37,23 @@ function parsePrice(price: string) {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartLine[]>([]);
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed)) {
+        setItems(parsed);
+      }
+    } catch {
+      // ignore invalid stored data
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+  }, [items]);
 
   function addItem(handle: string) {
     const product = mockProducts.find((p) => p.handle === handle);

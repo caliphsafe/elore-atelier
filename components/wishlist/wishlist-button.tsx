@@ -31,7 +31,7 @@ export function WishlistButton({
           ? "border-brand-olive bg-brand-olive text-white"
           : "border-brand-ink bg-white text-brand-ink hover:border-brand-mocha hover:text-brand-mocha"
       }`}
-      aria-label={active ? "Remove from wishlist" : "Add to wishlist"}
+      aria-label={active ? "Remove from saved pieces" : "Save piece"}
     >
       <span
         className={`leading-none ${

@@ -59,8 +59,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     Craft Notes
                   </p>
                   <p className="mt-2">
-                    Presented as part of the ELÖRE collection with an emphasis on silhouette,
-                    proportion, and refined detail.
+                    Presented as part of the Elöre collection with an emphasis on silhouette, proportion, and refined detail.
                   </p>
                 </div>
 
@@ -77,10 +76,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
             <div className="mt-8">
               <Link
-                href="/custom"
+                href="/experiences"
                 className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
               >
-                Looking for something one-of-one? Begin a custom hat
+                Interested in a workshop or custom direction? View experiences
               </Link>
             </div>
           </div>

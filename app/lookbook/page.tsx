@@ -2,28 +2,28 @@ import Link from "next/link";
 
 const looks = [
   {
-    title: "Look One",
-    subtitle: "Structured silhouette with soft tonal contrast.",
+    title: "Portraits",
+    subtitle: "Faces, silhouettes, and favorite pieces selected for mood and presence.",
     panel: "bg-[linear-gradient(135deg,#ead8c4_0%,#c9ae90_100%)]"
   },
   {
-    title: "Look Two",
-    subtitle: "A quieter form built around texture and restraint.",
+    title: "Full Looks",
+    subtitle: "Styled images that show how each hat lives with the person wearing it.",
     panel: "bg-[linear-gradient(135deg,#f3e8db_0%,#dcc6aa_100%)]"
   },
   {
-    title: "Look Three",
-    subtitle: "A deeper mood shaped through shadow and line.",
+    title: "Details",
+    subtitle: "Close frames of trim, felt, straw, hands, texture, and finish.",
     panel: "bg-[linear-gradient(135deg,#53660b_0%,#253000_100%)]"
   },
   {
-    title: "Look Four",
-    subtitle: "Refined proportions with a modern editorial tone.",
+    title: "Movement",
+    subtitle: "Images with motion, atmosphere, and real use beyond the studio.",
     panel: "bg-[linear-gradient(135deg,#d8c0a3_0%,#b3916c_100%)]"
   },
   {
-    title: "Look Five",
-    subtitle: "Minimal styling that lets silhouette lead.",
+    title: "Favorites",
+    subtitle: "Three to four chosen images per hat can become the strongest lookbook sequence.",
     panel: "bg-[linear-gradient(135deg,#f5ede3_0%,#d9c0a2_100%)]"
   }
 ];
@@ -36,11 +36,10 @@ export default function LookbookPage() {
           <div className="max-w-4xl">
             <p className="eyebrow">Lookbook</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              Editorial imagery shaped to give the collection atmosphere, texture, and presence.
+              A visual archive of favorite pieces, people, and details.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The lookbook presents ELÖRE through mood, styling, proportion, and
-              visual rhythm—allowing each piece to live inside a richer fashion context.
+              The lookbook presents Elöre through imagery — showing each hat in context, on the body, in motion, and through the details that make every piece distinct.
             </p>
           </div>
         </div>
@@ -54,14 +53,12 @@ export default function LookbookPage() {
 
           <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
             <div>
-              <p className="eyebrow">Campaign Notes</p>
+              <p className="eyebrow">Image Direction</p>
               <h2 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
-                The visual language should feel cinematic, tactile, and quietly bold.
+                The strongest images should let the hat, the person, and the story share the frame.
               </h2>
               <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                Photography on this page should highlight movement, shape, texture,
-                and restraint. The goal is to create an atmosphere around the hats,
-                not simply document them.
+                This page works best when it mixes clean portraits, full-body styling, material details, studio moments, and images with negative space for a calm editorial rhythm.
               </p>
             </div>
 
@@ -70,10 +67,10 @@ export default function LookbookPage() {
                 Best Uses
               </p>
               <div className="mt-4 grid gap-3 text-sm leading-7 text-brand-ink/72">
-                <p>Editorial portraits with strong styling</p>
-                <p>Close-ups showing trim, felt, and texture</p>
-                <p>Full-body images with negative space</p>
-                <p>Moody studio or outdoor campaign scenes</p>
+                <p>Model portraits wearing signature hats</p>
+                <p>Full-body fashion shots with clean styling</p>
+                <p>Detail frames showing trims, felt, straw, and finish</p>
+                <p>Studio and environmental images that carry atmosphere</p>
               </div>
             </div>
           </div>
@@ -85,7 +82,7 @@ export default function LookbookPage() {
           <div className="mb-8 max-w-2xl">
             <p className="eyebrow">Featured Looks</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              A gallery built around image, silhouette, and mood.
+              A gallery built around silhouette, material, and mood.
             </h2>
           </div>
 
@@ -124,15 +121,13 @@ export default function LookbookPage() {
         <div className="editorial-container grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="rounded-luxe olive-panel p-6 shadow-soft md:p-8">
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-              Styling Direction
+              Layout Approach
             </p>
             <h2 className="serif-display mt-4 text-3xl leading-tight text-white md:text-4xl">
-              Let the silhouette lead, then let the styling support it.
+              The final lookbook can be arranged by hat, by model, or by story.
             </h2>
             <p className="mt-5 text-sm leading-7 text-white/80 md:text-base md:leading-8">
-              The strongest lookbook images will feel composed without appearing
-              overworked. A clear shape, thoughtful styling, and controlled mood
-              are what give the collection its editorial presence.
+              Once Salomé selects favorite photos, three to four images per hat can be organized into a page that feels curated instead of crowded.
             </p>
           </div>
 
@@ -148,48 +143,16 @@ export default function LookbookPage() {
       </section>
 
       <section className="section-pad pt-0">
-        <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_1fr] lg:p-12">
-            <div>
-              <p className="eyebrow">How to Populate This Page</p>
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                The lookbook works best when it mixes scale, detail, and atmosphere.
-              </h2>
-            </div>
-
-            <div className="grid gap-4 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-              <p>
-                Use a combination of hero portraits, full-body fashion shots,
-                close-up detail frames, and negative-space compositions so the page
-                feels paced like an editorial story rather than a product list.
-              </p>
-              <p>
-                The strongest sequence usually starts with a dominant opening image,
-                then alternates between wide, close, and mood-based frames to keep
-                the eye moving while preserving a sense of calm.
-              </p>
-              <p>
-                As real photography is added, these placeholder panels can be
-                replaced with campaign images, studio portraits, or styled
-                collection imagery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad pt-0">
         <div className="editorial-container">
           <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
               <div>
                 <p className="eyebrow">Continue Exploring</p>
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Move from editorial inspiration into the collection or a custom commission.
+                  Move from visual inspiration into the collection or the studio.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The lookbook builds mood and desire. From here, visitors should
-                  be able to shop the collection directly or begin a more personal custom journey.
+                  The lookbook builds the visual world of Elöre. From here, visitors can shop a piece, learn about the studio, or explore guided experiences.
                 </p>
               </div>
 
@@ -201,16 +164,16 @@ export default function LookbookPage() {
                   Shop the Collection
                 </Link>
                 <Link
-                  href="/custom"
+                  href="/studio"
                   className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
-                  Begin a Custom Hat
+                  Enter the Studio
                 </Link>
                 <Link
-                  href="/studio"
+                  href="/experiences"
                   className="inline-flex w-fit text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
                 >
-                  Enter the Studio
+                  View Experiences
                 </Link>
               </div>
             </div>

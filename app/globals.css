@@ -35,6 +35,7 @@ body {
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -52,11 +53,11 @@ img {
   color: var(--ink);
 }
 
-.luxury-shell {
+.brand-shell {
   position: relative;
 }
 
-.luxury-shell::before {
+.brand-shell::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -106,31 +107,6 @@ img {
   color: rgba(34, 31, 30, 0.72);
 }
 
-.section-fade {
-  position: relative;
-}
-
-.section-fade::after {
-  content: "";
-  position: absolute;
-  inset-inline: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(34, 31, 30, 0.08) 20%,
-    rgba(34, 31, 30, 0.08) 80%,
-    transparent 100%
-  );
-}
-
-/* PREMIUM MOTION */
-
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
 button,
 a {
   transition:
@@ -145,8 +121,6 @@ button:active,
 a:active {
   transform: scale(0.98);
 }
-
-/* SMOOTH FADE UP */
 
 .fade-up {
   animation: fadeUp 0.7s ease forwards;
@@ -163,8 +137,6 @@ a:active {
   }
 }
 
-/* PREMIUM SCROLLBAR */
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -174,7 +146,15 @@ a:active {
   border-radius: 999px;
 }
 
-/* MOBILE SPACING */
+.lift-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.lift-card:hover {
+  transform: translateY(-4px);
+}
 
 @media (max-width: 768px) {
   .section-pad {
@@ -191,30 +171,12 @@ a:active {
   .serif-display {
     line-height: 0.95;
   }
-}
 
-/* TOUCH TARGETS */
-
-@media (max-width: 768px) {
   button,
   a {
     min-height: 44px;
   }
 }
-
-/* IMAGE PARALLAX READY */
-
-.lift-card {
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
-}
-
-.lift-card:hover {
-  transform: translateY(-4px);
-}
-
-/* MOBILE PRODUCT BAR */
 
 @media (max-width: 767px) {
   .product-page-shell {
