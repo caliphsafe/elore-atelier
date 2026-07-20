@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ImageSlot } from "@/components/common/image-slot";
 
 export function Hero() {
   return (
@@ -62,7 +63,11 @@ export function Hero() {
         </div>
 
         <div className="grid gap-5">
-          <div className="image-panel aspect-[4/5] rounded-luxe border thin-border shadow-soft" />
+          <ImageSlot
+            src="/images/home-hero.jpg"
+            label="Elöre Atelier handcrafted hat"
+            className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+          />
 
           <div className="grid gap-5 sm:grid-cols-[1fr_1.2fr]">
             <div className="soft-panel rounded-luxe border thin-border p-5 shadow-soft">

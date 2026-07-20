@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { ImageSlot } from "@/components/common/image-slot";
 
 export function AtelierStory() {
   return (
     <section className="section-pad">
       <div className="editorial-container grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div className="rounded-luxe border thin-border bg-[linear-gradient(135deg,#efe0ce_0%,#d4baa1_55%,#b59472_100%)] shadow-soft">
-          <div className="aspect-[4/5] w-full rounded-luxe" />
-        </div>
+        <ImageSlot
+          src="/images/home-atelier.jpg"
+          label="Salomé Kopasz and Elöre Atelier"
+          className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+        />
 
         <div className="max-w-2xl">
           <p className="eyebrow">About the Founder</p>
@@ -19,7 +22,7 @@ export function AtelierStory() {
           </p>
 
           <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-            Elöre, meaning “to move forward,” reflects her commitment to preserving and reimagining a craft that is meant to be carried, shared, and made new.
+            Meaning “to move forward,” Elöre embodies Salomé’s commitment to innovation, storytelling, and intentional design.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">

@@ -1,20 +1,24 @@
 import Link from "next/link";
+import { ImageSlot } from "@/components/common/image-slot";
 
 const collections = [
   {
-    title: "Signature Blocks",
+    title: "Summer Collection",
+    subtitle: "Handcrafted hats shaped through natural materials, proportion, and care.",
+    href: "/shop",
+    image: "/images/home-collection-1.jpg",
+  },
+  {
+    title: "Signature Collection",
     subtitle: "Silhouettes shaped on custom forms designed specifically for Elöre.",
     href: "/shop",
+    image: "/images/home-collection-2.jpg",
   },
   {
-    title: "Studio Pieces",
-    subtitle: "Handcrafted hats guided by material, proportion, and quiet detail.",
-    href: "/shop",
-  },
-  {
-    title: "Workshops & Experiences",
-    subtitle: "Guided sessions for individuals, couples, and small groups.",
+    title: "Custom Design",
+    subtitle: "One-of-one pieces shaped through material, story, and personal expression.",
     href: "/experiences",
+    image: "/images/home-collection-3.jpg",
   },
 ];
 
@@ -24,9 +28,9 @@ export function FeaturedCollections() {
       <div className="editorial-container">
         <div className="mb-8 flex items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">Collections & Experiences</p>
+            <p className="eyebrow">Collections</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              A brand built through craft, story, and shared making.
+              Tradition, creativity, and craft moving forward together.
             </h2>
           </div>
 
@@ -39,23 +43,18 @@ export function FeaturedCollections() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {collections.map((collection, index) => (
+          {collections.map((collection) => (
             <article
               key={collection.title}
               className="group overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
             >
-              <div
-                className={`aspect-[4/5] w-full ${
-                  index === 0
-                    ? "image-panel"
-                    : index === 1
-                    ? "bg-[linear-gradient(135deg,#ede2d2_0%,#c9b194_100%)]"
-                    : "bg-[linear-gradient(135deg,#3b4b06_0%,#202b02_100%)]"
-                }`}
+              <ImageSlot
+                src={collection.image}
+                label={collection.title}
+                className="aspect-[4/5] transition duration-500 group-hover:scale-[1.02]"
               />
 
               <div className="p-6">
-                <p className="eyebrow mb-3">Elöre {index + 1}</p>
                 <h3 className="serif-display text-3xl leading-tight text-brand-ink">
                   {collection.title}
                 </h3>

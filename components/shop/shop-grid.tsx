@@ -62,7 +62,7 @@ export function ShopGrid({ products }: ShopGridProps) {
                         : "border-brand-ink text-brand-ink hover:border-brand-mocha hover:text-brand-mocha"
                     }`}
                   >
-                    {category}
+                    {category === "all" ? "All" : category}
                   </button>
                 );
               })}

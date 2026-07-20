@@ -4,13 +4,14 @@ import { useRouter } from "next/navigation";
 import { Product } from "@/lib/shopify/types";
 import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
 import { WishlistButton } from "@/components/wishlist/wishlist-button";
+import { ImageSlot } from "@/components/common/image-slot";
 
 type ProductCardProps = {
   product: Product;
   index: number;
 };
 
-export function ProductCard({ product, index }: ProductCardProps) {
+export function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
 
   return (
@@ -29,14 +30,10 @@ export function ProductCard({ product, index }: ProductCardProps) {
     >
       <div className="lift-card">
         <div className="relative">
-          <div
-            className={`aspect-[4/5] w-full transition duration-500 group-hover:scale-[1.03] ${
-              index % 3 === 0
-                ? "image-panel"
-                : index % 3 === 1
-                ? "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                : "bg-[linear-gradient(135deg,#4c5d0b_0%,#283300_100%)]"
-            }`}
+          <ImageSlot
+            src={product.image}
+            label={product.title}
+            className="aspect-[4/5] transition duration-500 group-hover:scale-[1.03]"
           />
 
           <div className="absolute right-3 top-3 z-20">

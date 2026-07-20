@@ -1,10 +1,5 @@
 import Link from "next/link";
-
-const panels = [
-  "bg-[linear-gradient(135deg,#d9c4ab_0%,#b79774_100%)]",
-  "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]",
-  "bg-[linear-gradient(135deg,#4a5c0a_0%,#273300_100%)]",
-];
+import { ImageSlot } from "@/components/common/image-slot";
 
 export function LookbookPreview() {
   return (
@@ -13,26 +8,30 @@ export function LookbookPreview() {
         <div className="mb-8 max-w-2xl">
           <p className="eyebrow">Lookbook</p>
           <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-            A visual story of silhouette, character, and material.
+            Favorite pieces, silhouettes, and details from Elöre Atelier.
           </h2>
         </div>
 
         <div className="grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
-          <div className={`rounded-luxe border thin-border shadow-soft ${panels[0]}`}>
-            <div className="aspect-[5/6] w-full rounded-luxe" />
-          </div>
+          <ImageSlot
+            src="/images/home-lookbook-1.jpg"
+            label="Elöre Atelier lookbook image"
+            className="aspect-[5/6] rounded-luxe border thin-border shadow-soft"
+          />
 
           <div className="grid gap-5">
-            <div className={`rounded-luxe border thin-border shadow-soft ${panels[1]}`}>
-              <div className="aspect-[5/3] w-full rounded-luxe" />
-            </div>
+            <ImageSlot
+              src="/images/home-lookbook-2.jpg"
+              label="Elöre Atelier lookbook detail"
+              className="aspect-[5/3] rounded-luxe border thin-border shadow-soft"
+            />
 
             <div className="rounded-luxe olive-panel p-8 shadow-soft">
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-                Visual Direction
+                Lookbook
               </p>
               <p className="serif-display mt-4 max-w-md text-3xl leading-tight text-white md:text-4xl">
-                Selected images should show the relationship between the person, the piece, and the story it carries.
+                A curated view of the collection, selected through favorite hats and details.
               </p>
               <Link
                 href="/lookbook"
