@@ -9,7 +9,7 @@ export const mockProducts: Product[] = [
       "A sculpted statement piece defined by refined proportion, tonal trim, and a quietly bold silhouette.",
     price: "$850",
     image: "/placeholder.jpg",
-    category: "Signature Forms"
+    category: "Signature Collection"
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ export const mockProducts: Product[] = [
       "A grounded, expressive form with deep character and an elegant sense of restraint.",
     price: "$920",
     image: "/placeholder.jpg",
-    category: "Studio Editions"
+    category: "Signature Collection"
   },
   {
     id: "3",
@@ -29,7 +29,7 @@ export const mockProducts: Product[] = [
       "Soft tonal warmth, structured lines, and a silhouette shaped to feel timeless.",
     price: "$790",
     image: "/placeholder.jpg",
-    category: "Signature Forms"
+    category: "Summer Collection"
   },
   {
     id: "4",
@@ -39,7 +39,7 @@ export const mockProducts: Product[] = [
       "A darker, more formal expression with clean edge work and a tailored finish.",
     price: "$980",
     image: "/placeholder.jpg",
-    category: "Studio Editions"
+    category: "Signature Collection"
   },
   {
     id: "5",
@@ -49,17 +49,17 @@ export const mockProducts: Product[] = [
       "A piece led by texture and detail, balancing softness with visual authority.",
     price: "$875",
     image: "/placeholder.jpg",
-    category: "Signature Forms"
+    category: "Signature Collection"
   },
   {
     id: "6",
     handle: "custom-atelier-form",
     title: "Custom Atelier Form",
     description:
-      "A bespoke-inspired presentation piece designed to preview the one-of-one commission journey.",
+      "A custom design preview shaped around one-of-one proportion, material, and personal expression.",
     price: "$1,250",
     image: "/placeholder.jpg",
-    category: "Custom Commissions"
+    category: "Custom Design"
   },
   {
     id: "7",
@@ -69,17 +69,17 @@ export const mockProducts: Product[] = [
       "Warm, understated, and shaped with a natural softness that gives it effortless presence.",
     price: "$810",
     image: "/placeholder.jpg",
-    category: "Signature Forms"
+    category: "Summer Collection"
   },
   {
     id: "8",
     handle: "studio-crown-ivory",
     title: "Studio Crown Ivory",
     description:
-      "Minimal and polished, with subtle contrast and a quietly luxurious finish.",
+      "Minimal and polished, with subtle contrast and a carefully finished presence.",
     price: "$895",
     image: "/placeholder.jpg",
-    category: "Studio Editions"
+    category: "Signature Collection"
   }
 ];
 

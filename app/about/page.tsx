@@ -4,19 +4,19 @@ import Link from "next/link";
 const pillars = [
   {
     title: "Craftsmanship",
-    text: "Every piece is presented with an emphasis on form, finish, and the quiet power of detail."
+    text: "Every Elöre piece is shaped by hand with patience, precision, and care."
   },
   {
     title: "Individuality",
-    text: "ELÖRE is shaped for people drawn to pieces that feel personal, distinctive, and lasting."
+    text: "Each hat carries its own character through material, proportion, and the person who wears it."
   },
   {
     title: "Timeless Presence",
-    text: "The brand balances modern perspective with silhouettes and textures that endure beyond trend."
+    text: "The work balances tradition with a modern point of view, creating pieces designed to endure."
   },
   {
     title: "Intentional Design",
-    text: "From visual direction to product presentation, every element is meant to feel considered."
+    text: "From custom blocks to final finishing, every decision is made with purpose."
   }
 ];
 
@@ -28,12 +28,12 @@ export default function AboutPage() {
           <div className="max-w-4xl">
             <p className="eyebrow">About ELÖRE</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A luxury hat brand shaped by craft, presence, and personal expression.
+              A Boston-based handcrafted hat brand redefining modern millinery.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              ELÖRE Atelier is envisioned as a refined fashion destination where
-              handcrafted hats are presented through an editorial lens—elevating
-              each piece beyond product and into identity, atmosphere, and story.
+              Elöre Atelier was founded by Salomé Kopasz, a designer committed
+              to preserving and reimagining the art of hat-making through craft,
+              storytelling, and intentional design.
             </p>
           </div>
         </div>
@@ -43,20 +43,23 @@ export default function AboutPage() {
         <div className="editorial-container grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div className="space-y-6 text-base leading-8 text-brand-ink/75 md:text-lg">
             <p>
-              ELÖRE is rooted in the belief that a hat can do more than complete
-              a look. It can carry character, frame presence, and communicate a
-              sense of individuality before a word is spoken.
+              After studying Fashion Design in Boston, Salomé discovered her
+              passion for hat-making during a short class in New York. Captivated
+              by the hands-on artistry of shaping felt, she pursued formal
+              training at Schola Academy in Florence, Italy, where her love for
+              craftsmanship deepened.
             </p>
             <p>
-              The brand is designed to live at the intersection of timeless form
-              and modern expression. Through a restrained visual language,
-              elevated presentation, and a focus on shape and texture, ELÖRE
-              creates a world that feels both intimate and aspirational.
+              What began as a personal creative pursuit became a mission to
+              preserve and reimagine a dying art form. Meaning “to move forward,”
+              Elöre embodies Salomé’s commitment to innovation, storytelling, and
+              intentional design.
             </p>
             <p>
-              Rather than functioning as a conventional storefront alone, the
-              site is meant to reflect the atmosphere of an atelier—where craft,
-              visual storytelling, and personal sƒtyle meet with intention.
+              Elöre represents the belief that tradition is not something we
+              leave behind, but something we carry with us as we create what
+              comes next. Each piece is shaped on custom signature blocks unique
+              to the brand, blending artistry and identity.
             </p>
           </div>
 
@@ -71,7 +74,7 @@ export default function AboutPage() {
           <div className="mb-8 max-w-2xl">
             <p className="eyebrow">Brand Pillars</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              Built around a clear point of view.
+              Built around craft, story, and forward movement.
             </h2>
           </div>
 
@@ -101,18 +104,19 @@ export default function AboutPage() {
 </div>
 
             <div className="flex flex-col justify-center">
-              <p className="eyebrow">The ELÖRE Perspective</p>
+              <p className="eyebrow">The Meaning of ELÖRE</p>
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Fashion, atmosphere, and form presented with restraint.
+                To move forward while carrying tradition with you.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                The visual world of ELÖRE is meant to feel polished without
-                excess—luxurious, grounded, and emotionally resonant. Every page,
-                image, and product moment should reinforce that sense of depth.
+                Elöre is rooted in the idea that heritage and innovation can live
+                together. The work honors traditional millinery while creating
+                forms that feel personal, contemporary, and enduring.
               </p>
               <p className="mt-4 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                It is this combination of intentional design and refined
-                presentation that gives the brand its signature tone.
+                Through collaborations and workshops, Salomé continues to share
+                her craft and create a space where tradition, creativity, and
+                community move forward together.
               </p>
             </div>
           </div>
@@ -126,12 +130,11 @@ export default function AboutPage() {
               <div>
                 <p className="eyebrow">Next Steps</p>
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Explore the collection or begin a bespoke commission.
+                  Explore the collection or step inside the studio.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Whether entering through the ready-to-shop collection or a
-                  custom order, the experience should feel elevated, clear, and
-                  personal from the very first interaction.
+                  Discover finished pieces, learn more about the making process,
+                  or begin a custom conversation shaped around your own story.
                 </p>
               </div>
 

@@ -15,13 +15,12 @@ export function LookbookPreview() {
           <p className="eyebrow">Lookbook</p>
 
           <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-            Fashion imagery designed to create atmosphere before a word is read.
+            Favorite hats, styled through form, texture, and presence.
           </h2>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-            The ELÖRE lookbook is more than product photography—it is a visual
-            narrative built from silhouette, texture, movement, and quiet
-            confidence.
+            The ELÖRE lookbook gathers selected pieces from the collection through
+            portraits, details, and styled moments that bring each silhouette into view.
           </p>
         </div>
 
@@ -39,11 +38,11 @@ export function LookbookPreview() {
 
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
               <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
-                Editorial Campaign
+                Selected Edit
               </p>
 
               <h3 className="serif-display mt-3 max-w-lg text-4xl leading-tight text-white md:text-5xl">
-                Every image should feel worthy of a magazine spread.
+                A closer look at favorite hats from the collection.
               </h3>
             </div>
           </div>
@@ -81,7 +80,7 @@ export function LookbookPreview() {
                   href="/lookbook"
                   className="mt-3 inline-flex text-[11px] uppercase tracking-[0.26em] text-white transition hover:text-white/80"
                 >
-                  Explore the Editorial Collection
+                  View the Lookbook
                 </Link>
               </div>
             </div>

@@ -11,8 +11,8 @@ export default function ContactPage() {
               Begin a conversation with the atelier.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              For custom commissions, wholesale inquiries, collaborations, press,
-              or general questions, we welcome thoughtful inquiries.
+              For custom commissions, workshops, collaborations, press, or
+              general questions, Elöre welcomes thoughtful inquiries.
             </p>
           </div>
         </div>
@@ -26,29 +26,30 @@ export default function ContactPage() {
             <div className="mt-6 grid gap-6 text-sm leading-7 text-brand-ink/72 md:text-base">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                  Studio
+                </p>
+                <p className="mt-2">One Avenue De Lafayette</p>
+                <p>Boston, MA 02111</p>
+              </div>
+
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                  Phone
+                </p>
+                <p className="mt-2">(781) 985-8868</p>
+              </div>
+
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
                   Email
                 </p>
-                <p className="mt-2">hello@eloreatelier.com</p>
-              </div>
-
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Custom Orders
-                </p>
-                <p className="mt-2">Please include timeline, sizing, references, and desired direction.</p>
-              </div>
-
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Response Time
-                </p>
-                <p className="mt-2">Typically within 1–3 business days.</p>
+                <p className="mt-2">contact@elore.design</p>
               </div>
             </div>
           </div>
 
           <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft md:p-8">
-            <p className="eyebrow">Suggested Contact Form</p>
+            <p className="eyebrow">Send an Inquiry</p>
 
             <div className="mt-6 grid gap-4">
               <input placeholder="Full Name" className="rounded-xl border thin-border bg-white px-4 py-3 outline-none" />

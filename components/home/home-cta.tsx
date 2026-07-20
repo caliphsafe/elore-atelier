@@ -28,13 +28,12 @@ export function HomeCta() {
                   </p>
 
                   <h2 className="serif-display mt-5 text-5xl leading-[0.92] text-white md:text-7xl">
-                    Every piece begins with a story.
+                    Move forward with craft.
                   </h2>
 
                   <p className="mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-                    Explore the collection, discover the atelier, or step inside
-                    one of our immersive experiences. Every journey begins with
-                    craftsmanship and ends with something uniquely yours.
+                    Explore the collection, discover the studio, or step into a
+                    guided experience shaped by hand, material, and intention.
                   </p>
 
                   <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

@@ -9,8 +9,8 @@ export function SiteFooter() {
             ELÖRE
           </p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-brand-ink/70">
-            Handcrafted luxury hats shaped through craftsmanship, personal expression,
-            and a modern editorial point of view.
+            Boston-based handcrafted hats shaped through tradition, material,
+            personal expression, and modern millinery.
           </p>
         </div>
 
@@ -30,12 +30,14 @@ export function SiteFooter() {
 
         <div>
           <p className="text-[11px] uppercase tracking-[0.3em] text-brand-mocha">
-            Atelier Notes
+            Contact
           </p>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-brand-ink/70">
-            Built as a custom headless storefront with editorial storytelling,
-            bespoke ordering flow, and scalable commerce architecture.
-          </p>
+          <div className="mt-4 max-w-sm text-sm leading-7 text-brand-ink/70">
+            <p>One Avenue De Lafayette</p>
+            <p>Boston, MA 02111</p>
+            <p className="mt-3">(781) 985-8868</p>
+            <p>contact@elore.design</p>
+          </div>
         </div>
       </div>
     </footer>

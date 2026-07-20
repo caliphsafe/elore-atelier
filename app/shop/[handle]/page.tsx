@@ -60,7 +60,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   </p>
                   <p className="mt-2">
                     Presented as part of the ELÖRE collection with an emphasis on silhouette,
-                    proportion, and refined detail.
+                    proportion, material, and refined detail.
                   </p>
                 </div>
 
@@ -69,7 +69,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     Availability
                   </p>
                   <p className="mt-2">
-                    Live inventory and variant details will appear here once Shopify is connected.
+                    Availability, sizing, and final purchase details can be confirmed through the atelier.
                   </p>
                 </div>
               </div>

@@ -3,59 +3,59 @@ import Link from "next/link";
 
 const offerings = [
   {
-    title: "Hat-Making Experience",
-    label: "Introductory Session",
-    duration: "Single-session format",
-    capacity: "Individuals or small groups",
-    outcome: "Create and personalize your own hat",
+    title: "Private Workshop",
+    label: "Single Guest",
+    duration: "Guided workshop format",
+    capacity: "One person",
+    outcome: "Create and personalize a custom hat",
     description:
-      "A hands-on experience designed for guests who want to step inside the atelier, learn the basics of hat making, and leave with something personal.",
+      "A guided atelier experience for one guest, shaped around material, silhouette, and personal direction. No previous experience is needed.",
     image: "/images/experiences/hat-making.jpg",
-    alt: "ELÖRE hat-making experience"
+    alt: "ELÖRE private hat-making workshop"
   },
   {
-    title: "Two-Day Hat-Making Workshop",
-    label: "Immersive Training",
-    duration: "Two-day format",
-    capacity: "Up to 15 participants",
-    outcome: "Leave with one felt hat and one straw hat",
+    title: "Couples Workshop",
+    label: "Two People",
+    duration: "Guided workshop format",
+    capacity: "Two people",
+    outcome: "Create a shared experience and finished hats",
     description:
-      "A deeper workshop for guests who want to learn the process in a more complete way, from material direction and shaping to finishing details.",
+      "A two-person workshop designed for couples or pairs who want a hands-on creative experience inside the atelier.",
     image: "/images/experiences/two-day-workshop.jpg",
-    alt: "ELÖRE two-day hat-making workshop"
+    alt: "ELÖRE couples hat-making workshop"
   },
   {
-    title: "Private Atelier Experience",
-    label: "Private Booking",
-    duration: "Custom format",
-    capacity: "Individuals, groups, teams, and events",
-    outcome: "A tailored creative experience",
+    title: "Group Workshop",
+    label: "Small Group",
+    duration: "Guided workshop format",
+    capacity: "5–10 people",
+    outcome: "A hands-on group experience",
     description:
-      "A private atelier experience for special occasions, creative teams, intimate gatherings, brand activations, or guests seeking a more personal format.",
+      "A guided workshop for small groups, creative gatherings, and private events. Pricing varies based on custom hat costs and selected materials.",
     image: "/images/experiences/private-atelier.jpg",
-    alt: "ELÖRE private atelier experience"
+    alt: "ELÖRE group hat-making workshop"
   }
 ];
 
 const workshopAgenda = [
   {
-    day: "Day One",
-    title: "Foundation, Material, and Shape",
+    day: "Step One",
+    title: "Material, Shape, and Direction",
     points: [
       "Introduction to hat-making tools and materials",
-      "Felt and straw material overview",
-      "Understanding crown, brim, proportion, and silhouette",
-      "Beginning the first hat form"
+      "Guidance on felt, straw, trim, and finishing options",
+      "Selecting crown, brim, proportion, and silhouette",
+      "Beginning the custom hat-making process"
     ]
   },
   {
-    day: "Day Two",
-    title: "Finishing, Detail, and Final Presentation",
+    day: "Step Two",
+    title: "Finishing, Detail, and Final Form",
     points: [
       "Refining shape and fit",
-      "Trim, band, and finishing decisions",
+      "Selecting trim, band, and finishing details",
       "Final shaping and styling guidance",
-      "Guests leave with one felt hat and one straw hat"
+      "Completing a piece shaped by hand"
     ]
   }
 ];
@@ -64,9 +64,9 @@ const included = [
   "Guided instruction inside the atelier",
   "Hands-on making and finishing process",
   "Material and silhouette guidance",
-  "One felt hat and one straw hat for two-day workshop participants",
-  "Private and group formats available",
-  "Airbnb Experiences booking option once active"
+  "Private, couples, and group workshop formats",
+  "Group workshops available for 5–10 people",
+  "No previous hat-making experience needed"
 ];
 
 export default function ExperiencesPage() {
@@ -79,14 +79,13 @@ export default function ExperiencesPage() {
               <p className="eyebrow">Experiences</p>
 
               <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-                Learn the craft of hat making inside the atelier.
+                Guided hat-making workshops inside the atelier.
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                ELÖRE Experiences are designed for guests who want more than a
-                finished product. Through workshops, private sessions, and
-                immersive training, visitors are invited into the process of
-                shaping, finishing, and creating a hat by hand.
+                ELÖRE Experiences invite guests into the process of shaping,
+                finishing, and creating a hat by hand. Private, couples, and
+                group workshops are available, and no previous experience is needed.
               </p>
             </div>
 
@@ -97,18 +96,18 @@ export default function ExperiencesPage() {
 
               <div className="mt-5 grid gap-5 text-sm leading-7 text-brand-ink/72">
                 <div>
-                  <p className="text-brand-ink">Workshop Capacity</p>
-                  <p>Up to 15 participants</p>
+                  <p className="text-brand-ink">Workshop Formats</p>
+                  <p>Private, couples, and group sessions</p>
                 </div>
 
                 <div>
-                  <p className="text-brand-ink">Two-Day Workshop Outcome</p>
-                  <p>Each guest leaves with one felt hat and one straw hat</p>
+                  <p className="text-brand-ink">Group Capacity</p>
+                  <p>5–10 people</p>
                 </div>
 
                 <div>
-                  <p className="text-brand-ink">Booking Paths</p>
-                  <p>Direct inquiry and Airbnb Experiences</p>
+                  <p className="text-brand-ink">Pricing</p>
+                  <p>Varies based on custom hat costs and selected materials</p>
                 </div>
               </div>
 
@@ -121,10 +120,10 @@ export default function ExperiencesPage() {
                 </Link>
 
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
-                  Airbnb Experiences
+                  Ask a Question
                 </a>
               </div>
             </div>
@@ -152,7 +151,7 @@ export default function ExperiencesPage() {
                   Inside the Atelier
                 </p>
                 <h2 className="serif-display mt-4 text-4xl leading-tight text-white md:text-6xl">
-                  A tactile, personal, and memorable introduction to the craft.
+                  A tactile and memorable introduction to the craft.
                 </h2>
               </div>
             </div>
@@ -166,7 +165,7 @@ export default function ExperiencesPage() {
             <p className="eyebrow">Choose Your Format</p>
 
             <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-              Experiences built for guests, groups, and deeper creative learning.
+              Experiences for individuals, couples, and small groups.
             </h2>
           </div>
 
@@ -225,29 +224,28 @@ export default function ExperiencesPage() {
         <div className="editorial-container">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow">Two-Day Workshop</p>
+              <p className="eyebrow">Guided Workshop</p>
 
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-                A deeper training experience with a finished result.
+                A hands-on experience shaped around the craft.
               </h2>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                The two-day workshop is the most complete experience format.
-                It gives guests time to understand the materials, learn the
-                process, and leave with two completed pieces: one felt hat and
-                one straw hat.
+                Each workshop introduces guests to the materials, tools, and
+                decisions behind a handcrafted hat. Pricing varies based on the
+                custom hat costs, selected materials, and workshop format.
               </p>
 
               <div className="mt-8 rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                  Workshop Limit
+                  Group Format
                 </p>
                 <p className="serif-display mt-3 text-4xl leading-tight text-brand-ink">
-                  Up to 15 people
+                  5–10 people
                 </p>
                 <p className="mt-3 text-sm leading-7 text-brand-ink/72">
-                  The experience is intentionally limited to keep the format
-                  hands-on, personal, and manageable for each participant.
+                  Group workshops are kept intimate so each guest can receive
+                  guidance throughout the making process.
                 </p>
               </div>
             </div>
@@ -334,14 +332,12 @@ export default function ExperiencesPage() {
                 <p className="eyebrow">Booking</p>
 
                 <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Book directly or through Airbnb Experiences.
+                  Inquire directly with the atelier.
                 </h2>
 
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
                   Guests can inquire directly through the ELÖRE website for
-                  workshops, private sessions, and group bookings. Once the
-                  Airbnb Experiences listing is active, visitors will also be
-                  able to book there.
+                  private workshops, couples workshops, and group bookings.
                 </p>
               </div>
 
@@ -354,10 +350,10 @@ export default function ExperiencesPage() {
                 </Link>
 
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex w-fit justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
-                  Airbnb Experiences
+                  Contact the Atelier
                 </a>
 
                 <Link

@@ -3,16 +3,16 @@ import Link from "next/link";
 
 const offerings = [
   {
-    title: "Hat-Making Experience",
-    text: "A hands-on introduction to shaping, finishing, and personalizing your own hat through a guided atelier experience."
+    title: "Private Workshop",
+    text: "A guided one-on-one atelier experience for guests who want to shape a custom hat with personal direction."
   },
   {
-    title: "Two-Day Workshop",
-    text: "Limited to 15 participants. Learn traditional techniques and leave with two handcrafted hats—one felt and one straw."
+    title: "Couples Workshop",
+    text: "A two-person workshop built around shared creativity, hands-on making, and a memorable finished piece."
   },
   {
-    title: "Private Events",
-    text: "Private atelier sessions for individuals, groups, creative teams, and special occasions. Tailored experiences are available by request."
+    title: "Group Workshop",
+    text: "A guided studio experience for groups of 5–10 people. No previous hat-making experience is needed."
   }
 ];
 
@@ -42,7 +42,7 @@ export function ExperiencesPreview() {
               </p>
 
               <h2 className="serif-display mt-4 max-w-lg text-4xl leading-tight text-white md:text-6xl">
-                Learn the craft from the people who live it.
+                Step inside the craft of hat making.
               </h2>
             </div>
           </div>
@@ -55,15 +55,14 @@ export function ExperiencesPreview() {
               <p className="eyebrow">Experiences</p>
 
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                More than shopping.
+                Guided workshops in the atelier.
               </h2>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                ELÖRE invites guests beyond the storefront through immersive
-                experiences that celebrate craftsmanship, creativity, and
-                connection. Whether you're discovering hat making for the first
-                time or looking for an in-depth workshop, each experience is
-                designed to feel intimate, inspiring, and unforgettable.
+                ELÖRE invites guests into the making process through guided
+                workshops for individuals, couples, and small groups. Each
+                experience is hands-on, welcoming, and shaped around material,
+                creativity, and care.
               </p>
             </div>
 
@@ -96,16 +95,16 @@ export function ExperiencesPreview() {
               </Link>
 
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
               >
-                Airbnb Experiences
+                Contact the Atelier
               </a>
 
             </div>
 
             <p className="mt-6 text-xs uppercase tracking-[0.28em] text-brand-mocha">
-              Workshops • Private Sessions • Creative Events
+              Private • Couples • Group Workshops
             </p>
 
           </div>

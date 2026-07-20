@@ -4,7 +4,7 @@ import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
   title: "ELÖRE Atelier",
-  description: "Luxury fashion e-commerce experience for handcrafted hats."
+  description: "Boston-based handcrafted hat atelier redefining modern millinery."
 };
 
 export default function RootLayout({

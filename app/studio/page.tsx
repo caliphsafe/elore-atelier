@@ -3,33 +3,33 @@ import Link from "next/link";
 const principles = [
   {
     title: "Shape",
-    text: "Silhouette is treated as structure and emotion at once—each curve, crown, and brim chosen to create presence."
+    text: "Every hat begins with feeling, memory, texture, landscape, or a story waiting to be told."
   },
   {
     title: "Material",
-    text: "Texture, finish, and weight help define the character of each piece and the way it lives on the body."
+    text: "Fine felts, straw, silk, leather, and natural fibers are selected for beauty, durability, and character."
   },
   {
     title: "Detail",
-    text: "Trim, edge work, tonal variation, and restraint are used to give a hat distinction without excess."
+    text: "Edges, trims, habillage, and finishing touches are completed with patience and intention."
   }
 ];
 
 const processSteps = [
   {
     number: "01",
-    title: "Direction",
-    text: "Ideas begin with references, mood, silhouette, and the intended feeling of the final piece."
+    title: "Material Selection",
+    text: "Each hat begins with natural materials chosen for their integrity, texture, and distinct presence."
   },
   {
     number: "02",
-    title: "Refinement",
-    text: "Material choices, proportion, trim, and finishing details are shaped into a cohesive visual language."
+    title: "Blocking & Shaping",
+    text: "The material is steamed and shaped by hand over wooden blocks, allowing the form to emerge through craft."
   },
   {
     number: "03",
-    title: "Completion",
-    text: "The finished hat is presented as a crafted object with clarity, balance, and individuality."
+    title: "Finishing",
+    text: "The silhouette is refined, each edge is completed, and the final habillage brings the piece to life."
   }
 ];
 
@@ -41,12 +41,11 @@ export default function StudioPage() {
           <div className="max-w-4xl">
             <p className="eyebrow">Studio</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A closer look at the atmosphere, craft, and creative process behind the work.
+              A creative studio and shop where every hat is handcrafted from beginning to end.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The studio is where silhouette, texture, mood, and intention are
-              brought into alignment—shaping each piece through a process that
-              values refinement, individuality, and quiet impact.
+              Located in Downtown Boston, Elöre Atelier is where ideas are
+              transformed into heirloom pieces through patience, precision, and care.
             </p>
           </div>
         </div>
@@ -61,18 +60,17 @@ export default function StudioPage() {
           <div className="max-w-2xl">
             <p className="eyebrow">Creative Environment</p>
             <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-              A studio language built from form, restraint, and atmosphere.
+              Where imagination and material meet.
             </h2>
             <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-              More than a workspace, the studio represents a visual and material
-              philosophy. It is where references are distilled, textures are
-              considered, and each decision moves closer to a finished object
-              that feels balanced and self-possessed.
+              The studio is more than a workspace. Every collection, custom
+              commission, and collaboration begins here, guided by the belief
+              that creating by hand is an experience worth preserving.
             </p>
             <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-              The tone is intentional: refined but grounded, editorial but
-              tactile, luxurious without feeling overworked. That tension is a
-              defining part of the ELÖRE perspective.
+              For Salomé, the process itself is the greatest source of
+              inspiration. As each piece evolves, it becomes a quiet dialogue
+              between imagination, material, and the person who will wear it.
             </p>
           </div>
         </div>
@@ -121,12 +119,13 @@ export default function StudioPage() {
             <div>
               <p className="eyebrow">Process</p>
               <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                From first reference to finished form.
+                From natural material to finished form.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                The studio process is guided by clarity and patience. Each stage
-                is meant to sharpen the visual language of the piece while
-                preserving the individuality that gives it life.
+                Creating a hat is a journey. Every step carries intention—from
+                selecting the material to steaming the felt, shaping it over
+                wooden blocks, refining the silhouette, sanding every edge, and
+                completing the final details.
               </p>
             </div>
 
@@ -168,9 +167,10 @@ export default function StudioPage() {
               Texture and finish are part of the story.
             </h2>
             <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-              Felt, trim, tonal depth, edge treatment, and surface character all
-              shape the emotional tone of a piece. These details are not added
-              decoration—they are part of the structure of the experience.
+              Elöre works primarily with fine beaver and rabbit felts,
+              handwoven Panama straw, silk, leather, and natural fibers chosen
+              for their integrity and timeless quality. Each material is allowed
+              to retain its natural character, giving every hat its own presence.
             </p>
           </div>
         </div>
@@ -186,9 +186,9 @@ export default function StudioPage() {
                   Discover the collection or begin a custom commission.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The studio offers a deeper understanding of the perspective
-                  behind the work. The next step is to explore the collection or
-                  move into a more personal bespoke experience.
+                  The studio offers a deeper understanding of the care behind
+                  the work. From here, explore finished pieces or begin a more
+                  personal custom experience.
                 </p>
               </div>
 

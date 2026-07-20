@@ -19,10 +19,10 @@ export function AtelierStory() {
 
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
               <p className="max-w-lg text-[11px] uppercase tracking-[0.3em] text-white/75">
-                Atelier Perspective
+                Atelier Story
               </p>
               <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-white md:text-6xl">
-                Where craftsmanship meets identity.
+                Tradition carried forward.
               </h2>
             </div>
           </div>
@@ -32,19 +32,20 @@ export function AtelierStory() {
               <p className="eyebrow">About the Atelier</p>
 
               <h3 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                A storefront designed to feel like a living fashion house.
+                Founded by Salomé Kopasz, Elöre moves the craft of modern millinery forward.
               </h3>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                ELÖRE is designed as more than a storefront. It is a space where
-                form, texture, color, and story come together to present each
-                piece with the same intention it was created with.
+                After studying Fashion Design in Boston, Salomé discovered
+                hat-making during a short class in New York. That moment
+                transformed her creative path and led her to formal training at
+                Schola Academy in Florence, Italy.
               </p>
 
               <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-                The brand experience draws from fashion editorials, bespoke
-                studio culture, and the timeless ritual of wearing a hat that
-                feels made for a singular presence.
+                Meaning “to move forward,” Elöre reflects a belief that tradition
+                is not something we leave behind, but something we carry with us
+                as we create what comes next.
               </p>
             </div>
 

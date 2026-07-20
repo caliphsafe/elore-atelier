@@ -8,16 +8,16 @@ export function Hero() {
         <div className="grid gap-8 lg:min-h-[78vh] lg:grid-cols-[0.82fr_1.18fr] lg:items-stretch">
           <div className="order-2 flex flex-col justify-between rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-10">
             <div>
-              <p className="eyebrow">Luxury Hat Atelier</p>
+              <p className="eyebrow">Modern Millinery Atelier</p>
 
               <h1 className="serif-display mt-5 max-w-3xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.8rem]">
-                Crafted for presence, shaped with intention.
+                Handcrafted hats shaped by story, material, and intention.
               </h1>
 
               <p className="mt-6 max-w-xl text-base leading-8 muted-copy md:text-lg">
-                ELÖRE Atelier is a modern luxury storefront for handcrafted hats,
-                blending editorial storytelling, refined product presentation, and
-                a bespoke custom-order experience.
+                ELÖRE Atelier is a Boston-based handcrafted hat brand redefining
+                modern millinery through signature forms, natural materials, and
+                a thoughtful connection between tradition and what comes next.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -40,28 +40,28 @@ export function Hero() {
             <div className="mt-10 grid gap-4 border-t thin-border pt-6 sm:grid-cols-3 lg:mt-12">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Crafted
+                  Handcrafted
                 </p>
                 <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                  Luxury hat forms made to feel singular and personal.
+                  Each piece is shaped by hand from beginning to end.
                 </p>
               </div>
 
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Editorial
+                  Millinery
                 </p>
                 <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                  A visual world inspired by fashion lookbooks and atelier culture.
+                  Traditional techniques meet a contemporary point of view.
                 </p>
               </div>
 
               <div>
                 <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Bespoke
+                  Custom
                 </p>
                 <p className="mt-2 text-sm leading-6 text-brand-ink/75">
-                  A guided custom process for one-of-one commissions.
+                  Signature blocks and guided commissions create one-of-one forms.
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ export function Hero() {
                   Atelier Ethos
                 </p>
                 <p className="serif-display mt-3 text-2xl leading-tight md:text-3xl">
-                  The language of craft, texture, silhouette, and individuality.
+                  Tradition carried forward through craft, texture, silhouette, and individuality.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export function Hero() {
               Studio Ethos
             </p>
             <p className="serif-display mt-4 text-3xl leading-tight text-brand-ink">
-              Material, proportion, and restraint guide each visual decision.
+              Creating by hand is an experience worth preserving.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export function Hero() {
               Experiences
             </p>
             <p className="serif-display mt-4 text-3xl leading-tight md:text-4xl">
-              From workshop to finished form, every detail carries intention.
+              Workshops invite guests into the craft of shaping a hat by hand.
             </p>
           </div>
         </div>

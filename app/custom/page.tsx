@@ -9,17 +9,17 @@ const steps = [
   {
     number: "02",
     title: "Design Direction",
-    text: "Shape, materials, trim, color, and details are selected to create a unique vision."
+    text: "Shape, materials, trim, color, and details are selected to create a personal direction."
   },
   {
     number: "03",
     title: "Craftsmanship",
-    text: "Your piece is shaped, refined, and finished through a considered making process."
+    text: "Your piece is shaped, refined, and finished through a careful handmade process."
   },
   {
     number: "04",
-    title: "Delivery",
-    text: "The final hat is prepared and delivered as a wearable signature piece."
+    title: "Completion",
+    text: "The final hat is prepared as a wearable piece shaped around your story."
   }
 ];
 
@@ -34,8 +34,8 @@ export default function CustomPage() {
               A one-of-one hat shaped around your own visual language.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              Our bespoke process is designed for clients seeking something deeply personal,
-              refined, and impossible to replicate.
+              The custom process is guided by material, proportion, personal
+              expression, and the story the finished piece is created to carry.
             </p>
           </div>
         </div>

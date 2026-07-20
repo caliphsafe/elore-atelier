@@ -9,16 +9,16 @@ export default function ShopPage() {
           <div className="max-w-3xl fade-up">
             <p className="eyebrow">Shop</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              Signature forms, refined silhouettes, and future icons.
+              Signature forms, refined silhouettes, and handcrafted pieces.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The collection is presented through a premium storefront experience.
-              Shopify products will populate here once connected.
+              Explore selected hats from Elöre Atelier, shaped through material,
+              proportion, and intentional design.
             </p>
           </div>
 
           <div className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha fade-up">
-            {mockProducts.length} Featured Mock Products
+            {mockProducts.length} Featured Products
           </div>
         </div>
       </section>

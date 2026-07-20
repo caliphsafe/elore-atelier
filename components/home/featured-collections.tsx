@@ -3,26 +3,29 @@ import Link from "next/link";
 
 const collections = [
   {
-    title: "Signature Forms",
-    subtitle: "Refined silhouettes shaped for timeless presence.",
+    label: "Summer",
+    title: "Summer Collection",
+    subtitle: "Natural straw forms and warm-weather silhouettes shaped with ease and character.",
     href: "/shop",
     image: "/images/home/collections/signature.jpg",
+    alt: "ELÖRE summer hat collection"
+  },
+  {
+    label: "Signature",
+    title: "Signature Collection",
+    subtitle: "Recognizable Elöre silhouettes shaped on custom blocks unique to the atelier.",
+    href: "/shop",
+    image: "/images/home/collections/studio-editions.jpg",
     alt: "ELÖRE signature hat collection"
   },
   {
-    title: "Studio Editions",
-    subtitle: "Limited pieces rooted in craft, detail, and character.",
-    href: "/lookbook",
-    image: "/images/home/collections/studio-editions.jpg",
-    alt: "ELÖRE studio edition hat"
-  },
-  {
-    title: "Custom Commissions",
-    subtitle: "One-of-one hats built through an intentional bespoke process.",
+    label: "Custom",
+    title: "Custom Design",
+    subtitle: "A guided one-of-one process shaped around material, fit, and personal expression.",
     href: "/custom",
     image: "/images/home/collections/custom.jpg",
     alt: "ELÖRE custom hat commission"
-  },
+  }
 ];
 
 export function FeaturedCollections() {
@@ -33,7 +36,7 @@ export function FeaturedCollections() {
           <div className="max-w-2xl">
             <p className="eyebrow">Featured Collections</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-6xl">
-              Collection paths for ready-to-wear and bespoke expression.
+              Collections shaped through season, signature form, and custom design.
             </h2>
           </div>
 
@@ -46,7 +49,7 @@ export function FeaturedCollections() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
-          {collections.map((collection, index) => (
+          {collections.map((collection) => (
             <Link
   key={collection.title}
   href={collection.href}
@@ -64,7 +67,7 @@ export function FeaturedCollections() {
 
               <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-7">
                 <p className="text-[10px] uppercase tracking-[0.3em] text-white/70">
-                  Collection {index + 1}
+                  {collection.label}
                 </p>
 
                 <h3 className="serif-display mt-3 text-4xl leading-tight md:text-5xl">
