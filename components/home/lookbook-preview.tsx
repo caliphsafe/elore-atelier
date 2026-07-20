@@ -12,7 +12,7 @@ export function LookbookPreview() {
           </h2>
         </div>
 
-        <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <div className="grid w-full min-w-0 gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <ImageSlot
             src="/images/home-lookbook-1.jpg"
             label="Elöre Atelier lookbook"
@@ -38,11 +38,9 @@ export function LookbookPreview() {
               <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
                 Lookbook
               </p>
-
               <p className="serif-display mt-4 max-w-md text-3xl leading-tight text-white md:text-4xl">
-                A curated view of the collection, selected through favorite hats and details.
+                A curated view of the collection through favorite hats, details, and silhouettes.
               </p>
-
               <Link
                 href="/lookbook"
                 className="mt-6 inline-flex text-[11px] uppercase tracking-[0.26em] text-white/80 transition hover:text-white"

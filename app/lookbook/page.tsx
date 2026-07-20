@@ -3,33 +3,33 @@ import { ImageSlot } from "@/components/common/image-slot";
 
 const looks = [
   {
-    title: "Portraits",
-    subtitle: "Favorite hats worn with presence and individuality.",
+    title: "Look One",
+    subtitle: "A signature silhouette shaped with quiet presence.",
     image: "/images/lookbook-1.jpg"
   },
   {
-    title: "Full Looks",
-    subtitle: "Styled images that show how each hat lives on the body.",
+    title: "Look Two",
+    subtitle: "Natural materials, sculptural form, and personal expression.",
     image: "/images/lookbook-2.jpg"
   },
   {
-    title: "Details",
-    subtitle: "Trim, felt, straw, texture, and finish in close view.",
+    title: "Look Three",
+    subtitle: "A finished piece carrying the character of the hands that made it.",
     image: "/images/lookbook-3.jpg"
   },
   {
-    title: "Movement",
-    subtitle: "Hats seen through motion, atmosphere, and everyday expression.",
+    title: "Look Four",
+    subtitle: "A silhouette shaped on custom Elöre signature blocks.",
     image: "/images/lookbook-4.jpg"
   },
   {
-    title: "Favorites",
-    subtitle: "Selected pieces from the Elöre collection.",
+    title: "Look Five",
+    subtitle: "Craft, material, and identity brought into form.",
     image: "/images/lookbook-5.jpg"
   },
   {
-    title: "Studio Moments",
-    subtitle: "The craft, material, and quiet details behind the finished work.",
+    title: "Look Six",
+    subtitle: "A contemporary expression of traditional millinery.",
     image: "/images/lookbook-6.jpg"
   }
 ];
@@ -42,41 +42,41 @@ export default function LookbookPage() {
           <div className="max-w-4xl">
             <p className="eyebrow">Lookbook</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A visual archive of favorite pieces, people, and details.
+              Favorite pieces from Elöre Atelier.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The lookbook presents Elöre through imagery — showing each hat in context, on the body, in motion, and through the details that make every piece distinct.
+              The lookbook brings the collection into view through the silhouettes, details, and handcrafted pieces chosen to represent Elöre.
             </p>
           </div>
         </div>
       </section>
 
       <section className="section-pad">
-        <div className="editorial-container grid gap-5 md:grid-cols-[1.15fr_0.85fr]">
+        <div className="editorial-container grid gap-5 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
           <ImageSlot
             src="/images/lookbook-hero.jpg"
             label="Elöre Atelier lookbook"
-            className="aspect-[5/6] rounded-luxe border thin-border shadow-soft"
+            className="aspect-[5/6] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
           />
 
-          <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
+          <div className="flex min-w-0 flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
             <div>
-              <p className="eyebrow">Selected by Salomé</p>
+              <p className="eyebrow">Elöre Atelier</p>
               <h2 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
-                Favorite photos from the collection.
+                Handcrafted hats shaped through material, memory, and intentional design.
               </h2>
               <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                Three to four images per hat create a closer look at the pieces, details, and silhouettes chosen for the Elöre lookbook.
+                Each Elöre piece is made by hand using traditional European millinery techniques learned in Florence, Italy, and shaped on signature hat blocks unique to the brand.
               </p>
             </div>
 
             <div className="mt-8 border-t thin-border pt-6">
-              <Link
-                href="/shop"
-                className="inline-flex rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
-              >
-                Shop the Collection
-              </Link>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+                Made By Hand
+              </p>
+              <p className="mt-4 text-sm leading-7 text-brand-ink/72">
+                No two hats are ever exactly alike.
+              </p>
             </div>
           </div>
         </div>
@@ -85,9 +85,9 @@ export default function LookbookPage() {
       <section className="section-pad pt-0">
         <div className="editorial-container">
           <div className="mb-8 max-w-2xl">
-            <p className="eyebrow">Featured Looks</p>
+            <p className="eyebrow">Selected Looks</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              A gallery of silhouettes, material, and form.
+              Silhouettes, materials, and details chosen from the collection.
             </h2>
           </div>
 
@@ -117,29 +117,29 @@ export default function LookbookPage() {
       </section>
 
       <section className="section-pad">
-        <div className="editorial-container grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="editorial-container grid gap-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
           <div className="rounded-luxe olive-panel p-6 shadow-soft md:p-8">
             <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-              Elöre Atelier
+              Signature Forms
             </p>
             <h2 className="serif-display mt-4 text-3xl leading-tight text-white md:text-4xl">
-              Each Elöre piece is shaped on custom signature blocks unique to the brand.
+              Custom blocks create silhouettes that are uniquely Elöre.
             </h2>
             <p className="mt-5 text-sm leading-7 text-white/80 md:text-base md:leading-8">
-              The lookbook brings those silhouettes into view through favorite photos selected from the collection.
+              Each finished piece reflects the studio’s commitment to handmade artistry, natural materials, and sculptural character.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid min-w-0 gap-5 md:grid-cols-2">
             <ImageSlot
               src="/images/lookbook-7.jpg"
-              label="Elöre Atelier lookbook image"
-              className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+              label="Elöre Atelier lookbook"
+              className="aspect-[4/5] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
             />
             <ImageSlot
               src="/images/lookbook-8.jpg"
-              label="Elöre Atelier lookbook image"
-              className="aspect-[4/5] rounded-luxe border thin-border shadow-soft"
+              label="Elöre Atelier lookbook"
+              className="aspect-[4/5] w-full min-w-0 rounded-luxe border thin-border shadow-soft"
             />
           </div>
         </div>
