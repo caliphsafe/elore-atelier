@@ -1,5 +1,11 @@
-# 43 Build — ELÖRE Atelier Spacing + Image Slot Update
+# ELÖRE Atelier — Shopify Checkout Type Fix 43 Build
 
-This update is meant to be layered onto the restored July 1 structure. It keeps the existing visual system while tightening spacing, reducing dead space, and replacing gradient/image placeholders with real image paths.
+This update fixes the Vercel TypeScript build error in:
 
-Upload the contents of this folder to the restore-july-1 branch.
+```text
+app/api/checkout/route.ts
+```
+
+It adds proper typing for checkout request items so the Shopify checkout API route can compile under strict TypeScript settings.
+
+Upload only the included `app` folder to the `restore-july-1` branch and commit.
