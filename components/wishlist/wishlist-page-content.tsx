@@ -1,24 +1,28 @@
 "use client";
 
 import Link from "next/link";
-import { mockProducts } from "@/lib/shopify/mock-data";
+import type { Product } from "@/lib/shopify/types";
 import { useWishlist } from "@/components/wishlist/wishlist-provider";
 import { ProductCard } from "@/components/shop/product-card";
 
-export function WishlistPageContent() {
+type WishlistPageContentProps = {
+  products: Product[];
+};
+
+export function WishlistPageContent({ products: allProducts }: WishlistPageContentProps) {
   const { items } = useWishlist();
 
-  const products = mockProducts.filter((product) => items.includes(product.handle));
+  const products = allProducts.filter((product) => items.includes(product.handle));
 
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
+      <section className="section-pad pt-10 md:pt-12">
         <div className="editorial-container">
           <p className="eyebrow">Wishlist</p>
           <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
             Pieces saved for later.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
             Your saved selections are stored on this device for easy return visits.
           </p>
         </div>
