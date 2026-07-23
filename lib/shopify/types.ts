@@ -1,3 +1,8 @@
+export type ProductImage = {
+  src: string;
+  alt: string;
+};
+
 export type Product = {
   id: string;
   handle: string;
@@ -5,7 +10,10 @@ export type Product = {
   description: string;
   price: string;
   image: string;
+  images?: ProductImage[];
   category?: string;
+  variantId?: string;
+  availableForSale?: boolean;
 };
 
 export type CartItem = {

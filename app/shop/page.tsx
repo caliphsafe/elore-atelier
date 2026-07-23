@@ -1,7 +1,9 @@
-import { mockProducts } from "@/lib/shopify/mock-data";
 import { ShopGrid } from "@/components/shop/shop-grid";
+import { getProducts } from "@/lib/shopify/storefront";
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const products = await getProducts();
+
   return (
     <>
       <section className="section-pad pt-12 md:pt-14">
@@ -18,12 +20,12 @@ export default function ShopPage() {
           </div>
 
           <div className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha fade-up">
-            {mockProducts.length} Featured Products
+            {products.length} Featured Products
           </div>
         </div>
       </section>
 
-      <ShopGrid products={mockProducts} />
+      <ShopGrid products={products} />
     </>
   );
 }

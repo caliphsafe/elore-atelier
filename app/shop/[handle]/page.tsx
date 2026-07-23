@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getMockProductByHandle, getRelatedMockProducts } from "@/lib/shopify/mock-data";
+import { getProductByHandle, getRelatedProducts } from "@/lib/shopify/storefront";
 import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
 import { RelatedProductCard } from "@/components/shop/related-product-card";
 import { WishlistButton } from "@/components/wishlist/wishlist-button";
@@ -13,7 +13,7 @@ type ProductPageProps = {
 
 export default async function ProductDetailPage({ params }: ProductPageProps) {
   const { handle } = await params;
-  const product = getMockProductByHandle(handle);
+  const product = await getProductByHandle(handle);
 
   if (!product) {
     return (
@@ -25,14 +25,18 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     );
   }
 
-  const relatedProducts = getRelatedMockProducts(handle);
+  const relatedProducts = await getRelatedProducts(handle, product.category);
 
   return (
     <>
       <section className="section-pad product-page-shell pt-12 md:pt-14">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
           <div className="fade-up">
-            <ProductGallery title={product.title} handle={product.handle} />
+            <ProductGallery
+              title={product.title}
+              handle={product.handle}
+              images={product.images}
+            />
           </div>
 
           <div className="fade-up lg:sticky lg:top-28">
@@ -48,7 +52,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             </p>
 
             <div className="mt-8 hidden gap-3 md:grid">
-              <AddFeedbackButton handle={product.handle} />
+              <AddFeedbackButton product={product} />
               <WishlistButton handle={product.handle} />
             </div>
 
@@ -69,8 +73,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     Availability
                   </p>
                   <p className="mt-2">
-                    Final product availability, sizing, and inventory will update
-                    once Shopify is connected.
+                    {product.availableForSale
+                      ? "Available through secure Shopify checkout."
+                      : "This piece is currently unavailable through Shopify checkout."}
                   </p>
                 </div>
               </div>
@@ -114,7 +119,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <p className="mt-1 text-sm text-brand-ink">{product.price}</p>
           </div>
 
-          <AddFeedbackButton handle={product.handle} />
+          <AddFeedbackButton product={product} />
         </div>
       </div>
     </>

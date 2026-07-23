@@ -7,24 +7,29 @@ import {
   useState,
   ReactNode,
 } from "react";
-import { mockProducts } from "@/lib/shopify/mock-data";
+import type { Product } from "@/lib/shopify/types";
 
 export type CartLine = {
   id: string;
   handle: string;
+  variantId?: string;
   productTitle: string;
   price: string;
   quantity: number;
+  image?: string;
 };
 
 type CartContextValue = {
   items: CartLine[];
   totalItems: number;
   estimatedTotal: string;
-  addItem: (handle: string) => void;
+  isCheckingOut: boolean;
+  cartError: string;
+  addItem: (product: Product) => void;
   removeItem: (handle: string) => void;
   decrementItem: (handle: string) => void;
   clearCart: () => void;
+  checkout: () => Promise<void>;
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -35,17 +40,19 @@ function parsePrice(price: string) {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartLine[]>([]);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [cartError, setCartError] = useState("");
 
-  function addItem(handle: string) {
-    const product = mockProducts.find((p) => p.handle === handle);
-    if (!product) return;
+  function addItem(product: Product) {
+    if (!product.variantId || product.availableForSale === false) return;
 
+    setCartError("");
     setItems((current) => {
-      const existing = current.find((item) => item.handle === handle);
+      const existing = current.find((item) => item.handle === product.handle);
 
       if (existing) {
         return current.map((item) =>
-          item.handle === handle
+          item.handle === product.handle
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -56,9 +63,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
         {
           id: product.id,
           handle: product.handle,
+          variantId: product.variantId,
           productTitle: product.title,
           price: product.price,
           quantity: 1,
+          image: product.image,
         },
       ];
     });
@@ -84,6 +93,43 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([]);
   }
 
+  async function checkout() {
+    if (!items.length || isCheckingOut) return;
+
+    setIsCheckingOut(true);
+    setCartError("");
+
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: items.map((item) => ({
+            variantId: item.variantId,
+            quantity: item.quantity,
+          })),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.checkoutUrl) {
+        throw new Error(data.error || "Unable to open Shopify checkout.");
+      }
+
+      window.location.href = data.checkoutUrl;
+    } catch (error) {
+      setCartError(
+        error instanceof Error
+          ? error.message
+          : "Unable to open Shopify checkout."
+      );
+      setIsCheckingOut(false);
+    }
+  }
+
   const totalItems = useMemo(
     () => items.reduce((sum, item) => sum + item.quantity, 0),
     [items]
@@ -105,12 +151,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
       items,
       totalItems,
       estimatedTotal,
+      isCheckingOut,
+      cartError,
       addItem,
       removeItem,
       decrementItem,
       clearCart,
+      checkout,
     }),
-    [items, totalItems, estimatedTotal]
+    [items, totalItems, estimatedTotal, isCheckingOut, cartError]
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

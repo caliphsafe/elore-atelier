@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/components/cart/cart-provider";
 
@@ -9,8 +10,17 @@ type CartDrawerProps = {
 };
 
 export function CartDrawer({ open, onClose }: CartDrawerProps) {
-  const { items, estimatedTotal, addItem, decrementItem, removeItem, totalItems } =
-    useCart();
+  const {
+    items,
+    estimatedTotal,
+    addItem,
+    decrementItem,
+    removeItem,
+    totalItems,
+    checkout,
+    isCheckingOut,
+    cartError,
+  } = useCart();
 
   return (
     <>
@@ -59,18 +69,22 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               </div>
             ) : (
               <div className="grid gap-4">
-                {items.map((item, index) => (
+                {items.map((item) => (
                   <div
                     key={item.handle}
                     className="grid grid-cols-[84px_1fr] gap-4 rounded-[1.5rem] border thin-border bg-white p-4"
                   >
-                    <div
-                      className={`aspect-[4/5] rounded-[1rem] ${
-                        index % 2 === 0
-                          ? "image-panel"
-                          : "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                      }`}
-                    />
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-[#f7f1ea]">
+                      {item.image ? (
+                        <Image
+                          src={item.image}
+                          alt={item.productTitle}
+                          fill
+                          sizes="84px"
+                          className="object-cover"
+                        />
+                      ) : null}
+                    </div>
 
                     <div className="min-w-0">
                       <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
@@ -98,7 +112,18 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
 
                         <button
                           type="button"
-                          onClick={() => addItem(item.handle)}
+                          onClick={() =>
+                            addItem({
+                              id: item.id,
+                              handle: item.handle,
+                              variantId: item.variantId,
+                              title: item.productTitle,
+                              description: "",
+                              price: item.price,
+                              image: item.image || "",
+                              availableForSale: true,
+                            })
+                          }
                           className="inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded-full border border-brand-ink text-sm text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                           aria-label={`Increase quantity of ${item.productTitle}`}
                         >
@@ -126,12 +151,20 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
               <span>{estimatedTotal}</span>
             </div>
 
+            {cartError ? (
+              <p className="mb-4 rounded-[1rem] border thin-border bg-[#f7f1ea] p-3 text-xs leading-6 text-brand-ink/72">
+                {cartError}
+              </p>
+            ) : null}
+
             <div className="grid gap-3">
               <button
                 type="button"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+                onClick={checkout}
+                disabled={!items.length || isCheckingOut}
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha disabled:cursor-not-allowed disabled:bg-brand-ink/35"
               >
-                Checkout
+                {isCheckingOut ? "Opening Checkout" : "Checkout"}
               </button>
 
               <Link

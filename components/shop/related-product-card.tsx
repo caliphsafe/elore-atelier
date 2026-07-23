@@ -39,7 +39,7 @@ export function RelatedProductCard({ product }: RelatedProductCardProps) {
           />
 
           <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block">
-            <AddFeedbackButton handle={product.handle} compact />
+            <AddFeedbackButton product={product} compact />
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export function RelatedProductCard({ product }: RelatedProductCardProps) {
               {product.price}
             </span>
             <div className="md:hidden">
-              <AddFeedbackButton handle={product.handle} compact />
+              <AddFeedbackButton product={product} compact />
             </div>
           </div>
         </div>

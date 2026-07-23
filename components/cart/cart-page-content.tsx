@@ -1,11 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/components/cart/cart-provider";
 
 export function CartPageContent() {
-  const { items, totalItems, estimatedTotal, addItem, decrementItem, removeItem } =
-    useCart();
+  const {
+    items,
+    totalItems,
+    estimatedTotal,
+    addItem,
+    decrementItem,
+    removeItem,
+    checkout,
+    isCheckingOut,
+    cartError,
+  } = useCart();
 
   return (
     <>
@@ -51,18 +61,22 @@ export function CartPageContent() {
                 </Link>
               </div>
             ) : (
-              items.map((item, index) => (
+              items.map((item) => (
                 <div
                   key={item.handle}
                   className="grid grid-cols-[110px_1fr] gap-4 rounded-luxe border thin-border bg-white p-4 shadow-soft sm:grid-cols-[140px_1fr] sm:p-6"
                 >
-                  <div
-                    className={`aspect-[4/5] rounded-[1.25rem] ${
-                      index % 2 === 0
-                        ? "image-panel"
-                        : "bg-[linear-gradient(135deg,#f1e6d8_0%,#d3ba9d_100%)]"
-                    }`}
-                  />
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] bg-[#f7f1ea]">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.productTitle}
+                        fill
+                        sizes="140px"
+                        className="object-cover"
+                      />
+                    ) : null}
+                  </div>
 
                   <div className="min-w-0">
                     <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
@@ -89,7 +103,18 @@ export function CartPageContent() {
 
                       <button
                         type="button"
-                        onClick={() => addItem(item.handle)}
+                        onClick={() =>
+                          addItem({
+                            id: item.id,
+                            handle: item.handle,
+                            variantId: item.variantId,
+                            title: item.productTitle,
+                            description: "",
+                            price: item.price,
+                            image: item.image || "",
+                            availableForSale: true,
+                          })
+                        }
                         className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-brand-ink text-sm text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                       >
                         +
@@ -123,12 +148,20 @@ export function CartPageContent() {
                 <span className="text-brand-ink">{estimatedTotal}</span>
               </div>
 
+              {cartError ? (
+                <p className="mt-5 rounded-[1rem] border thin-border bg-[#f7f1ea] p-3 text-xs leading-6 text-brand-ink/72">
+                  {cartError}
+                </p>
+              ) : null}
+
               <div className="mt-6 grid gap-3">
                 <button
                   type="button"
-                  className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
+                  onClick={checkout}
+                  disabled={!items.length || isCheckingOut}
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha disabled:cursor-not-allowed disabled:bg-brand-ink/35"
                 >
-                  Proceed to Checkout
+                  {isCheckingOut ? "Opening Checkout" : "Proceed to Checkout"}
                 </button>
 
                 <Link

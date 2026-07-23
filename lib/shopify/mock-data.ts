@@ -1,5 +1,12 @@
 import type { CartItem, Product } from "./types";
 
+function productImages(handle: string, title: string) {
+  return [1, 2, 3, 4].map((number) => ({
+    src: `/images/products/${handle}-${number}.jpg`,
+    alt: `${title} image ${number}`
+  }));
+}
+
 export const mockProducts: Product[] = [
   {
     id: "1",
@@ -9,7 +16,10 @@ export const mockProducts: Product[] = [
       "A sculpted piece defined by refined proportion, tonal trim, and a quietly bold silhouette.",
     price: "$850",
     image: "/images/products/signature-fedora-noir-1.jpg",
-    category: "Signature Collection"
+    images: productImages("signature-fedora-noir", "Signature Fedora Noir"),
+    category: "Signature Collection",
+    variantId: "mock-signature-fedora-noir",
+    availableForSale: true
   },
   {
     id: "2",
@@ -19,7 +29,10 @@ export const mockProducts: Product[] = [
       "A grounded, expressive form with deep character and an elegant sense of restraint.",
     price: "$920",
     image: "/images/products/atelier-brim-olive-1.jpg",
-    category: "Signature Collection"
+    images: productImages("atelier-brim-olive", "Atelier Brim Olive"),
+    category: "Signature Collection",
+    variantId: "mock-atelier-brim-olive",
+    availableForSale: true
   },
   {
     id: "3",
@@ -29,7 +42,10 @@ export const mockProducts: Product[] = [
       "Soft tonal warmth, structured lines, and a silhouette shaped to feel timeless.",
     price: "$790",
     image: "/images/products/desert-crown-sand-1.jpg",
-    category: "Summer Collection"
+    images: productImages("desert-crown-sand", "Desert Crown Sand"),
+    category: "Summer Collection",
+    variantId: "mock-desert-crown-sand",
+    availableForSale: true
   },
   {
     id: "4",
@@ -39,7 +55,10 @@ export const mockProducts: Product[] = [
       "A darker, more formal expression with clean edge work and a tailored finish.",
     price: "$980",
     image: "/images/products/midnight-brim-classic-1.jpg",
-    category: "Signature Collection"
+    images: productImages("midnight-brim-classic", "Midnight Brim Classic"),
+    category: "Signature Collection",
+    variantId: "mock-midnight-brim-classic",
+    availableForSale: true
   },
   {
     id: "5",
@@ -49,7 +68,10 @@ export const mockProducts: Product[] = [
       "A piece led by texture and detail, balancing softness with visual authority.",
     price: "$875",
     image: "/images/products/heritage-band-felt-1.jpg",
-    category: "Signature Collection"
+    images: productImages("heritage-band-felt", "Heritage Band Felt"),
+    category: "Signature Collection",
+    variantId: "mock-heritage-band-felt",
+    availableForSale: true
   },
   {
     id: "6",
@@ -59,7 +81,10 @@ export const mockProducts: Product[] = [
       "A custom design presentation piece shaped around material, proportion, and personal story.",
     price: "$1,250",
     image: "/images/products/custom-atelier-form-1.jpg",
-    category: "Custom Design"
+    images: productImages("custom-atelier-form", "Custom Atelier Form"),
+    category: "Custom Design",
+    variantId: "mock-custom-atelier-form",
+    availableForSale: true
   },
   {
     id: "7",
@@ -69,7 +94,10 @@ export const mockProducts: Product[] = [
       "Warm, understated, and shaped with a natural softness that gives it effortless presence.",
     price: "$810",
     image: "/images/products/soft-brim-tobacco-1.jpg",
-    category: "Summer Collection"
+    images: productImages("soft-brim-tobacco", "Soft Brim Tobacco"),
+    category: "Summer Collection",
+    variantId: "mock-soft-brim-tobacco",
+    availableForSale: true
   },
   {
     id: "8",
@@ -79,7 +107,10 @@ export const mockProducts: Product[] = [
       "Minimal and polished, with subtle contrast and a quiet, refined finish.",
     price: "$895",
     image: "/images/products/studio-crown-ivory-1.jpg",
-    category: "Signature Collection"
+    images: productImages("studio-crown-ivory", "Studio Crown Ivory"),
+    category: "Signature Collection",
+    variantId: "mock-studio-crown-ivory",
+    availableForSale: true
   }
 ];
 

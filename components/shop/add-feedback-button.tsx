@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { useCart } from "@/components/cart/cart-provider";
+import type { Product } from "@/lib/shopify/types";
 
 type AddFeedbackButtonProps = {
-  handle: string;
+  product: Product;
   compact?: boolean;
 };
 
 export function AddFeedbackButton({
-  handle,
+  product,
   compact = false,
 }: AddFeedbackButtonProps) {
   const { addItem } = useCart();
@@ -21,13 +22,17 @@ export function AddFeedbackButton({
     return () => window.clearTimeout(timeout);
   }, [added]);
 
+  const unavailable = product.availableForSale === false || !product.variantId;
+
   return (
     <button
       type="button"
+      disabled={unavailable}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
-        addItem(handle);
+        if (unavailable) return;
+        addItem(product);
         setAdded(true);
       }}
       className={`inline-flex items-center justify-center rounded-full border transition ${
@@ -35,13 +40,15 @@ export function AddFeedbackButton({
           ? "min-h-[36px] px-3 py-2 text-[10px] tracking-[0.2em] sm:px-4 sm:text-[11px] sm:tracking-[0.24em]"
           : "min-h-[44px] px-6 py-3 text-xs tracking-[0.24em]"
       } uppercase ${
-        added
+        unavailable
+          ? "cursor-not-allowed border-brand-ink/30 bg-brand-ink/10 text-brand-ink/45"
+          : added
           ? "border-brand-olive bg-brand-olive text-white"
           : "border-brand-ink bg-brand-ink text-white hover:border-brand-olive hover:bg-brand-olive hover:text-white"
       }`}
-      aria-label="Add to cart"
+      aria-label={unavailable ? "Unavailable" : "Add to cart"}
     >
-      {added ? "Added" : compact ? "Add" : "Add to Cart"}
+      {unavailable ? "Unavailable" : added ? "Added" : compact ? "Add" : "Add to Cart"}
     </button>
   );
 }

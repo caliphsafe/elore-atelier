@@ -2,18 +2,23 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import type { ProductImage } from "@/lib/shopify/types";
 
 type ProductGalleryProps = {
   title: string;
   handle: string;
+  images?: ProductImage[];
 };
 
-function buildImages(handle: string) {
-  return [1, 2, 3, 4].map((number) => `/images/products/${handle}-${number}.jpg`);
+function buildImages(handle: string, title: string) {
+  return [1, 2, 3, 4].map((number) => ({
+    src: `/images/products/${handle}-${number}.jpg`,
+    alt: `${title} image ${number}`
+  }));
 }
 
-export function ProductGallery({ title, handle }: ProductGalleryProps) {
-  const galleryImages = buildImages(handle);
+export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
+  const galleryImages = images?.length ? images : buildImages(handle, title);
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
 
@@ -58,8 +63,8 @@ export function ProductGallery({ title, handle }: ProductGalleryProps) {
         onTouchEnd={handleTouchEnd}
       >
         <Image
-          src={galleryImages[activeIndex]}
-          alt={`${title} image ${activeIndex + 1}`}
+          src={galleryImages[activeIndex].src}
+          alt={galleryImages[activeIndex].alt}
           width={1200}
           height={1500}
           priority={activeIndex === 0}
@@ -97,7 +102,7 @@ export function ProductGallery({ title, handle }: ProductGalleryProps) {
           const active = activeIndex === index;
           return (
             <button
-              key={image}
+              key={`${image.src}-${index}`}
               type="button"
               onClick={() => setActiveIndex(index)}
               className={`relative aspect-[4/5] overflow-hidden rounded-[1.25rem] border bg-[#f7f1ea] transition ${
@@ -106,8 +111,8 @@ export function ProductGallery({ title, handle }: ProductGalleryProps) {
               aria-label={`Select image ${index + 1}`}
             >
               <Image
-                src={image}
-                alt={`${title} thumbnail ${index + 1}`}
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="25vw"
                 className="object-cover"

@@ -44,7 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block">
-            <AddFeedbackButton handle={product.handle} compact />
+            <AddFeedbackButton product={product} compact />
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <span className="text-[12px] text-brand-ink sm:text-sm">
               {product.price}
             </span>
-            <AddFeedbackButton handle={product.handle} compact />
+            <AddFeedbackButton product={product} compact />
           </div>
 
           <div className="mt-3 hidden items-center justify-between gap-2 sm:mt-5 md:flex">
