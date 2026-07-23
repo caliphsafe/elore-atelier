@@ -128,10 +128,10 @@ export function WorkshopBookingForm() {
   }
 
   return (
-    <section id="workshop-booking" className="px-5 pb-20 pt-8 md:px-8 md:pb-24 lg:px-12">
+    <section id="workshop-booking" className="px-5 pb-14 pt-4 md:px-8 md:pb-16 lg:px-12">
       <div className="editorial-container">
         <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
+          <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
             <div className="flex flex-col justify-between rounded-[1.5rem] bg-[#f7f1ea] p-6 md:p-8">
               <div>
                 <p className="eyebrow">Booking</p>
@@ -146,7 +146,7 @@ export function WorkshopBookingForm() {
                 </p>
               </div>
 
-              <div className="mt-8 grid gap-4 text-sm leading-7 text-brand-ink/72">
+              <div className="mt-6 grid gap-4 text-sm leading-7 text-brand-ink/72">
                 <div className="rounded-[1.25rem] border thin-border bg-white p-5">
                   <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
                     Selected Format

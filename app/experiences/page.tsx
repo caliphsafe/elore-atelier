@@ -53,9 +53,9 @@ const included = [
 export default function ExperiencesPage() {
   return (
     <>
-      <section className="px-5 pb-10 pt-10 md:px-8 md:pb-12 md:pt-12 lg:px-12">
+      <section className="px-5 pb-6 pt-10 md:px-8 md:pb-8 md:pt-12 lg:px-12">
         <div className="editorial-container">
-          <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end">
+          <div className="grid gap-6 lg:grid-cols-[1fr_420px] lg:items-end">
             <div className="max-w-4xl">
               <p className="eyebrow">Experiences</p>
 
@@ -63,7 +63,7 @@ export default function ExperiencesPage() {
                 Learn the craft of hat making inside the atelier.
               </h1>
 
-              <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
                 Elöre Experiences invite guests into the process of creating by
                 hand through private, couples, and group workshops guided inside
                 the studio.
@@ -105,7 +105,7 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
+      <section className="px-5 py-4 md:px-8 md:py-6 lg:px-12">
         <div className="editorial-container">
           <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[540px]">
             <Image
@@ -133,9 +133,9 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
+      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
-          <div className="mb-10 max-w-3xl">
+          <div className="mb-8 max-w-3xl">
             <p className="eyebrow">Choose Your Format</p>
 
             <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
@@ -201,7 +201,7 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
+      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
@@ -211,13 +211,13 @@ export default function ExperiencesPage() {
                 An experience shaped through material, form, and personal direction.
               </h2>
 
-              <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
+              <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
                 Every workshop is guided step by step, from choosing materials
                 and understanding silhouette to shaping, finishing, and bringing
                 the final piece to life.
               </p>
 
-              <div className="mt-8 rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft">
+              <div className="mt-7 rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft">
                 <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
                   Pricing
                 </p>

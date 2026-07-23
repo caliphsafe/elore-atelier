@@ -67,8 +67,13 @@ img {
   z-index: -1;
 }
 
+/*
+  Sitewide spacing cleanup:
+  This keeps the same visual system, but removes the oversized vertical gaps
+  that were creating dead space between page headings and the next content block.
+*/
 .section-pad {
-  @apply px-5 py-14 md:px-8 md:py-20 lg:px-12;
+  @apply px-5 py-10 md:px-8 md:py-14 lg:px-12 lg:py-16;
 }
 
 .editorial-container {
@@ -178,8 +183,8 @@ a:active {
 
 @media (max-width: 768px) {
   .section-pad {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }

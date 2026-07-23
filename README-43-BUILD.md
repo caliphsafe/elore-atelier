@@ -1,11 +1,22 @@
-# ELÖRE Atelier — Shopify Checkout Type Fix 43 Build
+# ELÖRE Atelier 43 Build — Sitewide Spacing Cleanup
 
-This update fixes the Vercel TypeScript build error in:
+This update removes unnecessary dead space across the site while preserving the existing design, structure, typography, colors, image paths, and Shopify connection.
 
-```text
-app/api/checkout/route.ts
-```
+## Files changed
 
-It adds proper typing for checkout request items so the Shopify checkout API route can compile under strict TypeScript settings.
+- `app/globals.css`
+- `app/shop/page.tsx`
+- `app/experiences/page.tsx`
+- `components/experiences/workshop-booking-form.tsx`
 
-Upload only the included `app` folder to the `restore-july-1` branch and commit.
+## What changed
+
+- Reduced the global `.section-pad` vertical spacing used across the site.
+- Tightened mobile section spacing.
+- Removed the large gap between the Shop page title area and the browse/filter content.
+- Tightened the Experiences page sections and workshop booking area.
+- Kept the existing site look and layout intact.
+
+## Upload
+
+Upload the contents of this folder to the `restore-july-1` branch.
