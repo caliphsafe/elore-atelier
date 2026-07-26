@@ -1,42 +1,58 @@
 import { mockProducts } from "./mock-data";
-import type { Product, ProductImage } from "./types";
+import type { Product, ProductCollection, ProductImage } from "./types";
 
 const SHOPIFY_API_VERSION = "2026-01";
 
-const PRODUCTS_QUERY = `#graphql
-  query Products($first: Int!) {
-    products(first: $first) {
+const PRODUCT_FIELDS = `#graphql
+  fragment ProductCardFields on Product {
+    id
+    handle
+    title
+    description
+    productType
+    tags
+    availableForSale
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    collections(first: 8) {
       edges {
         node {
           id
           handle
           title
-          description
-          productType
-          tags
+        }
+      }
+    }
+    images(first: 8) {
+      edges {
+        node {
+          url
+          altText
+        }
+      }
+    }
+    variants(first: 20) {
+      edges {
+        node {
+          id
           availableForSale
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
-          images(first: 4) {
-            edges {
-              node {
-                url
-                altText
-              }
-            }
-          }
-          variants(first: 10) {
-            edges {
-              node {
-                id
-                availableForSale
-              }
-            }
-          }
+        }
+      }
+    }
+  }
+`;
+
+const PRODUCTS_QUERY = `#graphql
+  ${PRODUCT_FIELDS}
+  query Products($first: Int!) {
+    products(first: $first) {
+      edges {
+        node {
+          ...ProductCardFields
         }
       }
     }
@@ -44,37 +60,10 @@ const PRODUCTS_QUERY = `#graphql
 `;
 
 const PRODUCT_BY_HANDLE_QUERY = `#graphql
+  ${PRODUCT_FIELDS}
   query ProductByHandle($handle: String!) {
     product(handle: $handle) {
-      id
-      handle
-      title
-      description
-      productType
-      tags
-      availableForSale
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
-        }
-      }
-      images(first: 8) {
-        edges {
-          node {
-            url
-            altText
-          }
-        }
-      }
-      variants(first: 20) {
-        edges {
-          node {
-            id
-            availableForSale
-          }
-        }
-      }
+      ...ProductCardFields
     }
   }
 `;
@@ -99,6 +88,12 @@ type ShopifyMoney = {
   currencyCode: string;
 };
 
+type ShopifyCollectionNode = {
+  id: string;
+  handle: string;
+  title: string;
+};
+
 type ShopifyProductNode = {
   id: string;
   handle: string;
@@ -109,6 +104,11 @@ type ShopifyProductNode = {
   availableForSale: boolean;
   priceRange: {
     minVariantPrice: ShopifyMoney;
+  };
+  collections?: {
+    edges: Array<{
+      node: ShopifyCollectionNode;
+    }>;
   };
   images: {
     edges: Array<{
@@ -217,6 +217,14 @@ function mapShopifyProduct(product: ShopifyProductNode): Product {
     alt: node.altText || `${product.title} image ${index + 1}`
   }));
 
+  const collections: ProductCollection[] =
+    product.collections?.edges.map(({ node }) => ({
+      id: node.id,
+      handle: node.handle,
+      title: node.title
+    })) ?? [];
+
+  const primaryCollection = collections[0];
   const availableVariant = product.variants.edges.find(
     ({ node }) => node.availableForSale
   )?.node;
@@ -233,7 +241,9 @@ function mapShopifyProduct(product: ShopifyProductNode): Product {
     price: formatMoney(product.priceRange.minVariantPrice),
     image: images[0]?.src || `/images/products/${product.handle}-1.jpg`,
     images: images.length ? images : undefined,
-    category: product.productType || product.tags?.[0] || "Collection",
+    category: primaryCollection?.title || product.productType || product.tags?.[0] || "Collection",
+    collectionHandle: primaryCollection?.handle,
+    collections: collections.length ? collections : undefined,
     variantId: selectedVariant?.id,
     availableForSale: product.availableForSale && Boolean(selectedVariant?.availableForSale)
   };
@@ -246,7 +256,7 @@ export async function getProducts() {
 
   try {
     const data = await shopifyFetch<ShopifyProductsResponse>(PRODUCTS_QUERY, {
-      first: 48
+      first: 100
     });
 
     return data.products.edges.map(({ node }) => mapShopifyProduct(node));
@@ -276,9 +286,10 @@ export async function getProductByHandle(handle: string) {
 
 export async function getRelatedProducts(handle: string, category?: string) {
   const products = await getProducts();
-  const relatedByCategory = products.filter(
-    (product) => product.handle !== handle && product.category === category
-  );
+  const relatedByCategory = products.filter((product) => {
+    const sameCollection = product.category === category;
+    return product.handle !== handle && sameCollection;
+  });
 
   if (relatedByCategory.length >= 4) {
     return relatedByCategory.slice(0, 4);

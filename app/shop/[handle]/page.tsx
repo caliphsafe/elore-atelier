@@ -29,8 +29,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <>
-      <section className="section-pad product-page-shell pt-12 md:pt-14">
-        <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-start">
+      <section className="section-pad product-page-shell pt-10 md:pt-12">
+        <div className="editorial-container grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
           <div className="fade-up">
             <ProductGallery
               title={product.title}
@@ -56,8 +56,17 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               <WishlistButton handle={product.handle} />
             </div>
 
-            <div className="mt-9 border-t thin-border pt-6">
+            <div className="mt-8 border-t thin-border pt-6">
               <div className="grid gap-5 text-sm leading-7 text-brand-ink/72">
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                    Collection
+                  </p>
+                  <p className="mt-2">
+                    {product.category || "Elöre Atelier"}
+                  </p>
+                </div>
+
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
                     Craft Notes
@@ -95,14 +104,14 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <section className="section-pad pt-0">
         <div className="editorial-container">
-          <div className="mb-8 fade-up">
+          <div className="mb-6 fade-up">
             <p className="eyebrow">Related Pieces</p>
             <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
               Continue exploring the collection.
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
             {relatedProducts.map((related, i) => (
               <RelatedProductCard key={related.id} product={related} index={i} />
             ))}

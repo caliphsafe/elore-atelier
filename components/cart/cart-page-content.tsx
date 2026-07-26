@@ -19,7 +19,7 @@ export function CartPageContent() {
 
   return (
     <>
-      <section className="section-pad pt-12 md:pt-16">
+      <section className="section-pad pt-10 md:pt-12">
         <div className="editorial-container flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="eyebrow">Cart</p>
@@ -64,15 +64,15 @@ export function CartPageContent() {
               items.map((item) => (
                 <div
                   key={item.handle}
-                  className="grid grid-cols-[110px_1fr] gap-4 rounded-luxe border thin-border bg-white p-4 shadow-soft sm:grid-cols-[140px_1fr] sm:p-6"
+                  className="grid gap-4 rounded-luxe border thin-border bg-white p-4 shadow-soft sm:grid-cols-[180px_1fr] sm:p-6"
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] bg-[#f7f1ea]">
+                  <div className="relative aspect-[2477/1651] overflow-hidden rounded-[1.25rem] bg-[#f7f1ea]">
                     {item.image ? (
                       <Image
                         src={item.image}
                         alt={item.productTitle}
                         fill
-                        sizes="140px"
+                        sizes="(max-width: 640px) 100vw, 180px"
                         className="object-cover"
                       />
                     ) : null}

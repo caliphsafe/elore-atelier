@@ -1,33 +1,77 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Product } from "@/lib/shopify/types";
+import { Product, ProductCollection } from "@/lib/shopify/types";
 import { ProductCard } from "@/components/shop/product-card";
 
 type ShopGridProps = {
   products: Product[];
 };
 
+type FilterOption = {
+  label: string;
+  value: string;
+};
+
+function productCollections(product: Product): ProductCollection[] {
+  if (product.collections?.length) {
+    return product.collections;
+  }
+
+  if (product.category) {
+    return [
+      {
+        handle: product.category.toLowerCase().replace(/\s+/g, "-"),
+        title: product.category
+      }
+    ];
+  }
+
+  return [];
+}
+
 export function ShopGrid({ products }: ShopGridProps) {
   const [query, setQuery] = useState("all");
   const [search, setSearch] = useState("");
 
-  const categories = useMemo(() => {
-    const values = Array.from(
-      new Set(products.map((product) => product.category).filter(Boolean))
-    ) as string[];
-    return ["all", ...values];
+  const collections = useMemo<FilterOption[]>(() => {
+    const map = new Map<string, string>();
+
+    products.forEach((product) => {
+      productCollections(product).forEach((collection) => {
+        map.set(collection.handle, collection.title);
+      });
+    });
+
+    const values = Array.from(map.entries()).map(([value, label]) => ({
+      value,
+      label
+    }));
+
+    return [{ value: "all", label: "All" }, ...values];
   }, [products]);
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
-      const matchesCategory =
-        query === "all" ? true : product.category === query;
+      const collectionHandles = productCollections(product).map(
+        (collection) => collection.handle
+      );
+      const matchesCollection =
+        query === "all" ? true : collectionHandles.includes(query);
 
-      const searchText = `${product.title} ${product.description} ${product.category ?? ""}`.toLowerCase();
+      const searchText = [
+        product.title,
+        product.description,
+        product.category,
+        ...(product.collections?.map((collection) => collection.title) ?? [])
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
       const matchesSearch = searchText.includes(search.toLowerCase());
 
-      return matchesCategory && matchesSearch;
+      return matchesCollection && matchesSearch;
     });
   }, [products, query, search]);
 
@@ -49,20 +93,20 @@ export function ShopGrid({ products }: ShopGridProps) {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {categories.map((category) => {
-                const active = query === category;
+              {collections.map((collection) => {
+                const active = query === collection.value;
                 return (
                   <button
-                    key={category}
+                    key={collection.value}
                     type="button"
-                    onClick={() => setQuery(category)}
+                    onClick={() => setQuery(collection.value)}
                     className={`rounded-full border px-4 py-2 text-[11px] uppercase tracking-[0.24em] transition ${
                       active
                         ? "border-brand-ink bg-brand-ink text-white"
                         : "border-brand-ink text-brand-ink hover:border-brand-mocha hover:text-brand-mocha"
                     }`}
                   >
-                    {category}
+                    {collection.label}
                   </button>
                 );
               })}
@@ -72,7 +116,7 @@ export function ShopGrid({ products }: ShopGridProps) {
       </section>
 
       <section className="section-pad pt-0">
-        <div className="editorial-container grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4">
+        <div className="editorial-container grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 2xl:grid-cols-4">
           {filteredProducts.map((product, i) => (
             <ProductCard key={product.id} product={product} index={i} />
           ))}

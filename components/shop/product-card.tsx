@@ -13,6 +13,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
+  const unavailable = product.availableForSale === false;
 
   return (
     <article
@@ -33,15 +34,21 @@ export function ProductCard({ product }: ProductCardProps) {
           <Image
             src={product.image}
             alt={product.title}
-            width={900}
-            height={1125}
-            sizes="(max-width: 640px) 50vw, (max-width: 1280px) 33vw, 25vw"
-            className="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            width={2477}
+            height={1651}
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+            className="aspect-[2477/1651] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
 
           <div className="absolute right-3 top-3 z-20">
             <WishlistButton handle={product.handle} compact />
           </div>
+
+          {unavailable ? (
+            <div className="absolute left-3 top-3 z-20 rounded-full border border-white/70 bg-white/90 px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-brand-ink">
+              Unavailable
+            </div>
+          ) : null}
 
           <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block">
             <AddFeedbackButton product={product} compact />
@@ -53,7 +60,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.category}
           </p>
 
-          <h3 className="serif-display mt-2 text-lg leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
+          <h3 className="serif-display mt-2 text-xl leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
             {product.title}
           </h3>
 

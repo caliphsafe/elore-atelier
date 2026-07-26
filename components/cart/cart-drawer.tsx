@@ -72,15 +72,15 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
                 {items.map((item) => (
                   <div
                     key={item.handle}
-                    className="grid grid-cols-[84px_1fr] gap-4 rounded-[1.5rem] border thin-border bg-white p-4"
+                    className="grid grid-cols-[112px_1fr] gap-4 rounded-[1.5rem] border thin-border bg-white p-4"
                   >
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-[1rem] bg-[#f7f1ea]">
+                    <div className="relative aspect-[2477/1651] overflow-hidden rounded-[1rem] bg-[#f7f1ea]">
                       {item.image ? (
                         <Image
                           src={item.image}
                           alt={item.productTitle}
                           fill
-                          sizes="84px"
+                          sizes="112px"
                           className="object-cover"
                         />
                       ) : null}

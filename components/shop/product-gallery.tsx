@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProductImage } from "@/lib/shopify/types";
 
 type ProductGalleryProps = {
@@ -21,6 +21,12 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
   const galleryImages = images?.length ? images : buildImages(handle, title);
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (activeIndex > galleryImages.length - 1) {
+      setActiveIndex(0);
+    }
+  }, [activeIndex, galleryImages.length]);
 
   function previous() {
     setActiveIndex((current) =>
@@ -56,71 +62,74 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
   }
 
   return (
-    <div className="grid gap-5">
+    <div className="grid gap-4">
       <div
-        className="relative overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft"
+        className="relative aspect-[2477/1651] overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         <Image
           src={galleryImages[activeIndex].src}
           alt={galleryImages[activeIndex].alt}
-          width={1200}
-          height={1500}
+          fill
           priority={activeIndex === 0}
-          sizes="(max-width: 1024px) 100vw, 52vw"
-          className="aspect-[4/5] w-full object-cover transition-all duration-300"
+          sizes="(max-width: 1024px) 100vw, 56vw"
+          className="object-cover transition-all duration-300"
         />
 
-        <div className="absolute inset-x-4 bottom-4 flex items-center justify-between md:hidden">
-          <button
-            type="button"
-            onClick={previous}
-            className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
-            aria-label="Previous image"
-          >
-            ‹
-          </button>
-
-          <div className="rounded-full border border-white/70 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-brand-ink">
-            {activeIndex + 1} / {galleryImages.length}
-          </div>
-
-          <button
-            type="button"
-            onClick={next}
-            className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
-            aria-label="Next image"
-          >
-            ›
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-4 gap-4">
-        {galleryImages.map((image, index) => {
-          const active = activeIndex === index;
-          return (
+        {galleryImages.length > 1 ? (
+          <div className="absolute inset-x-4 bottom-4 flex items-center justify-between">
             <button
-              key={`${image.src}-${index}`}
               type="button"
-              onClick={() => setActiveIndex(index)}
-              className={`relative aspect-[4/5] overflow-hidden rounded-[1.25rem] border bg-[#f7f1ea] transition ${
-                active ? "border-brand-ink shadow-soft" : "thin-border"
-              }`}
-              aria-label={`Select image ${index + 1}`}
+              onClick={previous}
+              className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
+              aria-label="Previous image"
             >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="25vw"
-                className="object-cover"
-              />
+              ‹
             </button>
-          );
-        })}
+
+            <div className="rounded-full border border-white/70 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-brand-ink">
+              {activeIndex + 1} / {galleryImages.length}
+            </div>
+
+            <button
+              type="button"
+              onClick={next}
+              className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
+              aria-label="Next image"
+            >
+              ›
+            </button>
+          </div>
+        ) : null}
       </div>
+
+      {galleryImages.length > 1 ? (
+        <div className="grid grid-cols-4 gap-3 sm:gap-4">
+          {galleryImages.map((image, index) => {
+            const active = activeIndex === index;
+            return (
+              <button
+                key={`${image.src}-${index}`}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                className={`relative aspect-[2477/1651] overflow-hidden rounded-[1rem] border bg-[#f7f1ea] transition sm:rounded-[1.25rem] ${
+                  active ? "border-brand-ink shadow-soft" : "thin-border"
+                }`}
+                aria-label={`Select image ${index + 1}`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="25vw"
+                  className="object-cover"
+                />
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }

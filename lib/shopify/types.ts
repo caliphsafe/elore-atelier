@@ -3,6 +3,12 @@ export type ProductImage = {
   alt: string;
 };
 
+export type ProductCollection = {
+  id?: string;
+  handle: string;
+  title: string;
+};
+
 export type Product = {
   id: string;
   handle: string;
@@ -12,6 +18,8 @@ export type Product = {
   image: string;
   images?: ProductImage[];
   category?: string;
+  collectionHandle?: string;
+  collections?: ProductCollection[];
   variantId?: string;
   availableForSale?: boolean;
 };
