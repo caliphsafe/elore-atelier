@@ -18,7 +18,7 @@ const offerings = [
 
 export function ExperiencesPreview() {
   return (
-    <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
+    <section className="px-5 py-10 md:px-8 md:py-14 lg:px-12">
       <div className="editorial-container">
         <div className="grid gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
           <div className="relative min-h-[500px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px]">
@@ -34,11 +34,7 @@ export function ExperiencesPreview() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <p className="text-[10px] uppercase tracking-[0.30em] text-white/70">
-                Atelier Experiences
-              </p>
-
-              <h2 className="serif-display mt-4 max-w-lg text-4xl leading-tight text-white md:text-6xl">
+              <h2 className="serif-display max-w-lg text-4xl leading-tight text-white md:text-6xl">
                 Learn the craft inside the studio.
               </h2>
             </div>
@@ -46,9 +42,7 @@ export function ExperiencesPreview() {
 
           <div className="flex flex-col rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-9">
             <div>
-              <p className="eyebrow">Experiences</p>
-
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
+              <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl">
                 Guided workshops for individuals, couples, and groups.
               </h2>
 
@@ -92,10 +86,6 @@ export function ExperiencesPreview() {
                 Inquire to Book
               </Link>
             </div>
-
-            <p className="mt-6 text-xs uppercase tracking-[0.28em] text-brand-mocha">
-              No Experience Needed • Guided Workshop • Custom Hat Costs Vary
-            </p>
           </div>
         </div>
       </div>

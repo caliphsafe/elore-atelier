@@ -27,13 +27,12 @@ const collections = [
 
 export function FeaturedCollections() {
   return (
-    <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
+    <section className="px-5 py-10 md:px-8 md:py-14 lg:px-12">
       <div className="editorial-container">
         <div className="mb-8 flex flex-col gap-4 md:mb-10 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p className="eyebrow">Featured Collections</p>
-            <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-6xl">
-              Handcrafted hats shaped for identity, presence, and everyday meaning.
+            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
+              Shop Featured Collections and Custom Designs
             </h2>
           </div>
 

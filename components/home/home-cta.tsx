@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function HomeCta() {
   return (
-    <section className="px-5 pb-20 pt-7 md:px-8 md:pb-24 lg:px-12">
+    <section className="px-5 pb-10 pt-6 md:px-8 md:pb-14 lg:px-12">
       <div className="editorial-container">
         <div className="relative overflow-hidden rounded-luxe border thin-border shadow-soft">
           <div className="relative min-h-[520px] md:min-h-[640px]">
@@ -20,11 +20,7 @@ export function HomeCta() {
             <div className="absolute inset-0 flex items-end">
               <div className="w-full p-6 md:p-10 lg:p-12">
                 <div className="max-w-3xl">
-                  <p className="text-[11px] uppercase tracking-[0.30em] text-white/70">
-                    ELÖRE Atelier
-                  </p>
-
-                  <h2 className="serif-display mt-5 text-5xl leading-[0.92] text-white md:text-7xl">
+                  <h2 className="serif-display text-5xl leading-[0.92] text-white md:text-7xl">
                     Every piece begins with a story.
                   </h2>
 

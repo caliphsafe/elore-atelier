@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function AtelierStory() {
   return (
-    <section className="px-5 py-12 md:px-8 md:py-16 lg:px-12">
+    <section className="px-5 py-10 md:px-8 md:py-14 lg:px-12">
       <div className="editorial-container">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
           <div className="relative min-h-[480px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[600px]">
@@ -18,10 +18,7 @@ export function AtelierStory() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <p className="max-w-lg text-[11px] uppercase tracking-[0.3em] text-white/75">
-                Atelier Perspective
-              </p>
-              <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-white md:text-6xl">
+              <h2 className="serif-display max-w-2xl text-4xl leading-tight text-white md:text-6xl">
                 Where tradition moves forward.
               </h2>
             </div>
@@ -29,23 +26,16 @@ export function AtelierStory() {
 
           <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-9">
             <div>
-              <p className="eyebrow">About the Atelier</p>
-
-              <h3 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Founded by Salome Kopasz, Elöre is rooted in craft, story, and intentional design.
+              <h3 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl">
+                Founded by Salome Kopasz, Elöre is rooted in craft, story and slow fashion.
               </h3>
 
               <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-                After studying Fashion Design in Boston, Salome discovered her
-                passion for hat-making during a short class in New York. That
-                moment transformed her creative path and led her to formal
-                training at Schola Academy in Florence, Italy.
-              </p>
-
-              <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-                Meaning “to move forward,” Elöre reflects the belief that
-                tradition is not something we leave behind, but something we
-                carry with us as we create what comes next.
+                Born in Cameroon and raised in Paris, Salomé&apos;s creative perspective
+                was shaped by a life immersed in culture, fashion, and artistry. As
+                a former model, she experienced the fashion world from within,
+                developing an appreciation for the relationship between clothing,
+                identity, and self-expression…
               </p>
             </div>
 
