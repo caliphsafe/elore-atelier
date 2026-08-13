@@ -64,40 +64,40 @@ const timelessMaterials = [
 export default function StudioPage() {
   return (
     <>
-      <section className="px-5 pb-6 pt-10 md:px-8 md:pb-8 md:pt-12 lg:px-12">
+      <section className="px-5 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12">
         <div className="editorial-container">
-          <div className="max-w-5xl">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
-            </h1>
-          </div>
-        </div>
-      </section>
+          <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
+            <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white/78 p-6 shadow-soft backdrop-blur md:p-8 lg:p-10">
+              <div>
+                <h1 className="serif-display max-w-4xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.15rem]">
+                  A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
+                </h1>
+              </div>
 
-      <section className="px-5 py-6 md:px-8 md:py-8 lg:px-12">
-        <div className="editorial-container grid gap-6 lg:grid-cols-[0.96fr_1.04fr] lg:items-center">
-          <div className="relative min-h-[390px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[520px]">
-            <Image
-              src="/images/studio/workspace.jpg"
-              alt="ELÖRE Atelier workspace in Downtown Boston"
-              fill
-              sizes="(max-width: 1024px) 100vw, 48vw"
-              className="object-cover"
-              priority
-            />
-          </div>
+              <div className="mt-8 border-t thin-border pt-6 md:mt-10 md:pt-7">
+                <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl lg:text-6xl">
+                  The atelier is more than a workspace.
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
+                  Every Elöre hat begins in the atelier where tradition is practiced,
+                  materials are transformed, and craftsmanship is given the time it
+                  deserves. Here, every step of the process is carried out by hand,
+                  honoring generations of techniques while shaping a new future for
+                  the craft.
+                </p>
+              </div>
+            </div>
 
-          <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-10">
-            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-              The atelier is more than a workspace.
-            </h2>
-            <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-              Every Elöre hat begins in the atelier where tradition is practiced,
-              materials are transformed, and craftsmanship is given the time it
-              deserves. Here, every step of the process is carried out by hand,
-              honoring generations of techniques while shaping a new future for
-              the craft.
-            </p>
+            <div className="relative min-h-[430px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px] lg:min-h-[720px]">
+              <Image
+                src="/images/studio/workspace.jpg"
+                alt="ELÖRE Atelier workspace in Downtown Boston"
+                fill
+                sizes="(max-width: 1024px) 100vw, 56vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
