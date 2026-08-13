@@ -66,31 +66,31 @@ export default function ExperiencesPage() {
       <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
           <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-5 shadow-soft md:p-8 lg:p-10">
-            <div className="grid gap-7 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-              <div>
-                <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">
-                  An experience shaped through material, form, and personal
-                  direction.
-                </h2>
-              </div>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:items-stretch xl:grid-cols-[minmax(0,1fr)_430px]">
+              <div className="flex flex-col justify-between rounded-[1.85rem] bg-white p-6 shadow-soft md:p-8 lg:p-10">
+                <div>
+                  <h2 className="serif-display max-w-4xl text-4xl leading-tight text-brand-ink md:text-6xl">
+                    An experience shaped through material, form, and personal
+                    direction.
+                  </h2>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                {included.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1.35rem] border thin-border bg-white px-5 py-4 shadow-soft"
-                  >
-                    <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
-                      {item}
-                    </p>
+                  <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                    {included.map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-[1.2rem] border thin-border bg-[#fbf8f4] px-4 py-3"
+                      >
+                        <p className="text-sm leading-6 text-brand-ink/72 md:text-base">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
+
+              <ExperienceVideoFrame />
             </div>
-
-            <div className="my-8 h-px bg-brand-ink/10" />
-
-            <ExperienceVideoFrame />
 
             <div className="mt-8 overflow-hidden rounded-[1.9rem] border thin-border bg-white p-3 shadow-soft md:p-4">
               <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] md:min-h-[520px]">
