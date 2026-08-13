@@ -16,34 +16,34 @@ export default function ExperiencesPage() {
     <>
       <section className="px-5 pb-5 pt-10 md:px-8 md:pb-6 md:pt-12 lg:px-12">
         <div className="editorial-container">
-          <div className="max-w-7xl">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-6xl xl:text-7xl xl:whitespace-nowrap">
-              Learn the craft of hat making inside the atelier.
-            </h1>
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <div className="max-w-[82rem]">
+              <h1 className="serif-display text-5xl leading-[0.92] tracking-hero text-brand-ink md:text-6xl lg:text-[5rem] xl:whitespace-nowrap">
+                Learn the craft of hat making inside the atelier.
+              </h1>
 
-            <div className="mt-6 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
-              <p className="max-w-3xl text-base leading-8 text-brand-ink/72 md:text-lg">
+              <p className="mt-6 max-w-4xl text-base leading-8 text-brand-ink/72 md:text-lg">
                 Elöre Experiences invite guests into the timeless art of
                 hat-making through private, couples, and group workshops. Guided
                 by hand, each experience offers an intimate introduction to the
                 craft, where tradition, creativity, and storytelling come
                 together.
               </p>
-
-              <Link
-                href="#workshop-booking"
-                className="inline-flex w-fit min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha"
-              >
-                Book an Experience
-              </Link>
             </div>
+
+            <Link
+              href="#workshop-booking"
+              className="inline-flex w-fit min-h-[44px] items-center justify-center rounded-full bg-brand-ink px-7 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha lg:mb-2"
+            >
+              Book an Experience
+            </Link>
           </div>
         </div>
       </section>
 
       <section className="px-5 py-5 md:px-8 md:py-6 lg:px-12">
         <div className="editorial-container">
-          <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]">
+          <div className="relative min-h-[430px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[600px]">
             <Image
               src="/images/experiences/hero.jpg"
               alt="ELÖRE Atelier hat-making experience"
@@ -53,10 +53,10 @@ export default function ExperiencesPage() {
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/12 to-transparent" />
 
-            <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
-              <h2 className="serif-display max-w-5xl text-4xl leading-tight text-white md:text-6xl xl:whitespace-nowrap">
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-10 lg:p-12">
+              <h2 className="serif-display max-w-[72rem] text-4xl leading-[0.95] text-white md:text-6xl lg:text-[5.4rem] xl:whitespace-nowrap">
                 Discover the beauty of hat-making.
               </h2>
             </div>
@@ -66,61 +66,59 @@ export default function ExperiencesPage() {
 
       <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-            <div className="grid gap-6 p-5 md:p-6 lg:grid-cols-[0.85fr_1.15fr] lg:p-8">
-              <div className="grid gap-6">
-                <div className="rounded-[1.5rem] bg-white p-6 shadow-soft md:p-8">
-                  <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-                    An experience shaped through material, form, and personal
-                    direction.
-                  </h2>
-                </div>
-
-                <div className="grid gap-3 rounded-[1.5rem] bg-white p-6 shadow-soft md:p-7">
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    What Is Included
-                  </h3>
-
-                  <div className="mt-2 grid gap-3">
-                    {included.map((item) => (
-                      <div
-                        key={item}
-                        className="border-b thin-border pb-3 last:border-none last:pb-0"
-                      >
-                        <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-5 shadow-soft md:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <div className="rounded-[1.75rem] bg-white p-6 shadow-soft md:p-8 lg:p-10">
+                <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
+                  An experience shaped through material, form, and personal
+                  direction.
+                </h2>
               </div>
 
-              <div className="grid gap-6 md:grid-cols-[0.72fr_1fr] lg:grid-cols-[0.72fr_1fr]">
-                <div className="relative min-h-[520px] overflow-hidden rounded-[1.5rem] border thin-border bg-brand-ink shadow-soft md:min-h-[620px]">
-                  <video
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source
-                      src="/videos/experiences/atelier-workshop.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
+              <div className="rounded-[1.75rem] bg-white p-6 shadow-soft md:p-8 lg:p-10">
+                <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
+                  What Is Included
+                </h3>
 
-                <div className="relative min-h-[320px] overflow-hidden rounded-[1.5rem] border thin-border shadow-soft md:min-h-[620px]">
-                  <Image
-                    src="/images/experiences/materials.jpg"
-                    alt="ELÖRE hat-making materials"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 38vw"
-                    className="object-cover"
-                  />
+                <div className="mt-6 grid gap-x-8 gap-y-4 md:grid-cols-2">
+                  {included.map((item) => (
+                    <div
+                      key={item}
+                      className="border-t thin-border pt-4"
+                    >
+                      <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-8">
+              <div className="relative mx-auto aspect-[9/16] w-full max-w-[420px] overflow-hidden rounded-[2rem] border thin-border bg-brand-ink shadow-soft">
+                <video
+                  className="h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source
+                    src="/videos/experiences/atelier-workshop.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+
+              <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border thin-border shadow-soft md:min-h-[520px]">
+                <Image
+                  src="/images/experiences/materials.jpg"
+                  alt="ELÖRE hat-making materials"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
