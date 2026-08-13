@@ -1,24 +1,39 @@
-# ELÖRE Atelier — Home Page Updates 43 Build
+# ELÖRE Atelier 43 Build — Sitewide Titles, Shop, Navigation, and About Page Updates
 
-This 43 Build updates only the home page files requested.
+This focused build includes only the requested updates:
 
-## Included files
+- Removes small eyebrow titles sitewide by hiding the shared `.eyebrow` style.
+- Updates the Shop page headline and description.
+- Removes the Lookbook link from the desktop and mobile navigation while keeping the Lookbook page available in the project.
+- Replaces the About page hero image with a moving carousel using images from `public/images/about/about_gallery`.
+- Updates the About page headline and founder/designer story copy.
+- Removes the Brand Pillars section from the About page.
+- Adds the Philosophy and Manifesto section with `public/images/about/manifesto.jpg`.
+- Adds the three-column About page section using `natural.jpg`, `crafter.jpg`, and `packaged.jpg`.
 
-- `app/page.tsx`
-- `components/hero.tsx`
-- `components/home/featured-collections.tsx`
-- `components/home/lookbook-preview.tsx`
-- `components/home/atelier-story.tsx`
-- `components/home/experiences-preview.tsx`
-- `components/home/home-cta.tsx`
-- `components/home/coverage-marquee.tsx`
-- `public/images/home/coverage/.gitkeep`
+## Image paths needed
 
-## Coverage logo paths
+Upload these images to the repo with the exact paths:
 
-Upload the coverage logos with these exact names:
+```text
+public/images/about/about_gallery/1.jpg
+public/images/about/about_gallery/2.jpg
+public/images/about/about_gallery/3.jpg
+public/images/about/about_gallery/4.jpg
+public/images/about/about_gallery/5.jpg
+public/images/about/manifesto.jpg
+public/images/about/natural.jpg
+public/images/about/crafter.jpg
+public/images/about/packaged.jpg
+```
 
-- `public/images/home/coverage/boston.png`
-- `public/images/home/coverage/downtown.png`
-- `public/images/home/coverage/globe.png`
-- `public/images/home/coverage/huston.png`
+## Files included
+
+```text
+app/globals.css
+app/shop/page.tsx
+app/about/page.tsx
+components/site-header.tsx
+components/about/about-gallery-carousel.tsx
+public/images/about/about_gallery/.gitkeep
+```

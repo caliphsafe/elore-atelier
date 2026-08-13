@@ -11,7 +11,7 @@ export default async function ShopPage() {
           <div className="max-w-3xl fade-up">
             <p className="eyebrow">Shop</p>
             <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              Signature forms, refined silhouettes, and handcrafted pieces.
+              All Handcrafted Hats
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
               Explore Elöre pieces shaped through natural materials, intentional

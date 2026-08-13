@@ -80,8 +80,17 @@ img {
   @apply mx-auto w-full max-w-8xl;
 }
 
+/*
+  Sitewide small-title cleanup:
+  Hides the small eyebrow titles such as About ELÖRE, The ELÖRE Perspective,
+  Featured Collections, Studio, Contact, and similar section labels.
+*/
 .eyebrow {
-  @apply text-[11px] font-medium uppercase tracking-[0.35em] text-brand-mocha/70;
+  display: none !important;
+}
+
+.eyebrow + * {
+  margin-top: 0 !important;
 }
 
 .serif-display {
@@ -165,6 +174,49 @@ a:active {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ABOUT PAGE CAROUSEL */
+
+.about-gallery-carousel__image {
+  opacity: 0;
+  animation: aboutGalleryFade 25s infinite;
+  transform: scale(1.03);
+}
+
+@keyframes aboutGalleryFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  4% {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+  18% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  22% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-gallery-carousel__image {
+    animation: none;
+    opacity: 0;
+    transform: none;
+  }
+
+  .about-gallery-carousel__image:first-child {
+    opacity: 1;
   }
 }
 
