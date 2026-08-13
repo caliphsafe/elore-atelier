@@ -1,202 +1,183 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const principles = [
+const processSteps = [
   {
-    title: "Shape",
-    text: "Every silhouette is refined through proportion, balance, and the character of the material."
+    title: "Material Selection",
+    text: "Each element is chosen for its quality, character, and ability to stand the test of time. Each choice lays the foundation for a piece that is meant to be worn for years to come."
   },
   {
-    title: "Material",
-    text: "Fine beaver and rabbit felts, Panama straw, silk, leather, and natural fibers are selected for beauty, durability, and character."
+    title: "Shaping",
+    text: "The crown and silhouette are sculpted by hand and molded by wooden blocks giving the hat its personality, balance, and overall presence."
   },
   {
-    title: "Detail",
-    text: "Edge work, sanding, trim, and habillage complete each piece with patience and care."
+    title: "Brimming and Sanding",
+    text: "The brim is carefully refined through a brim cutter and sanding techniques that create softness and movement."
+  },
+  {
+    title: "Sweatband",
+    text: "The interior sweatband is fitted by hand for comfort and structure. This detail becomes an intimate part of the hat and often carries a personalized or artistic element."
+  },
+  {
+    title: "Habillage",
+    text: "Ribbon work, embroidery, burns, stitching, and symbolic adornments are added to complete the visual story of the piece."
+  },
+  {
+    title: "Finishing Details",
+    text: "Final refinements are made by hand to ensure balance, craftsmanship, and individuality."
   }
 ];
 
-const processSteps = [
+const timelessMaterials = [
   {
-    number: "01",
-    title: "Material",
-    text: "Each hat begins with natural materials selected for integrity, texture, and lasting presence."
+    title: "Wooden Blocks",
+    image: "/images/studio/Wooden_Blocks.jpg",
+    alt: "ELÖRE handcrafted wooden hat blocks",
+    text: "Handcrafted in Poland by a fourth-generation block maker, each form is carved from timber sourced through a family business that plants and stewards its own trees."
   },
   {
-    number: "02",
-    title: "Blocking",
-    text: "Felt is steamed and shaped by hand over wooden blocks, allowing the form to emerge gradually."
+    title: "Panama Straw",
+    image: "/images/studio/Panama_Straw.jpg",
+    alt: "ELÖRE Panama straw material",
+    text: "Woven by skilled artisans in Ecuador, authentic Panama straw represents one of the world's most celebrated hat-making traditions. Lightweight, breathable, and remarkably refined."
   },
   {
-    number: "03",
-    title: "Finishing",
-    text: "The silhouette is refined, each edge is cut and sanded, and the final habillage brings the piece to life."
+    title: "Fur Felt",
+    image: "/images/studio/Fur_Felt.jpg",
+    alt: "ELÖRE fur felt material",
+    text: "Crafted in Portugal, our fur felt is created through a centuries-old process that transforms natural fibers using moisture, heat, and pressure into a dense, durable textile."
+  },
+  {
+    title: "Leather Sweatbands",
+    image: "/images/studio/Sweatband.jpg",
+    alt: "ELÖRE leather sweatbands",
+    text: "Every hat is finished with premium leather sweatbands crafted in the United States. Their dedication to traditional leathercraft and enduring quality mirrors our own belief that every detail matters."
   }
 ];
 
 export default function StudioPage() {
   return (
     <>
-      <section className="section-pad pt-12 md:pt-14">
+      <section className="section-pad pb-6 pt-10 md:pb-8 md:pt-12">
         <div className="editorial-container">
-          <div className="max-w-4xl">
-            <p className="eyebrow">Studio</p>
-            <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              A creative studio and shop in Downtown Boston where every hat is made by hand.
+          <div className="max-w-5xl">
+            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+              A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              The studio is where ideas are transformed into heirloom pieces
-              through patience, precision, and care.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-pad pt-6">
-        <div className="editorial-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]">
-            <Image
-              src="/images/studio/workspace.jpg"
-              alt="ELÖRE Atelier studio workspace"
-              fill
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover"
-            />
-          </div>
-
-          <div className="max-w-2xl">
-            <p className="eyebrow">The Studio</p>
-            <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-6xl">
-              More than a workspace, the studio is where each collection, commission, and collaboration begins.
-            </h2>
-            <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
-              Guided by the belief that creating by hand is an experience worth
-              preserving, the studio brings together tradition, creativity, and
-              community through the language of millinery.
-            </p>
-            <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-              Every gesture is performed with patience, allowing the material to
-              guide the final form. No two hats are ever exactly alike.
-            </p>
           </div>
         </div>
       </section>
 
       <section className="section-pad pt-0">
-        <div className="editorial-container">
-          <div className="mb-8 max-w-2xl">
-            <p className="eyebrow">Studio Principles</p>
-            <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
-              The elements that shape the work.
-            </h2>
+        <div className="editorial-container grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div className="relative min-h-[420px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[560px]">
+            <Image
+              src="/images/studio/workspace.jpg"
+              alt="ELÖRE Atelier workspace in Downtown Boston"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+              priority
+            />
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
-            {principles.map((principle, index) => (
-              <div
-                key={principle.title}
-                className={`rounded-[1.75rem] border thin-border p-6 shadow-soft ${
-                  index === 2 ? "olive-panel text-white" : "bg-white"
-                }`}
-              >
-                <h3
-                  className={`text-[11px] uppercase tracking-[0.28em] ${
-                    index === 2 ? "text-white/70" : "text-brand-mocha"
-                  }`}
-                >
-                  {principle.title}
-                </h3>
-                <p
-                  className={`mt-4 text-sm leading-7 ${
-                    index === 2 ? "text-white/80" : "text-brand-ink/72"
-                  }`}
-                >
-                  {principle.text}
-                </p>
-              </div>
-            ))}
+          <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-10">
+            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
+              The atelier is more than a workspace.
+            </h2>
+            <p className="mt-6 text-base leading-8 text-brand-ink/72 md:text-lg">
+              Every Elöre hat begins in the atelier where tradition is practiced,
+              materials are transformed, and craftsmanship is given the time it
+              deserves. Here, every step of the process is carried out by hand,
+              honoring generations of techniques while shaping a new future for
+              the craft.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="section-pad">
-        <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-10">
-            <div>
-              <p className="eyebrow">The Creative Process</p>
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink md:text-5xl">
-                Each finished piece is not simply designed — it is discovered.
+      <section className="section-pad pt-2">
+        <div className="editorial-container">
+          <div className="grid gap-8 rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
+                The Process of a Handcrafted Hat
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                For Salome, the process itself is the greatest source of
-                inspiration. Every step carries intention, from selecting the
-                material to steaming, shaping, refining, and completing the final
-                details.
+              <p className="mt-6 max-w-xl text-base leading-8 text-brand-ink/72 md:text-lg">
+                Every step carries a story whether it’s from the designer or the
+                wearer. Every silhouette begins on a handcrafted wooden block,
+                where steam, pressure, and skilled hands shape each hat into its
+                distinctive form.
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {processSteps.map((step) => (
-                <div
-                  key={step.number}
-                  className="rounded-[1.5rem] border thin-border bg-white p-5 md:p-6"
+                <article
+                  key={step.title}
+                  className="rounded-[1.5rem] border thin-border bg-white p-5 shadow-soft md:p-6"
                 >
-                  <div className="flex items-start gap-4">
-                    <p className="serif-display text-3xl leading-none text-brand-mocha">
-                      {step.number}
-                    </p>
-                    <div>
-                      <h3 className="text-sm uppercase tracking-[0.24em] text-brand-ink">
-                        {step.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-brand-ink/70">
-                        {step.text}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  <h3 className="serif-display text-3xl leading-tight text-brand-ink">
+                    {step.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
+                    {step.text}
+                  </p>
+                </article>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section-pad pt-0">
-        <div className="editorial-container grid gap-5 md:grid-cols-[1.2fr_0.8fr]">
-          <div className="relative min-h-[320px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[440px]">
-            <Image
-              src="/images/studio/materials.jpg"
-              alt="ELÖRE Atelier materials and tools"
-              fill
-              sizes="(max-width: 768px) 100vw, 60vw"
-              className="object-cover"
-            />
+      <section className="section-pad pt-2">
+        <div className="editorial-container">
+          <div className="mb-8 max-w-3xl">
+            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
+              Timeless Materials
+            </h2>
           </div>
 
-          <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
-            <p className="eyebrow">Material Language</p>
-            <h2 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
-              Texture and finish are part of the story.
-            </h2>
-            <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-              Each material is allowed to retain its natural texture and
-              individuality, giving every hat its own distinct presence.
-            </p>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {timelessMaterials.map((material) => (
+              <article
+                key={material.title}
+                className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
+              >
+                <div className="relative min-h-[260px] overflow-hidden bg-[#f7f1ea] md:min-h-[320px]">
+                  <Image
+                    src={material.image}
+                    alt={material.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="object-cover transition duration-700 hover:scale-[1.03]"
+                  />
+                </div>
+
+                <div className="p-6 md:p-7">
+                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
+                    {material.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
+                    {material.text}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-pad pt-0">
+      <section className="section-pad pt-2">
         <div className="editorial-container">
           <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
               <div>
-                <p className="eyebrow">Continue Exploring</p>
-                <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
+                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
                   Discover the collection or begin a custom commission.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The studio offers a deeper understanding of the craft behind
+                  The atelier offers a deeper understanding of the craft behind
                   the work. The next step is to explore the collection or move
                   into a more personal custom experience.
                 </p>
@@ -214,12 +195,6 @@ export default function StudioPage() {
                   className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
                 >
                   Begin a Custom Hat
-                </Link>
-                <Link
-                  href="/lookbook"
-                  className="inline-flex w-fit text-[11px] uppercase tracking-[0.26em] text-brand-mocha transition hover:text-brand-ink"
-                >
-                  View the Lookbook
                 </Link>
               </div>
             </div>

@@ -7,13 +7,14 @@ import { WishlistLink } from "@/components/wishlist/wishlist-link";
 const desktopLinks = [
   { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
-  { href: "/studio", label: "Studio" },
+  { href: "/studio", label: "Atelier" },
   { href: "/experiences", label: "Experiences" },
   { href: "/contact", label: "Contact" }
 ];
 
 const mobileQuickLinks = [
   { href: "/shop", label: "Shop" },
+  { href: "/studio", label: "Atelier" },
   { href: "/custom", label: "Custom" }
 ];
 
@@ -71,7 +72,7 @@ export function SiteHeader({ onOpenCart }: Props) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 border-t thin-border bg-white md:hidden">
+      <div className="grid grid-cols-3 border-t thin-border bg-white md:hidden">
         {mobileQuickLinks.map((link) => (
           <Link
             key={link.href}
