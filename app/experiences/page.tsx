@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExperienceVideo } from "@/components/experiences/experience-video";
+import { ExperienceVideoFrame } from "@/components/experiences/experience-video-frame";
 import { WorkshopBookingForm } from "@/components/experiences/workshop-booking-form";
 
 const included = [
@@ -24,8 +24,8 @@ export default function ExperiencesPage() {
             Book an Experience
           </Link>
 
-          <div className="mt-7 max-w-7xl">
-            <h1 className="serif-display text-5xl leading-[0.92] tracking-hero text-brand-ink md:text-6xl lg:text-[4.8rem] xl:whitespace-nowrap">
+          <div className="mt-8 max-w-[88rem]">
+            <h1 className="serif-display text-5xl leading-[0.92] tracking-hero text-brand-ink md:text-6xl lg:text-[4.85rem] xl:whitespace-nowrap">
               Learn the craft of hat making inside the atelier.
             </h1>
 
@@ -42,7 +42,7 @@ export default function ExperiencesPage() {
 
       <section className="px-5 py-4 md:px-8 md:py-5 lg:px-12">
         <div className="editorial-container">
-          <div className="relative min-h-[430px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[590px]">
+          <div className="relative min-h-[440px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px]">
             <Image
               src="/images/experiences/hero.jpg"
               alt="ELÖRE Atelier hat-making experience"
@@ -52,10 +52,10 @@ export default function ExperiencesPage() {
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/12 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/66 via-black/16 to-transparent" />
 
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-10 lg:p-12">
-              <h2 className="serif-display max-w-[72rem] text-4xl leading-[0.95] text-white md:text-6xl lg:text-[5rem] xl:whitespace-nowrap">
+              <h2 className="serif-display max-w-[74rem] text-4xl leading-[0.95] text-white md:text-6xl lg:text-[5rem] xl:whitespace-nowrap">
                 Discover the beauty of hat-making.
               </h2>
             </div>
@@ -65,35 +65,35 @@ export default function ExperiencesPage() {
 
       <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-            <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:p-10 lg:items-start">
-              <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">
-                An experience shaped through material, form, and personal direction.
-              </h2>
+          <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-5 shadow-soft md:p-8 lg:p-10">
+            <div className="grid gap-7 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+              <div>
+                <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">
+                  An experience shaped through material, form, and personal
+                  direction.
+                </h2>
+              </div>
 
-              <div className="rounded-[1.75rem] bg-white p-6 shadow-soft md:p-8">
-                <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                  What Is Included
-                </h3>
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {included.map((item) => (
-                    <div key={item} className="border-t thin-border pt-4">
-                      <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {included.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-[1.35rem] border thin-border bg-white px-5 py-4 shadow-soft"
+                  >
+                    <p className="text-sm leading-7 text-brand-ink/72 md:text-base">
+                      {item}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="border-t thin-border p-6 md:p-8 lg:p-10">
-              <ExperienceVideo />
-            </div>
+            <div className="my-8 h-px bg-brand-ink/10" />
 
-            <div className="border-t thin-border p-6 pt-0 md:p-8 md:pt-0 lg:p-10 lg:pt-0">
-              <div className="relative min-h-[360px] overflow-hidden rounded-[1.75rem] border thin-border shadow-soft md:min-h-[520px]">
+            <ExperienceVideoFrame />
+
+            <div className="mt-8 overflow-hidden rounded-[1.9rem] border thin-border bg-white p-3 shadow-soft md:p-4">
+              <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] md:min-h-[520px]">
                 <Image
                   src="/images/experiences/materials.jpg"
                   alt="ELÖRE hat-making materials"

@@ -1,39 +1,53 @@
-# ELÖRE Atelier 43 Build — Sitewide Titles, Shop, Navigation, and About Page Updates
+# ELÖRE Experience Page UX Redirection 43 Build
 
-This focused build includes only the requested updates:
+This build takes the Experience page in a different direction while respecting the removal notes.
 
-- Removes small eyebrow titles sitewide by hiding the shared `.eyebrow` style.
-- Updates the Shop page headline and description.
-- Removes the Lookbook link from the desktop and mobile navigation while keeping the Lookbook page available in the project.
-- Replaces the About page hero image with a moving carousel using images from `public/images/about/about_gallery`.
-- Updates the About page headline and founder/designer story copy.
-- Removes the Brand Pillars section from the About page.
-- Adds the Philosophy and Manifesto section with `public/images/about/manifesto.jpg`.
-- Adds the three-column About page section using `natural.jpg`, `crafter.jpg`, and `packaged.jpg`.
+## Files Included
 
-## Image paths needed
+- app/experiences/page.tsx
+- components/experiences/experience-video-frame.tsx
+- public/videos/experiences/.gitkeep
 
-Upload these images to the repo with the exact paths:
+## What Changed
 
-```text
-public/images/about/about_gallery/1.jpg
-public/images/about/about_gallery/2.jpg
-public/images/about/about_gallery/3.jpg
-public/images/about/about_gallery/4.jpg
-public/images/about/about_gallery/5.jpg
-public/images/about/manifesto.jpg
-public/images/about/natural.jpg
-public/images/about/crafter.jpg
-public/images/about/packaged.jpg
-```
+- Keeps the three workshop cards removed.
+- Keeps the Experience Snapshot removed.
+- Keeps the pricing box removed.
+- Keeps small titles removed.
+- Keeps the top Book an Experience CTA.
+- Keeps only the approved content:
+  - main headline
+  - intro paragraph
+  - hero image and hero statement
+  - experience statement
+  - What Is Included list
+  - vertical video
+  - materials image
+  - booking form
+- Does not put the video and image side by side.
+- Rebuilds the content into a cleaner UX flow:
+  1. CTA + headline + intro
+  2. large hero image
+  3. experience statement + included details
+  4. video as its own intentional editorial feature
+  5. materials image as a separate wide visual
+  6. booking form
+- Uses a fallback image for the video so the video area does not show as a black box before the MP4 is uploaded.
 
-## Files included
+## Video Upload
 
-```text
-app/globals.css
-app/shop/page.tsx
-app/about/page.tsx
-components/site-header.tsx
-components/about/about-gallery-carousel.tsx
-public/images/about/about_gallery/.gitkeep
-```
+Download the selected vertical workshop video, rename it:
+
+atelier-workshop.mp4
+
+Upload it here:
+
+public/videos/experiences/atelier-workshop.mp4
+
+## Upload Instructions
+
+1. Unzip this folder.
+2. Open GitHub.
+3. Make sure you are on the restore-july-1 branch.
+4. Upload the contents of this folder.
+5. Commit with: 43 Build UX redirect experience page
