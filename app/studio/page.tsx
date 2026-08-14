@@ -1,180 +1,68 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const processSteps = [
-  {
-    number: "01",
-    title: "Material Selection",
-    text: "Each element is chosen for its quality, character, and ability to stand the test of time. Each choice lays the foundation for a piece that is meant to be worn for years to come."
-  },
-  {
-    number: "02",
-    title: "Shaping",
-    text: "The crown and silhouette are sculpted by hand and molded by wooden blocks giving the hat its personality, balance, and overall presence."
-  },
-  {
-    number: "03",
-    title: "Brimming and Sanding",
-    text: "The brim is carefully refined through a brim cutter and sanding techniques that create softness and movement."
-  },
-  {
-    number: "04",
-    title: "Sweatband",
-    text: "The interior sweatband is fitted by hand for comfort and structure. This detail becomes an intimate part of the hat and often carries a personalized or artistic element."
-  },
-  {
-    number: "05",
-    title: "Habillage",
-    text: "Ribbon work, embroidery, burns, stitching, and symbolic adornments are added to complete the visual story of the piece."
-  },
-  {
-    number: "06",
-    title: "Finishing Details",
-    text: "Final refinements are made by hand to ensure balance, craftsmanship, and individuality."
-  }
+const steps = [
+  ["01","RAW MATERIAL","Material Selection","Each element is chosen for quality, character, and its ability to endure."],
+  ["02","FORM","Shaping","The crown and silhouette are sculpted by hand on wooden blocks."],
+  ["03","EDGE","Brimming and Sanding","The brim is refined through cutting and sanding for softness and movement."],
+  ["04","INTERIOR","Sweatband","The interior is fitted by hand for comfort, structure, and intimacy."],
+  ["05","STORY","Habillage","Ribbon, embroidery, burns, stitching, and adornments complete the visual story."],
+  ["06","OBJECT","Finishing Details","Final refinements establish balance, craftsmanship, and individuality."]
 ];
 
-const timelessMaterials = [
-  {
-    title: "Wooden Blocks",
-    image: "/images/studio/Wooden_Blocks.jpg",
-    alt: "ELÖRE handcrafted wooden hat blocks",
-    text: "Handcrafted in Poland by a fourth-generation block maker, each form is carved from timber sourced through a family business that plants and stewards its own trees."
-  },
-  {
-    title: "Panama Straw",
-    image: "/images/studio/Panama_Straw.jpg",
-    alt: "ELÖRE Panama straw material",
-    text: "Woven by skilled artisans in Ecuador, authentic Panama straw represents one of the world's most celebrated hat-making traditions. Lightweight, breathable, and remarkably refined."
-  },
-  {
-    title: "Fur Felt",
-    image: "/images/studio/Fur_Felt.jpg",
-    alt: "ELÖRE fur felt material",
-    text: "Crafted in Portugal, our fur felt is created through a centuries-old process that transforms natural fibers using moisture, heat, and pressure into a dense, durable textile."
-  },
-  {
-    title: "Leather Sweatbands",
-    image: "/images/studio/Sweatband.jpg",
-    alt: "ELÖRE leather sweatbands",
-    text: "Every hat is finished with premium leather sweatbands crafted in the United States. Their dedication to traditional leathercraft and enduring quality mirrors our own belief that every detail matters."
-  }
+const materials = [
+  ["Wooden Blocks","/images/studio/Wooden_Blocks.jpg","Handcrafted in Poland by a fourth-generation block maker, each form begins with timber and inherited knowledge."],
+  ["Panama Straw","/images/studio/Panama_Straw.jpg","Woven by skilled artisans in Ecuador, authentic Panama straw is light, breathable, and remarkably refined."],
+  ["Fur Felt","/images/studio/Fur_Felt.jpg","Crafted in Portugal through a centuries-old process using moisture, heat, pressure, and natural fiber."],
+  ["Leather Sweatbands","/images/studio/Sweatband.jpg","Premium leather sweatbands crafted in the United States complete the interior with structure and comfort."]
 ];
 
 export default function StudioPage() {
   return (
     <>
-      <section className="px-5 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12">
+      <section className="bg-[#FAF8F2] px-5 py-10 md:px-8 md:py-16 lg:px-12">
         <div className="editorial-container">
-          <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
-            <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white/78 p-6 shadow-soft backdrop-blur md:p-8 lg:p-10">
-              <div>
-                <h1 className="serif-display max-w-4xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.15rem]">
-                  A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
-                </h1>
-              </div>
-
-              <div className="mt-8 border-t thin-border pt-6 md:mt-10 md:pt-7">
-                <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl lg:text-6xl">
-                  The atelier is more than a workspace.
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-                  Every Elöre hat begins in the atelier where tradition is practiced,
-                  materials are transformed, and craftsmanship is given the time it
-                  deserves. Here, every step of the process is carried out by hand,
-                  honoring generations of techniques while shaping a new future for
-                  the craft.
-                </p>
-              </div>
+          <div className="mb-7 flex justify-between border-b thin-border pb-4"><span className="elore-kicker">Atelier / Boston</span><span className="elore-kicker text-[#6F292B]">Craft in motion</span></div>
+          <div className="grid gap-7 lg:grid-cols-[.72fr_1.28fr]">
+            <div className="flex flex-col justify-between">
+              <h1 className="elore-display text-[clamp(4.2rem,8vw,8.4rem)]">Where<br/>material<br/><em>becomes form.</em></h1>
+              <p className="mt-10 max-w-lg text-base leading-8 text-[#241C19]/70">A creative atelier and shop in Downtown Boston where tradition is practiced, materials are transformed, and every hat is given the time it deserves.</p>
             </div>
+            <div className="elore-crop relative min-h-[68vh]"><Image src="/images/studio/workspace.jpg" alt="ELÖRE Atelier workspace" fill priority sizes="(max-width:1024px) 100vw, 65vw" className="object-cover"/></div>
+          </div>
+        </div>
+      </section>
 
-            <div className="relative min-h-[430px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px] lg:min-h-[720px]">
-              <Image
-                src="/images/studio/workspace.jpg"
-                alt="ELÖRE Atelier workspace in Downtown Boston"
-                fill
-                sizes="(max-width: 1024px) 100vw, 56vw"
-                className="object-cover"
-                priority
-              />
+      <section className="elore-olive px-5 py-16 md:px-8 md:py-24 lg:px-12">
+        <div className="editorial-container">
+          <div className="grid gap-12 lg:grid-cols-[.42fr_1fr]">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <p className="elore-kicker text-white/60">The Process</p>
+              <h2 className="serif-display mt-6 text-5xl leading-[.92] tracking-[-.04em] md:text-7xl">Six movements.<br/>One object.</h2>
+            </div>
+            <div>
+              {steps.map(([n,k,t,d])=>(
+                <article key={n} className="grid gap-4 border-t border-white/25 py-7 md:grid-cols-[70px_150px_1fr] md:py-9">
+                  <span className="text-xs tracking-[.24em] text-white/50">{n}</span>
+                  <span className="text-[10px] uppercase tracking-[.24em] text-[#D5B875]">{k}</span>
+                  <div><h3 className="serif-display text-4xl md:text-5xl">{t}</h3><p className="mt-3 max-w-2xl leading-7 text-white/68">{d}</p></div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
+      <section className="bg-[#F2EBDD] px-5 py-16 md:px-8 md:py-24 lg:px-12">
         <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-            <div className="grid gap-7 p-6 md:p-8 lg:p-10">
-              <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-                <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">
-                  The Process of a Handcrafted Hat
-                </h2>
-                <p className="max-w-3xl text-base leading-8 text-brand-ink/72 md:text-lg lg:pb-2">
-                  Every step carries a story whether it’s from the designer or the
-                  wearer. Every silhouette begins on a handcrafted wooden block,
-                  where steam, pressure, and skilled hands shape each hat into its
-                  distinctive form.
-                </p>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {processSteps.map((step) => (
-                  <article
-                    key={step.title}
-                    className="flex h-full flex-col rounded-[1.5rem] border thin-border bg-white p-5 shadow-soft md:p-6"
-                  >
-                    <div className="mb-5 flex items-center justify-between border-b thin-border pb-4">
-                      <span className="text-[10px] uppercase tracking-[0.28em] text-brand-mocha/75">
-                        {step.number}
-                      </span>
-                      <span className="h-px w-12 bg-brand-mocha/20" />
-                    </div>
-                    <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                      {step.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                      {step.text}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="mb-7 max-w-3xl md:mb-9">
-            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-              Timeless Materials
-            </h2>
-          </div>
-
-          <div className="grid gap-5 lg:grid-cols-2">
-            {timelessMaterials.map((material) => (
-              <article
-                key={material.title}
-                className="grid overflow-hidden rounded-luxe border thin-border bg-white shadow-soft md:grid-cols-[0.95fr_1.05fr]"
-              >
-                <div className="relative min-h-[260px] overflow-hidden bg-[#f7f1ea] md:min-h-[340px]">
-                  <Image
-                    src={material.image}
-                    alt={material.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                    className="object-cover transition duration-700 hover:scale-[1.03]"
-                  />
-                </div>
-
-                <div className="flex flex-col justify-center p-6 md:p-7">
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    {material.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                    {material.text}
-                  </p>
+          <h2 className="elore-display mb-12 text-[clamp(4rem,8vw,8rem)]">Timeless<br/><em>materials.</em></h2>
+          <div className="grid gap-x-7 gap-y-14 md:grid-cols-2">
+            {materials.map(([title,img,text],i)=>(
+              <article key={title} className={i%2 ? "md:mt-24" : ""}>
+                <div className="elore-crop relative aspect-[4/5]"><Image src={img} alt={title} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover"/></div>
+                <div className="mt-5 grid grid-cols-[40px_1fr] gap-4 border-t thin-border pt-4">
+                  <span className="text-[10px] tracking-[.2em]">0{i+1}</span>
+                  <div><h3 className="serif-display text-4xl">{title}</h3><p className="mt-3 max-w-xl leading-7 text-[#241C19]/68">{text}</p></div>
                 </div>
               </article>
             ))}
@@ -182,37 +70,10 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-            <div className="grid gap-7 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
-              <div>
-                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Discover the collection or begin a custom commission.
-                </h2>
-                <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The atelier offers a deeper understanding of the craft behind
-                  the work. The next step is to explore the collection or move
-                  into a more personal custom experience.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center gap-4">
-                <Link
-                  href="/shop"
-                  className="inline-flex w-fit rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
-                >
-                  Shop the Collection
-                </Link>
-                <Link
-                  href="/custom"
-                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                >
-                  Begin a Custom Hat
-                </Link>
-              </div>
-            </div>
-          </div>
+      <section className="elore-oxblood px-5 py-16 md:px-8 md:py-24 lg:px-12">
+        <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <h2 className="serif-display max-w-[12ch] text-5xl leading-[.92] tracking-[-.04em] md:text-7xl">Discover the collection or begin something personal.</h2>
+          <div className="flex flex-wrap gap-3"><Link href="/shop" className="border border-white bg-white px-5 py-3 text-[10px] uppercase tracking-[.22em] text-[#241C19]">Shop Collection</Link><Link href="/custom" className="border border-white/60 px-5 py-3 text-[10px] uppercase tracking-[.22em]">Custom Commission</Link></div>
         </div>
       </section>
     </>

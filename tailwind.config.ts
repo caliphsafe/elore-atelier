@@ -9,31 +9,25 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ink: "#221F1E",
-          mocha: "#563D39",
-          sand: "#D3BA9D",
-          olive: "#344200",
-          black: "#000000",
-          white: "#FFFFFF"
+          ink: "#241C19",
+          mocha: "#6F292B",
+          sand: "#D5B875",
+          olive: "#596044",
+          clay: "#A4664E",
+          bone: "#F2EBDD",
+          ivory: "#FAF8F2",
+          black: "#241C19",
+          white: "#FAF8F2"
         }
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', "Georgia", "serif"],
         sans: ['"Inter"', "Arial", "sans-serif"]
       },
-      maxWidth: {
-        "8xl": "90rem"
-      },
-      letterSpacing: {
-        luxe: "0.18em",
-        hero: "-0.04em"
-      },
-      boxShadow: {
-        soft: "0 10px 30px rgba(34, 31, 30, 0.08)"
-      },
-      borderRadius: {
-        luxe: "2rem"
-      }
+      maxWidth: { "8xl": "94rem" },
+      letterSpacing: { luxe: "0.18em", hero: "-0.055em" },
+      boxShadow: { soft: "0 1px 0 rgba(36,28,25,.10)" },
+      borderRadius: { luxe: "0.25rem" }
     }
   },
   plugins: []
