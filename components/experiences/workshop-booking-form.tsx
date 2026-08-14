@@ -115,8 +115,7 @@ export function WorkshopBookingForm() {
       "",
       "Notes:",
       form.notes || "Not provided"
-    ].join("
-");
+    ].join("\n");
 
     window.location.href = `mailto:contact@elore.design?subject=${encodeURIComponent(
       subject
