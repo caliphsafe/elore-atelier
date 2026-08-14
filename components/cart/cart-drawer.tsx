@@ -39,7 +39,8 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b thin-border px-6 py-5">
             <div>
-              <h2 className="serif-display text-3xl text-brand-ink">
+              <p className="eyebrow">Cart</p>
+              <h2 className="serif-display mt-2 text-3xl text-brand-ink">
                 Your Selection
               </h2>
               <p className="mt-2 text-sm text-brand-ink/60">
@@ -59,9 +60,9 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
           <div className="flex-1 overflow-y-auto px-6 py-6">
             {items.length === 0 ? (
               <div className="rounded-[1.5rem] border thin-border bg-[#f7f1ea] p-6">
-                <h3 className="serif-display text-3xl leading-tight text-brand-ink">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
                   Cart Empty
-                </h3>
+                </p>
                 <p className="mt-3 text-sm leading-7 text-brand-ink/72">
                   Add pieces from the collection to begin building your selection.
                 </p>
@@ -86,7 +87,11 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
                     </div>
 
                     <div className="min-w-0">
-                      <h3 className="serif-display text-2xl leading-tight text-brand-ink">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
+                        ELÖRE Atelier
+                      </p>
+
+                      <h3 className="serif-display mt-2 text-2xl leading-tight text-brand-ink">
                         {item.productTitle}
                       </h3>
 

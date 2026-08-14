@@ -22,7 +22,8 @@ export function CartPageContent() {
       <section className="section-pad pt-10 md:pt-12">
         <div className="editorial-container flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+            <p className="eyebrow">Cart</p>
+            <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
               Your current selection.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
@@ -41,7 +42,10 @@ export function CartPageContent() {
           <div className="grid gap-4">
             {items.length === 0 ? (
               <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-8 shadow-soft">
-                <h2 className="serif-display text-3xl text-brand-ink">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
+                  Cart Empty
+                </p>
+                <h2 className="serif-display mt-4 text-3xl text-brand-ink">
                   Your cart is waiting for its first piece.
                 </h2>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-brand-ink/72">
@@ -75,7 +79,11 @@ export function CartPageContent() {
                   </div>
 
                   <div className="min-w-0">
-                    <h2 className="serif-display text-3xl leading-tight text-brand-ink">
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
+                      ELÖRE Atelier
+                    </p>
+
+                    <h2 className="serif-display mt-2 text-3xl leading-tight text-brand-ink">
                       {item.productTitle}
                     </h2>
 
@@ -128,7 +136,8 @@ export function CartPageContent() {
 
           <div className="lg:sticky lg:top-28">
             <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft sm:p-8">
-              <h2 className="serif-display text-4xl leading-tight text-brand-ink">
+              <p className="eyebrow">Order Summary</p>
+              <h2 className="serif-display mt-4 text-4xl leading-tight text-brand-ink">
                 Estimated total
               </h2>
 

@@ -14,10 +14,7 @@ const config: Config = {
           sand: "#D3BA9D",
           olive: "#344200",
           black: "#000000",
-          white: "#FFFFFF",
-          maroon: "#6F3035",
-          clay: "#A4664E",
-          bone: "#F6F0E5"
+          white: "#FFFFFF"
         }
       },
       fontFamily: {
@@ -32,8 +29,7 @@ const config: Config = {
         hero: "-0.04em"
       },
       boxShadow: {
-        soft: "0 10px 30px rgba(34, 31, 30, 0.08)",
-        deep: "0 22px 70px rgba(34, 31, 30, 0.14)"
+        soft: "0 10px 30px rgba(34, 31, 30, 0.08)"
       },
       borderRadius: {
         luxe: "2rem"

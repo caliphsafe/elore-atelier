@@ -40,7 +40,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </div>
 
           <div className="fade-up lg:sticky lg:top-28">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-6xl">
+            <p className="eyebrow">{product.category}</p>
+            <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-6xl">
               {product.title}
             </h1>
 
@@ -58,21 +59,29 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <div className="mt-8 border-t thin-border pt-6">
               <div className="grid gap-5 text-sm leading-7 text-brand-ink/72">
                 <div>
-                  <p>
-                    <span className="text-brand-ink">Collection:</span>{" "}
+                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                    Collection
+                  </p>
+                  <p className="mt-2">
                     {product.category || "Elöre Atelier"}
                   </p>
                 </div>
 
                 <div>
-                  <p>
+                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                    Craft Notes
+                  </p>
+                  <p className="mt-2">
                     Shaped through proportion, material character, and refined
                     detail as part of the Elöre collection.
                   </p>
                 </div>
 
                 <div>
-                  <p>
+                  <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
+                    Availability
+                  </p>
+                  <p className="mt-2">
                     {product.availableForSale
                       ? "Available through secure Shopify checkout."
                       : "This piece is currently unavailable through Shopify checkout."}
@@ -96,7 +105,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <section className="section-pad pt-0">
         <div className="editorial-container">
           <div className="mb-6 fade-up">
-            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl">
+            <p className="eyebrow">Related Pieces</p>
+            <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
               Continue exploring the collection.
             </h2>
           </div>

@@ -40,7 +40,8 @@ export default function LookbookPage() {
       <section className="section-pad pt-12 md:pt-14">
         <div className="editorial-container">
           <div className="max-w-4xl">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+            <p className="eyebrow">Lookbook</p>
+            <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
               Favorite pieces, silhouettes, and details from Elöre Atelier.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
@@ -67,7 +68,8 @@ export default function LookbookPage() {
 
           <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
             <div>
-              <h2 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
+              <p className="eyebrow">Collection View</p>
+              <h2 className="serif-display mt-4 text-3xl leading-tight text-brand-ink md:text-4xl">
                 Hats shaped through feeling, memory, texture, landscape, and story.
               </h2>
               <p className="mt-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
@@ -78,7 +80,10 @@ export default function LookbookPage() {
             </div>
 
             <div className="mt-8 border-t thin-border pt-6">
-              <div className="grid gap-3 text-sm leading-7 text-brand-ink/72">
+              <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
+                Elöre Atelier
+              </p>
+              <div className="mt-4 grid gap-3 text-sm leading-7 text-brand-ink/72">
                 <p>Handcrafted hats shaped from beginning to end</p>
                 <p>Signature forms unique to the brand</p>
                 <p>Natural materials selected for beauty and character</p>
@@ -92,7 +97,8 @@ export default function LookbookPage() {
       <section className="section-pad pt-0">
         <div className="editorial-container">
           <div className="mb-8 max-w-2xl">
-            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl">
+            <p className="eyebrow">Featured Looks</p>
+            <h2 className="serif-display mt-3 text-4xl leading-tight text-brand-ink md:text-5xl">
               A curated view of the collection.
             </h2>
           </div>
@@ -116,16 +122,16 @@ export default function LookbookPage() {
                   {index === 2 ? <div className="absolute inset-0 bg-black/20" /> : null}
                 </div>
                 <div className="p-6">
-                  <h3
-                    className={`serif-display text-3xl leading-tight ${
-                      index === 2 ? "text-white" : "text-brand-ink"
+                  <p
+                    className={`text-[11px] uppercase tracking-[0.28em] ${
+                      index === 2 ? "text-white/70" : "text-brand-mocha"
                     }`}
                   >
                     {look.title}
-                  </h3>
+                  </p>
                   <p
-                    className={`mt-3 text-sm leading-7 ${
-                      index === 2 ? "text-white/80" : "text-brand-ink/72"
+                    className={`mt-3 serif-display text-3xl leading-tight ${
+                      index === 2 ? "text-white" : "text-brand-ink"
                     }`}
                   >
                     {look.subtitle}
@@ -140,7 +146,10 @@ export default function LookbookPage() {
       <section className="section-pad">
         <div className="editorial-container grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="rounded-luxe olive-panel p-6 shadow-soft md:p-8">
-            <h2 className="serif-display text-3xl leading-tight text-white md:text-4xl">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
+              Design Philosophy
+            </p>
+            <h2 className="serif-display mt-4 text-3xl leading-tight text-white md:text-4xl">
               Every hat begins with a feeling.
             </h2>
             <p className="mt-5 text-sm leading-7 text-white/80 md:text-base md:leading-8">
@@ -178,7 +187,8 @@ export default function LookbookPage() {
           <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
             <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
               <div>
-                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
+                <p className="eyebrow">Continue Exploring</p>
+                <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
                   Move from the lookbook into the collection or a custom design.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">

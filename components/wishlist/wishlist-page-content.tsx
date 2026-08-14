@@ -18,7 +18,8 @@ export function WishlistPageContent({ products: allProducts }: WishlistPageConte
     <>
       <section className="section-pad pt-10 md:pt-12">
         <div className="editorial-container">
-          <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+          <p className="eyebrow">Wishlist</p>
+          <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
             Pieces saved for later.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
@@ -30,9 +31,9 @@ export function WishlistPageContent({ products: allProducts }: WishlistPageConte
       <section className="section-pad pt-0">
         {products.length === 0 ? (
           <div className="editorial-container rounded-luxe border thin-border bg-[#f7f1ea] p-8 shadow-soft">
-            <h2 className="serif-display text-3xl leading-tight text-brand-ink">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-brand-mocha">
               Nothing Saved Yet
-            </h2>
+            </p>
             <p className="mt-3 max-w-xl text-sm leading-7 text-brand-ink/72">
               Tap the heart on any product to save it here.
             </p>

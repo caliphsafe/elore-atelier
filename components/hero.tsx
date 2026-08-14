@@ -3,37 +3,48 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="elore-hero relative overflow-hidden bg-brand-ink text-white">
-      <div className="relative min-h-[82svh] md:min-h-[88vh]">
-        <Image
-          src="/images/home/hero/hero.jpg"
-          alt="ELÖRE Atelier hat"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-black/5" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15" />
+    <section className="px-5 pb-10 pt-6 md:px-8 md:pb-14 md:pt-8 lg:px-12">
+      <div className="editorial-container">
+        <div className="grid gap-5 lg:min-h-[64vh] lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+          <div className="order-2 flex flex-col justify-center rounded-luxe border thin-border bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 lg:order-1 lg:p-10">
+            <h1 className="serif-display max-w-3xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.8rem]">
+              Crafted for presence, shaped with intention.
+            </h1>
 
-        <div className="editorial-container relative z-10 flex min-h-[82svh] flex-col justify-end px-5 pb-10 pt-24 md:min-h-[88vh] md:px-8 md:pb-14 lg:px-12">
-          <div className="mb-auto flex items-center gap-3 pt-4 text-[10px] uppercase tracking-[0.32em] text-white/75">
-            <span>ELÖRE / Atelier</span><span className="h-px w-12 bg-white/50"/><span>Boston</span>
+            <p className="mt-7 max-w-2xl text-lg leading-8 muted-copy md:text-xl md:leading-9">
+              Elöre Atelier is a Boston-based atelier dedicated to preserving the
+              craft of hat-making. Through thoughtful design, natural materials,
+              and storytelling, each piece reflects a commitment to craftsmanship.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/shop"
+                className="inline-flex justify-center rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
+              >
+                Shop the Collection
+              </Link>
+
+              <Link
+                href="/experiences"
+                className="inline-flex justify-center rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
+              >
+                Book an Experience
+              </Link>
+            </div>
           </div>
-          <p className="mb-4 max-w-xl text-xs uppercase tracking-[0.3em] text-white/80">Hand formed. Story led. Made with presence.</p>
-          <h1 className="serif-display max-w-5xl text-[clamp(4rem,10vw,9.5rem)] leading-[0.78] tracking-[-0.055em]">
-            Shaped<br/>with soul.
-          </h1>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/shop" className="elore-btn elore-btn--light">Shop the Collection</Link>
-            <Link href="/custom" className="elore-btn elore-btn--ghost-light">Create Your Hat</Link>
+
+          <div className="order-1 relative min-h-[430px] overflow-hidden rounded-luxe border thin-border shadow-soft sm:min-h-[540px] lg:order-2 lg:min-h-full">
+            <Image
+              src="/images/home/hero/hero.jpg"
+              alt="ELÖRE Atelier hero"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 56vw"
+              className="object-cover"
+            />
           </div>
         </div>
-      </div>
-      <div className="grid grid-cols-3 text-center text-[10px] uppercase tracking-[0.28em]">
-        <div className="bg-elore-maroon px-3 py-4">Form</div>
-        <div className="bg-elore-olive px-3 py-4">Culture</div>
-        <div className="bg-elore-sand px-3 py-4 text-brand-ink">Character</div>
       </div>
     </section>
   );
