@@ -1,3 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
-export function Hero(){return <section className="relative min-h-[96svh] overflow-hidden bg-brand-olive"><div className="absolute inset-0 lg:left-[34%]"><Image src="/images/home/hero/hero.jpg" alt="ELÖRE Atelier hat" fill priority sizes="100vw" className="object-cover"/><div className="absolute inset-0 bg-gradient-to-r from-brand-olive/90 via-brand-olive/15 to-transparent lg:from-brand-olive/65"/></div><div className="editorial-container relative z-10 flex min-h-[96svh] flex-col px-5 pb-10 pt-28 md:px-8 lg:px-12"><div className="flex justify-between text-[10px] uppercase tracking-[.34em] text-brand-bone/75"><span>ELÖRE / Atelier</span><span className="hidden md:block">Boston</span></div><div className="mt-auto grid gap-8 lg:grid-cols-12 lg:items-end"><div className="lg:col-span-8"><p className="mb-5 max-w-xl text-xs uppercase tracking-[.32em] text-brand-sand">Hand formed. Story led. Made with presence.</p><h1 className="serif-display max-w-[8ch] text-[clamp(5.3rem,13vw,13rem)] leading-[.68] tracking-[-.07em] text-brand-bone">Shaped<br/><em className="font-normal text-brand-sand">with soul.</em></h1><div className="mt-9 flex flex-wrap gap-3"><Link href="/shop" className="btn-light">Shop the Collection</Link><Link href="/custom" className="btn-outline-light">Create Your Hat</Link></div></div><p className="hidden border-l border-brand-bone/35 pl-6 serif-display text-3xl leading-tight text-brand-bone lg:col-span-3 lg:block">Craft is carried forward by the hands that reshape it.</p></div></div></section>}
+
+export function Hero() {
+  return (
+    <section className="relative min-h-[92svh] overflow-hidden bg-brand-maroon text-brand-bone">
+      <div className="absolute inset-0 lg:left-[27%]">
+        <Image src="/images/home/hero/hero.jpg" alt="ELÖRE Atelier hat" fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
+      <div className="absolute inset-y-0 left-0 w-[68%] bg-brand-maroon [clip-path:polygon(0_0,72%_0,100%_100%,0_100%)] sm:w-[62%] lg:w-[52%]" />
+      <div className="absolute right-[7%] top-[14%] hidden aspect-square w-[9rem] rounded-full bg-brand-sand/90 md:block lg:w-[12rem]" />
+
+      <div className="editorial-container relative z-10 flex min-h-[92svh] flex-col justify-end px-5 pb-10 pt-24 md:px-8 md:pb-12 lg:px-12 lg:pb-14">
+        <div className="grid items-end gap-8 lg:grid-cols-[1fr_.45fr]">
+          <div>
+            <h1 className="serif-display max-w-[8ch] text-[clamp(5rem,12vw,12rem)] leading-[.7] tracking-[-.07em] text-brand-bone">
+              Shaped<br /><em className="font-normal text-brand-sand">with soul.</em>
+            </h1>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link href="/shop" className="btn-light">Shop the Collection</Link>
+              <Link href="/custom" className="btn-outline-light">Create Your Hat</Link>
+            </div>
+          </div>
+          <div className="hidden border-l border-brand-bone/30 pl-6 lg:block">
+            <p className="serif-display text-3xl leading-tight text-brand-bone">Craft is carried forward by the hands that reshape it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

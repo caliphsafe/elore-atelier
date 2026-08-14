@@ -469,3 +469,65 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
 
 /* V3 prefers disciplined editorial rectangles over decorative masks. */
 .v3-image{border-radius:0!important;clip-path:none!important}
+
+/* =========================================================
+   ELÖRE V4 — CLIENT-SCOPED CLEANUP
+   Preserve approved page structure, remove decorative micro-subheaders,
+   keep explicit readable foreground/background combinations.
+   ========================================================= */
+.eyebrow,
+.eyebrow-olive,
+.eyebrow-light {
+  display: none !important;
+}
+.eyebrow + *,
+.eyebrow-olive + *,
+.eyebrow-light + * {
+  margin-top: 0 !important;
+}
+
+/* Olive is the default dark foreground throughout the light palette. */
+.bg-brand-bone,
+.bg-brand-ivory,
+.bg-brand-sand,
+.surface-bone,
+.surface-ivory,
+.surface-sand {
+  color: #344200;
+}
+.bg-brand-bone :where(h1,h2,h3,h4,h5,h6,p,li),
+.bg-brand-ivory :where(h1,h2,h3,h4,h5,h6,p,li),
+.bg-brand-sand :where(h1,h2,h3,h4,h5,h6,p,li) {
+  text-shadow: none;
+}
+
+/* Dark surfaces always receive a light readable foreground. */
+.bg-brand-maroon,
+.bg-brand-olive,
+.surface-maroon,
+.surface-olive {
+  color: #F6F0E5;
+}
+.bg-brand-maroon .text-brand-bone,
+.bg-brand-olive .text-brand-bone,
+.bg-brand-maroon .text-white,
+.bg-brand-olive .text-white {
+  color: #F6F0E5 !important;
+}
+
+/* Clean card geometry for sales/UI components; decorative masks remain only
+   where a page explicitly owns them (e.g. the approved About storytelling). */
+.home-clean-card,
+.shop-clean-card {
+  border-radius: 0 !important;
+  clip-path: none !important;
+}
+
+/* Keep compact UI labels in forms/navigation, but page-level micro-kickers are gone. */
+@media (max-width: 768px) {
+  .editorial-container { overflow-x: clip; }
+  .btn-olive,.btn-light,.btn-outline-olive,.btn-outline-light,.filter-active,.filter-idle {
+    min-height: 46px;
+    padding-inline: 1rem;
+  }
+}

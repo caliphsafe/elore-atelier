@@ -54,13 +54,9 @@ export default function AboutPage() {
     <>
       <section className="relative overflow-hidden bg-brand-bone text-brand-ink">
         <div className="absolute -left-20 top-28 h-80 w-80 rounded-full bg-brand-sand/75" />
-        <div className="absolute right-8 top-24 hidden text-[10px] uppercase tracking-[0.34em] text-brand-maroon lg:block [writing-mode:vertical-rl]">
-          Cameroon / Paris / Boston / Florence
-        </div>
 
         <div className="editorial-container grid min-h-[86svh] gap-8 px-5 pb-12 pt-10 md:px-8 md:pt-12 lg:grid-cols-12 lg:px-12">
           <div className="relative z-10 flex flex-col justify-end lg:col-span-5">
-            <p className="mb-5 text-[10px] uppercase tracking-[0.34em] text-brand-maroon">Founder / Maker / Storyteller</p>
             <h1 className="serif-display max-w-[9ch] text-[clamp(4.4rem,10vw,10.5rem)] leading-[0.76] tracking-[-0.07em] text-brand-olive">
               Meet the designer behind the craft
             </h1>
@@ -89,8 +85,7 @@ export default function AboutPage() {
         <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="text-[10px] uppercase tracking-[0.34em] text-brand-sand">Salomé's path into hat-making.</p>
-              <h2 className="serif-display mt-6 text-5xl leading-[0.88] md:text-7xl">
+              <h2 className="serif-display text-5xl leading-[0.88] md:text-7xl">
                 A story told in movement, training, and handwork.
               </h2>
             </div>
@@ -122,8 +117,7 @@ export default function AboutPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <p className="text-[10px] uppercase tracking-[0.34em] text-brand-maroon">The two dots above the Ö</p>
-            <h2 className="serif-display mt-5 text-5xl leading-[0.88] text-brand-olive md:text-7xl lg:text-8xl">
+            <h2 className="serif-display text-5xl leading-[0.88] text-brand-olive md:text-7xl lg:text-8xl">
               Philosophy and Manifesto
             </h2>
 
@@ -159,8 +153,7 @@ export default function AboutPage() {
         <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-4">
-              <p className="eyebrow-olive">How the atelier chooses to make</p>
-              <h2 className="serif-display mt-5 text-5xl leading-[0.88] text-brand-olive md:text-7xl">Materials, place, and purpose.</h2>
+              <h2 className="serif-display text-5xl leading-[0.88] text-brand-olive md:text-7xl">Materials, place, and purpose.</h2>
             </div>
             <p className="max-w-xl text-base leading-8 text-brand-olive/78 lg:col-span-5 lg:col-start-8">A slower practice extends beyond the finished hat into the materials selected, the place each piece is made, and the way it enters the world.</p>
           </div>
