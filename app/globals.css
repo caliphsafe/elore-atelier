@@ -543,7 +543,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   --elore-v7-ivory: #fbf8f1;
   --elore-v7-olive: #4d5638;
   --elore-v7-olive-deep: #38402a;
-  --elore-v7-maroon: #344200;
+  --elore-v7-maroon: #4a332b; /* warm espresso brown accent */
   --elore-v7-sand: #d8cbb8;
   --elore-v7-line: rgba(77, 86, 56, 0.24);
 }
@@ -906,7 +906,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   inset: 0;
   z-index: -2;
   background: url("/images/custom/hero.jpg") center 42% / cover no-repeat;
-  opacity: .2;
+  opacity: .45;
 }
 
 .custom-opening::after {
@@ -914,7 +914,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(244,237,226,.96) 0%, rgba(244,237,226,.78) 44%, rgba(244,237,226,.46) 72%, rgba(244,237,226,.72) 100%);
+  background: linear-gradient(90deg, rgba(244,237,226,.93) 0%, rgba(244,237,226,.72) 42%, rgba(244,237,226,.28) 72%, rgba(244,237,226,.58) 100%);
   pointer-events: none;
 }
 
@@ -959,8 +959,8 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
 
 .custom-process__inner {
   display: grid;
-  grid-template-columns: minmax(0, .62fr) minmax(0, 1fr) minmax(260px, .58fr);
-  gap: clamp(2rem, 4vw, 4.5rem);
+  grid-template-columns: minmax(0, .52fr) minmax(0, .82fr) minmax(360px, .92fr);
+  gap: clamp(2rem, 3.5vw, 4rem);
   padding: clamp(4rem, 7vw, 7rem) 3rem;
 }
 
@@ -1004,13 +1004,13 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   position: relative;
   align-self: center;
   width: 100%;
-  max-width: 380px;
+  max-width: 520px;
   aspect-ratio: 9 / 16;
   margin-left: auto;
   overflow: hidden;
   border: 1px solid rgba(244,237,226,.28);
-  box-shadow: 18px 22px 0 rgba(217,201,168,.16);
-  transform: translateY(1.75rem);
+  box-shadow: 24px 28px 0 rgba(216,203,184,.18);
+  transform: translateY(.5rem);
 }
 
 .custom-process__film video {
@@ -1692,3 +1692,50 @@ a[class*="rounded-full"] {
 .atelier-color-panel{background:#344200!important;color:#f6f0e5!important}
 .atelier-color-panel :where(h1,h2,h3,p){color:inherit!important}
 @media(max-width:767px){.about-principles-grid{grid-template-columns:1fr}.experience-opening{min-height:760px;background-position:58% center}.experience-opening__inner{grid-template-columns:1fr;padding-left:1.25rem;padding-right:1.25rem}.experience-story{margin-top:-3rem}.experience-story__inner{grid-template-columns:1fr;padding-left:1.25rem;padding-right:1.25rem}.experience-story__included{margin-top:0}}
+
+
+/* =========================================================
+   ELÖRE V10 — OLIVE + ESPRESSO / CUSTOM FILM PRESENCE
+   ========================================================= */
+@media (max-width: 1100px) {
+  .custom-process__inner {
+    grid-template-columns: minmax(0, .72fr) minmax(320px, .9fr);
+  }
+  .custom-process__heading {
+    grid-column: 1;
+  }
+  .custom-process__list {
+    grid-column: 1;
+  }
+  .custom-process__film {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: min(100%, 460px);
+    max-width: none;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .custom-opening::before {
+    opacity: .45;
+    background-position: 58% center;
+  }
+  .custom-opening::after {
+    background: linear-gradient(180deg, rgba(244,237,226,.84) 0%, rgba(244,237,226,.68) 52%, rgba(244,237,226,.38) 100%);
+  }
+  .custom-process__inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .custom-process__film {
+    order: 2;
+    width: min(88vw, 430px);
+    margin: .75rem auto 1.5rem;
+    transform: none;
+  }
+  .custom-process__list {
+    order: 3;
+  }
+}
