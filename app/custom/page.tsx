@@ -37,7 +37,6 @@ export default function CustomPage() {
         <div className="editorial-container custom-process__inner">
           <div className="custom-process__heading">
             <h2 className="serif-display">Six stages. One piece shaped around you.</h2>
-            <Link href="https://drive.google.com/drive/folders/13kDt5kaS432Zk-xWnHTWENonhmBe-CE5?usp=drive_link" target="_blank" rel="noreferrer" className="btn-light">View Current Process Video</Link>
           </div>
           <div className="custom-process__list">
             {stages.map((stage, index) => (
@@ -46,6 +45,17 @@ export default function CustomPage() {
                 <h3 className="serif-display">{stage}</h3>
               </div>
             ))}
+          </div>
+          <div className="custom-process__film">
+            <video
+              src="/video/custom.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="ELÖRE custom hat making process"
+            />
           </div>
         </div>
       </section>
