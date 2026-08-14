@@ -4,7 +4,6 @@ import { CoverageMarquee } from "@/components/home/coverage-marquee";
 import { ExperiencesPreview } from "@/components/home/experiences-preview";
 import { FeaturedCollections } from "@/components/home/featured-collections";
 import { HomeCta } from "@/components/home/home-cta";
-import { LookbookPreview } from "@/components/home/lookbook-preview";
 
 export default function HomePage() {
   return (
@@ -13,7 +12,6 @@ export default function HomePage() {
       <AtelierStory />
       <FeaturedCollections />
       <ExperiencesPreview />
-      <LookbookPreview />
       <HomeCta />
       <CoverageMarquee />
     </>

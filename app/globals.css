@@ -384,3 +384,35 @@ button[class*="rounded-full"], a[class*="rounded-full"] { border-radius:0 !impor
 @media(min-width:1024px){
   .section-pad:nth-of-type(even) .rounded-luxe{border-radius:.35rem 4.5rem .35rem 4.5rem!important}
 }
+
+
+/* =========================================================
+   ELÖRE 43 / UNBOUND CLIENT REVISION
+   Contrast protection, olive ink, no Lookbook, more organic page rhythm.
+   ========================================================= */
+:root{
+  --ink:#344200;
+  --elore-ink:#344200;
+  --elore-olive:#344200;
+  --black:#344200;
+}
+body{color:var(--elore-olive);}
+.text-brand-ink,.text-black{color:var(--elore-olive)!important;}
+.text-brand-ink\/75{color:rgba(52,66,0,.75)!important;}
+.text-brand-ink\/72{color:rgba(52,66,0,.72)!important;}
+.text-brand-ink\/78{color:rgba(52,66,0,.78)!important;}
+.text-brand-ink\/60{color:rgba(52,66,0,.60)!important;}
+.bg-brand-sand,.bg-elore-sand{color:var(--elore-olive)!important;}
+.bg-brand-sand .text-white,.bg-elore-sand .text-white,.bg-brand-bone .text-white,.bg-elore-ivory .text-white{color:var(--elore-olive)!important;text-shadow:none!important;}
+.bg-brand-sand .text-white\/75,.bg-brand-sand .text-white\/80,.bg-brand-sand .text-white\/85,.bg-elore-sand .text-white\/75,.bg-elore-sand .text-white\/80,.bg-elore-sand .text-white\/85{color:rgba(52,66,0,.76)!important;}
+.bg-brand-maroon .text-brand-ink,.bg-brand-olive .text-brand-ink,.bg-elore-maroon .text-brand-ink,.bg-elore-olive .text-brand-ink{color:#fff!important;}
+.bg-brand-maroon .text-brand-ink\/72,.bg-brand-olive .text-brand-ink\/72,.bg-elore-maroon .text-brand-ink\/72,.bg-elore-olive .text-brand-ink\/72{color:rgba(255,255,255,.74)!important;}
+.border-black{border-color:rgba(52,66,0,.35)!important;}
+.bg-black{background-color:var(--elore-olive)!important;}
+.elore-btn{border-radius:999px 999px 999px 999px!important;}
+.elore-btn.bg-brand-olive,.elore-btn--light{box-shadow:0 14px 34px rgba(52,66,0,.13)!important;}
+.organic-frame--soft{position:relative;overflow:hidden;}
+.organic-frame--arch{position:relative;overflow:hidden;}
+@media(max-width:768px){
+  .elore-collage::before{inset:6% -2% -3% 5%;}
+}

@@ -52,63 +52,56 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
-      <section className="px-5 pb-8 pt-10 md:px-8 md:pb-10 md:pt-12 lg:px-12">
-        <div className="editorial-container">
-          <div className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-            <div className="flex flex-col justify-center rounded-luxe border thin-border bg-white/78 p-6 shadow-soft backdrop-blur md:p-8 lg:p-10">
-              <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-                Meet the designer behind the craft
-              </h1>
+      <section className="relative overflow-hidden bg-brand-bone text-brand-ink">
+        <div className="absolute -left-20 top-28 h-80 w-80 rounded-full bg-brand-sand/75" />
+        <div className="absolute right-8 top-24 hidden text-[10px] uppercase tracking-[0.34em] text-brand-maroon lg:block [writing-mode:vertical-rl]">
+          Cameroon / Paris / Boston / Florence
+        </div>
 
-              <div className="mt-6 max-w-2xl space-y-5 text-base leading-8 text-brand-ink/75 md:text-lg">
-                <p>
-                  Elöre Atelier was founded by designer{" "}
-                  <strong className="font-semibold text-brand-ink">Salomé Kopasz</strong>,
-                  whose work is rooted in the belief that traditional craftsmanship
-                  has the power to preserve stories, connect generations, and move
-                  tradition forward.
-                </p>
-
-                <p>
-                  Each creation is a quiet reminder that craftsmanship is a living
-                  tradition, one that continues to evolve with every hand that shapes it.
-                </p>
-              </div>
+        <div className="editorial-container grid min-h-[86svh] gap-8 px-5 pb-12 pt-10 md:px-8 md:pt-12 lg:grid-cols-12 lg:px-12">
+          <div className="relative z-10 flex flex-col justify-end lg:col-span-5">
+            <p className="mb-5 text-[10px] uppercase tracking-[0.34em] text-brand-maroon">Founder / Maker / Storyteller</p>
+            <h1 className="serif-display max-w-[9ch] text-[clamp(4.4rem,10vw,10.5rem)] leading-[0.76] tracking-[-0.07em] text-brand-olive">
+              Meet the designer behind the craft
+            </h1>
+            <div className="mt-8 max-w-xl space-y-5 border-l border-brand-maroon/35 pl-5 text-base leading-8 text-brand-olive/75 md:text-lg">
+              <p>
+                Elöre Atelier was founded by designer <strong className="font-semibold text-brand-olive">Salomé Kopasz</strong>, whose work is rooted in the belief that traditional craftsmanship has the power to preserve stories, connect generations, and move tradition forward.
+              </p>
+              <p>
+                Each creation is a quiet reminder that craftsmanship is a living tradition, one that continues to evolve with every hand that shapes it.
+              </p>
             </div>
+          </div>
 
-            <AboutGalleryCarousel
-              className="min-h-[420px] md:min-h-[560px] lg:min-h-[640px]"
-              sizes="(max-width: 1024px) 100vw, 52vw"
-            />
+          <div className="relative z-10 lg:col-span-7 lg:pt-10">
+            <div className="elore-collage elore-collage--olive">
+              <AboutGalleryCarousel
+                className="min-h-[520px] md:min-h-[690px]"
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-            <div className="rounded-luxe border thin-border bg-[#f7f1ea] p-6 shadow-soft md:p-8 lg:sticky lg:top-28">
-              <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-5xl">
-                Salomé's path into hat-making.
+      <section className="bg-brand-maroon text-white">
+        <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <p className="text-[10px] uppercase tracking-[0.34em] text-brand-sand">Salomé's path into hat-making.</p>
+              <h2 className="serif-display mt-6 text-5xl leading-[0.88] md:text-7xl">
+                A story told in movement, training, and handwork.
               </h2>
-              <p className="mt-5 text-base leading-8 text-brand-ink/72 md:text-lg">
-                Her story moves through culture, fashion, handwork, and a deep
-                respect for the artisans who preserve craft across generations.
-              </p>
             </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {storyCards.map((card) => (
-                <article
-                  key={card.title}
-                  className="rounded-[1.5rem] border thin-border bg-white p-6 shadow-soft md:p-7"
-                >
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    {card.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                    {card.description}
-                  </p>
+            <div className="grid gap-5 lg:col-span-8">
+              {storyCards.map((card, index) => (
+                <article key={card.title} className={`grid gap-5 border-t border-white/24 pt-6 md:grid-cols-[0.35fr_1fr] ${index % 2 ? "md:ml-20" : ""}`}>
+                  <p className="serif-display text-7xl leading-none text-brand-sand/60">0{index + 1}</p>
+                  <div>
+                    <h3 className="serif-display text-4xl leading-[0.95] text-white md:text-5xl">{card.title}</h3>
+                    <p className="mt-5 max-w-3xl text-sm leading-7 text-white/75 md:text-base md:leading-8">{card.description}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -116,158 +109,89 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
-            <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] lg:min-h-full">
-              <Image
-                src="/images/about/manifesto.jpg"
-                alt="ELÖRE Atelier philosophy and manifesto"
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
-              />
-            </div>
+      <section className="overflow-hidden bg-brand-bone text-brand-ink">
+        <div className="editorial-container grid gap-8 px-5 py-16 md:px-8 lg:grid-cols-12 lg:px-12 lg:py-24">
+          <div className="relative min-h-[420px] overflow-hidden lg:col-span-5 lg:min-h-[720px]">
+            <Image
+              src="/images/about/manifesto.jpg"
+              alt="ELÖRE Atelier philosophy and manifesto"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover elore-slant"
+            />
+          </div>
 
-            <div>
-              <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-                Philosophy and Manifesto
-              </h2>
+          <div className="lg:col-span-7">
+            <p className="text-[10px] uppercase tracking-[0.34em] text-brand-maroon">The two dots above the Ö</p>
+            <h2 className="serif-display mt-5 text-5xl leading-[0.88] text-brand-olive md:text-7xl lg:text-8xl">
+              Philosophy and Manifesto
+            </h2>
 
-              <div className="mt-8 grid gap-6 lg:grid-cols-2">
-                <div className="rounded-[1.5rem] bg-white/72 p-5 md:p-6">
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    Our Philosophy
-                  </h3>
-
-                  <div className="mt-5 space-y-4 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                    <p>
-                      Elöre is built on the belief that tradition should never be
-                      left behind—it should be carried forward into the next generation.
-                    </p>
-
-                    <p>
-                      The two dots above the Ö are a quiet symbol of that journey.
-                      The first dot represents the craft: the enduring artistry of
-                      hat-making, shaped by hand and preserved through generations
-                      of makers. The second represents movement: the stories we
-                      continue to tell, the evolution of design, and the
-                      responsibility to bring heritage into the present.
-                    </p>
-
-                    <p>
-                      The Ö in Elöre serves as a confident reminder that every step
-                      forward begins with honoring the roots of where we came from
-                      and how it's carried forward.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="rounded-[1.5rem] bg-white/72 p-5 md:p-6">
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    Our Manifesto
-                  </h3>
-
-                  <div className="mt-5 space-y-4 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                    <p>
-                      We believe the finest things cannot be rushed. At Elöre
-                      Atelier, every hat begins with a story. We embrace a slower
-                      rhythm of making—one that values skilled hands, intentional
-                      design, and the discipline of craftsmanship over speed and
-                      mass production.
-                    </p>
-
-                    <p>
-                      Rooted in Boston and inspired by a global tradition of
-                      hat-making, our atelier exists to preserve a craft that has
-                      shaped generations of makers.
-                    </p>
-
-                    <p>
-                      Sustainability is not a trend—it is a responsibility. By
-                      crafting each hat made to order, reducing unnecessary waste,
-                      and choosing recycled, plastic-free packaging, we create with
-                      care for both the object and the world it enters.
-                    </p>
-                  </div>
+            <div className="mt-10 grid gap-8 lg:grid-cols-2">
+              <div className="relative border-l border-brand-maroon/35 pl-6">
+                <span className="absolute -left-3 top-0 h-5 w-5 rounded-full bg-brand-sand" />
+                <h3 className="serif-display text-4xl leading-tight text-brand-olive">Our Philosophy</h3>
+                <div className="mt-5 space-y-4 text-sm leading-7 text-brand-olive/75 md:text-base md:leading-8">
+                  <p>Elöre is built on the belief that tradition should never be left behind—it should be carried forward into the next generation.</p>
+                  <p>The two dots above the Ö are a quiet symbol of that journey. The first dot represents the craft: the enduring artistry of hat-making, shaped by hand and preserved through generations of makers. The second represents movement: the stories we continue to tell, the evolution of design, and the responsibility to bring heritage into the present.</p>
+                  <p>The Ö in Elöre serves as a confident reminder that every step forward begins with honoring the roots of where we came from and how it's carried forward.</p>
                 </div>
               </div>
-
-              <p className="mt-6 rounded-[1.5rem] bg-white/72 p-5 text-sm leading-7 text-brand-ink/72 md:text-base md:leading-8">
-                As artisans, we believe we are storytellers. Every hat carries the
-                knowledge of those who came before us while becoming part of the story
-                of the person who wears it. Elöre is a place where heritage is
-                practiced, stories are shared, and craftsmanship continues to evolve.
-              </p>
+              <div className="relative border-l border-brand-maroon/35 pl-6 lg:mt-24">
+                <span className="absolute -left-3 top-0 h-5 w-5 rounded-full bg-brand-maroon" />
+                <h3 className="serif-display text-4xl leading-tight text-brand-olive">Our Manifesto</h3>
+                <div className="mt-5 space-y-4 text-sm leading-7 text-brand-olive/75 md:text-base md:leading-8">
+                  <p>We believe the finest things cannot be rushed. At Elöre Atelier, every hat begins with a story. We embrace a slower rhythm of making—one that values skilled hands, intentional design, and the discipline of craftsmanship over speed and mass production.</p>
+                  <p>Rooted in Boston and inspired by a global tradition of hat-making, our atelier exists to preserve a craft that has shaped generations of makers.</p>
+                  <p>Sustainability is not a trend—it is a responsibility. By crafting each hat made to order, reducing unnecessary waste, and choosing recycled, plastic-free packaging, we create with care for both the object and the world it enters.</p>
+                </div>
+              </div>
             </div>
+
+            <p className="mt-10 max-w-4xl border-t border-brand-olive/25 pt-6 text-base leading-8 text-brand-olive/75 md:text-lg">
+              As artisans, we believe we are storytellers. Every hat carries the knowledge of those who came before us while becoming part of the story of the person who wears it. Elöre is a place where heritage is practiced, stories are shared, and craftsmanship continues to evolve.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container grid gap-6 md:grid-cols-3">
-          {principles.map((principle) => (
-            <article
-              key={principle.title}
-              className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft"
-            >
-              <div className="relative min-h-[240px] overflow-hidden bg-[#f7f1ea] md:min-h-[300px]">
-                <Image
-                  src={principle.image}
-                  alt={principle.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="p-6 md:p-7">
-                <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                  {principle.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                  {principle.description}
-                </p>
-              </div>
-            </article>
-          ))}
+      <section className="bg-brand-olive text-white">
+        <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
+          <div className="grid gap-7 md:grid-cols-3">
+            {principles.map((principle, index) => (
+              <article key={principle.title} className={`${index === 1 ? "md:translate-y-14" : ""}`}>
+                <div className="organic-frame relative min-h-[290px] overflow-hidden bg-brand-sand md:min-h-[390px]">
+                  <Image
+                    src={principle.image}
+                    alt={principle.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="mt-6 border-t border-white/25 pt-5">
+                  <h3 className="serif-display text-4xl leading-tight text-white md:text-5xl">{principle.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-white/75 md:text-base">{principle.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-            <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
-              <div>
-                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Discover the collection or step inside the atelier.
-                </h2>
-                <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  Explore handcrafted pieces, learn more about the making
-                  process, or begin a custom design conversation.
-                </p>
-              </div>
-
-              <div className="flex flex-col justify-center gap-4">
-                <Link
-                  href="/shop"
-                  className="inline-flex w-fit rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
-                >
-                  Shop the Collection
-                </Link>
-                <Link
-                  href="/custom"
-                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                >
-                  Begin a Custom Hat
-                </Link>
-                <Link
-                  href="/studio"
-                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                >
-                  Enter the Atelier
-                </Link>
-              </div>
+      <section className="bg-brand-sand text-brand-ink">
+        <div className="editorial-container grid gap-7 px-5 py-14 md:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:px-12 lg:py-20">
+          <h2 className="serif-display max-w-3xl text-5xl leading-[0.9] text-brand-olive md:text-7xl">
+            Discover the collection or step inside the atelier.
+          </h2>
+          <div className="flex flex-col justify-center gap-4">
+            <p className="max-w-xl text-base leading-8 text-brand-olive/75">
+              Explore handcrafted pieces, learn more about the making process, or begin a custom design conversation.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/shop" className="elore-btn bg-brand-olive text-white">Shop the Collection</Link>
+              <Link href="/custom" className="elore-btn border border-brand-olive text-brand-olive">Begin a Custom Hat</Link>
+              <Link href="/studio" className="elore-btn border border-brand-olive text-brand-olive">Enter the Atelier</Link>
             </div>
           </div>
         </div>
