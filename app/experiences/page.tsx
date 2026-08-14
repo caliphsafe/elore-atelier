@@ -16,29 +16,26 @@ export default function ExperiencesPage() {
   return (
     <>
       <section className="bg-brand-bone text-brand-olive">
-        <div className="editorial-container px-5 pb-8 pt-10 md:px-8 md:pb-10 md:pt-14 lg:px-12 lg:pb-12">
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-9">
-              <h1 className="serif-display max-w-[15ch] text-[clamp(4rem,8.2vw,8.8rem)] leading-[.8] tracking-[-.06em] text-brand-olive">
-                Learn the craft of hat making inside the atelier.
-              </h1>
-            </div>
-            <div className="lg:col-span-3 lg:pb-2">
-              <Link href="#workshop-booking" className="btn-olive w-fit">
-                Book an Experience
-              </Link>
-            </div>
-          </div>
+        <div className="editorial-container px-5 pb-9 pt-9 md:px-8 md:pb-12 md:pt-12 lg:px-12 lg:pb-14 lg:pt-14">
+          <Link href="#workshop-booking" className="btn-olive w-fit">
+            Book an Experience
+          </Link>
 
-          <p className="mt-7 max-w-4xl text-base leading-8 text-brand-olive/80 md:text-lg">
-            Elöre Experiences invite guests into the timeless art of hat-making through private, couples, and group workshops. Guided by hand, each experience offers an intimate introduction to the craft, where tradition, creativity, and storytelling come together.
-          </p>
+          <div className="mt-10 grid gap-7 lg:grid-cols-12 lg:items-end lg:gap-10">
+            <h1 className="serif-display max-w-[13ch] text-[clamp(3.8rem,8.4vw,8.7rem)] leading-[.82] tracking-[-.055em] text-brand-olive lg:col-span-8">
+              Learn the craft of hat making inside the atelier.
+            </h1>
+
+            <p className="max-w-xl text-base leading-8 text-brand-olive/82 md:text-lg lg:col-span-4 lg:pb-2">
+              Elöre Experiences invite guests into the timeless art of hat-making through private, couples, and group workshops. Guided by hand, each experience offers an intimate introduction to the craft, where tradition, creativity, and storytelling come together.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="bg-brand-bone px-5 pb-12 md:px-8 md:pb-16 lg:px-12 lg:pb-20">
-        <div className="editorial-container">
-          <div className="relative aspect-[4/3] overflow-hidden md:aspect-[16/7] lg:aspect-[21/8]">
+      <section className="bg-brand-bone pb-0">
+        <div className="editorial-container px-5 md:px-8 lg:px-12">
+          <div className="relative aspect-[16/8] min-h-[300px] overflow-hidden md:aspect-[16/6.8] lg:aspect-[21/8] lg:min-h-[500px]">
             <Image
               src="/images/experiences/hero.jpg"
               alt="ELÖRE Atelier hat-making experience"
@@ -47,9 +44,9 @@ export default function ExperiencesPage() {
               sizes="100vw"
               className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/64 via-black/5 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6 md:p-10 lg:p-12">
-              <h2 className="serif-display max-w-[16ch] text-4xl leading-[.92] text-white md:text-6xl lg:text-7xl">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/68 via-black/5 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-9 lg:p-12">
+              <h2 className="serif-display max-w-[15ch] text-[clamp(3rem,6vw,6.4rem)] leading-[.88] tracking-[-.04em] text-white">
                 Discover the beauty of hat-making.
               </h2>
             </div>
@@ -57,25 +54,29 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-maroon text-brand-bone">
-        <div className="editorial-container grid gap-10 px-5 py-16 md:px-8 lg:grid-cols-12 lg:px-12 lg:py-24">
-          <div className="lg:col-span-4">
-            <h2 className="serif-display text-5xl leading-[.88] text-brand-bone md:text-7xl">
+      <section className="bg-brand-bone px-5 py-16 text-brand-olive md:px-8 md:py-20 lg:px-12 lg:py-28">
+        <div className="editorial-container grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-5 lg:pt-4">
+            <h2 className="serif-display max-w-[11ch] text-[clamp(3.5rem,6.2vw,6.8rem)] leading-[.86] tracking-[-.045em] text-brand-olive">
               An experience shaped through material, form, and personal direction.
             </h2>
           </div>
 
-          <div className="lg:col-span-8">
-            <div className="divide-y divide-brand-bone/25 border-y border-brand-bone/25">
+          <div className="lg:col-span-7">
+            <h3 className="serif-display text-4xl leading-none text-brand-olive md:text-5xl">
+              What Is Included
+            </h3>
+
+            <div className="mt-7 border-y border-brand-olive/25">
               {included.map((item, index) => (
                 <div
                   key={item}
-                  className={`grid gap-4 py-6 sm:grid-cols-[84px_1fr] sm:items-start md:py-7 ${index % 2 ? "md:ml-12" : ""}`}
+                  className="grid grid-cols-[56px_1fr] gap-4 border-b border-brand-olive/20 py-5 last:border-b-0 md:grid-cols-[80px_1fr] md:gap-6 md:py-6"
                 >
-                  <span className="serif-display text-5xl leading-none text-brand-sand">
+                  <span className="serif-display text-3xl leading-none text-brand-maroon md:text-4xl">
                     0{index + 1}
                   </span>
-                  <p className="max-w-2xl text-base leading-8 text-brand-bone md:text-lg">
+                  <p className="max-w-2xl text-base leading-7 text-brand-olive/82 md:text-lg md:leading-8">
                     {item}
                   </p>
                 </div>
@@ -85,38 +86,23 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-brand-bone text-brand-olive">
-        <div className="editorial-container grid gap-10 px-5 py-16 md:px-8 lg:grid-cols-12 lg:items-center lg:px-12 lg:py-24">
-          <div className="lg:col-span-4">
-            <h2 className="serif-display text-5xl leading-[.9] text-brand-olive md:text-7xl">
-              Private, couples, and group workshops guided by the studio.
-            </h2>
-            <p className="mt-7 max-w-lg text-base leading-8 text-brand-olive/78 md:text-lg">
-              Each workshop is guided from beginning to end and shaped around the selected experience.
-            </p>
-          </div>
-
-          <div className="relative min-h-[380px] md:min-h-[520px] lg:col-span-8 lg:min-h-[620px]">
+      <section className="bg-brand-sand px-5 py-10 md:px-8 md:py-14 lg:px-12 lg:py-16">
+        <div className="editorial-container">
+          <div className="relative aspect-[4/3] min-h-[340px] overflow-hidden md:aspect-[16/8] md:min-h-[500px] lg:aspect-[21/9] lg:min-h-[620px]">
             <Image
               src="/images/experiences/materials.jpg"
               alt="ELÖRE hat-making materials"
               fill
-              sizes="(max-width:1024px) 100vw,66vw"
-              className="object-cover"
+              sizes="100vw"
+              className="object-cover object-center"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-olive text-brand-bone">
-        <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="serif-display text-5xl leading-[.9] text-brand-bone md:text-7xl">
-              Discover the beauty of hat-making.
-            </h2>
-          </div>
-
-          <div className="mx-auto mt-10 max-w-xl md:mt-14">
+      <section className="bg-brand-olive px-5 py-20 md:px-8 md:py-28 lg:px-12 lg:py-36">
+        <div className="editorial-container">
+          <div className="mx-auto w-full max-w-[520px]">
             <ExperienceVideoFrame />
           </div>
         </div>
