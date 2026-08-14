@@ -1,53 +1,32 @@
-# ELÖRE Experience Page UX Redirection 43 Build
+# ELÖRE Atelier 43 Build — Shop Image Ratio + Shopify Collections
 
-This build takes the Experience page in a different direction while respecting the removal notes.
+This build only updates the shop-related files needed to refine the Shopify shopping experience.
 
-## Files Included
+## What changed
 
-- app/experiences/page.tsx
-- components/experiences/experience-video-frame.tsx
-- public/videos/experiences/.gitkeep
+- Product images now display at the Shopify image ratio: 2477 × 1651.
+- Shop cards, related product cards, product detail gallery, cart drawer, cart page, and wishlist product cards now accommodate the wider landscape product image proportion.
+- Shopify collections are now pulled from each Shopify product and displayed as the filter options on the Shop page.
+- Products can appear under every Shopify collection they belong to, while their primary collection still displays as the card/category label.
+- The shopping grid has been refined so product cards have more room for the wider image shape.
 
-## What Changed
+## Files included
 
-- Keeps the three workshop cards removed.
-- Keeps the Experience Snapshot removed.
-- Keeps the pricing box removed.
-- Keeps small titles removed.
-- Keeps the top Book an Experience CTA.
-- Keeps only the approved content:
-  - main headline
-  - intro paragraph
-  - hero image and hero statement
-  - experience statement
-  - What Is Included list
-  - vertical video
-  - materials image
-  - booking form
-- Does not put the video and image side by side.
-- Rebuilds the content into a cleaner UX flow:
-  1. CTA + headline + intro
-  2. large hero image
-  3. experience statement + included details
-  4. video as its own intentional editorial feature
-  5. materials image as a separate wide visual
-  6. booking form
-- Uses a fallback image for the video so the video area does not show as a black box before the MP4 is uploaded.
+- app/shop/[handle]/page.tsx
+- components/shop/shop-grid.tsx
+- components/shop/product-card.tsx
+- components/shop/related-product-card.tsx
+- components/shop/product-gallery.tsx
+- components/cart/cart-drawer.tsx
+- components/cart/cart-page-content.tsx
+- components/wishlist/wishlist-page-content.tsx
+- lib/shopify/storefront.ts
+- lib/shopify/types.ts
 
-## Video Upload
+## Upload
 
-Download the selected vertical workshop video, rename it:
+Upload the contents of this folder to the `restore-july-1` branch in GitHub.
 
-atelier-workshop.mp4
+Suggested commit message:
 
-Upload it here:
-
-public/videos/experiences/atelier-workshop.mp4
-
-## Upload Instructions
-
-1. Unzip this folder.
-2. Open GitHub.
-3. Make sure you are on the restore-july-1 branch.
-4. Upload the contents of this folder.
-5. Commit with: 43 Build UX redirect experience page
+43 Build refine Shopify shop image ratio and collections

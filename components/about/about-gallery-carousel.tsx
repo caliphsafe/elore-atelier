@@ -8,9 +8,19 @@ const galleryImages = [
   "/images/about/about_gallery/5.jpg"
 ];
 
-export function AboutGalleryCarousel() {
+type AboutGalleryCarouselProps = {
+  className?: string;
+  sizes?: string;
+};
+
+export function AboutGalleryCarousel({
+  className = "",
+  sizes = "(max-width: 1024px) 100vw, 48vw"
+}: AboutGalleryCarouselProps) {
   return (
-    <div className="relative min-h-[520px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[680px] lg:sticky lg:top-28">
+    <div
+      className={`relative overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft ${className}`}
+    >
       {galleryImages.map((image, index) => (
         <Image
           key={image}
@@ -18,7 +28,7 @@ export function AboutGalleryCarousel() {
           alt={`Salomé Kopasz and ELÖRE Atelier image ${index + 1}`}
           fill
           priority={index === 0}
-          sizes="(max-width: 1024px) 100vw, 48vw"
+          sizes={sizes}
           className="about-gallery-carousel__image object-cover"
           style={{ animationDelay: `${index * 5}s` }}
         />

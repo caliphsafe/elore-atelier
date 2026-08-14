@@ -23,12 +23,7 @@ const workshopOptions = [
   }
 ];
 
-const timeWindows = [
-  "Morning",
-  "Afternoon",
-  "Evening",
-  "Flexible"
-];
+const timeWindows = ["Morning", "Afternoon", "Evening", "Flexible"];
 
 const inputClass =
   "w-full rounded-[1.1rem] border thin-border bg-white px-4 py-3 text-sm text-brand-ink outline-none transition placeholder:text-brand-ink/35 focus:border-brand-mocha";
@@ -120,7 +115,8 @@ export function WorkshopBookingForm() {
       "",
       "Notes:",
       form.notes || "Not provided"
-    ].join("\n");
+    ].join("
+");
 
     window.location.href = `mailto:contact@elore.design?subject=${encodeURIComponent(
       subject
@@ -128,15 +124,13 @@ export function WorkshopBookingForm() {
   }
 
   return (
-    <section id="workshop-booking" className="px-5 pb-14 pt-4 md:px-8 md:pb-16 lg:px-12">
+    <section id="workshop-booking" className="px-5 pb-16 pt-6 md:px-8 md:pb-20 lg:px-12">
       <div className="editorial-container">
         <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-          <div className="grid gap-6 p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
+          <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
             <div className="flex flex-col justify-between rounded-[1.5rem] bg-[#f7f1ea] p-6 md:p-8">
               <div>
-                <p className="eyebrow">Booking</p>
-
-                <h2 className="serif-display mt-4 max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
+                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
                   Request a workshop date.
                 </h2>
 
@@ -146,22 +140,16 @@ export function WorkshopBookingForm() {
                 </p>
               </div>
 
-              <div className="mt-6 grid gap-4 text-sm leading-7 text-brand-ink/72">
+              <div className="mt-8 grid gap-4 text-sm leading-7 text-brand-ink/72">
                 <div className="rounded-[1.25rem] border thin-border bg-white p-5">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                    Selected Format
-                  </p>
-                  <p className="serif-display mt-3 text-3xl leading-tight text-brand-ink">
+                  <p className="serif-display text-3xl leading-tight text-brand-ink">
                     {selectedWorkshop.label}
                   </p>
                   <p className="mt-2">{selectedWorkshop.detail}</p>
                 </div>
 
                 <div className="rounded-[1.25rem] border thin-border bg-white p-5">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                    Confirmation
-                  </p>
-                  <p className="mt-3">
+                  <p>
                     Your request is sent directly to the atelier. Availability,
                     final pricing, and next steps are confirmed by follow-up.
                   </p>
@@ -304,10 +292,7 @@ export function WorkshopBookingForm() {
 
               {submitted ? (
                 <div className="rounded-[1.25rem] border thin-border bg-white p-5 text-sm leading-7 text-brand-ink/72">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-brand-mocha">
-                    Request Prepared
-                  </p>
-                  <p className="mt-3">
+                  <p>
                     Your email app should open with the workshop request ready to
                     send to contact@elore.design.
                   </p>
