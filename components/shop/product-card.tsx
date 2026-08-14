@@ -6,25 +6,44 @@ import { Product } from "@/lib/shopify/types";
 import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
 import { WishlistButton } from "@/components/wishlist/wishlist-button";
 
-export function ProductCard({ product }: { product: Product; index: number }) {
+export function ProductCard({ product, index }: { product: Product; index: number }) {
   const router = useRouter();
   const unavailable = product.availableForSale === false;
 
   return (
-    <article role="link" tabIndex={0} onClick={() => router.push(`/shop/${product.handle}`)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); router.push(`/shop/${product.handle}`); } }} className="group cursor-pointer" aria-label={`View ${product.title}`}>
-      <div className="relative overflow-hidden bg-[#eee7dc]">
-        <Image src={product.image} alt={product.title} width={2477} height={1651} sizes="(max-width:640px) 100vw,(max-width:1280px) 50vw,25vw" className="aspect-[2477/1651] w-full object-cover transition duration-500 group-hover:scale-[1.025]" />
-        <div className="absolute right-3 top-3 z-20"><WishlistButton handle={product.handle} compact /></div>
-        {unavailable ? <div className="absolute left-3 top-3 z-20 bg-brand-bone px-3 py-2 text-[10px] uppercase tracking-[.2em] text-brand-olive">Unavailable</div> : null}
-        <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block"><AddFeedbackButton product={product} compact /></div>
+    <article
+      role="link"
+      tabIndex={0}
+      onClick={() => router.push(`/shop/${product.handle}`)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          router.push(`/shop/${product.handle}`);
+        }
+      }}
+      className={`shop-product group shop-product--${(index % 3) + 1}`}
+      aria-label={`View ${product.title}`}
+    >
+      <div className="shop-product__media">
+        <Image
+          src={product.image}
+          alt={product.title}
+          width={2477}
+          height={1651}
+          sizes="(max-width:640px) 100vw,(max-width:1280px) 50vw,33vw"
+          className="shop-product__image"
+        />
+        <div className="shop-product__wishlist"><WishlistButton handle={product.handle} compact /></div>
+        {unavailable ? <div className="shop-product__unavailable">Unavailable</div> : null}
+        <div className="shop-product__desktop-action"><AddFeedbackButton product={product} compact /></div>
       </div>
-      <div className="border-b border-brand-olive/20 py-4 sm:py-5">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="serif-display text-2xl leading-tight text-brand-olive sm:text-3xl">{product.title}</h3>
-          <span className="shrink-0 text-sm text-brand-maroon">{product.price}</span>
+      <div className="shop-product__info">
+        <div className="shop-product__line">
+          <h3 className="serif-display">{product.title}</h3>
+          <span>{product.price}</span>
         </div>
-        <p className="mt-3 hidden text-sm leading-7 text-brand-olive/70 sm:block">{product.description}</p>
-        <div className="mt-4 md:hidden"><AddFeedbackButton product={product} compact /></div>
+        <p>{product.description}</p>
+        <div className="shop-product__mobile-action"><AddFeedbackButton product={product} compact /></div>
       </div>
     </article>
   );
