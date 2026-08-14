@@ -19,7 +19,6 @@ type WishlistContextValue = {
 };
 
 const WishlistContext = createContext<WishlistContextValue | null>(null);
-
 const STORAGE_KEY = "elore_wishlist";
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
@@ -35,7 +34,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
         setItems(parsed);
       }
     } catch {
-      //
+      // ignore invalid stored data
     }
   }, []);
 

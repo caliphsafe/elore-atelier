@@ -79,17 +79,14 @@ export function ShopGrid({ products }: ShopGridProps) {
     <>
       <section className="section-pad pt-0">
         <div className="editorial-container rounded-luxe border thin-border bg-white p-4 shadow-soft sm:p-6">
-          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
             <div>
-              <p className="eyebrow">Browse the Collection</p>
-              <div className="mt-3">
-                <input
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search hats..."
-                  className="w-full rounded-full border thin-border bg-white px-5 py-3 text-sm text-brand-ink outline-none transition focus:border-brand-mocha"
-                />
-              </div>
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search hats..."
+                className="w-full rounded-full border thin-border bg-white px-5 py-3 text-sm text-brand-ink outline-none transition focus:border-brand-mocha"
+              />
             </div>
 
             <div className="flex flex-wrap gap-2">

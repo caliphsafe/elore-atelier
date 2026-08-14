@@ -30,8 +30,7 @@ export default function CustomPage() {
       <section className="section-pad pt-12 md:pt-14">
         <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
           <div className="max-w-4xl">
-            <p className="eyebrow">Custom Hat Experience</p>
-            <h1 className="serif-display mt-4 text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
+            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
               A one-of-one hat shaped around your own visual language.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
@@ -75,10 +74,7 @@ export default function CustomPage() {
         <div className="editorial-container overflow-hidden rounded-luxe border thin-border olive-panel shadow-soft">
           <div className="grid gap-8 p-6 md:p-8 lg:grid-cols-[1fr_1fr] lg:p-10">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-white/70">
-                Commission Inquiry
-              </p>
-              <h2 className="serif-display mt-4 text-4xl leading-tight text-white md:text-5xl">
+              <h2 className="serif-display text-4xl leading-tight text-white md:text-5xl">
                 Begin your custom consultation.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-white/80">

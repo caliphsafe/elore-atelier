@@ -10,10 +10,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <FeaturedCollections />
-      <LookbookPreview />
       <AtelierStory />
+      <FeaturedCollections />
       <ExperiencesPreview />
+      <LookbookPreview />
       <HomeCta />
       <CoverageMarquee />
     </>
