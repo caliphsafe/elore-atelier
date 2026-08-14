@@ -4,24 +4,20 @@ import { AboutGalleryCarousel } from "@/components/about/about-gallery-carousel"
 
 const storyCards = [
   {
-    title: "A life shaped by culture",
     description:
       "Born in Cameroon and raised in Paris, Salomé's creative perspective was shaped by a life immersed in culture, fashion, and artistry. As a former model, she experienced the fashion world from within, developing an appreciation for the relationship between clothing, identity, and self-expression. Those early experiences continue to influence her approach to design—one that values both beauty and meaning."
   },
   {
-    title: "A craft discovered by hand",
     description:
-      "For Salomé, hat-making was never simply about creating an accessory, it became a language of craft. After studying Fashion Design in Boston, a hat-making class in New York unexpectedly changed the course of her creative journey. Drawn to the rhythm of shaping felt by hand, she continued her training at Schola Academy in Florence, Italy."
+      "For Salomé, hat-making was never simply about creating an accessory, it became a language of craft. After studying Fashion Design in Boston, a hat-making class in New York unexpectedly changed the course of her creative journey. Drawn to the rhythm of shaping felt by hand, she continued her training at Schola Academy in Florence, Italy, where she immersed herself in the traditions of European design and developed a deep respect for the generations of artisans who came before her. That experience became the foundation of Elöre Atelier."
   },
   {
-    title: "Moving tradition forward",
     description:
-      "Named after the idea of moving forward, Elöre reflects that tradition not only deserves to be preserved but is something to carry into the present with intention. Every hat is thoughtfully shaped by hand using Elöre's signature wooden hat blocks, honoring time-honored techniques while embracing a contemporary perspective."
+      "Named after the idea of \"moving forward,\" Elöre reflects that tradition not only deserves to be preserved but is something to carry into the present with intention. Every hat is thoughtfully shaped by hand using Elöre's signature wooden hat blocks, honoring time-honored techniques while embracing a contemporary perspective."
   },
   {
-    title: "A living tradition",
     description:
-      "Today, her work extends beyond creating hats. Through collections, workshops, and collaborations, Salomé is committed to keeping the art of hat-making alive—inviting others to slow down, appreciate the beauty of handmade objects, and reconnect with the stories woven into every piece."
+      "Today, her work extends beyond creating hats. Through collections, workshops, and collaborations, Salomé is committed to keeping the art of hat-making alive—inviting others to slow down, appreciate the beauty of handmade objects, and reconnect with the stories woven into every piece. Each creation is a quiet reminder that craftsmanship is a living tradition, one that continues to evolve with every hand that shapes it."
   }
 ];
 
@@ -64,9 +60,6 @@ export default function AboutPage() {
               <p>
                 Elöre Atelier was founded by designer <strong className="font-semibold text-brand-olive">Salomé Kopasz</strong>, whose work is rooted in the belief that traditional craftsmanship has the power to preserve stories, connect generations, and move tradition forward.
               </p>
-              <p>
-                Each creation is a quiet reminder that craftsmanship is a living tradition, one that continues to evolve with every hand that shapes it.
-              </p>
             </div>
           </div>
 
@@ -86,16 +79,15 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <h2 className="serif-display text-5xl leading-[0.88] md:text-7xl">
-                A story told in movement, training, and handwork.
+                Meet the designer behind the craft
               </h2>
             </div>
             <div className="grid gap-5 lg:col-span-8">
               {storyCards.map((card, index) => (
-                <article key={card.title} className={`grid gap-5 border-t border-white/24 pt-6 md:grid-cols-[0.35fr_1fr] ${index % 2 ? "md:ml-20" : ""}`}>
+                <article key={index} className={`grid gap-5 border-t border-white/24 pt-6 md:grid-cols-[0.35fr_1fr] ${index % 2 ? "md:ml-20" : ""}`}>
                   <p className="serif-display text-7xl leading-none text-brand-sand/60">0{index + 1}</p>
                   <div>
-                    <h3 className="serif-display text-4xl leading-[0.95] text-white md:text-5xl">{card.title}</h3>
-                    <p className="mt-5 max-w-3xl text-sm leading-7 text-white/75 md:text-base md:leading-8">{card.description}</p>
+                    <p className="max-w-3xl text-base leading-8 text-white/82 md:text-lg md:leading-9">{card.description}</p>
                   </div>
                 </article>
               ))}
@@ -128,6 +120,7 @@ export default function AboutPage() {
                 <div className="mt-5 space-y-4 text-sm leading-7 text-brand-olive/75 md:text-base md:leading-8">
                   <p>Elöre is built on the belief that tradition should never be left behind—it should be carried forward into the next generation.</p>
                   <p>The two dots above the Ö are a quiet symbol of that journey. The first dot represents the craft: the enduring artistry of hat-making, shaped by hand and preserved through generations of makers. The second represents movement: the stories we continue to tell, the evolution of design, and the responsibility to bring heritage into the present.</p>
+                  <p>As artisans, we believe we are storytellers. Every hat carries the knowledge of those who came before us while becoming part of the story of the person who wears it. In a world increasingly driven by automation and fast production, choosing to make by hand is an act of preservation. It is our commitment to keeping the art of hat-making alive and forever evolving.</p>
                   <p>The Ö in Elöre serves as a confident reminder that every step forward begins with honoring the roots of where we came from and how it's carried forward.</p>
                 </div>
               </div>
@@ -136,8 +129,9 @@ export default function AboutPage() {
                 <h3 className="serif-display text-4xl leading-tight text-brand-olive">Our Manifesto</h3>
                 <div className="mt-5 space-y-4 text-sm leading-7 text-brand-olive/75 md:text-base md:leading-8">
                   <p>We believe the finest things cannot be rushed. At Elöre Atelier, every hat begins with a story. We embrace a slower rhythm of making—one that values skilled hands, intentional design, and the discipline of craftsmanship over speed and mass production.</p>
-                  <p>Rooted in Boston and inspired by a global tradition of hat-making, our atelier exists to preserve a craft that has shaped generations of makers.</p>
+                  <p>Rooted in Boston and inspired by a global tradition of hat-making, our atelier exists to preserve a craft that has shaped generations of makers. We work with natural materials sourced from trusted artisans around the world, transforming them by hand into pieces that honor their origins while embracing a contemporary perspective.</p>
                   <p>Sustainability is not a trend—it is a responsibility. By crafting each hat made to order, reducing unnecessary waste, and choosing recycled, plastic-free packaging, we create with care for both the object and the world it enters.</p>
+                  <p>Elöre is a place where heritage is practiced, stories are shared, and craftsmanship continues to evolve. Every piece we create is a celebration of slow making, cultural exchange, and the belief that the traditions worth preserving are the ones we continue to live.</p>
                 </div>
               </div>
             </div>
@@ -153,9 +147,9 @@ export default function AboutPage() {
         <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-4">
-              <h2 className="serif-display text-5xl leading-[0.88] text-brand-olive md:text-7xl">Materials, place, and purpose.</h2>
+              <h2 className="serif-display text-5xl leading-[0.88] text-brand-olive md:text-7xl">Natural Material. Crafted in Boston. Packaged with Purpose.</h2>
             </div>
-            <p className="max-w-xl text-base leading-8 text-brand-olive/78 lg:col-span-5 lg:col-start-8">A slower practice extends beyond the finished hat into the materials selected, the place each piece is made, and the way it enters the world.</p>
+
           </div>
 
           <div className="mt-14 space-y-16 md:space-y-24">

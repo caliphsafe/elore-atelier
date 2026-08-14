@@ -15,7 +15,7 @@ export function Hero() {
         <div className="grid items-end gap-8 lg:grid-cols-[1fr_.45fr]">
           <div>
             <h1 className="serif-display max-w-[8ch] text-[clamp(5rem,12vw,12rem)] leading-[.7] tracking-[-.07em] text-brand-bone">
-              Shaped<br /><em className="font-normal text-brand-sand">with soul.</em>
+              Crafted for presence,<br /><em className="font-normal text-brand-sand">shaped with intention</em>
             </h1>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link href="/shop" className="btn-light">Shop the Collection</Link>
@@ -23,7 +23,7 @@ export function Hero() {
             </div>
           </div>
           <div className="hidden border-l border-brand-bone/30 pl-6 lg:block">
-            <p className="serif-display text-3xl leading-tight text-brand-bone">Craft is carried forward by the hands that reshape it.</p>
+            <p className="serif-display text-3xl leading-tight text-brand-bone">Elöre Atelier is a Boston-based atelier dedicated to preserving the craft of hat-making. Through thoughtful design, natural materials, and storytelling, each piece reflects a commitment to craftsmanship.</p>
           </div>
         </div>
       </div>
