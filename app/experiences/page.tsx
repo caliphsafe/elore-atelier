@@ -16,14 +16,27 @@ export default function ExperiencesPage() {
     <main className="experience-page">
       <section className="experience-opening">
         <div className="editorial-container experience-opening__inner">
-          <div className="experience-opening__title">
-            <h1 className="serif-display">Learn the craft of hat making inside the atelier.</h1>
+          <div className="experience-opening__content">
+            <div className="experience-opening__title">
+              <h1 className="serif-display">Learn the craft of hat making inside the atelier.</h1>
+            </div>
+            <div className="experience-opening__copy">
+              <p>
+                Elöre Experiences invite guests into the timeless art of hat-making through private, couples, and group workshops. Guided by hand, each experience offers an intimate introduction to the craft, where tradition, creativity, and storytelling come together.
+              </p>
+              <Link href="#workshop-booking" className="btn-olive">Book an Experience</Link>
+            </div>
           </div>
-          <div className="experience-opening__copy">
-            <p>
-              Elöre Experiences invite guests into the timeless art of hat-making through private, couples, and group workshops. Guided by hand, each experience offers an intimate introduction to the craft, where tradition, creativity, and storytelling come together.
-            </p>
-            <Link href="#workshop-booking" className="btn-olive">Book an Experience</Link>
+
+          <div className="experience-opening__image">
+            <Image
+              src="/images/experiences/hero.jpg"
+              alt="ELÖRE hats prepared for an atelier experience"
+              fill
+              priority
+              sizes="(max-width: 900px) 92vw, 48vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>

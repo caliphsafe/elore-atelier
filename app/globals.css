@@ -906,7 +906,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   inset: 0;
   z-index: -2;
   background: url("/images/custom/hero.jpg") center 42% / cover no-repeat;
-  opacity: .45;
+  opacity: .60;
 }
 
 .custom-opening::after {
@@ -1719,7 +1719,7 @@ a[class*="rounded-full"] {
 
 @media (max-width: 760px) {
   .custom-opening::before {
-    opacity: .45;
+    opacity: .60;
     background-position: 58% center;
   }
   .custom-opening::after {
@@ -1737,5 +1737,168 @@ a[class*="rounded-full"] {
   }
   .custom-process__list {
     order: 3;
+  }
+}
+
+
+/* =========================================================
+   ELÖRE V11 — CUSTOM + EXPERIENCES HERO FAMILY
+   ========================================================= */
+
+.custom-opening::before {
+  opacity: .60;
+}
+
+/* Experiences: background image + foreground image, no round masks. */
+.experience-opening {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: auto;
+  display: block;
+  background: var(--elore-v7-bone);
+  color: var(--elore-v7-olive-deep);
+}
+
+.experience-opening::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/images/experiences/hero.jpg") center 48% / cover no-repeat;
+  opacity: .60;
+}
+
+.experience-opening::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(244,237,226,.94) 0%,
+      rgba(244,237,226,.78) 38%,
+      rgba(244,237,226,.42) 63%,
+      rgba(244,237,226,.54) 100%);
+}
+
+.experience-opening__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0,.84fr) minmax(0,1.16fr);
+  gap: clamp(2.5rem,5vw,6rem);
+  align-items: center;
+  min-height: clamp(660px, 80svh, 900px);
+  padding: clamp(4rem,7vw,7rem) 3rem clamp(6rem,9vw,9rem);
+}
+
+.experience-opening__content {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-opening__title h1 {
+  max-width: 8.5ch;
+  margin: 0;
+  color: var(--elore-v7-olive-deep);
+  font-size: clamp(4.5rem,7vw,8.2rem);
+  line-height: .79;
+  letter-spacing: -.055em;
+}
+
+.experience-opening__copy {
+  max-width: 38rem;
+  margin-top: 1.8rem;
+}
+
+.experience-opening__copy p {
+  margin: 0;
+  color: rgba(56,64,42,.88);
+  font-size: 1.04rem;
+  line-height: 1.78;
+}
+
+.experience-opening__copy .btn-olive {
+  margin-top: 1.7rem;
+}
+
+.experience-opening__image {
+  position: relative;
+  width: min(100%, 760px);
+  min-height: clamp(380px, 40vw, 560px);
+  justify-self: end;
+  overflow: hidden;
+  clip-path: polygon(5% 0, 100% 3%, 96% 94%, 12% 100%, 0 84%, 2% 12%);
+  box-shadow: 22px 28px 0 rgba(74,51,43,.16);
+}
+
+.experience-opening__image img {
+  object-position: center 48%;
+}
+
+/* Keep the existing statement hovering over the hero transition. */
+.experience-story {
+  position: relative;
+  z-index: 2;
+}
+
+.experience-story__statement {
+  position: relative;
+  z-index: 4;
+  margin-top: clamp(-5.5rem, -6vw, -3.5rem);
+}
+
+@media (max-width: 900px) {
+  .experience-opening__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .experience-opening__content {
+    max-width: 46rem;
+  }
+
+  .experience-opening__image {
+    width: min(100%, 760px);
+    min-height: clamp(330px, 58vw, 500px);
+    justify-self: center;
+  }
+
+  .experience-opening::after {
+    background:
+      linear-gradient(180deg,
+        rgba(244,237,226,.92) 0%,
+        rgba(244,237,226,.75) 46%,
+        rgba(244,237,226,.40) 100%);
+  }
+}
+
+@media (max-width: 600px) {
+  .custom-opening::before,
+  .experience-opening::before {
+    opacity: .60;
+  }
+
+  .experience-opening__inner {
+    padding: 3.2rem 1rem 5rem;
+    gap: 2rem;
+  }
+
+  .experience-opening__title h1 {
+    font-size: clamp(3.7rem, 16vw, 5.7rem);
+    line-height: .82;
+  }
+
+  .experience-opening__image {
+    min-height: 300px;
+    clip-path: polygon(4% 0, 100% 2%, 96% 95%, 8% 100%, 0 86%, 1% 10%);
+    box-shadow: 12px 16px 0 rgba(74,51,43,.14);
+  }
+
+  .experience-story__statement {
+    margin-top: -2.5rem;
   }
 }
