@@ -1902,3 +1902,78 @@ a[class*="rounded-full"] {
     margin-top: -2.5rem;
   }
 }
+
+
+/* =========================================================
+   ELÖRE V12 — EXPERIENCES HERO CORRECTION
+   Keep olive hero, fade image into olive, restore overlap.
+   ========================================================= */
+.experience-opening {
+  background: var(--elore-v7-olive-deep);
+  color: var(--elore-v7-bone);
+}
+
+.experience-opening::before {
+  background: url("/images/experiences/hero.jpg") center 48% / cover no-repeat;
+  opacity: .60;
+  mix-blend-mode: luminosity;
+}
+
+.experience-opening::after {
+  background:
+    linear-gradient(90deg,
+      rgba(56,64,42,.93) 0%,
+      rgba(56,64,42,.82) 38%,
+      rgba(56,64,42,.52) 66%,
+      rgba(56,64,42,.72) 100%);
+}
+
+.experience-opening__title h1,
+.experience-opening__copy p {
+  color: var(--elore-v7-bone);
+}
+
+.experience-opening__copy p {
+  color: rgba(244,237,226,.9);
+}
+
+.experience-opening__image {
+  box-shadow: 22px 28px 0 rgba(216,203,184,.16);
+}
+
+.experience-story {
+  margin-top: 0;
+}
+
+.experience-story__inner {
+  position: relative;
+}
+
+.experience-story__statement {
+  position: relative;
+  z-index: 5;
+  width: min(92%, 760px);
+  margin: clamp(-5.5rem, -6vw, -3.5rem) auto 0;
+}
+
+@media (max-width: 900px) {
+  .experience-opening::after {
+    background:
+      linear-gradient(180deg,
+        rgba(56,64,42,.92) 0%,
+        rgba(56,64,42,.78) 48%,
+        rgba(56,64,42,.54) 100%);
+  }
+
+  .experience-story__statement {
+    width: min(94%, 680px);
+    margin-top: -3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-story__statement {
+    width: calc(100% - 2rem);
+    margin-top: -2rem;
+  }
+}
