@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ExperienceVideoFrame } from "@/components/experiences/experience-video-frame";
 import { WorkshopBookingForm } from "@/components/experiences/workshop-booking-form";
 
 const included = [
@@ -27,17 +26,6 @@ export default function ExperiencesPage() {
             <Link href="#workshop-booking" className="btn-olive">Book an Experience</Link>
           </div>
         </div>
-      </section>
-
-      <section className="experience-hero" aria-label="ELÖRE Atelier experience">
-        <Image
-          src="/images/experiences/hero.jpg"
-          alt="ELÖRE Atelier hats prepared for a hat-making experience"
-          fill
-          priority
-          sizes="100vw"
-          className="experience-hero__image"
-        />
       </section>
 
       <section className="experience-story">
@@ -69,12 +57,6 @@ export default function ExperiencesPage() {
             sizes="100vw"
             className="experience-materials__image"
           />
-        </div>
-      </section>
-
-      <section className="experience-film" aria-label="ELÖRE Atelier film">
-        <div className="experience-film__stage">
-          <ExperienceVideoFrame />
         </div>
       </section>
 

@@ -12,7 +12,6 @@ export default async function ShopPage() {
             <h1 className="serif-display">All Handcrafted Hats</h1>
             <p>Explore Elöre pieces shaped through natural materials, intentional design, and the art of modern millinery.</p>
           </div>
-          <div className="shop-opening__count serif-display" aria-label={`${products.length} products`}>{products.length}</div>
         </div>
       </section>
       <ShopGrid products={products} />

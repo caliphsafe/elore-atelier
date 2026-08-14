@@ -144,30 +144,16 @@ export default function AboutPage() {
       </section>
 
       <section className="surface-sand overflow-hidden">
-        <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-4">
-              <h2 className="serif-display text-5xl leading-[0.88] text-brand-olive md:text-7xl">Natural Material. Crafted in Boston. Packaged with Purpose.</h2>
-            </div>
-
-          </div>
-
-          <div className="mt-14 space-y-16 md:space-y-24">
-            {principles.map((principle, index) => (
-              <article key={principle.title} className="grid gap-7 border-t border-brand-olive/25 pt-7 lg:grid-cols-12 lg:items-center">
-                <div className={`relative min-h-[340px] overflow-hidden md:min-h-[500px] lg:col-span-7 ${index % 2 ? "lg:order-2 lg:col-start-6" : ""}`}>
-                  <Image
-                    src={principle.image}
-                    alt={principle.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                    className="object-cover"
-                  />
+        <div className="editorial-container px-5 py-12 md:px-8 lg:px-12 lg:py-16">
+          <div className="about-principles-grid">
+            {principles.map((principle) => (
+              <article key={principle.title} className="about-principle-card">
+                <div className="about-principle-card__image">
+                  <Image src={principle.image} alt={principle.alt} fill sizes="(max-width: 767px) 100vw, 33vw" className="object-cover" />
                 </div>
-                <div className={`lg:col-span-4 ${index % 2 ? "lg:order-1" : "lg:col-start-9"}`}>
-                  <p className="serif-display text-7xl leading-none text-brand-maroon/28">0{index + 1}</p>
-                  <h3 className="serif-display mt-2 text-4xl leading-tight text-brand-olive md:text-5xl">{principle.title}</h3>
-                  <p className="mt-5 text-sm leading-7 text-brand-olive/78 md:text-base md:leading-8">{principle.description}</p>
+                <div className="about-principle-card__copy">
+                  <h3 className="serif-display text-4xl leading-tight text-brand-olive">{principle.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-brand-olive/78 md:text-base">{principle.description}</p>
                 </div>
               </article>
             ))}
@@ -186,8 +172,8 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/shop" className="elore-btn bg-brand-olive text-white">Shop the Collection</Link>
-              <Link href="/custom" className="elore-btn border border-brand-olive text-brand-olive">Begin a Custom Hat</Link>
-              <Link href="/studio" className="elore-btn border border-brand-olive text-brand-olive">Enter the Atelier</Link>
+              <Link href="/custom" className="elore-btn border border-white bg-white text-brand-olive">Begin a Custom Hat</Link>
+              <Link href="/studio" className="elore-btn border border-white bg-white text-brand-olive">Enter the Atelier</Link>
             </div>
           </div>
         </div>

@@ -64,10 +64,10 @@ const timelessMaterials = [
 export default function StudioPage() {
   return (
     <>
-      <section className="px-5 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12">
+      <section className="atelier-color-band px-5 pb-8 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12">
         <div className="editorial-container">
           <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-stretch">
-            <div className="flex flex-col justify-between rounded-luxe border thin-border bg-white/78 p-6 shadow-soft backdrop-blur md:p-8 lg:p-10">
+            <div className="atelier-color-panel flex flex-col justify-between rounded-luxe border thin-border p-6 shadow-soft md:p-8 lg:p-10">
               <div>
                 <h1 className="serif-display max-w-4xl text-5xl leading-[0.92] tracking-hero text-brand-ink sm:text-6xl md:text-7xl lg:text-[5.15rem]">
                   A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
@@ -102,9 +102,9 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
+      <section className="bg-brand-bone px-5 py-8 md:px-8 md:py-10 lg:px-12">
         <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
+          <div className="overflow-hidden rounded-luxe border thin-border bg-brand-sand/45 shadow-soft">
             <div className="grid gap-7 p-6 md:p-8 lg:p-10">
               <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
                 <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">

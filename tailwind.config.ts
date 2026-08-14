@@ -11,11 +11,11 @@ const config: Config = {
         brand: {
           ink: "#344200",
           mocha: "#563D39",
-          sand: "#D3BA9D",
+          sand: "#D8CBB8",
           olive: "#344200",
           black: "#344200",
           white: "#FFFFFF",
-          maroon: "#6F3035",
+          maroon: "#344200",
           clay: "#A4664E",
           bone: "#F6F0E5"
         }
