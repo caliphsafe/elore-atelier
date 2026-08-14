@@ -1977,3 +1977,343 @@ a[class*="rounded-full"] {
     margin-top: -2rem;
   }
 }
+
+/* =========================================================
+   ELÖRE V13 — EXPERIENCES / ABOUT / CONTACT REFINEMENT
+   ========================================================= */
+
+/* EXPERIENCES — make the statement physically overlap the hero. */
+.experience-opening {
+  position: relative;
+  z-index: 1;
+}
+
+.experience-story {
+  position: relative;
+  z-index: 20;
+  margin-top: clamp(-7rem, -8vw, -4.5rem) !important;
+  pointer-events: none;
+}
+
+.experience-story__inner {
+  position: relative;
+  z-index: 21;
+  pointer-events: auto;
+}
+
+.experience-story__statement {
+  position: relative;
+  z-index: 30;
+  margin-top: 0 !important;
+  transform: translateZ(0);
+  box-shadow: 0 28px 70px rgba(28, 35, 20, .22);
+}
+
+.experience-story__included {
+  pointer-events: auto;
+}
+
+/* ABOUT — retain three columns but break the rigid card rhythm. */
+.about-principles-grid {
+  align-items: start;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.about-principle-card {
+  position: relative;
+  background: rgba(251, 248, 241, .58);
+  border: 0;
+  overflow: visible;
+}
+
+.about-principle-card::before {
+  content: "";
+  position: absolute;
+  inset: 14px -10px -12px 12px;
+  z-index: -1;
+  background: rgba(74, 51, 43, .10);
+}
+
+.about-principle-card:nth-child(1) {
+  transform: translateY(1.75rem) rotate(-.4deg);
+}
+
+.about-principle-card:nth-child(2) {
+  transform: translateY(-.75rem) rotate(.25deg);
+}
+
+.about-principle-card:nth-child(3) {
+  transform: translateY(2.75rem) rotate(-.2deg);
+}
+
+.about-principle-card__image {
+  min-height: 0;
+  aspect-ratio: 1.18 / .82;
+  clip-path: polygon(0 0, 100% 2%, 98% 96%, 3% 100%);
+}
+
+.about-principle-card:nth-child(2) .about-principle-card__image {
+  aspect-ratio: 1.12 / .76;
+  clip-path: polygon(2% 0, 100% 0, 97% 100%, 0 96%);
+}
+
+.about-principle-card:nth-child(3) .about-principle-card__image {
+  aspect-ratio: 1.2 / .84;
+  clip-path: polygon(0 3%, 97% 0, 100% 95%, 4% 100%);
+}
+
+.about-principle-card__copy {
+  padding: 1.6rem 1.35rem 2rem;
+}
+
+.about-principle-card__copy h3 {
+  font-size: clamp(2.25rem, 3vw, 3.35rem) !important;
+  line-height: .95 !important;
+}
+
+/* CONTACT — editorial olive / espresso / sand treatment. */
+.contact-page {
+  background: var(--elore-v7-bone);
+  color: var(--elore-v7-olive-deep);
+}
+
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--elore-v7-olive-deep);
+  color: var(--elore-v7-bone);
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  right: -10vw;
+  bottom: -34%;
+  width: 42vw;
+  aspect-ratio: 1;
+  background: var(--elore-v7-sand);
+  transform: rotate(13deg);
+  opacity: .92;
+}
+
+.contact-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: center;
+  min-height: clamp(580px, 72svh, 760px);
+  padding: clamp(4.5rem, 8vw, 8rem) 3rem;
+}
+
+.contact-hero__copy h1 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--elore-v7-bone);
+  font-size: clamp(4.8rem, 7.3vw, 8.5rem);
+  line-height: .79;
+  letter-spacing: -.055em;
+}
+
+.contact-hero__copy p {
+  max-width: 36rem;
+  margin: 1.8rem 0 0;
+  color: rgba(244,237,226,.88);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.contact-hero__image {
+  position: relative;
+  min-height: clamp(390px, 42vw, 590px);
+  overflow: hidden;
+  clip-path: polygon(3% 0, 100% 3%, 96% 96%, 9% 100%, 0 87%);
+  box-shadow: 24px 30px 0 rgba(74,51,43,.34);
+}
+
+.contact-content {
+  background: var(--elore-v7-sand);
+}
+
+.contact-content__inner {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  padding: clamp(4rem, 7vw, 7rem) 3rem;
+}
+
+.contact-details {
+  display: grid;
+  align-content: start;
+  gap: 0;
+}
+
+.contact-detail {
+  padding: 1.6rem 0 2rem;
+  border-top: 1px solid rgba(56,64,42,.34);
+}
+
+.contact-detail--offset {
+  padding-left: clamp(1rem, 4vw, 4rem);
+}
+
+.contact-detail h2 {
+  margin: 0;
+  color: var(--elore-v7-olive-deep);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: .9;
+}
+
+.contact-detail p,
+.contact-detail a {
+  display: inline-block;
+  margin: .9rem 0 0;
+  color: rgba(56,64,42,.82);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.contact-detail a:hover {
+  color: var(--elore-v7-maroon);
+}
+
+.contact-form-panel {
+  position: relative;
+  overflow: visible;
+  background: var(--elore-v7-bone);
+  box-shadow: 22px 26px 0 rgba(74,51,43,.14);
+}
+
+.contact-form-panel__accent {
+  position: absolute;
+  top: -18px;
+  right: 24px;
+  width: 42%;
+  height: 18px;
+  background: var(--elore-v7-maroon);
+}
+
+.contact-form-panel__form {
+  display: grid;
+  gap: 0;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.contact-field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(56,64,42,.34);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.1rem .15rem;
+  color: var(--elore-v7-olive-deep);
+  font: inherit;
+  outline: none;
+}
+
+.contact-field::placeholder {
+  color: rgba(56,64,42,.58);
+}
+
+.contact-field:focus {
+  border-color: var(--elore-v7-maroon);
+}
+
+.contact-field--textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contact-submit {
+  justify-self: start;
+  margin-top: 1.75rem;
+  border: 1px solid var(--elore-v7-olive-deep);
+  border-radius: 0;
+  background: var(--elore-v7-olive-deep);
+  padding: .95rem 1.5rem;
+  color: var(--elore-v7-bone);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.contact-submit:hover,
+.contact-submit:focus-visible {
+  border-color: var(--elore-v7-maroon);
+  background: var(--elore-v7-maroon);
+  color: var(--elore-v7-bone);
+}
+
+@media (max-width: 900px) {
+  .experience-story {
+    margin-top: -4.5rem !important;
+  }
+
+  .about-principle-card:nth-child(1),
+  .about-principle-card:nth-child(2),
+  .about-principle-card:nth-child(3) {
+    transform: none;
+  }
+
+  .contact-hero__inner,
+  .contact-content__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero__inner {
+    min-height: auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .contact-hero__image {
+    min-height: 420px;
+  }
+
+  .contact-content__inner {
+    padding: 4rem 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .experience-story {
+    margin-top: -3.25rem !important;
+  }
+
+  .about-principles-grid {
+    gap: 1.5rem;
+  }
+
+  .about-principle-card::before {
+    inset: 10px -5px -8px 8px;
+  }
+
+  .about-principle-card__image,
+  .about-principle-card:nth-child(2) .about-principle-card__image,
+  .about-principle-card:nth-child(3) .about-principle-card__image {
+    aspect-ratio: 1.25 / .82;
+  }
+
+  .contact-hero__inner,
+  .contact-content__inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-hero__copy h1 {
+    font-size: clamp(3.8rem, 16vw, 5.8rem);
+  }
+
+  .contact-hero__image {
+    min-height: 320px;
+  }
+
+  .contact-detail--offset {
+    padding-left: 1.25rem;
+  }
+
+  .contact-form-panel {
+    box-shadow: 12px 14px 0 rgba(74,51,43,.12);
+  }
+}

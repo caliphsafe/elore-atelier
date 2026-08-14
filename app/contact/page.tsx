@@ -2,78 +2,61 @@ import Image from "next/image";
 
 export default function ContactPage() {
   return (
-    <>
-      <section className="section-pad pt-12 md:pt-14">
-        <div className="editorial-container">
-          <div className="max-w-4xl">
-            <h1 className="serif-display text-5xl leading-[0.95] tracking-hero text-brand-ink md:text-7xl">
-              Begin a conversation with the atelier.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-brand-ink/72 md:text-lg">
-              For custom designs, workshops, collaborations, or general
-              questions, contact Elöre Atelier directly.
+    <main className="contact-page">
+      <section className="contact-hero">
+        <div className="editorial-container contact-hero__inner">
+          <div className="contact-hero__copy">
+            <h1 className="serif-display">Begin a conversation with the atelier.</h1>
+            <p>
+              For custom designs, workshops, collaborations, or general questions,
+              contact Elöre Atelier directly.
             </p>
           </div>
+
+          <div className="contact-hero__image">
+            <Image
+              src="/images/contact/studio.jpg"
+              alt="ELÖRE Atelier studio in Downtown Boston"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 48vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="section-pad pt-6">
-        <div className="editorial-container grid gap-8 lg:grid-cols-[1fr_1fr]">
-          <div className="rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8">
-            <div className="grid gap-6 text-sm leading-7 text-brand-ink/72 md:text-base">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Address
-                </p>
-                <p className="mt-2">One Avenue De Lafayette, Boston MA 02111</p>
-              </div>
-
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Phone
-                </p>
-                <p className="mt-2">(781) 985-8868</p>
-              </div>
-
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.26em] text-brand-mocha">
-                  Email
-                </p>
-                <p className="mt-2">contact@elore.design</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft">
-            <div className="relative min-h-[240px] overflow-hidden">
-              <Image
-                src="/images/contact/studio.jpg"
-                alt="ELÖRE Atelier studio in Downtown Boston"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+      <section className="contact-content">
+        <div className="editorial-container contact-content__inner">
+          <aside className="contact-details">
+            <div className="contact-detail">
+              <h2 className="serif-display">Address</h2>
+              <p>One Avenue De Lafayette, Boston MA 02111</p>
             </div>
 
-            <div className="p-6 md:p-8">
-              <div className="grid gap-4">
-                <input placeholder="Full Name" className="rounded-xl border thin-border bg-white px-4 py-3 outline-none" />
-                <input placeholder="Email Address" className="rounded-xl border thin-border bg-white px-4 py-3 outline-none" />
-                <input placeholder="Subject" className="rounded-xl border thin-border bg-white px-4 py-3 outline-none" />
-                <textarea
-                  placeholder="Tell us more..."
-                  rows={5}
-                  className="rounded-xl border thin-border bg-white px-4 py-3 outline-none"
-                />
+            <div className="contact-detail contact-detail--offset">
+              <h2 className="serif-display">Phone</h2>
+              <a href="tel:+17819858868">(781) 985-8868</a>
+            </div>
 
-                <button className="mt-2 rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-white transition hover:bg-brand-mocha">
-                  Send Inquiry
-                </button>
-              </div>
+            <div className="contact-detail">
+              <h2 className="serif-display">Email</h2>
+              <a href="mailto:contact@elore.design">contact@elore.design</a>
+            </div>
+          </aside>
+
+          <div className="contact-form-panel">
+            <div className="contact-form-panel__accent" aria-hidden="true" />
+            <div className="contact-form-panel__form">
+              <input placeholder="Full Name" className="contact-field" />
+              <input placeholder="Email Address" className="contact-field" />
+              <input placeholder="Subject" className="contact-field" />
+              <textarea placeholder="Tell us more..." rows={6} className="contact-field contact-field--textarea" />
+              <button className="contact-submit">Send Inquiry</button>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
