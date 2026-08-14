@@ -335,13 +335,7 @@ body { background: var(--elore-bone); }
 .elore-btn--light { background:var(--elore-bone); color:var(--elore-ink); }
 .elore-btn--ghost-light { border-color:rgba(255,255,255,.7); color:#fff; }
 
-/* Existing sections become a paced editorial sequence rather than identical cards. */
-main > section:nth-of-type(2) { background: var(--elore-olive); color: var(--elore-bone); }
-main > section:nth-of-type(2) .text-brand-ink,
-main > section:nth-of-type(2) .muted-copy { color: var(--elore-bone) !important; }
-main > section:nth-of-type(3) { background: var(--elore-ivory); }
-main > section:nth-of-type(4) { background: var(--elore-sand); }
-main > section:nth-of-type(5) { background: var(--elore-ivory); }
+/* V3: section colors are explicit per component; no positional nth-of-type overrides. */
 
 /* Product and editorial images stay exactly sourced from the current project;
    presentation becomes more tactile and fashion-led. */
@@ -416,3 +410,62 @@ body{color:var(--elore-olive);}
 @media(max-width:768px){
   .elore-collage::before{inset:6% -2% -3% 5%;}
 }
+
+
+/* =========================================================
+   ELÖRE V3 — EXPLICIT CONTRAST SYSTEM
+   Section color owns foreground. No positional inheritance.
+   ========================================================= */
+.surface-bone{background:#F6F0E5;color:#344200}
+.surface-ivory{background:#FBF8F1;color:#344200}
+.surface-sand{background:#D3BA9D;color:#344200}
+.surface-olive{background:#344200;color:#F6F0E5}
+.surface-maroon{background:#6F3035;color:#F6F0E5}
+.surface-bone :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)),
+.surface-ivory :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)),
+.surface-sand :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)){color:inherit}
+.surface-olive :where(h1,h2,h3,h4,h5,h6,p,li,label),
+.surface-maroon :where(h1,h2,h3,h4,h5,h6,p,li,label){color:inherit}
+
+/* Intentionally colored editorial accents override surface inheritance. */
+.surface-bone .text-brand-maroon,.surface-ivory .text-brand-maroon,.surface-sand .text-brand-maroon{color:#6F3035!important}
+.surface-bone .text-brand-olive,.surface-ivory .text-brand-olive,.surface-sand .text-brand-olive{color:#344200!important}
+.surface-olive .text-brand-sand,.surface-maroon .text-brand-sand{color:#D3BA9D!important}
+.surface-olive .text-brand-bone,.surface-maroon .text-brand-bone,.surface-olive .text-white,.surface-maroon .text-white{color:#F6F0E5!important}
+.surface-olive .text-brand-bone\/80,.surface-maroon .text-brand-bone\/80{color:rgba(246,240,229,.82)!important}
+.surface-olive .text-brand-bone\/75,.surface-maroon .text-brand-bone\/75{color:rgba(246,240,229,.76)!important}
+
+.eyebrow-olive{font-size:10px;text-transform:uppercase;letter-spacing:.34em;color:#344200}
+.eyebrow-light{font-size:10px;text-transform:uppercase;letter-spacing:.34em;color:#D3BA9D}
+
+.btn-olive,.btn-light,.btn-outline-olive,.btn-outline-light,.filter-active,.filter-idle{
+ display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:.72rem 1.25rem;
+ font-size:10px;text-transform:uppercase;letter-spacing:.22em;transition:background-color .25s ease,color .25s ease,border-color .25s ease;
+ border:1px solid transparent;text-decoration:none
+}
+.btn-olive,.filter-active{background:#344200!important;color:#F6F0E5!important;border-color:#344200!important}
+.btn-olive:hover,.filter-active:hover{background:#6F3035!important;color:#F6F0E5!important;border-color:#6F3035!important}
+.btn-light{background:#F6F0E5!important;color:#344200!important;border-color:#F6F0E5!important}
+.btn-light:hover{background:#D3BA9D!important;color:#344200!important;border-color:#D3BA9D!important}
+.btn-outline-olive,.filter-idle{background:transparent!important;color:#344200!important;border-color:#344200!important}
+.btn-outline-olive:hover,.filter-idle:hover{background:#344200!important;color:#F6F0E5!important}
+.btn-outline-light{background:transparent!important;color:#F6F0E5!important;border-color:rgba(246,240,229,.82)!important}
+.btn-outline-light:hover{background:#F6F0E5!important;color:#344200!important;border-color:#F6F0E5!important}
+
+/* Legacy buttons receive safe foregrounds even outside V3 components. */
+a.bg-brand-olive,button.bg-brand-olive,a.bg-brand-ink,button.bg-brand-ink,a.bg-brand-maroon,button.bg-brand-maroon{color:#F6F0E5!important}
+a.bg-white,button.bg-white,a.bg-brand-bone,button.bg-brand-bone{color:#344200!important}
+.bg-brand-sand a.bg-brand-olive,.bg-brand-sand button.bg-brand-olive{color:#F6F0E5!important}
+
+/* Forms: never allow inherited light text on light controls. */
+input,select,textarea{color:#344200!important;background:#FBF8F1!important;border-color:rgba(52,66,0,.34)!important}
+input::placeholder,textarea::placeholder{color:rgba(52,66,0,.48)!important}
+.contrast-input{background:transparent!important;color:#344200!important}
+
+/* Accessibility / interaction */
+:focus-visible{outline:2px solid #D3BA9D;outline-offset:3px}
+.surface-sand :focus-visible,.surface-bone :focus-visible,.surface-ivory :focus-visible{outline-color:#6F3035}
+button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
+
+/* V3 prefers disciplined editorial rectangles over decorative masks. */
+.v3-image{border-radius:0!important;clip-path:none!important}

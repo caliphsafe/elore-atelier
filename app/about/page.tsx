@@ -155,23 +155,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-brand-olive text-white">
+      <section className="surface-sand overflow-hidden">
         <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
-          <div className="grid gap-7 md:grid-cols-3">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-4">
+              <p className="eyebrow-olive">How the atelier chooses to make</p>
+              <h2 className="serif-display mt-5 text-5xl leading-[0.88] text-brand-olive md:text-7xl">Materials, place, and purpose.</h2>
+            </div>
+            <p className="max-w-xl text-base leading-8 text-brand-olive/78 lg:col-span-5 lg:col-start-8">A slower practice extends beyond the finished hat into the materials selected, the place each piece is made, and the way it enters the world.</p>
+          </div>
+
+          <div className="mt-14 space-y-16 md:space-y-24">
             {principles.map((principle, index) => (
-              <article key={principle.title} className={`${index === 1 ? "md:translate-y-14" : ""}`}>
-                <div className="organic-frame relative min-h-[290px] overflow-hidden bg-brand-sand md:min-h-[390px]">
+              <article key={principle.title} className="grid gap-7 border-t border-brand-olive/25 pt-7 lg:grid-cols-12 lg:items-center">
+                <div className={`relative min-h-[340px] overflow-hidden md:min-h-[500px] lg:col-span-7 ${index % 2 ? "lg:order-2 lg:col-start-6" : ""}`}>
                   <Image
                     src={principle.image}
                     alt={principle.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
                     className="object-cover"
                   />
                 </div>
-                <div className="mt-6 border-t border-white/25 pt-5">
-                  <h3 className="serif-display text-4xl leading-tight text-white md:text-5xl">{principle.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/75 md:text-base">{principle.description}</p>
+                <div className={`lg:col-span-4 ${index % 2 ? "lg:order-1" : "lg:col-start-9"}`}>
+                  <p className="serif-display text-7xl leading-none text-brand-maroon/28">0{index + 1}</p>
+                  <h3 className="serif-display mt-2 text-4xl leading-tight text-brand-olive md:text-5xl">{principle.title}</h3>
+                  <p className="mt-5 text-sm leading-7 text-brand-olive/78 md:text-base md:leading-8">{principle.description}</p>
                 </div>
               </article>
             ))}

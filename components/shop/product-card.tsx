@@ -1,87 +1,10 @@
 "use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Product } from "@/lib/shopify/types";
-import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
-import { WishlistButton } from "@/components/wishlist/wishlist-button";
-
-type ProductCardProps = {
-  product: Product;
-  index: number;
-};
-
-export function ProductCard({ product }: ProductCardProps) {
-  const router = useRouter();
-  const unavailable = product.availableForSale === false;
-
-  return (
-    <article
-      role="link"
-      tabIndex={0}
-      onClick={() => router.push(`/shop/${product.handle}`)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          router.push(`/shop/${product.handle}`);
-        }
-      }}
-      className="group cursor-pointer overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft transition sm:rounded-luxe"
-      aria-label={`View ${product.title}`}
-    >
-      <div className="lift-card">
-        <div className="relative overflow-hidden bg-[#f7f1ea]">
-          <Image
-            src={product.image}
-            alt={product.title}
-            width={2477}
-            height={1651}
-            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-            className="aspect-[2477/1651] w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-          />
-
-          <div className="absolute right-3 top-3 z-20">
-            <WishlistButton handle={product.handle} compact />
-          </div>
-
-          {unavailable ? (
-            <div className="absolute left-3 top-3 z-20 rounded-full border border-white/70 bg-white/90 px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-brand-ink">
-              Unavailable
-            </div>
-          ) : null}
-
-          <div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition duration-300 group-hover:opacity-100 md:block">
-            <AddFeedbackButton product={product} compact />
-          </div>
-        </div>
-
-        <div className="p-3 sm:p-5">
-          <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
-            {product.category}
-          </p>
-
-          <h3 className="serif-display mt-2 text-xl leading-tight text-brand-ink sm:mt-3 sm:text-2xl md:text-3xl">
-            {product.title}
-          </h3>
-
-          <p className="mt-3 hidden text-sm leading-7 text-brand-ink/72 sm:block">
-            {product.description}
-          </p>
-
-          <div className="mt-3 flex items-center justify-between gap-2 sm:mt-5 md:hidden">
-            <span className="text-[12px] text-brand-ink sm:text-sm">
-              {product.price}
-            </span>
-            <AddFeedbackButton product={product} compact />
-          </div>
-
-          <div className="mt-3 hidden items-center justify-between gap-2 sm:mt-5 md:flex">
-            <span className="text-[12px] text-brand-ink sm:text-sm">
-              {product.price}
-            </span>
-          </div>
-        </div>
-      </div>
-    </article>
-  );
-}
+import {useRouter} from "next/navigation";
+import {Product} from "@/lib/shopify/types";
+import {AddFeedbackButton} from "@/components/shop/add-feedback-button";
+import {WishlistButton} from "@/components/wishlist/wishlist-button";
+export function ProductCard({product,index}:{product:Product;index:number}){const router=useRouter();const unavailable=product.availableForSale===false;return <article role="link" tabIndex={0} onClick={()=>router.push(`/shop/${product.handle}`)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();router.push(`/shop/${product.handle}`)}}} className="group cursor-pointer" aria-label={`View ${product.title}`}>
+ <div className={`relative overflow-hidden bg-[#eee7dc] ${index%5===0?"aspect-[4/5]":index%5===1?"aspect-[3/4]":"aspect-[2477/1651]"}`}><Image src={product.image} alt={product.title} fill sizes="(max-width:640px) 100vw,(max-width:1280px) 50vw,45vw" className="object-cover transition duration-700 group-hover:scale-[1.025]"/><div className="absolute right-3 top-3 z-20"><WishlistButton handle={product.handle} compact/></div>{unavailable?<div className="absolute left-3 top-3 bg-brand-bone px-3 py-2 text-[10px] uppercase tracking-[.22em] text-brand-olive">Unavailable</div>:null}<div className="absolute inset-x-3 bottom-3 z-20 hidden opacity-0 transition group-hover:opacity-100 md:block"><AddFeedbackButton product={product} compact/></div></div>
+ <div className="border-b border-brand-olive/25 py-5"><p className="text-[9px] uppercase tracking-[.24em] text-brand-maroon sm:text-[10px]">{product.category}</p><div className="mt-2 flex items-start justify-between gap-4"><h3 className="serif-display text-3xl leading-[.95] text-brand-olive md:text-4xl">{product.title}</h3><span className="shrink-0 text-sm text-brand-olive">{product.price}</span></div><p className="mt-3 hidden max-w-xl text-sm leading-7 text-brand-olive/70 sm:block">{product.description}</p><div className="mt-4 md:hidden"><AddFeedbackButton product={product} compact/></div></div>
+ </article>}
