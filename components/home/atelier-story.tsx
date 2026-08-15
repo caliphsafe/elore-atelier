@@ -7,14 +7,11 @@ export function AtelierStory() {
         <div className="home-story-video">
           <iframe
             title="ELÖRE Atelier film"
-            src="https://player.vimeo.com/video/1218122493?h=bb73f54b5a"
+            src="https://player.vimeo.com/video/1218122493?h=bb73f54b5a&title=0&byline=0&portrait=0&badge=0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
-          <div className="home-story-video__caption">
-            <h2 className="serif-display">Where tradition moves forward.</h2>
-          </div>
         </div>
         <div className="home-story-copy flex flex-col justify-between bg-brand-ivory p-6 md:p-8 lg:p-10">
           <div>

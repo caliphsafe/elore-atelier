@@ -3212,3 +3212,25 @@ a[class*="rounded-full"] {
     font-size: clamp(1.8rem, 9vw, 3rem);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V22 — SMALL POLISH
+   Experiences breathing room + cleaner Home Vimeo.
+   ========================================================= */
+
+/* Give the process-film chapter a clear breath after the hero. */
+.experience-story {
+  padding-top: clamp(2rem, 3.5vw, 3.75rem);
+}
+
+/* Vimeo is now allowed to stand on its own without our title overlay. */
+.home-story-video__caption {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .experience-story {
+    padding-top: 1.5rem;
+  }
+}
