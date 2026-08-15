@@ -2368,3 +2368,47 @@ a[class*="rounded-full"] {
     box-shadow: 14px 17px 0 rgba(216,203,184,.14);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V15 — EXPERIENCES HERO SHAPE, REFINED
+   Subtle asymmetry: nearly rectangular, gently clipped corners.
+   ========================================================= */
+.experience-opening__image {
+  clip-path: polygon(
+    2% 0,
+    100% 2%,
+    98% 96%,
+    8% 100%,
+    0 92%,
+    0 6%
+  );
+  box-shadow: 18px 22px 0 rgba(216,203,184,.13);
+}
+
+@media (max-width: 900px) {
+  .experience-opening__image {
+    clip-path: polygon(
+      2% 0,
+      100% 2%,
+      98% 96%,
+      7% 100%,
+      0 93%,
+      0 5%
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-opening__image {
+    clip-path: polygon(
+      2% 0,
+      100% 2%,
+      98% 97%,
+      6% 100%,
+      0 94%,
+      0 4%
+    );
+    box-shadow: 10px 13px 0 rgba(216,203,184,.12);
+  }
+}
