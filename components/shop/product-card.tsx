@@ -42,7 +42,7 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
           <h3 className="serif-display">{product.title}</h3>
           <span>{product.price}</span>
         </div>
-        <p>{product.description}</p>
+        <p className="shop-product__description">{product.description}</p>
         <div className="shop-product__mobile-action"><AddFeedbackButton product={product} compact /></div>
       </div>
     </article>

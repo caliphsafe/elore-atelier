@@ -64,7 +64,7 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
   return (
     <div className="grid gap-4">
       <div
-        className="relative aspect-[2477/1651] overflow-hidden rounded-luxe border thin-border bg-[#f7f1ea] shadow-soft"
+        className="product-gallery__main"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -82,20 +82,20 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
             <button
               type="button"
               onClick={previous}
-              className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
+              className="product-gallery__arrow"
               aria-label="Previous image"
             >
               ‹
             </button>
 
-            <div className="rounded-full border border-white/70 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-brand-ink">
+            <div className="product-gallery__counter">
               {activeIndex + 1} / {galleryImages.length}
             </div>
 
             <button
               type="button"
               onClick={next}
-              className="inline-flex min-h-[40px] min-w-[40px] items-center justify-center rounded-full border border-white/70 bg-white/90 text-brand-ink"
+              className="product-gallery__arrow"
               aria-label="Next image"
             >
               ›
@@ -113,9 +113,7 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
                 key={`${image.src}-${index}`}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`relative aspect-[2477/1651] overflow-hidden rounded-[1rem] border bg-[#f7f1ea] transition sm:rounded-[1.25rem] ${
-                  active ? "border-brand-ink shadow-soft" : "thin-border"
-                }`}
+                className={`product-gallery__thumb ${active ? "is-active" : ""}`}
                 aria-label={`Select image ${index + 1}`}
               >
                 <Image

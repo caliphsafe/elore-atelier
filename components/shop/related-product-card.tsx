@@ -24,11 +24,11 @@ export function RelatedProductCard({ product }: RelatedProductCardProps) {
           router.push(`/shop/${product.handle}`);
         }
       }}
-      className="group cursor-pointer overflow-hidden rounded-[1.1rem] border thin-border bg-white shadow-soft transition sm:rounded-luxe"
+      className="related-product group"
       aria-label={`View ${product.title}`}
     >
-      <div className="lift-card">
-        <div className="relative overflow-hidden bg-[#f7f1ea]">
+      <div>
+        <div className="related-product__media">
           <Image
             src={product.image}
             alt={product.title}
@@ -43,7 +43,7 @@ export function RelatedProductCard({ product }: RelatedProductCardProps) {
           </div>
         </div>
 
-        <div className="p-3 sm:p-5">
+        <div className="related-product__info">
           <p className="text-[9px] uppercase tracking-[0.22em] text-brand-mocha sm:text-[11px] sm:tracking-[0.28em]">
             {product.category}
           </p>
