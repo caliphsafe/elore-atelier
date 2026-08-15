@@ -4212,3 +4212,36 @@ a[class*="rounded-full"] {
     font-size: clamp(2.8rem, 11vw, 4rem);
   }
 }
+
+
+/* ELÖRE V29 — lock Atelier desktop hero headline to four lines */
+.atelier-opening__content {
+  min-width: 0;
+}
+
+.atelier-opening__content > .atelier-hero-title {
+  width: min(100%, 760px);
+  max-width: 760px;
+  font-size: clamp(2.8rem, 3.7vw, 4.35rem);
+  line-height: .88;
+  letter-spacing: -.045em;
+}
+
+.atelier-hero-title > span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .atelier-opening__content > .atelier-hero-title {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(2.7rem, 6.4vw, 4rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .atelier-hero-title > span {
+    white-space: normal;
+  }
+}
