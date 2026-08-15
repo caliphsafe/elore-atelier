@@ -3489,3 +3489,137 @@ a[class*="rounded-full"] {
     );
   }
 }
+
+
+/* =========================================================
+   ELÖRE V26 — ATELIER HERO + HOME STORY PROPORTION FIX
+   ========================================================= */
+
+/* ATELIER: remove unnecessary vertical growth. */
+.atelier-opening__inner {
+  min-height: clamp(455px, 55svh, 610px);
+  padding-top: clamp(2.25rem, 3vw, 3.25rem);
+  padding-bottom: clamp(2.25rem, 3vw, 3.25rem);
+}
+
+.atelier-opening__content {
+  align-self: center;
+}
+
+.atelier-opening__content > h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 4.25vw, 4.85rem);
+  line-height: .86;
+  letter-spacing: -.045em;
+}
+
+.atelier-opening__intro {
+  max-width: 46rem;
+  margin-top: 1rem;
+}
+
+.atelier-opening__intro h2 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(1.45rem, 1.75vw, 2rem);
+  line-height: 1;
+}
+
+.atelier-opening__intro p {
+  max-width: 43rem;
+  margin-top: .75rem;
+  line-height: 1.5;
+}
+
+.atelier-opening__image {
+  max-height: 430px;
+}
+
+/* HOME STORY: let Vimeo use its real 16:9 canvas instead of a tall green shell. */
+.home-story-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: center !important;
+  gap: clamp(2rem, 4vw, 4.5rem);
+}
+
+.home-story-video {
+  width: 100%;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  background: transparent;
+}
+
+.home-story-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-story-copy {
+  min-height: 0 !important;
+  height: auto !important;
+  justify-content: flex-start !important;
+  padding-top: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+  padding-bottom: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+}
+
+.home-story-copy h3 {
+  margin: 0;
+  font-size: clamp(2.65rem, 3.7vw, 4.45rem);
+  line-height: .94;
+}
+
+.home-story-copy p {
+  margin-top: 1.15rem !important;
+  line-height: 1.58 !important;
+}
+
+.home-story-copy > div:last-child {
+  margin-top: clamp(1.5rem, 2.5vw, 2.25rem) !important;
+}
+
+@media (max-width: 1023px) {
+  .atelier-opening__inner {
+    min-height: auto;
+  }
+
+  .atelier-opening__intro h2 {
+    white-space: normal;
+  }
+
+  .home-story-grid {
+    grid-template-columns: 1fr;
+    align-items: stretch !important;
+  }
+
+  .home-story-video {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .home-story-copy {
+    padding: 1.75rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .atelier-opening__content > h1 {
+    max-width: none;
+    font-size: clamp(2.65rem, 10vw, 3.55rem);
+    line-height: .9;
+  }
+
+  .atelier-opening__intro h2 {
+    white-space: normal;
+    font-size: 1.45rem;
+  }
+
+  .atelier-opening__image {
+    max-height: 300px;
+  }
+
+  .home-story-copy {
+    padding: 1.4rem 1rem !important;
+  }
+}
