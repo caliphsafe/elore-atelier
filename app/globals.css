@@ -3989,3 +3989,226 @@ a[class*="rounded-full"] {
     font-size: clamp(3.2rem,13vw,4.7rem);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V28 — ATELIER CONTENT COMPACTION
+   Preserve V27 editorial structure, remove hero-scale spacing.
+   ========================================================= */
+
+/* PROCESS: compact intro, tighter type, less dead space */
+.atelier-process__inner {
+  padding-top: clamp(2.25rem, 3.5vw, 3.75rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.atelier-process__lead {
+  grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  align-items: center;
+  padding-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.atelier-process__lead h2 {
+  max-width: 11ch;
+  font-size: clamp(3rem, 4.6vw, 5rem);
+  line-height: .88;
+}
+
+.atelier-process__lead p {
+  font-size: .98rem;
+  line-height: 1.62;
+  margin-bottom: 0;
+}
+
+.atelier-process__journey {
+  margin-top: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.atelier-process__step {
+  min-height: 0;
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.atelier-process__step--2,
+.atelier-process__step--4,
+.atelier-process__step--6 {
+  padding-left: clamp(2rem, 4vw, 4rem);
+}
+
+.atelier-process__number {
+  font-size: clamp(2.6rem, 3.8vw, 4rem);
+}
+
+.atelier-process__step-copy {
+  margin-top: .8rem;
+  grid-template-columns: minmax(0,.72fr) minmax(0,1.28fr);
+  gap: 1rem;
+}
+
+.atelier-process__step h3 {
+  font-size: clamp(1.7rem, 2.3vw, 2.65rem);
+}
+
+.atelier-process__step p {
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+/* MATERIALS: less chapter-like, more continuous editorial flow */
+.atelier-materials__inner {
+  padding-top: clamp(2.75rem, 4vw, 4rem);
+  padding-bottom: clamp(3.25rem, 5vw, 5rem);
+}
+
+.atelier-materials__title {
+  justify-content: flex-start;
+  padding-bottom: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.atelier-materials__title h2 {
+  max-width: none;
+  text-align: left;
+  font-size: clamp(3.2rem, 5vw, 5.4rem);
+  line-height: .86;
+}
+
+.atelier-materials__layout {
+  gap: clamp(1.25rem, 2vw, 2rem);
+}
+
+.atelier-material--2 {
+  margin-top: 3.5rem;
+}
+
+.atelier-material--3 {
+  margin-top: 0;
+}
+
+.atelier-material--4 {
+  margin-top: 2rem;
+}
+
+.atelier-material__image,
+.atelier-material--1 .atelier-material__image,
+.atelier-material--2 .atelier-material__image,
+.atelier-material--3 .atelier-material__image,
+.atelier-material--4 .atelier-material__image {
+  min-height: 340px;
+  max-height: 430px;
+}
+
+.atelier-material--1 .atelier-material__image {
+  min-height: 420px;
+}
+
+.atelier-material--4 .atelier-material__image {
+  min-height: 390px;
+}
+
+.atelier-material__copy h3 {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+}
+
+.atelier-material__copy p {
+  margin-top: .65rem;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+/* CLOSE: compact end chapter instead of another oversized section */
+.atelier-close__inner {
+  padding-top: clamp(2.75rem, 4vw, 4rem);
+  padding-bottom: clamp(2.75rem, 4vw, 4rem);
+}
+
+.atelier-close__copy h2 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 4.7vw, 5rem);
+  line-height: .88;
+}
+
+.atelier-close__copy p {
+  margin-top: 1rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .atelier-process__lead {
+    gap: 1.25rem;
+  }
+
+  .atelier-process__lead h2 {
+    max-width: 10ch;
+  }
+
+  .atelier-process__journey {
+    gap: 1rem;
+  }
+
+  .atelier-materials__layout {
+    gap: 1.25rem;
+  }
+
+  .atelier-material--2,
+  .atelier-material--3,
+  .atelier-material--4 {
+    margin-top: 0;
+  }
+
+  .atelier-material__image,
+  .atelier-material--1 .atelier-material__image,
+  .atelier-material--2 .atelier-material__image,
+  .atelier-material--3 .atelier-material__image,
+  .atelier-material--4 .atelier-material__image {
+    min-height: 320px;
+    max-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .atelier-process__inner,
+  .atelier-materials__inner,
+  .atelier-close__inner {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .atelier-process__lead {
+    padding-bottom: 1.25rem;
+  }
+
+  .atelier-process__lead h2,
+  .atelier-materials__title h2 {
+    font-size: clamp(2.9rem, 12vw, 4.2rem);
+  }
+
+  .atelier-process__journey {
+    margin-top: 1rem;
+  }
+
+  .atelier-process__step {
+    padding: 1rem;
+  }
+
+  .atelier-process__step-copy {
+    margin-top: .6rem;
+  }
+
+  .atelier-materials__title {
+    padding-bottom: 1.25rem;
+  }
+
+  .atelier-material__image,
+  .atelier-material--1 .atelier-material__image,
+  .atelier-material--2 .atelier-material__image,
+  .atelier-material--3 .atelier-material__image,
+  .atelier-material--4 .atelier-material__image {
+    min-height: 270px;
+    max-height: 310px;
+  }
+
+  .atelier-close__copy h2 {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+  }
+}
