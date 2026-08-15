@@ -2643,3 +2643,160 @@ a[class*="rounded-full"] {
     box-shadow: 10px 13px 0 rgba(74,51,43,.14);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V17 — SITEWIDE HERO HEIGHT CONSISTENCY
+   SHOP is the benchmark: compact editorial hero, not full-page.
+   ========================================================= */
+:root {
+  --elore-hero-min: 520px;
+  --elore-hero-fluid: 65svh;
+  --elore-hero-max: 720px;
+}
+
+/* Page-specific hero shells */
+.custom-opening__inner,
+.experience-opening__inner,
+.atelier-opening__inner,
+.shop-opening__inner,
+.contact-hero__inner {
+  min-height: clamp(var(--elore-hero-min), var(--elore-hero-fluid), var(--elore-hero-max));
+}
+
+/* Keep hero images visually strong without making the entire hero taller. */
+.custom-opening__image,
+.experience-opening__image,
+.atelier-opening__image,
+.shop-opening__image,
+.contact-hero__image {
+  min-height: clamp(330px, 36vw, 500px);
+  max-height: 520px;
+}
+
+/* Shared title scale: page personality stays, vertical footprint becomes consistent. */
+.custom-opening__copy h1,
+.experience-opening__title h1,
+.atelier-opening__content > h1,
+.shop-opening__content h1,
+.contact-hero__copy h1 {
+  font-size: clamp(3.9rem, 6.4vw, 7rem);
+  line-height: .82;
+}
+
+/* Wider measures prevent unnecessary 5–7 line hero titles. */
+.custom-opening__copy h1 {
+  max-width: 11ch;
+}
+
+.experience-opening__title h1 {
+  max-width: 10.5ch;
+}
+
+.atelier-opening__content > h1 {
+  max-width: 13.5ch;
+  font-size: clamp(3.5rem, 5.4vw, 6.25rem);
+  line-height: .86;
+}
+
+.shop-opening__content h1 {
+  max-width: 9ch;
+}
+
+.contact-hero__copy h1 {
+  max-width: 11ch;
+}
+
+/* Reduce excess hero padding that can defeat the height cap. */
+.custom-opening__inner,
+.experience-opening__inner,
+.atelier-opening__inner,
+.shop-opening__inner,
+.contact-hero__inner {
+  padding-top: clamp(3.25rem, 5vw, 5rem);
+  padding-bottom: clamp(3.25rem, 5vw, 5rem);
+}
+
+/* Atelier supporting copy is important but should not push the hero taller. */
+.atelier-opening__intro {
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+}
+
+.atelier-opening__intro h2 {
+  font-size: clamp(1.8rem, 2.3vw, 2.7rem);
+}
+
+.atelier-opening__intro p {
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+/* Tablet: all heroes deliberately converge on the same rhythm. */
+@media (max-width: 900px) {
+  .custom-opening__inner,
+  .experience-opening__inner,
+  .atelier-opening__inner,
+  .shop-opening__inner,
+  .contact-hero__inner {
+    min-height: auto;
+    padding-top: 3.5rem;
+    padding-bottom: 4.25rem;
+    gap: 2rem;
+  }
+
+  .custom-opening__copy h1,
+  .experience-opening__title h1,
+  .atelier-opening__content > h1,
+  .shop-opening__content h1,
+  .contact-hero__copy h1 {
+    font-size: clamp(3.7rem, 10vw, 5.8rem);
+    line-height: .84;
+  }
+
+  .custom-opening__image,
+  .experience-opening__image,
+  .atelier-opening__image,
+  .shop-opening__image,
+  .contact-hero__image {
+    min-height: clamp(300px, 48vw, 420px);
+    max-height: 440px;
+  }
+}
+
+/* Mobile: same visual footprint without clipping copy. */
+@media (max-width: 600px) {
+  .custom-opening__inner,
+  .experience-opening__inner,
+  .atelier-opening__inner,
+  .shop-opening__inner,
+  .contact-hero__inner {
+    padding-top: 2.75rem;
+    padding-bottom: 3.5rem;
+    gap: 1.6rem;
+  }
+
+  .custom-opening__copy h1,
+  .experience-opening__title h1,
+  .atelier-opening__content > h1,
+  .shop-opening__content h1,
+  .contact-hero__copy h1 {
+    max-width: 12ch;
+    font-size: clamp(3.1rem, 13vw, 4.6rem);
+    line-height: .86;
+  }
+
+  .atelier-opening__content > h1 {
+    max-width: 14ch;
+    font-size: clamp(2.9rem, 11.5vw, 4.1rem);
+    line-height: .9;
+  }
+
+  .custom-opening__image,
+  .experience-opening__image,
+  .atelier-opening__image,
+  .shop-opening__image,
+  .contact-hero__image {
+    min-height: 270px;
+    max-height: 330px;
+  }
+}

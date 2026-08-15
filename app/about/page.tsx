@@ -51,9 +51,9 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-brand-bone text-brand-ink">
         <div className="absolute -left-20 top-28 h-80 w-80 rounded-full bg-brand-sand/75" />
 
-        <div className="editorial-container grid min-h-[86svh] gap-8 px-5 pb-12 pt-10 md:px-8 md:pt-12 lg:grid-cols-12 lg:px-12">
+        <div className="editorial-container grid min-h-[65svh] gap-8 px-5 pb-12 pt-10 md:px-8 md:pt-12 lg:grid-cols-12 lg:px-12">
           <div className="relative z-10 flex flex-col justify-end lg:col-span-5">
-            <h1 className="serif-display max-w-[9ch] text-[clamp(4.4rem,10vw,10.5rem)] leading-[0.76] tracking-[-0.07em] text-brand-olive">
+            <h1 className="serif-display max-w-[12ch] text-[clamp(3.9rem,7vw,7.25rem)] leading-[0.82] tracking-[-0.07em] text-brand-olive">
               Meet the designer behind the craft
             </h1>
             <div className="mt-8 max-w-xl space-y-5 border-l border-brand-maroon/35 pl-5 text-base leading-8 text-brand-olive/75 md:text-lg">
@@ -66,7 +66,7 @@ export default function AboutPage() {
           <div className="relative z-10 lg:col-span-7 lg:pt-10">
             <div className="elore-collage elore-collage--olive">
               <AboutGalleryCarousel
-                className="min-h-[520px] md:min-h-[690px]"
+                className="min-h-[380px] md:min-h-[520px]"
                 sizes="(max-width: 1024px) 100vw, 58vw"
               />
             </div>
