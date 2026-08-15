@@ -2412,3 +2412,234 @@ a[class*="rounded-full"] {
     box-shadow: 10px 13px 0 rgba(216,203,184,.12);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V16 — ATELIER + SHOP HERO FAMILY
+   Related to Custom/Experiences, individually art-directed.
+   ========================================================= */
+
+/* ATELIER — tactile, warm, process-led */
+.atelier-opening {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--elore-v7-sand);
+  color: var(--elore-v7-olive-deep);
+}
+
+.atelier-opening::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/images/studio/workspace.jpg") center / cover no-repeat;
+  opacity: .38;
+  filter: saturate(.78) contrast(.92);
+}
+
+.atelier-opening::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(216,203,184,.96) 0%,
+    rgba(216,203,184,.84) 40%,
+    rgba(216,203,184,.46) 68%,
+    rgba(216,203,184,.62) 100%);
+}
+
+.atelier-opening__inner {
+  min-height: clamp(650px, 78svh, 880px);
+  padding: clamp(4.5rem, 7vw, 7.5rem) 3rem;
+  display: grid;
+  grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr);
+  align-items: center;
+  gap: clamp(2.5rem,5vw,6rem);
+}
+
+.atelier-opening__content {
+  position: relative;
+  z-index: 2;
+}
+
+.atelier-opening__content > h1 {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(4.3rem,6.8vw,8rem);
+  line-height: .82;
+  letter-spacing: -.052em;
+  color: var(--elore-v7-olive-deep);
+}
+
+.atelier-opening__intro {
+  max-width: 38rem;
+  margin: clamp(2rem,4vw,3.5rem) 0 0 clamp(1rem,3vw,4rem);
+  padding-left: 1.4rem;
+  border-left: 2px solid rgba(74,51,43,.72);
+}
+
+.atelier-opening__intro h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2rem,3vw,3.4rem);
+  line-height: .95;
+  color: #4a332b;
+}
+
+.atelier-opening__intro p {
+  margin: 1rem 0 0;
+  max-width: 35rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(56,64,42,.88);
+}
+
+.atelier-opening__image {
+  position: relative;
+  width: min(100%,760px);
+  min-height: clamp(430px,43vw,610px);
+  justify-self: end;
+  overflow: hidden;
+  clip-path: polygon(3% 0,100% 2%,97% 95%,10% 100%,0 91%,0 7%);
+  box-shadow: 20px 24px 0 rgba(74,51,43,.16);
+}
+
+/* SHOP — cleaner, product-first, but unmistakably ELÖRE */
+.shop-opening {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--elore-v7-olive-deep);
+  color: var(--elore-v7-bone);
+}
+
+.shop-opening::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("/images/home/collections/signature.jpg") 68% center / cover no-repeat;
+  opacity: .32;
+  filter: saturate(.7);
+}
+
+.shop-opening::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(56,64,42,.97) 0%,
+    rgba(56,64,42,.88) 42%,
+    rgba(56,64,42,.52) 70%,
+    rgba(56,64,42,.72) 100%);
+}
+
+.shop-opening__inner {
+  min-height: clamp(520px,65svh,720px);
+  padding: clamp(4rem,6vw,6.5rem) 3rem;
+  display: grid;
+  grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+  align-items: center;
+  gap: clamp(2.5rem,5vw,6rem);
+}
+
+.shop-opening__content {
+  position: relative;
+  z-index: 2;
+}
+
+.shop-opening__content h1 {
+  max-width: 7ch;
+  margin: 0;
+  font-size: clamp(5rem,8vw,9rem);
+  line-height: .78;
+  letter-spacing: -.055em;
+  color: var(--elore-v7-bone);
+}
+
+.shop-opening__content p {
+  max-width: 34rem;
+  margin: 1.7rem 0 0 clamp(.5rem,2vw,2rem);
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--elore-v7-sand);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(244,237,226,.9);
+}
+
+.shop-opening__image {
+  position: relative;
+  width: min(100%,650px);
+  min-height: clamp(360px,38vw,520px);
+  justify-self: end;
+  overflow: hidden;
+  clip-path: polygon(2% 0,100% 3%,97% 97%,7% 100%,0 93%,0 5%);
+  box-shadow: 18px 22px 0 rgba(216,203,184,.18);
+}
+
+@media (max-width: 900px) {
+  .atelier-opening__inner,
+  .shop-opening__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 4rem 1.5rem 5.5rem;
+  }
+
+  .atelier-opening::after {
+    background: linear-gradient(180deg,
+      rgba(216,203,184,.94) 0%,
+      rgba(216,203,184,.80) 48%,
+      rgba(216,203,184,.50) 100%);
+  }
+
+  .shop-opening::after {
+    background: linear-gradient(180deg,
+      rgba(56,64,42,.94) 0%,
+      rgba(56,64,42,.82) 48%,
+      rgba(56,64,42,.56) 100%);
+  }
+
+  .atelier-opening__intro {
+    margin-left: 0;
+  }
+
+  .atelier-opening__image,
+  .shop-opening__image {
+    justify-self: center;
+    width: min(100%,760px);
+  }
+
+  .atelier-opening__image {
+    min-height: clamp(350px,58vw,500px);
+  }
+
+  .shop-opening__image {
+    min-height: clamp(330px,56vw,470px);
+  }
+}
+
+@media (max-width: 600px) {
+  .atelier-opening__inner,
+  .shop-opening__inner {
+    padding: 3.25rem 1rem 4.5rem;
+    gap: 2rem;
+  }
+
+  .atelier-opening__content > h1 {
+    font-size: clamp(3.6rem,15vw,5.4rem);
+  }
+
+  .shop-opening__content h1 {
+    font-size: clamp(4.2rem,18vw,6rem);
+  }
+
+  .atelier-opening__image,
+  .shop-opening__image {
+    min-height: 300px;
+    clip-path: polygon(2% 0,100% 2%,98% 97%,6% 100%,0 94%,0 4%);
+    box-shadow: 10px 13px 0 rgba(74,51,43,.14);
+  }
+}
