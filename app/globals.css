@@ -11,7 +11,7 @@
   --ink: #221f1e;
   --mocha: #563d39;
   --sand: #d8cbb8;
-  --olive: #344200;
+  --olive: #38402A;
   --black: #000000;
   --white: #ffffff;
   --border: rgba(34, 31, 30, 0.1);
@@ -63,7 +63,7 @@ img {
   pointer-events: none;
   background:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.28), transparent 20%),
-    radial-gradient(circle at 85% 20%, rgba(52, 66, 0, 0.05), transparent 20%);
+    radial-gradient(circle at 85% 20%, rgba(56, 64, 42, 0.05), transparent 20%);
   z-index: -1;
 }
 
@@ -113,7 +113,7 @@ img {
 }
 
 .olive-panel {
-  background: linear-gradient(135deg, #344200 0%, #485a08 100%);
+  background: linear-gradient(135deg, #38402A 0%, #38402A 100%);
 }
 
 .muted-copy {
@@ -308,8 +308,8 @@ a:active {
   --elore-bone: #F6F0E5;
   --elore-ivory: #FBF8F1;
   --elore-ink: #201B19;
-  --elore-maroon: #344200;
-  --elore-olive: #596044;
+  --elore-maroon: #38402A;
+  --elore-olive: #38402A;
   --elore-sand: #D5B875;
   --elore-clay: #A4664E;
 }
@@ -356,7 +356,7 @@ button[class*="rounded-full"], a[class*="rounded-full"] { border-radius:0 !impor
 .elore-editorial-rule { border-color: rgba(32,27,25,.18); }
 
 /* ELÖRE SECOND ART-DIRECTION PASS */
-:root{--elore-wine:#344200;--elore-palm:#4d5638;--elore-gold:#d8cbb8;--elore-earth:#9a5f49;--elore-bone:#f4ede2;--elore-ink:#211b19}
+:root{--elore-wine:#38402A;--elore-palm:#38402A;--elore-gold:#d8cbb8;--elore-earth:#9a5f49;--elore-bone:#f4ede2;--elore-ink:#211b19}
 .organic-frame{position:relative;overflow:hidden;border-radius:0;clip-path:polygon(4% 0,96% 2%,100% 11%,98% 91%,91% 100%,7% 98%,0 90%,2% 8%)}
 .organic-frame--soft{clip-path:ellipse(62% 48% at 50% 50%)}
 .organic-frame--arch{clip-path:polygon(8% 0,92% 0,100% 18%,100% 100%,0 100%,0 18%)}
@@ -385,26 +385,26 @@ button[class*="rounded-full"], a[class*="rounded-full"] { border-radius:0 !impor
    Contrast protection, olive ink, no Lookbook, more organic page rhythm.
    ========================================================= */
 :root{
-  --ink:#344200;
-  --elore-ink:#344200;
-  --elore-olive:#344200;
-  --black:#344200;
+  --ink:#38402A;
+  --elore-ink:#38402A;
+  --elore-olive:#38402A;
+  --black:#38402A;
 }
 body{color:var(--elore-olive);}
 .text-brand-ink,.text-black{color:var(--elore-olive)!important;}
-.text-brand-ink\/75{color:rgba(52,66,0,.75)!important;}
-.text-brand-ink\/72{color:rgba(52,66,0,.72)!important;}
-.text-brand-ink\/78{color:rgba(52,66,0,.78)!important;}
-.text-brand-ink\/60{color:rgba(52,66,0,.60)!important;}
+.text-brand-ink\/75{color:rgba(56,64,42,.75)!important;}
+.text-brand-ink\/72{color:rgba(56,64,42,.72)!important;}
+.text-brand-ink\/78{color:rgba(56,64,42,.78)!important;}
+.text-brand-ink\/60{color:rgba(56,64,42,.60)!important;}
 .bg-brand-sand,.bg-elore-sand{color:var(--elore-olive)!important;}
 .bg-brand-sand .text-white,.bg-elore-sand .text-white,.bg-brand-bone .text-white,.bg-elore-ivory .text-white{color:var(--elore-olive)!important;text-shadow:none!important;}
-.bg-brand-sand .text-white\/75,.bg-brand-sand .text-white\/80,.bg-brand-sand .text-white\/85,.bg-elore-sand .text-white\/75,.bg-elore-sand .text-white\/80,.bg-elore-sand .text-white\/85{color:rgba(52,66,0,.76)!important;}
+.bg-brand-sand .text-white\/75,.bg-brand-sand .text-white\/80,.bg-brand-sand .text-white\/85,.bg-elore-sand .text-white\/75,.bg-elore-sand .text-white\/80,.bg-elore-sand .text-white\/85{color:rgba(56,64,42,.76)!important;}
 .bg-brand-maroon .text-brand-ink,.bg-brand-olive .text-brand-ink,.bg-elore-maroon .text-brand-ink,.bg-elore-olive .text-brand-ink{color:#fff!important;}
 .bg-brand-maroon .text-brand-ink\/72,.bg-brand-olive .text-brand-ink\/72,.bg-elore-maroon .text-brand-ink\/72,.bg-elore-olive .text-brand-ink\/72{color:rgba(255,255,255,.74)!important;}
-.border-black{border-color:rgba(52,66,0,.35)!important;}
+.border-black{border-color:rgba(56,64,42,.35)!important;}
 .bg-black{background-color:var(--elore-olive)!important;}
 .elore-btn{border-radius:999px 999px 999px 999px!important;}
-.elore-btn.bg-brand-olive,.elore-btn--light{box-shadow:0 14px 34px rgba(52,66,0,.13)!important;}
+.elore-btn.bg-brand-olive,.elore-btn--light{box-shadow:0 14px 34px rgba(56,64,42,.13)!important;}
 .organic-frame--soft{position:relative;overflow:hidden;}
 .organic-frame--arch{position:relative;overflow:hidden;}
 @media(max-width:768px){
@@ -416,11 +416,11 @@ body{color:var(--elore-olive);}
    ELÖRE V3 — EXPLICIT CONTRAST SYSTEM
    Section color owns foreground. No positional inheritance.
    ========================================================= */
-.surface-bone{background:#F6F0E5;color:#344200}
-.surface-ivory{background:#FBF8F1;color:#344200}
-.surface-sand{background:#D8CBB8;color:#344200}
-.surface-olive{background:#344200;color:#F6F0E5}
-.surface-maroon{background:#344200;color:#F6F0E5}
+.surface-bone{background:#F6F0E5;color:#38402A}
+.surface-ivory{background:#FBF8F1;color:#38402A}
+.surface-sand{background:#D8CBB8;color:#38402A}
+.surface-olive{background:#38402A;color:#F6F0E5}
+.surface-maroon{background:#38402A;color:#F6F0E5}
 .surface-bone :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)),
 .surface-ivory :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)),
 .surface-sand :where(h1,h2,h3,h4,h5,h6,p,li,label,span:not(.preserve-color)){color:inherit}
@@ -428,14 +428,14 @@ body{color:var(--elore-olive);}
 .surface-maroon :where(h1,h2,h3,h4,h5,h6,p,li,label){color:inherit}
 
 /* Intentionally colored editorial accents override surface inheritance. */
-.surface-bone .text-brand-maroon,.surface-ivory .text-brand-maroon,.surface-sand .text-brand-maroon{color:#344200!important}
-.surface-bone .text-brand-olive,.surface-ivory .text-brand-olive,.surface-sand .text-brand-olive{color:#344200!important}
+.surface-bone .text-brand-maroon,.surface-ivory .text-brand-maroon,.surface-sand .text-brand-maroon{color:#38402A!important}
+.surface-bone .text-brand-olive,.surface-ivory .text-brand-olive,.surface-sand .text-brand-olive{color:#38402A!important}
 .surface-olive .text-brand-sand,.surface-maroon .text-brand-sand{color:#D8CBB8!important}
 .surface-olive .text-brand-bone,.surface-maroon .text-brand-bone,.surface-olive .text-white,.surface-maroon .text-white{color:#F6F0E5!important}
 .surface-olive .text-brand-bone\/80,.surface-maroon .text-brand-bone\/80{color:rgba(246,240,229,.82)!important}
 .surface-olive .text-brand-bone\/75,.surface-maroon .text-brand-bone\/75{color:rgba(246,240,229,.76)!important}
 
-.eyebrow-olive{font-size:10px;text-transform:uppercase;letter-spacing:.34em;color:#344200}
+.eyebrow-olive{font-size:10px;text-transform:uppercase;letter-spacing:.34em;color:#38402A}
 .eyebrow-light{font-size:10px;text-transform:uppercase;letter-spacing:.34em;color:#D8CBB8}
 
 .btn-olive,.btn-light,.btn-outline-olive,.btn-outline-light,.filter-active,.filter-idle{
@@ -443,28 +443,28 @@ body{color:var(--elore-olive);}
  font-size:10px;text-transform:uppercase;letter-spacing:.22em;transition:background-color .25s ease,color .25s ease,border-color .25s ease;
  border:1px solid transparent;text-decoration:none
 }
-.btn-olive,.filter-active{background:#344200!important;color:#F6F0E5!important;border-color:#344200!important}
-.btn-olive:hover,.filter-active:hover{background:#344200!important;color:#F6F0E5!important;border-color:#344200!important}
-.btn-light{background:#F6F0E5!important;color:#344200!important;border-color:#F6F0E5!important}
-.btn-light:hover{background:#D8CBB8!important;color:#344200!important;border-color:#D8CBB8!important}
-.btn-outline-olive,.filter-idle{background:transparent!important;color:#344200!important;border-color:#344200!important}
-.btn-outline-olive:hover,.filter-idle:hover{background:#344200!important;color:#F6F0E5!important}
+.btn-olive,.filter-active{background:#38402A!important;color:#F6F0E5!important;border-color:#38402A!important}
+.btn-olive:hover,.filter-active:hover{background:#38402A!important;color:#F6F0E5!important;border-color:#38402A!important}
+.btn-light{background:#F6F0E5!important;color:#38402A!important;border-color:#F6F0E5!important}
+.btn-light:hover{background:#D8CBB8!important;color:#38402A!important;border-color:#D8CBB8!important}
+.btn-outline-olive,.filter-idle{background:transparent!important;color:#38402A!important;border-color:#38402A!important}
+.btn-outline-olive:hover,.filter-idle:hover{background:#38402A!important;color:#F6F0E5!important}
 .btn-outline-light{background:transparent!important;color:#F6F0E5!important;border-color:rgba(246,240,229,.82)!important}
-.btn-outline-light:hover{background:#F6F0E5!important;color:#344200!important;border-color:#F6F0E5!important}
+.btn-outline-light:hover{background:#F6F0E5!important;color:#38402A!important;border-color:#F6F0E5!important}
 
 /* Legacy buttons receive safe foregrounds even outside V3 components. */
 a.bg-brand-olive,button.bg-brand-olive,a.bg-brand-ink,button.bg-brand-ink,a.bg-brand-maroon,button.bg-brand-maroon{color:#F6F0E5!important}
-a.bg-white,button.bg-white,a.bg-brand-bone,button.bg-brand-bone{color:#344200!important}
+a.bg-white,button.bg-white,a.bg-brand-bone,button.bg-brand-bone{color:#38402A!important}
 .bg-brand-sand a.bg-brand-olive,.bg-brand-sand button.bg-brand-olive{color:#F6F0E5!important}
 
 /* Forms: never allow inherited light text on light controls. */
-input,select,textarea{color:#344200!important;background:#FBF8F1!important;border-color:rgba(52,66,0,.34)!important}
-input::placeholder,textarea::placeholder{color:rgba(52,66,0,.48)!important}
-.contrast-input{background:transparent!important;color:#344200!important}
+input,select,textarea{color:#38402A!important;background:#FBF8F1!important;border-color:rgba(56,64,42,.34)!important}
+input::placeholder,textarea::placeholder{color:rgba(56,64,42,.48)!important}
+.contrast-input{background:transparent!important;color:#38402A!important}
 
 /* Accessibility / interaction */
 :focus-visible{outline:2px solid #D8CBB8;outline-offset:3px}
-.surface-sand :focus-visible,.surface-bone :focus-visible,.surface-ivory :focus-visible{outline-color:#344200}
+.surface-sand :focus-visible,.surface-bone :focus-visible,.surface-ivory :focus-visible{outline-color:#38402A}
 button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
 
 /* V3 prefers disciplined editorial rectangles over decorative masks. */
@@ -493,7 +493,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
 .surface-bone,
 .surface-ivory,
 .surface-sand {
-  color: #344200;
+  color: #38402A;
 }
 .bg-brand-bone :where(h1,h2,h3,h4,h5,h6,p,li),
 .bg-brand-ivory :where(h1,h2,h3,h4,h5,h6,p,li),
@@ -541,11 +541,11 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
 :root {
   --elore-v7-bone: #f4ede2;
   --elore-v7-ivory: #fbf8f1;
-  --elore-v7-olive: #4d5638;
+  --elore-v7-olive: #38402A;
   --elore-v7-olive-deep: #38402a;
   --elore-v7-maroon: #4a332b; /* warm espresso brown accent */
   --elore-v7-sand: #d8cbb8;
-  --elore-v7-line: rgba(77, 86, 56, 0.24);
+  --elore-v7-line: rgba(56, 64, 42, 0.24);
 }
 
 /* ---------- HOME / FEATURED COLLECTIONS ---------- */
@@ -563,7 +563,7 @@ button:disabled,[aria-disabled="true"]{opacity:.52;cursor:not-allowed}
   pointer-events: none;
   background:
     linear-gradient(135deg, rgba(255,255,255,.14), transparent 32%),
-    linear-gradient(315deg, rgba(52,66,0,.08), transparent 28%);
+    linear-gradient(315deg, rgba(56,64,42,.08), transparent 28%);
 }
 
 .home-collections__inner {
@@ -1685,11 +1685,11 @@ a[class*="rounded-full"] {
 .experience-story{margin-top:clamp(-5rem,-6vw,-3rem)}
 .experience-story__statement{box-shadow:0 22px 50px rgba(30,38,0,.16)}
 .about-principles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
-.about-principle-card{display:flex;flex-direction:column;min-width:0;background:rgba(251,248,241,.48);border-top:1px solid rgba(52,66,0,.24)}
+.about-principle-card{display:flex;flex-direction:column;min-width:0;background:rgba(251,248,241,.48);border-top:1px solid rgba(56,64,42,.24)}
 .about-principle-card__image{position:relative;min-height:300px;overflow:hidden}
 .about-principle-card__copy{padding:1.5rem 1.15rem 1.75rem}
 .atelier-color-band{background:#d8cbb8}
-.atelier-color-panel{background:#344200!important;color:#f6f0e5!important}
+.atelier-color-panel{background:#38402A!important;color:#f6f0e5!important}
 .atelier-color-panel :where(h1,h2,h3,p){color:inherit!important}
 @media(max-width:767px){.about-principles-grid{grid-template-columns:1fr}.experience-opening{min-height:760px;background-position:58% center}.experience-opening__inner{grid-template-columns:1fr;padding-left:1.25rem;padding-right:1.25rem}.experience-story{margin-top:-3rem}.experience-story__inner{grid-template-columns:1fr;padding-left:1.25rem;padding-right:1.25rem}.experience-story__included{margin-top:0}}
 
@@ -2006,7 +2006,7 @@ a[class*="rounded-full"] {
   z-index: 30;
   margin-top: 0 !important;
   transform: translateZ(0);
-  box-shadow: 0 28px 70px rgba(28, 35, 20, .22);
+  box-shadow: 0 28px 70px rgba(56,64,42, .22);
 }
 
 .experience-story__included {
@@ -2918,7 +2918,7 @@ a[class*="rounded-full"] {
   align-items: end;
   padding: clamp(2rem, 4vw, 4rem);
   background: #4a332b;
-  box-shadow: 0 22px 58px rgba(28, 35, 20, .14);
+  box-shadow: 0 22px 58px rgba(56,64,42, .14);
   transform: none;
   isolation: isolate;
 }
@@ -3215,22 +3215,227 @@ a[class*="rounded-full"] {
 
 
 /* =========================================================
-   ELÖRE V22 — SMALL POLISH
-   Experiences breathing room + cleaner Home Vimeo.
+   ELÖRE V22 — HOME VIMEO / NO FORCED ASPECT RATIO
+   Let the film fill the editorial column naturally.
    ========================================================= */
-
-/* Give the process-film chapter a clear breath after the hero. */
-.experience-story {
-  padding-top: clamp(2rem, 3.5vw, 3.75rem);
+.home-story-video {
+  aspect-ratio: auto !important;
+  min-height: clamp(430px, 44vw, 620px);
+  height: 100%;
 }
 
-/* Vimeo is now allowed to stand on its own without our title overlay. */
-.home-story-video__caption {
-  display: none !important;
+.home-story-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-story-copy {
+  min-height: clamp(430px, 44vw, 620px);
+}
+
+@media (min-width: 1024px) {
+  .home-story-video,
+  .home-story-copy {
+    min-height: clamp(430px, 44vw, 620px);
+    height: 100%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .home-story-video {
+    aspect-ratio: auto !important;
+    min-height: clamp(420px, 68vw, 620px);
+  }
+
+  .home-story-copy {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-story-video {
+    min-height: 440px;
+  }
+}
+
+
+/* ELÖRE V23 — Experiences: breathing room below hero */
+.experience-story {
+  padding-top: clamp(2rem, 3.5vw, 3.5rem);
 }
 
 @media (max-width: 600px) {
   .experience-story {
     padding-top: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   ELÖRE V24 — UNIFIED OLIVE + SIZE GUIDE
+   All green values resolve to #38402A.
+   Espresso brown remains a separate accent.
+   ========================================================= */
+:root {
+  --olive: #38402A;
+  --elore-olive: #38402A;
+  --elore-palm: #38402A;
+  --elore-v7-olive: #38402A;
+  --elore-v7-olive-deep: #38402A;
+}
+
+.bg-elore-olive { background-color: #38402A !important; }
+.text-elore-olive { color: #38402A !important; }
+
+.size-guide-page {
+  background: var(--elore-v7-bone);
+  color: #38402A;
+}
+
+.size-guide-hero {
+  position: relative;
+  overflow: hidden;
+  background: #38402A;
+  color: var(--elore-v7-bone);
+}
+
+.size-guide-hero::after {
+  content: "";
+  position: absolute;
+  right: -9%;
+  top: -35%;
+  width: 40%;
+  height: 170%;
+  background: var(--elore-v7-sand);
+  opacity: .72;
+  transform: skewX(-11deg);
+}
+
+.size-guide-hero__inner {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(360px, 46svh, 520px);
+  display: flex;
+  align-items: end;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 3rem;
+}
+
+.size-guide-hero h1 {
+  max-width: 8ch;
+  margin: 0;
+  color: var(--elore-v7-bone);
+  font-size: clamp(4.5rem, 8vw, 8rem);
+  line-height: .8;
+  letter-spacing: -.055em;
+}
+
+.size-guide-content {
+  padding: clamp(3.5rem, 6vw, 6rem) 3rem clamp(5rem, 8vw, 8rem);
+}
+
+.size-guide-intro {
+  max-width: 54rem;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(56,64,42,.82);
+}
+
+.size-guide-table-wrap {
+  overflow-x: auto;
+  border-top: 1px solid rgba(56,64,42,.30);
+  border-bottom: 1px solid rgba(56,64,42,.30);
+  background: rgba(251,248,241,.68);
+}
+
+.size-guide-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+}
+
+.size-guide-table th,
+.size-guide-table td {
+  padding: 1.15rem 1rem;
+  border-right: 1px solid rgba(56,64,42,.20);
+  border-bottom: 1px solid rgba(56,64,42,.20);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.size-guide-table th:last-child,
+.size-guide-table td:last-child {
+  border-right: 0;
+}
+
+.size-guide-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.size-guide-table th {
+  background: var(--elore-v7-sand);
+  color: #38402A;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.size-guide-table td {
+  color: #38402A;
+  font-size: 1rem;
+}
+
+.size-guide-table td.size-guide-emphasis {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+}
+
+.size-guide-note {
+  margin-top: 1.5rem;
+  max-width: 52rem;
+  color: rgba(56,64,42,.76);
+  line-height: 1.7;
+}
+
+.site-footer-links {
+  display: grid;
+  gap: .7rem;
+}
+
+.site-footer-links a {
+  color: var(--elore-v7-bone);
+}
+
+.site-footer-links a:hover {
+  color: var(--elore-v7-sand);
+}
+
+.site-footer-pending {
+  color: rgba(244,237,226,.48);
+}
+
+@media (max-width: 767px) {
+  .size-guide-hero__inner,
+  .size-guide-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .size-guide-hero__inner {
+    min-height: 320px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .size-guide-hero h1 {
+    font-size: clamp(3.8rem, 18vw, 5.6rem);
+  }
+
+  .size-guide-table th,
+  .size-guide-table td {
+    padding: .95rem .8rem;
   }
 }

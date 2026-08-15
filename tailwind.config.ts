@@ -9,13 +9,13 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ink: "#344200",
+          ink: "#38402A",
           mocha: "#563D39",
           sand: "#D8CBB8",
-          olive: "#344200",
-          black: "#344200",
+          olive: "#38402A",
+          black: "#38402A",
           white: "#FFFFFF",
-          maroon: "#344200",
+          maroon: "#38402A",
           clay: "#A4664E",
           bone: "#F6F0E5"
         }
