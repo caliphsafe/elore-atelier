@@ -4787,3 +4787,15 @@ a[class*="rounded-full"] {
     bottom: .7rem;
   }
 }
+
+
+/* ELÖRE V32 — SHOP HERO CAROUSEL, CLEAN AUTO-FLOW */
+.shop-hero-carousel__controls {
+  display: none !important;
+}
+
+.shop-hero-carousel__image {
+  transition:
+    opacity 1.2s ease,
+    transform 5.6s ease;
+}

@@ -13,36 +13,16 @@ const heroImages = [
     alt: "ELÖRE Summer Collection"
   },
   {
-    src: "/images/lookbook/hero.jpg",
+    src: "/images/home/lookbook/lookbook-1.jpg",
     alt: "ELÖRE editorial lookbook"
   },
   {
-    src: "/images/lookbook/look-1.jpg",
-    alt: "ELÖRE lookbook style"
+    src: "/images/home/lookbook/lookbook-2.jpg",
+    alt: "ELÖRE editorial lookbook"
   },
   {
-    src: "/images/lookbook/look-2.jpg",
-    alt: "ELÖRE lookbook style"
-  },
-  {
-    src: "/images/lookbook/look-3.jpg",
-    alt: "ELÖRE lookbook style"
-  },
-  {
-    src: "/images/lookbook/look-4.jpg",
-    alt: "ELÖRE lookbook style"
-  },
-  {
-    src: "/images/lookbook/look-5.jpg",
-    alt: "ELÖRE lookbook style"
-  },
-  {
-    src: "/images/lookbook/styling-1.jpg",
-    alt: "ELÖRE editorial styling"
-  },
-  {
-    src: "/images/lookbook/styling-2.jpg",
-    alt: "ELÖRE editorial styling"
+    src: "/images/home/lookbook/lookbook-3.jpg",
+    alt: "ELÖRE editorial lookbook"
   }
 ];
 
@@ -57,15 +37,7 @@ export function ShopHeroCarousel() {
     return () => window.clearInterval(interval);
   }, []);
 
-  function previous() {
-    setActiveIndex((current) =>
-      current === 0 ? heroImages.length - 1 : current - 1
-    );
-  }
 
-  function next() {
-    setActiveIndex((current) => (current + 1) % heroImages.length);
-  }
 
   return (
     <div className="shop-hero-carousel" aria-label="ELÖRE collection imagery">
@@ -85,18 +57,6 @@ export function ShopHeroCarousel() {
         ))}
       </div>
 
-      <div className="shop-hero-carousel__controls">
-        <button type="button" onClick={previous} aria-label="Previous image">
-          ←
-        </button>
-        <span>
-          {String(activeIndex + 1).padStart(2, "0")} /{" "}
-          {String(heroImages.length).padStart(2, "0")}
-        </span>
-        <button type="button" onClick={next} aria-label="Next image">
-          →
-        </button>
-      </div>
     </div>
   );
 }
