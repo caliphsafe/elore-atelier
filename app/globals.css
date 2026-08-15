@@ -3439,3 +3439,53 @@ a[class*="rounded-full"] {
     padding: .95rem .8rem;
   }
 }
+
+
+/* =========================================================
+   ELÖRE V25 — FOUR-SIDED HERO IMAGE SYSTEM
+   No hero image mask below uses more than four points.
+   ========================================================= */
+
+/* ATELIER — reverse-direction companion to the Custom hero.
+   Custom: top-left inset / bottom-right inset.
+   Atelier: top-right inset / bottom-left inset. */
+.atelier-opening__image {
+  clip-path: polygon(
+    0 0,
+    96% 0,
+    100% 94%,
+    4% 100%
+  );
+  box-shadow: 18px 22px 0 rgba(74,51,43,.14);
+}
+
+/* EXPERIENCES — a different restrained four-sided editorial skew. */
+.experience-opening__image {
+  clip-path: polygon(
+    4% 0,
+    100% 4%,
+    96% 100%,
+    0 96%
+  );
+  box-shadow: 18px 22px 0 rgba(216,203,184,.13);
+}
+
+@media (max-width: 600px) {
+  .atelier-opening__image {
+    clip-path: polygon(
+      0 0,
+      97% 0,
+      100% 95%,
+      3% 100%
+    );
+  }
+
+  .experience-opening__image {
+    clip-path: polygon(
+      3% 0,
+      100% 3%,
+      97% 100%,
+      0 97%
+    );
+  }
+}
