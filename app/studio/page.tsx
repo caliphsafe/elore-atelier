@@ -99,79 +99,32 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section className="bg-brand-bone px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-brand-sand/45 shadow-soft">
-            <div className="grid gap-7 p-6 md:p-8 lg:p-10">
-              <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-                <h2 className="serif-display max-w-3xl text-4xl leading-tight text-brand-ink md:text-6xl">
-                  The Process of a Handcrafted Hat
-                </h2>
-                <p className="max-w-3xl text-base leading-8 text-brand-ink/72 md:text-lg lg:pb-2">
-                  Every step carries a story whether it’s from the designer or the
-                  wearer. Every silhouette begins on a handcrafted wooden block,
-                  where steam, pressure, and skilled hands shape each hat into its
-                  distinctive form.
-                </p>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {processSteps.map((step) => (
-                  <article
-                    key={step.title}
-                    className="flex h-full flex-col rounded-[1.5rem] border thin-border bg-white p-5 shadow-soft md:p-6"
-                  >
-                    <div className="mb-5 flex items-center justify-between border-b thin-border pb-4">
-                      <span className="text-[10px] uppercase tracking-[0.28em] text-brand-mocha/75">
-                        {step.number}
-                      </span>
-                      <span className="h-px w-12 bg-brand-mocha/20" />
-                    </div>
-                    <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                      {step.title}
-                    </h3>
-                    <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                      {step.text}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 py-8 md:px-8 md:py-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="mb-7 max-w-3xl md:mb-9">
-            <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-              Timeless Materials
+      <section className="atelier-process">
+        <div className="editorial-container atelier-process__inner">
+          <div className="atelier-process__lead">
+            <h2 className="serif-display">
+              The Process of a Handcrafted Hat
             </h2>
+            <p>
+              Every step carries a story whether it’s from the designer or the
+              wearer. Every silhouette begins on a handcrafted wooden block,
+              where steam, pressure, and skilled hands shape each hat into its
+              distinctive form.
+            </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-2">
-            {timelessMaterials.map((material) => (
+          <div className="atelier-process__journey">
+            {processSteps.map((step, index) => (
               <article
-                key={material.title}
-                className="grid overflow-hidden rounded-luxe border thin-border bg-white shadow-soft md:grid-cols-[0.95fr_1.05fr]"
+                key={step.title}
+                className={`atelier-process__step atelier-process__step--${index + 1}`}
               >
-                <div className="relative min-h-[260px] overflow-hidden bg-[#f7f1ea] md:min-h-[340px]">
-                  <Image
-                    src={material.image}
-                    alt={material.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 35vw"
-                    className="object-cover transition duration-700 hover:scale-[1.03]"
-                  />
-                </div>
-
-                <div className="flex flex-col justify-center p-6 md:p-7">
-                  <h3 className="serif-display text-3xl leading-tight text-brand-ink md:text-4xl">
-                    {material.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-brand-ink/72 md:text-base">
-                    {material.text}
-                  </p>
+                <span className="atelier-process__number serif-display">
+                  {step.number}
+                </span>
+                <div className="atelier-process__step-copy">
+                  <h3 className="serif-display">{step.title}</h3>
+                  <p>{step.text}</p>
                 </div>
               </article>
             ))}
@@ -179,36 +132,58 @@ export default function StudioPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-16 pt-8 md:px-8 md:pb-20 md:pt-10 lg:px-12">
-        <div className="editorial-container">
-          <div className="overflow-hidden rounded-luxe border thin-border bg-white shadow-soft">
-            <div className="grid gap-7 p-6 md:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
-              <div>
-                <h2 className="serif-display max-w-2xl text-4xl leading-tight text-brand-ink md:text-5xl">
-                  Discover the collection or begin a custom commission.
-                </h2>
-                <p className="mt-5 max-w-xl text-base leading-8 text-brand-ink/72">
-                  The atelier offers a deeper understanding of the craft behind
-                  the work. The next step is to explore the collection or move
-                  into a more personal custom experience.
-                </p>
-              </div>
+      <section className="atelier-materials">
+        <div className="editorial-container atelier-materials__inner">
+          <div className="atelier-materials__title">
+            <h2 className="serif-display">Timeless Materials</h2>
+          </div>
 
-              <div className="flex flex-col justify-center gap-4">
-                <Link
-                  href="/shop"
-                  className="inline-flex w-fit rounded-full bg-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-white transition hover:bg-brand-mocha"
-                >
-                  Shop the Collection
-                </Link>
-                <Link
-                  href="/custom"
-                  className="inline-flex w-fit rounded-full border border-brand-ink px-6 py-3 text-xs uppercase tracking-[0.24em] text-brand-ink transition hover:border-brand-mocha hover:text-brand-mocha"
-                >
-                  Begin a Custom Hat
-                </Link>
-              </div>
-            </div>
+          <div className="atelier-materials__layout">
+            {timelessMaterials.map((material, index) => (
+              <article
+                key={material.title}
+                className={`atelier-material atelier-material--${index + 1}`}
+              >
+                <div className="atelier-material__image">
+                  <Image
+                    src={material.image}
+                    alt={material.alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 44vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="atelier-material__copy">
+                  <h3 className="serif-display">{material.title}</h3>
+                  <p>{material.text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="atelier-close">
+        <div className="editorial-container atelier-close__inner">
+          <div className="atelier-close__copy">
+            <h2 className="serif-display">
+              Discover the collection or begin a custom commission.
+            </h2>
+            <p>
+              The atelier offers a deeper understanding of the craft behind
+              the work. The next step is to explore the collection or move
+              into a more personal custom experience.
+            </p>
+          </div>
+
+          <div className="atelier-close__actions">
+            <Link href="/shop" className="btn-light">
+              Shop the Collection
+            </Link>
+            <Link href="/custom" className="btn-outline-light">
+              Begin a Custom Hat
+            </Link>
           </div>
         </div>
       </section>
