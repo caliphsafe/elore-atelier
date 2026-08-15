@@ -9,7 +9,6 @@ import { WishlistLink } from "@/components/wishlist/wishlist-link";
 const links = [
   { href: "/shop", label: "Shop" },
   { href: "/studio", label: "Atelier" },
-  { href: "/custom", label: "Custom" },
   { href: "/experiences", label: "Experiences" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

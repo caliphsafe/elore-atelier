@@ -4799,3 +4799,41 @@ a[class*="rounded-full"] {
     opacity 1.2s ease,
     transform 5.6s ease;
 }
+
+
+/* =========================================================
+   ELÖRE V33 — CUSTOM PROCESS TITLE CONTAINMENT
+   Prevent long stage names from bleeding into adjacent cells.
+   ========================================================= */
+.custom-process__item {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.custom-process__item h3 {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: none;
+  font-size: clamp(1.75rem, 2.35vw, 2.75rem);
+  line-height: .94;
+  letter-spacing: -.03em;
+}
+
+.custom-process__list {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .custom-process__item h3 {
+    font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .custom-process__item h3 {
+    font-size: clamp(1.85rem, 7vw, 2.5rem);
+    overflow-wrap: normal;
+  }
+}
