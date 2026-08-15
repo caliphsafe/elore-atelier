@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ShopGrid } from "@/components/shop/shop-grid";
+import { ShopHeroCarousel } from "@/components/shop/shop-hero-carousel";
 import { getProducts } from "@/lib/shopify/storefront";
 
 export default async function ShopPage() {
@@ -15,14 +15,7 @@ export default async function ShopPage() {
           </div>
 
           <div className="shop-opening__image">
-            <Image
-              src="/images/home/collections/signature.jpg"
-              alt="ELÖRE handcrafted hat collection"
-              fill
-              priority
-              sizes="(max-width: 900px) 92vw, 42vw"
-              className="object-cover"
-            />
+            <ShopHeroCarousel />
           </div>
         </div>
       </section>

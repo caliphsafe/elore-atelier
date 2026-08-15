@@ -6,14 +6,14 @@ const collections = [
     title: "Summer Collection",
     subtitle: "Handcrafted pieces shaped for warm days, movement, and ease.",
     href: "/shop",
-    image: "/images/home/collections/signature.jpg",
+    image: "/images/home/collections/studio-editions.jpg",
     alt: "ELÖRE summer hat collection"
   },
   {
     title: "Signature Collection",
     subtitle: "Recognizable silhouettes shaped on custom blocks unique to Elöre.",
     href: "/shop",
-    image: "/images/home/collections/studio-editions.jpg",
+    image: "/images/home/collections/signature.jpg",
     alt: "ELÖRE signature hat collection"
   },
   {
