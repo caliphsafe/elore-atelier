@@ -49,6 +49,17 @@ export default function ExperiencesPage() {
       <section className="experience-story">
         <div className="editorial-container experience-story__inner">
           <div className="experience-story__statement">
+            <video
+              className="experience-story__background-video"
+              src="/video/custom.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+            />
+            <div className="experience-story__video-wash" aria-hidden="true" />
             <h2 className="serif-display">Discover the beauty of hat-making.</h2>
           </div>
 

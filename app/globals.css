@@ -2886,3 +2886,135 @@ a[class*="rounded-full"] {
     max-height: 300px;
   }
 }
+
+
+/* =========================================================
+   ELÖRE V19 — EXPERIENCES PROCESS VIDEO STATEMENT
+   Brown remains the dominant surface; process film is texture.
+   Statement now sits naturally below the hero.
+   ========================================================= */
+
+/* Remove all previous hero-overlap behavior. */
+.experience-story {
+  position: relative;
+  z-index: 1;
+  margin-top: 0 !important;
+  pointer-events: auto;
+}
+
+.experience-story__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.experience-story__statement {
+  position: relative;
+  z-index: 1;
+  width: min(92%, 980px);
+  min-height: clamp(330px, 35vw, 470px);
+  margin: clamp(2.25rem, 4vw, 4rem) auto 0 !important;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: #4a332b;
+  box-shadow: 0 22px 58px rgba(28, 35, 20, .14);
+  transform: none;
+  isolation: isolate;
+}
+
+/* The 9:16 film fills the wide field as moving texture. */
+.experience-story__background-video {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  opacity: .34;
+  filter: saturate(.72) contrast(.92);
+}
+
+/* Brown stays visually dominant instead of becoming a video panel. */
+.experience-story__video-wash {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg,
+      rgba(74,51,43,.94) 0%,
+      rgba(74,51,43,.78) 48%,
+      rgba(74,51,43,.60) 100%);
+}
+
+.experience-story__statement::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(28,20,16,.22), transparent 48%);
+}
+
+.experience-story__statement h2 {
+  position: relative;
+  z-index: 2;
+  max-width: 9ch;
+  margin: 0;
+  color: var(--elore-v7-bone);
+  font-size: clamp(3.8rem, 6vw, 6.6rem);
+  line-height: .84;
+  text-shadow: 0 2px 20px rgba(22,15,12,.22);
+}
+
+.experience-story__included {
+  margin-top: clamp(3rem, 5vw, 5rem);
+}
+
+@media (max-width: 900px) {
+  .experience-story {
+    margin-top: 0 !important;
+  }
+
+  .experience-story__statement {
+    width: min(94%, 760px);
+    min-height: 360px;
+    margin-top: 2rem !important;
+  }
+
+  .experience-story__background-video {
+    object-position: center 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-story {
+    margin-top: 0 !important;
+  }
+
+  .experience-story__statement {
+    width: calc(100% - 2rem);
+    min-height: 390px;
+    margin-top: 1.5rem !important;
+    padding: 1.5rem;
+  }
+
+  .experience-story__statement h2 {
+    max-width: 8ch;
+    font-size: clamp(3.2rem, 14vw, 4.6rem);
+  }
+
+  .experience-story__background-video {
+    object-position: 52% center;
+    opacity: .32;
+  }
+
+  .experience-story__video-wash {
+    background:
+      linear-gradient(180deg,
+        rgba(74,51,43,.72) 0%,
+        rgba(74,51,43,.78) 42%,
+        rgba(74,51,43,.94) 100%);
+  }
+}
