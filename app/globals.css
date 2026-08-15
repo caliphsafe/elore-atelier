@@ -2317,3 +2317,54 @@ a[class*="rounded-full"] {
     box-shadow: 12px 14px 0 rgba(74,51,43,.12);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V14 — EXPERIENCES HERO IMAGE SILHOUETTE
+   A broader architectural cut-corner frame with one stepped
+   lower edge; intentionally different from the prior shard.
+   ========================================================= */
+.experience-opening__image {
+  clip-path: polygon(
+    0 7%,
+    78% 0,
+    100% 10%,
+    96% 76%,
+    84% 76%,
+    84% 94%,
+    22% 100%,
+    0 89%
+  );
+  box-shadow: 26px 30px 0 rgba(216,203,184,.15);
+}
+
+@media (max-width: 900px) {
+  .experience-opening__image {
+    clip-path: polygon(
+      0 5%,
+      80% 0,
+      100% 8%,
+      97% 78%,
+      86% 78%,
+      86% 95%,
+      18% 100%,
+      0 90%
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-opening__image {
+    clip-path: polygon(
+      0 4%,
+      82% 0,
+      100% 7%,
+      97% 80%,
+      87% 80%,
+      87% 95%,
+      15% 100%,
+      0 91%
+    );
+    box-shadow: 14px 17px 0 rgba(216,203,184,.14);
+  }
+}
