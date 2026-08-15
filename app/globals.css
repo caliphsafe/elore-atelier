@@ -2800,3 +2800,89 @@ a[class*="rounded-full"] {
     max-height: 330px;
   }
 }
+
+
+/* =========================================================
+   ELÖRE V18 — FOUR-LINE HERO TITLES / HEIGHT TIGHTENING
+   ========================================================= */
+
+/* EXPERIENCES */
+.experience-opening__title h1 {
+  max-width: none;
+  font-size: clamp(3.65rem, 5.6vw, 6.25rem);
+  line-height: .82;
+}
+
+.experience-opening__copy {
+  margin-top: 1.15rem;
+}
+
+.experience-opening__copy .btn-olive {
+  margin-top: 1.25rem;
+}
+
+/* ATELIER */
+.atelier-opening__inner {
+  min-height: clamp(500px, 62svh, 680px);
+  padding-top: clamp(2.75rem, 4vw, 4rem);
+  padding-bottom: clamp(2.75rem, 4vw, 4rem);
+}
+
+.atelier-opening__content > h1 {
+  max-width: none;
+  font-size: clamp(3.15rem, 4.7vw, 5.35rem);
+  line-height: .87;
+}
+
+.atelier-opening__intro {
+  margin-top: 1.15rem;
+  padding-left: 1.1rem;
+}
+
+.atelier-opening__intro h2 {
+  font-size: clamp(1.55rem, 2vw, 2.25rem);
+}
+
+.atelier-opening__intro p {
+  margin-top: .7rem;
+  line-height: 1.58;
+}
+
+.atelier-opening__image {
+  min-height: clamp(320px, 34vw, 460px);
+  max-height: 470px;
+}
+
+@media (max-width: 900px) {
+  .experience-opening__title h1 {
+    font-size: clamp(3.3rem, 8.8vw, 5rem);
+  }
+
+  .atelier-opening__content > h1 {
+    font-size: clamp(3rem, 8.3vw, 4.7rem);
+    line-height: .88;
+  }
+
+  .atelier-opening__inner {
+    min-height: auto;
+    padding-top: 3rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-opening__title h1 {
+    font-size: clamp(3rem, 12vw, 4.2rem);
+    line-height: .86;
+  }
+
+  .atelier-opening__content > h1 {
+    font-size: clamp(2.65rem, 10.5vw, 3.7rem);
+    line-height: .9;
+  }
+
+  .atelier-opening__image {
+    min-height: 260px;
+    max-height: 300px;
+  }
+}

@@ -18,7 +18,12 @@ export default function ExperiencesPage() {
         <div className="editorial-container experience-opening__inner">
           <div className="experience-opening__content">
             <div className="experience-opening__title">
-              <h1 className="serif-display">Learn the craft of hat making inside the atelier.</h1>
+              <h1 className="serif-display">
+              Learn the craft<br />
+              of hat making<br />
+              inside the<br />
+              atelier.
+            </h1>
             </div>
             <div className="experience-opening__copy">
               <p>

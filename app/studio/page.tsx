@@ -68,7 +68,10 @@ export default function StudioPage() {
         <div className="editorial-container atelier-opening__inner">
           <div className="atelier-opening__content">
             <h1 className="serif-display">
-              A creative atelier and shop in Downtown Boston where timeless pieces are transformed.
+              A creative atelier<br />
+              and shop in Downtown Boston<br />
+              where timeless pieces<br />
+              are transformed.
             </h1>
 
             <div className="atelier-opening__intro">
