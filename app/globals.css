@@ -3018,3 +3018,97 @@ a[class*="rounded-full"] {
         rgba(74,51,43,.94) 100%);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V20 — EXPERIENCES VIDEO / INCLUDED BALANCE
+   Taller process-film panel + lighter brown film.
+   ========================================================= */
+
+/* Let the story area read as a balanced two-part composition. */
+.experience-story__inner {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: stretch;
+}
+
+/* Tall film panel — intentionally closer to the source video's 9:16 character. */
+.experience-story__statement {
+  width: 100%;
+  min-height: clamp(620px, 58vw, 820px);
+  height: 100%;
+  margin: 0 !important;
+  align-self: stretch;
+  padding: clamp(2rem, 3vw, 3.25rem);
+}
+
+/* Make the right-hand content occupy a similar overall height. */
+.experience-story__included {
+  margin-top: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* More of the video should be visible. */
+.experience-story__background-video {
+  opacity: .72;
+  filter: saturate(.9) contrast(.96) brightness(.96);
+  object-position: center center;
+}
+
+/* Light warm-brown film, not a heavy dark cover. */
+.experience-story__video-wash {
+  background: rgba(143, 104, 82, .34);
+}
+
+/* Gentle legibility support only near the title. */
+.experience-story__statement::after {
+  background:
+    linear-gradient(
+      to top,
+      rgba(58, 39, 31, .42) 0%,
+      rgba(58, 39, 31, .20) 34%,
+      transparent 62%
+    );
+}
+
+.experience-story__statement h2 {
+  text-shadow: 0 2px 18px rgba(32, 21, 17, .28);
+}
+
+@media (max-width: 1000px) {
+  .experience-story__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-story__statement {
+    width: min(92%, 620px);
+    min-height: min(78vh, 760px);
+    margin: 0 auto !important;
+  }
+
+  .experience-story__included {
+    width: min(100%, 760px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience-story__statement {
+    width: calc(100% - 2rem);
+    min-height: 560px;
+  }
+
+  .experience-story__background-video {
+    opacity: .76;
+    object-position: 52% center;
+  }
+
+  .experience-story__video-wash {
+    background: rgba(143, 104, 82, .30);
+  }
+}
