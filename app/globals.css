@@ -3112,3 +3112,103 @@ a[class*="rounded-full"] {
     background: rgba(143, 104, 82, .30);
   }
 }
+
+
+/* =========================================================
+   ELÖRE V21 — HOME / SALOMÉ STORY VIMEO
+   Replace static studio image with the 16:9 Vimeo film and
+   balance the copy block to the film's visual height.
+   ========================================================= */
+.home-story-grid {
+  align-items: stretch;
+}
+
+.home-story-video {
+  position: relative;
+  overflow: hidden;
+  background: var(--elore-v7-olive-deep);
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.home-story-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.home-story-video__caption {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  max-width: min(72%, 34rem);
+  padding: 1.1rem 1.4rem 1.25rem;
+  background: rgba(56,64,42,.88);
+  pointer-events: none;
+}
+
+.home-story-video__caption h2 {
+  margin: 0;
+  color: var(--elore-v7-bone);
+  font-size: clamp(2rem, 3.6vw, 4.25rem);
+  line-height: .9;
+}
+
+.home-story-copy {
+  min-height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .home-story-grid {
+    align-items: stretch;
+  }
+
+  .home-story-video,
+  .home-story-copy {
+    min-height: clamp(390px, 32vw, 500px);
+    height: 100%;
+  }
+
+  .home-story-video {
+    aspect-ratio: auto;
+  }
+
+  .home-story-copy h3 {
+    font-size: clamp(2.4rem, 3.4vw, 4rem);
+    line-height: .96;
+  }
+
+  .home-story-copy p {
+    margin-top: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .home-story-copy > div:last-child {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  .home-story-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-story-copy {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-story-video__caption {
+    max-width: 78%;
+    padding: .85rem 1rem 1rem;
+  }
+
+  .home-story-video__caption h2 {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+  }
+}
