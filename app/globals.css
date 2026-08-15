@@ -4925,3 +4925,33 @@ body > div .relative.min-h-\[92svh\].overflow-hidden.bg-brand-maroon h1 {
       );
   }
 }
+
+
+/* =========================================================
+   ELÖRE V35 — HOME HERO SUPPORT COPY LEGIBILITY
+   Give the right-side statement its own controlled surface.
+   ========================================================= */
+.home-hero-support {
+  position: relative;
+  max-width: 34rem;
+  justify-self: end;
+  padding: 1.6rem 1.75rem 1.7rem;
+  border-left: 2px solid rgba(244,237,226,.72);
+  background: rgba(56,64,42,.82);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 44px rgba(20,24,14,.14);
+}
+
+.home-hero-support p {
+  margin: 0;
+  color: var(--elore-v7-bone) !important;
+  font-size: clamp(1.75rem, 2.25vw, 2.55rem);
+  line-height: 1.05;
+  text-shadow: 0 2px 18px rgba(20,24,14,.32);
+}
+
+@media (min-width: 1280px) {
+  .home-hero-support {
+    max-width: 36rem;
+  }
+}

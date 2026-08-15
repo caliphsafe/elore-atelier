@@ -22,8 +22,8 @@ export function Hero() {
               <Link href="/custom" className="btn-outline-light">Create Your Hat</Link>
             </div>
           </div>
-          <div className="hidden border-l border-brand-bone/30 pl-6 lg:block">
-            <p className="serif-display text-3xl leading-tight text-brand-bone">Elöre Atelier is a Boston-based atelier dedicated to preserving the craft of hat-making. Through thoughtful design, natural materials, and storytelling, each piece reflects a commitment to craftsmanship.</p>
+          <div className="home-hero-support hidden lg:block">
+            <p className="serif-display">Elöre Atelier is a Boston-based atelier dedicated to preserving the craft of hat-making. Through thoughtful design, natural materials, and storytelling, each piece reflects a commitment to craftsmanship.</p>
           </div>
         </div>
       </div>
