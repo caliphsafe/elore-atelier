@@ -1,5 +1,4 @@
 import "./globals.css";
-import "./cultural-backgrounds.css";
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 
@@ -13,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="luxury-shell elore-cultural-shell bg-brand-white text-brand-ink">
+      <body className="luxury-shell bg-brand-white text-brand-ink">
         <SiteShell>{children}</SiteShell>
       </body>
     </html>
