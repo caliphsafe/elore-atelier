@@ -63,15 +63,26 @@ export default function ExperiencesPage() {
             <h2 className="serif-display">Discover the beauty of hat-making.</h2>
           </div>
 
-          <div className="experience-story__included">
-            <h3 className="serif-display">What Is Included</h3>
-            <div className="experience-included-list">
-              {included.map((item, index) => (
-                <div className="experience-included-item" key={item}>
-                  <span className="serif-display">0{index + 1}</span>
-                  <p>{item}</p>
-                </div>
-              ))}
+          <div className="experience-story__included relative overflow-hidden">
+            <Image
+              src="/images/bg/elorebg4.png"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 70vw, 34vw"
+              className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+              aria-hidden="true"
+            />
+
+            <div className="relative z-10">
+              <h3 className="serif-display">What Is Included</h3>
+              <div className="experience-included-list">
+                {included.map((item, index) => (
+                  <div className="experience-included-item" key={item}>
+                    <span className="serif-display">0{index + 1}</span>
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

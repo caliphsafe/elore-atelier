@@ -65,8 +65,17 @@ export default function StudioPage() {
   return (
     <>
       <section className="atelier-opening">
-        <div className="editorial-container atelier-opening__inner">
-          <div className="atelier-opening__content">
+        <div className="editorial-container atelier-opening__inner relative overflow-hidden">
+          <Image
+            src="/images/bg/elorebg3.png"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 70vw, 34vw"
+            className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+            aria-hidden="true"
+          />
+
+          <div className="atelier-opening__content relative z-10">
             <h1 className="serif-display atelier-hero-title">
               <span>A creative atelier and shop</span>
               <span>in Downtown Boston where</span>
@@ -86,7 +95,7 @@ export default function StudioPage() {
             </div>
           </div>
 
-          <div className="atelier-opening__image">
+          <div className="atelier-opening__image relative z-10">
             <Image
               src="/images/studio/workspace.jpg"
               alt="ELÖRE Atelier workspace in Downtown Boston"

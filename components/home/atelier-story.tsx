@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function AtelierStory() {
@@ -13,12 +14,21 @@ export function AtelierStory() {
             allowFullScreen
           />
         </div>
-        <div className="home-story-copy flex flex-col justify-between bg-brand-ivory p-6 md:p-8 lg:p-10">
-          <div>
+        <div className="home-story-copy relative flex flex-col justify-between overflow-hidden bg-brand-ivory p-6 md:p-8 lg:p-10">
+          <Image
+            src="/images/bg/elorebg1.png"
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 60vw, 30vw"
+            className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10">
             <h3 className="serif-display text-4xl leading-tight text-brand-olive md:text-5xl">Founded by Salome Kopasz, Elöre is rooted in craft, story and slow fashion.</h3>
             <p className="mt-6 text-base leading-8 text-brand-olive/75 md:text-lg">Born in Cameroon and raised in Paris, Salomé&apos;s creative perspective was shaped by a life immersed in culture, fashion, and artistry. As a former model, she experienced the fashion world from within, developing an appreciation for the relationship between clothing, identity, and self-expression…</p>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="relative z-10 mt-8 flex flex-wrap gap-3">
             <Link href="/about" className="btn-olive">Read About ELÖRE</Link>
             <Link href="/studio" className="btn-outline-olive">Enter the Atelier</Link>
           </div>

@@ -74,8 +74,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-brand-maroon text-white">
-        <div className="editorial-container px-5 py-16 md:px-8 lg:px-12 lg:py-24">
+      <section className="relative overflow-hidden bg-brand-maroon text-white">
+        <Image
+          src="/images/bg/elorebg5.png"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 75vw, 36vw"
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-50 mix-blend-soft-light"
+          aria-hidden="true"
+        />
+
+        <div className="editorial-container relative z-10 px-5 py-16 md:px-8 lg:px-12 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <h2 className="serif-display text-5xl leading-[0.88] md:text-7xl">

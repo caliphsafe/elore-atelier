@@ -26,8 +26,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-content">
-        <div className="editorial-container contact-content__inner">
+      <section className="contact-content relative overflow-hidden">
+        <Image
+          src="/images/bg/elorebg6.png"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 80vw, 38vw"
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-50 mix-blend-multiply"
+          aria-hidden="true"
+        />
+
+        <div className="editorial-container contact-content__inner relative z-10">
           <aside className="contact-details">
             <div className="contact-detail">
               <h2 className="serif-display">Address</h2>
