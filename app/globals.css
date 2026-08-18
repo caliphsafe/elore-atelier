@@ -5228,3 +5228,226 @@ body > div .relative.min-h-\[92svh\].overflow-hidden.bg-brand-maroon h1 {
   }
 }
 
+/* =========================================================
+   ELÖRE PNG ACCENT VISIBILITY FIX
+   Paste this at the very bottom of app/globals.css,
+   after the previous PNG accent background block.
+   ========================================================= */
+
+/* Keep all page accent layers above the page background but behind real content. */
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+)::before {
+  z-index: 0 !important;
+  opacity: var(--elore-page-accent-opacity, 0.5) !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none !important;
+}
+
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+) > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ABOUT PAGE FIX
+   The previous about accent was sitting behind the photo/collage.
+   This replaces the decorative circle in the About hero with the about PNG accent.
+*/
+section:has(.elore-collage--olive) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Hide the existing plain decorative circle in the About hero. */
+section:has(.elore-collage--olive) > .absolute.rounded-full {
+  display: none !important;
+}
+
+/* Put the About background image in that decorative role instead. */
+section:has(.elore-collage--olive)::before {
+  content: "";
+  position: absolute;
+  right: clamp(1rem, 5vw, 5rem);
+  top: clamp(5rem, 10vw, 9rem);
+  width: min(34vw, 520px);
+  height: min(48vw, 690px);
+  z-index: 0;
+  pointer-events: none;
+  background: url("/images/bg/elorebg1.png") center / contain no-repeat;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+section:has(.elore-collage--olive) > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Stop the old About collage accent from hiding underneath the photo. */
+.elore-collage--olive::after {
+  display: none !important;
+}
+
+/* Make the about principles accent visible without sitting on top of the cards. */
+.about-principles-grid {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-principles-grid::before {
+  z-index: 0 !important;
+  opacity: 0.44 !important;
+  right: -1rem !important;
+  top: -4rem !important;
+}
+
+.about-principles-grid > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Visibility tuning per page so every single assigned PNG can actually be seen. */
+.home-story-section {
+  --elore-page-accent-opacity: 0.5;
+}
+
+.home-story-section::before {
+  width: min(38vw, 560px) !important;
+  height: min(54vw, 760px) !important;
+  left: -1.5rem !important;
+  top: 2rem !important;
+}
+
+.shop-page {
+  --elore-page-accent-opacity: 0.5;
+}
+
+.shop-page::before {
+  width: min(34vw, 520px) !important;
+  height: min(48vw, 680px) !important;
+  right: -1rem !important;
+  top: 2rem !important;
+}
+
+.product-page-shell {
+  --elore-page-accent-opacity: 0.42;
+}
+
+.product-page-shell::before {
+  width: min(32vw, 480px) !important;
+  height: min(48vw, 680px) !important;
+  left: -1rem !important;
+  top: 3rem !important;
+}
+
+.atelier-opening {
+  --elore-page-accent-opacity: 0.5;
+}
+
+.atelier-opening::before {
+  width: min(34vw, 540px) !important;
+  height: min(50vw, 720px) !important;
+  right: -1rem !important;
+  top: 2rem !important;
+}
+
+.experience-page {
+  --elore-page-accent-opacity: 0.46;
+}
+
+.experience-page::before {
+  width: min(32vw, 500px) !important;
+  height: min(50vw, 700px) !important;
+  left: -1rem !important;
+  top: 5rem !important;
+}
+
+.custom-page {
+  --elore-page-accent-opacity: 0.5;
+}
+
+.custom-page::before {
+  width: min(34vw, 540px) !important;
+  height: min(50vw, 720px) !important;
+  right: -1rem !important;
+  top: 4rem !important;
+}
+
+.contact-page {
+  --elore-page-accent-opacity: 0.5;
+}
+
+.contact-page::before {
+  width: min(31vw, 460px) !important;
+  height: min(46vw, 660px) !important;
+  right: 0 !important;
+  top: 4rem !important;
+}
+
+/* Mobile: still visible, but not fighting the content. */
+@media (max-width: 768px) {
+  section:has(.elore-collage--olive)::before {
+    right: -3rem;
+    top: 4rem;
+    width: min(72vw, 340px);
+    height: min(92vw, 460px);
+    opacity: 0.32;
+  }
+
+  :is(
+    .home-story-section,
+    .shop-page,
+    .product-page-shell,
+    .atelier-opening,
+    .experience-page,
+    .custom-page,
+    .contact-page
+  )::before {
+    opacity: min(var(--elore-page-accent-opacity, 0.32), 0.34) !important;
+  }
+
+  .home-story-section::before,
+  .product-page-shell::before,
+  .experience-page::before {
+    width: min(70vw, 340px) !important;
+    height: min(92vw, 460px) !important;
+  }
+
+  .shop-page::before,
+  .atelier-opening::before,
+  .custom-page::before,
+  .contact-page::before {
+    width: min(68vw, 340px) !important;
+    height: min(90vw, 460px) !important;
+  }
+}
+
