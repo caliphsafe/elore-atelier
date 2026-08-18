@@ -25,95 +25,111 @@ const collections = [
   }
 ];
 
-type CollectionCardProps = {
-  collection: (typeof collections)[number];
-  className?: string;
-  priority?: boolean;
-  compact?: boolean;
-};
-
-function CollectionCard({
-  collection,
-  className = "",
-  priority = false,
-  compact = false
-}: CollectionCardProps) {
-  return (
-    <Link
-      href={collection.href}
-      className={`group relative flex overflow-hidden bg-brand-ink ${className}`}
-    >
-      <Image
-        src={collection.image}
-        alt={collection.alt}
-        fill
-        priority={priority}
-        sizes={
-          compact
-            ? "(max-width: 1024px) 100vw, 44vw"
-            : "(max-width: 1024px) 100vw, 56vw"
-        }
-        className="object-cover transition duration-700 group-hover:scale-[1.025]"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/24 to-black/5" />
-
-      <div className="relative z-10 mt-auto w-full p-6 text-white md:p-8 lg:p-10">
-        <h3
-          className={`serif-display max-w-[9ch] leading-[0.9] tracking-[-0.055em] ${
-            compact
-              ? "text-5xl md:text-6xl lg:text-5xl xl:text-6xl"
-              : "text-6xl md:text-7xl lg:text-8xl"
-          }`}
-        >
-          {collection.title}
-        </h3>
-
-        <p className="mt-4 max-w-xl text-base leading-7 text-white/86 md:text-lg md:leading-8">
-          {collection.subtitle}
-        </p>
-      </div>
-    </Link>
-  );
-}
-
 export function FeaturedCollections() {
   return (
-    <section className="bg-brand-sand/60 px-5 py-10 md:px-8 md:py-14 lg:px-12 lg:py-16">
-      <div className="editorial-container">
-        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <h2 className="serif-display max-w-4xl text-5xl leading-[0.9] tracking-[-0.055em] text-brand-olive md:text-6xl lg:text-7xl">
-            Shop Featured Collections and Custom Designs
-          </h2>
-
-          <Link
-            href="/shop"
-            className="inline-flex w-fit min-h-[44px] items-center justify-center border border-brand-olive px-5 py-3 text-xs uppercase tracking-[0.24em] text-brand-olive transition hover:bg-brand-olive hover:text-white"
-          >
+    <section className="home-collections">
+      <div className="editorial-container home-collections__inner">
+        <div className="home-collections__copy">
+          <h2 className="serif-display">Shop Featured Collections and Custom Designs</h2>
+          <Link href="/shop" className="home-collections__all">
             View All Products
           </Link>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-          <CollectionCard
-            collection={collections[0]}
-            priority
-            className="min-h-[430px] md:min-h-[560px] lg:min-h-[690px]"
-          />
-
-          <div className="grid gap-6">
-            <CollectionCard
-              collection={collections[1]}
-              compact
-              className="min-h-[360px] md:min-h-[420px] lg:min-h-[332px]"
+        <div className="relative hidden min-h-[1040px] overflow-visible px-2 pb-10 pt-4 md:block md:min-h-[980px] lg:min-h-[850px]">
+          <Link
+            href={collections[0].href}
+            className="group absolute left-[1%] top-[1rem] z-30 block h-[47rem] w-[58%] min-w-[0] -rotate-[2deg] overflow-hidden bg-brand-ink shadow-soft md:h-[44rem] lg:h-[42rem]"
+          >
+            <Image
+              src={collections[0].image}
+              alt={collections[0].alt}
+              fill
+              priority={false}
+              sizes="(max-width: 1024px) 92vw, 58vw"
+              className="object-cover transition duration-700 group-hover:scale-[1.025]"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 pb-10 text-white md:p-8 md:pb-12 lg:p-10 lg:pb-14">
+              <h3 className="serif-display max-w-[8ch] text-6xl leading-[0.86] tracking-[-0.055em] md:text-7xl lg:text-8xl">
+                {collections[0].title}
+              </h3>
+              <p className="mt-4 max-w-[34rem] text-base leading-7 text-white/88 md:text-lg md:leading-8">
+                {collections[0].subtitle}
+              </p>
+            </div>
+          </Link>
 
-            <CollectionCard
-              collection={collections[2]}
-              compact
-              className="min-h-[360px] md:min-h-[420px] lg:min-h-[332px]"
+          <Link
+            href={collections[1].href}
+            className="group absolute right-[4%] top-[4rem] z-20 block h-[27rem] w-[43%] rotate-[2deg] overflow-hidden bg-brand-ink shadow-soft md:h-[28rem] lg:h-[29rem]"
+          >
+            <Image
+              src={collections[1].image}
+              alt={collections[1].alt}
+              fill
+              sizes="(max-width: 1024px) 86vw, 43vw"
+              className="object-cover transition duration-700 group-hover:scale-[1.025]"
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/24 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-8">
+              <h3 className="serif-display max-w-[8ch] text-5xl leading-[0.86] tracking-[-0.055em] md:text-6xl lg:text-7xl">
+                {collections[1].title}
+              </h3>
+              <p className="mt-4 max-w-[28rem] text-base leading-7 text-white/88 md:text-lg">
+                {collections[1].subtitle}
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href={collections[2].href}
+            className="group absolute bottom-[1rem] right-[7%] z-10 block h-[29rem] w-[53%] -rotate-[4deg] overflow-hidden bg-brand-ink shadow-soft md:h-[30rem] lg:h-[31rem]"
+          >
+            <Image
+              src={collections[2].image}
+              alt={collections[2].alt}
+              fill
+              sizes="(max-width: 1024px) 92vw, 53vw"
+              className="object-cover transition duration-700 group-hover:scale-[1.025]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/24 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-8 lg:p-10">
+              <h3 className="serif-display max-w-[11ch] text-5xl leading-[0.86] tracking-[-0.055em] md:text-6xl lg:text-7xl">
+                {collections[2].title}
+              </h3>
+              <p className="mt-4 max-w-[38rem] text-base leading-7 text-white/88 md:text-lg">
+                {collections[2].subtitle}
+              </p>
+            </div>
+          </Link>
+        </div>
+
+        <div className="mt-3 grid gap-5 md:hidden">
+          {collections.map((collection) => (
+            <Link
+              key={collection.title}
+              href={collection.href}
+              className="group relative min-h-[430px] overflow-hidden bg-brand-ink"
+            >
+              <Image
+                src={collection.image}
+                alt={collection.alt}
+                fill
+                sizes="100vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.025]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/24 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white">
+                <h3 className="serif-display max-w-[9ch] text-5xl leading-[0.88] tracking-[-0.055em]">
+                  {collection.title}
+                </h3>
+                <p className="mt-4 text-base leading-7 text-white/88">
+                  {collection.subtitle}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
