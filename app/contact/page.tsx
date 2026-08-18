@@ -32,7 +32,7 @@ export default function ContactPage() {
           alt=""
           fill
           sizes="(max-width: 1024px) 80vw, 38vw"
-          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-50 mix-blend-multiply"
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-30 mix-blend-multiply"
           aria-hidden="true"
         />
 

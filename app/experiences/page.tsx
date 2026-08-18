@@ -69,7 +69,7 @@ export default function ExperiencesPage() {
               alt=""
               fill
               sizes="(max-width: 1024px) 70vw, 34vw"
-              className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+              className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-30 mix-blend-multiply"
               aria-hidden="true"
             />
 

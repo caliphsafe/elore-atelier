@@ -39,7 +39,7 @@ export default function CustomPage() {
           alt=""
           fill
           sizes="(max-width: 1024px) 80vw, 42vw"
-          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-50 mix-blend-soft-light"
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-30 mix-blend-soft-light"
           aria-hidden="true"
         />
 
@@ -75,7 +75,7 @@ export default function CustomPage() {
           alt=""
           fill
           sizes="(max-width: 1024px) 80vw, 40vw"
-          className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-30 mix-blend-multiply"
           aria-hidden="true"
         />
 
