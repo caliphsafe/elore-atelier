@@ -39,28 +39,28 @@ export default function ContactPage() {
         <div className="editorial-container contact-content__inner relative z-10">
           <aside className="contact-details">
             <div className="contact-detail">
-              <h2 className="serif-display">Address</h2>
-              <p>One Avenue De Lafayette, Boston MA 02111</p>
+              <h2 className="serif-display font-semibold">Address</h2>
+              <p className="font-semibold text-brand-olive">One Avenue De Lafayette, Boston MA 02111</p>
             </div>
 
             <div className="contact-detail contact-detail--offset">
-              <h2 className="serif-display">Phone</h2>
-              <a href="tel:+17819858868">(781) 985-8868</a>
+              <h2 className="serif-display font-semibold">Phone</h2>
+              <a className="font-semibold text-brand-olive" href="tel:+17819858868">(781) 985-8868</a>
             </div>
 
             <div className="contact-detail">
-              <h2 className="serif-display">Email</h2>
-              <a href="mailto:contact@elore.design">contact@elore.design</a>
+              <h2 className="serif-display font-semibold">Email</h2>
+              <a className="font-semibold text-brand-olive" href="mailto:contact@elore.design">contact@elore.design</a>
             </div>
           </aside>
 
-          <div className="contact-form-panel">
+          <div className="contact-form-panel relative z-10 bg-brand-bone/95 backdrop-blur-[2px]">
             <div className="contact-form-panel__accent" aria-hidden="true" />
             <div className="contact-form-panel__form">
-              <input placeholder="Full Name" className="contact-field" />
-              <input placeholder="Email Address" className="contact-field" />
-              <input placeholder="Subject" className="contact-field" />
-              <textarea placeholder="Tell us more..." rows={6} className="contact-field contact-field--textarea" />
+              <input placeholder="Full Name" className="contact-field font-semibold text-brand-olive placeholder:text-brand-olive/70" />
+              <input placeholder="Email Address" className="contact-field font-semibold text-brand-olive placeholder:text-brand-olive/70" />
+              <input placeholder="Subject" className="contact-field font-semibold text-brand-olive placeholder:text-brand-olive/70" />
+              <textarea placeholder="Tell us more..." rows={6} className="contact-field contact-field--textarea font-semibold text-brand-olive placeholder:text-brand-olive/70" />
               <button className="contact-submit">Send Inquiry</button>
             </div>
           </div>

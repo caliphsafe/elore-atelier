@@ -33,8 +33,17 @@ export default function CustomPage() {
         </div>
       </section>
 
-      <section id="custom-process" className="custom-process">
-        <div className="editorial-container custom-process__inner">
+      <section id="custom-process" className="custom-process relative overflow-hidden">
+        <Image
+          src="/images/bg/elorebg7.png"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 80vw, 42vw"
+          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-50 mix-blend-soft-light"
+          aria-hidden="true"
+        />
+
+        <div className="editorial-container custom-process__inner relative z-10">
           <div className="custom-process__heading">
             <h2 className="serif-display">Six stages. One piece shaped around you.</h2>
           </div>
@@ -60,13 +69,22 @@ export default function CustomPage() {
         </div>
       </section>
 
-      <section className="custom-fit">
-        <div className="editorial-container custom-fit__inner">
+      <section className="custom-fit relative overflow-hidden">
+        <Image
+          src="/images/bg/elorebg7.png"
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 80vw, 40vw"
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+          aria-hidden="true"
+        />
+
+        <div className="editorial-container custom-fit__inner relative z-10">
           <div className="custom-fit__intro">
             <h2 className="serif-display">Find Your Perfect Fit</h2>
             <p>Every bespoke hat begins with an accurate measurement. Taking a few moments to measure your head ensures your custom piece is crafted with the fit and comfort it deserves.</p>
           </div>
-          <div className="custom-fit__steps">
+          <div className="custom-fit__steps bg-brand-sand/72 backdrop-blur-[2px]">
             {measureSteps.map(([number, title, description]) => (
               <div className="custom-fit__step" key={number}>
                 <span className="serif-display">{number}</span>

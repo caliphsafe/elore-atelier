@@ -24,9 +24,13 @@ export function AtelierStory() {
             aria-hidden="true"
           />
 
-          <div className="relative z-10">
-            <h3 className="serif-display text-4xl leading-tight text-brand-olive md:text-5xl">Founded by Salome Kopasz, Elöre is rooted in craft, story and slow fashion.</h3>
-            <p className="mt-6 text-base leading-8 text-brand-olive/75 md:text-lg">Born in Cameroon and raised in Paris, Salomé&apos;s creative perspective was shaped by a life immersed in culture, fashion, and artistry. As a former model, she experienced the fashion world from within, developing an appreciation for the relationship between clothing, identity, and self-expression…</p>
+          <div className="relative z-10 bg-brand-ivory/82 p-5 backdrop-blur-[2px] md:p-6 lg:p-7">
+            <h3 className="serif-display text-4xl font-semibold leading-tight text-brand-olive md:text-5xl">
+              Founded by Salome Kopasz, Elöre is rooted in craft, story and slow fashion.
+            </h3>
+            <p className="mt-6 text-base font-semibold leading-8 text-brand-olive md:text-lg">
+              Born in Cameroon and raised in Paris, Salomé&apos;s creative perspective was shaped by a life immersed in culture, fashion, and artistry. As a former model, she experienced the fashion world from within, developing an appreciation for the relationship between clothing, identity, and self-expression…
+            </p>
           </div>
           <div className="relative z-10 mt-8 flex flex-wrap gap-3">
             <Link href="/about" className="btn-olive">Read About ELÖRE</Link>
