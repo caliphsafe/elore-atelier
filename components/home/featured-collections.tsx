@@ -25,6 +25,81 @@ const collections = [
   }
 ];
 
+type CollectionCardProps = {
+  collection: (typeof collections)[number];
+  className?: string;
+  titleClassName?: string;
+  copyClassName?: string;
+  priority?: boolean;
+};
+
+function DesktopCollectionCard({
+  collection,
+  className = "",
+  titleClassName = "",
+  copyClassName = "",
+  priority = false
+}: CollectionCardProps) {
+  return (
+    <Link
+      href={collection.href}
+      className={`group absolute block overflow-hidden bg-brand-ink shadow-soft ${className}`}
+    >
+      <Image
+        src={collection.image}
+        alt={collection.alt}
+        fill
+        priority={priority}
+        sizes="(max-width: 1024px) 100vw, 58vw"
+        className="object-cover transition duration-700 group-hover:scale-[1.025]"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/22 to-black/0" />
+
+      <div className={`absolute z-40 text-white ${copyClassName}`}>
+        <h3
+          className={`serif-display leading-[0.86] tracking-[-0.055em] ${titleClassName}`}
+        >
+          {collection.title}
+        </h3>
+
+        <p className="mt-4 max-w-[32rem] text-base leading-7 text-white/88 md:text-lg md:leading-8">
+          {collection.subtitle}
+        </p>
+      </div>
+    </Link>
+  );
+}
+
+function MobileCollectionCard({ collection }: { collection: (typeof collections)[number] }) {
+  return (
+    <Link
+      href={collection.href}
+      className="group relative block min-h-[430px] overflow-hidden bg-brand-ink"
+    >
+      <Image
+        src={collection.image}
+        alt={collection.alt}
+        fill
+        sizes="100vw"
+        className="object-cover transition duration-700 group-hover:scale-[1.025]"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/24 to-transparent" />
+
+      <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white">
+        <h3 className="serif-display max-w-[9ch] text-5xl leading-[0.88] tracking-[-0.055em]">
+          {collection.title}
+        </h3>
+
+        <p className="mt-4 text-base leading-7 text-white/88">
+          {collection.subtitle}
+        </p>
+      </div>
+    </Link>
+  );
+}
+
 export function FeaturedCollections() {
   return (
     <section className="home-collections">
@@ -36,99 +111,33 @@ export function FeaturedCollections() {
           </Link>
         </div>
 
-        <div className="relative hidden min-h-[1040px] overflow-visible px-2 pb-10 pt-4 md:block md:min-h-[980px] lg:min-h-[850px]">
-          <Link
-            href={collections[0].href}
-            className="group absolute left-[1%] top-[1rem] z-30 block h-[47rem] w-[58%] min-w-[0] -rotate-[2deg] overflow-hidden bg-brand-ink shadow-soft md:h-[44rem] lg:h-[42rem]"
-          >
-            <Image
-              src={collections[0].image}
-              alt={collections[0].alt}
-              fill
-              priority={false}
-              sizes="(max-width: 1024px) 92vw, 58vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.025]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 pb-10 text-white md:p-8 md:pb-12 lg:p-10 lg:pb-14">
-              <h3 className="serif-display max-w-[8ch] text-6xl leading-[0.86] tracking-[-0.055em] md:text-7xl lg:text-8xl">
-                {collections[0].title}
-              </h3>
-              <p className="mt-4 max-w-[34rem] text-base leading-7 text-white/88 md:text-lg md:leading-8">
-                {collections[0].subtitle}
-              </p>
-            </div>
-          </Link>
+        <div className="relative hidden min-h-[860px] overflow-visible px-2 pb-12 pt-4 md:block">
+          <DesktopCollectionCard
+            collection={collections[0]}
+            priority
+            className="left-[1%] top-[1.5rem] z-10 h-[41rem] w-[58%] -rotate-[2deg]"
+            titleClassName="max-w-[8ch] text-6xl md:text-7xl lg:text-8xl"
+            copyClassName="bottom-12 left-9 right-auto max-w-[34rem] lg:left-11"
+          />
 
-          <Link
-            href={collections[1].href}
-            className="group absolute right-[4%] top-[4rem] z-20 block h-[27rem] w-[43%] rotate-[2deg] overflow-hidden bg-brand-ink shadow-soft md:h-[28rem] lg:h-[29rem]"
-          >
-            <Image
-              src={collections[1].image}
-              alt={collections[1].alt}
-              fill
-              sizes="(max-width: 1024px) 86vw, 43vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.025]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/24 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-8">
-              <h3 className="serif-display max-w-[8ch] text-5xl leading-[0.86] tracking-[-0.055em] md:text-6xl lg:text-7xl">
-                {collections[1].title}
-              </h3>
-              <p className="mt-4 max-w-[28rem] text-base leading-7 text-white/88 md:text-lg">
-                {collections[1].subtitle}
-              </p>
-            </div>
-          </Link>
+          <DesktopCollectionCard
+            collection={collections[1]}
+            className="right-[3%] top-[4.25rem] z-20 h-[26rem] w-[45%] rotate-[2deg]"
+            titleClassName="ml-auto max-w-[8ch] text-right text-5xl md:text-6xl lg:text-7xl"
+            copyClassName="bottom-8 right-8 max-w-[29rem] text-right lg:right-10"
+          />
 
-          <Link
-            href={collections[2].href}
-            className="group absolute bottom-[1rem] right-[7%] z-10 block h-[29rem] w-[53%] -rotate-[4deg] overflow-hidden bg-brand-ink shadow-soft md:h-[30rem] lg:h-[31rem]"
-          >
-            <Image
-              src={collections[2].image}
-              alt={collections[2].alt}
-              fill
-              sizes="(max-width: 1024px) 92vw, 53vw"
-              className="object-cover transition duration-700 group-hover:scale-[1.025]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/24 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-8 lg:p-10">
-              <h3 className="serif-display max-w-[11ch] text-5xl leading-[0.86] tracking-[-0.055em] md:text-6xl lg:text-7xl">
-                {collections[2].title}
-              </h3>
-              <p className="mt-4 max-w-[38rem] text-base leading-7 text-white/88 md:text-lg">
-                {collections[2].subtitle}
-              </p>
-            </div>
-          </Link>
+          <DesktopCollectionCard
+            collection={collections[2]}
+            className="bottom-[1.5rem] right-[6%] z-30 h-[24rem] w-[55%] -rotate-[3deg]"
+            titleClassName="ml-auto max-w-[11ch] text-right text-5xl md:text-6xl lg:text-7xl"
+            copyClassName="bottom-8 right-8 max-w-[38rem] text-right lg:right-10"
+          />
         </div>
 
         <div className="mt-3 grid gap-5 md:hidden">
           {collections.map((collection) => (
-            <Link
-              key={collection.title}
-              href={collection.href}
-              className="group relative min-h-[430px] overflow-hidden bg-brand-ink"
-            >
-              <Image
-                src={collection.image}
-                alt={collection.alt}
-                fill
-                sizes="100vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.025]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/24 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white">
-                <h3 className="serif-display max-w-[9ch] text-5xl leading-[0.88] tracking-[-0.055em]">
-                  {collection.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-white/88">
-                  {collection.subtitle}
-                </p>
-              </div>
-            </Link>
+            <MobileCollectionCard key={collection.title} collection={collection} />
           ))}
         </div>
       </div>
