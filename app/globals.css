@@ -4995,3 +4995,236 @@ body > div .relative.min-h-\[92svh\].overflow-hidden.bg-brand-maroon h1 {
     font-size: clamp(2.8rem, 12vw, 4rem);
   }
 }
+
+/* =========================================================
+   ELÖRE PNG BACKGROUND ACCENTS
+   Append this block at the very bottom of app/globals.css only.
+   No layout.tsx changes. No new CSS imports.
+   Uses one PNG accent per page/major page family.
+   Required folder: public/images/bg/
+   ========================================================= */
+
+:root {
+  --elore-bg-accent-opacity: 0.5;
+}
+
+/* Base accent behavior: decorative only, behind content, scoped to existing page/section classes. */
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+)::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--elore-page-accent);
+  background-repeat: no-repeat;
+  background-size: var(--elore-page-accent-size, min(42vw, 620px) auto);
+  background-position: var(--elore-page-accent-position, right 5% top 8%);
+  opacity: var(--elore-page-accent-opacity, var(--elore-bg-accent-opacity));
+  mix-blend-mode: multiply;
+}
+
+:is(
+  .home-story-section,
+  .shop-page,
+  .product-page-shell,
+  .atelier-opening,
+  .experience-page,
+  .custom-page,
+  .contact-page
+) > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* HOME — one accent only, tied to the Salomé/story section. */
+.home-story-section {
+  --elore-page-accent: url("/images/bg/elorebg2.png");
+  --elore-page-accent-position: left 2% top 10%;
+  --elore-page-accent-size: min(30vw, 430px) auto;
+  --elore-page-accent-opacity: 0.42;
+}
+
+.home-story-section::before {
+  inset: 0 auto 0 0;
+  width: min(34vw, 500px);
+}
+
+/* SHOP — one geometric accent for the catalog experience. */
+.shop-page {
+  --elore-page-accent: url("/images/bg/elorebg3.png");
+  --elore-page-accent-position: right 2% top 2.5rem;
+  --elore-page-accent-size: min(30vw, 440px) auto;
+  --elore-page-accent-opacity: 0.44;
+}
+
+.shop-page::before {
+  inset: 0 0 auto auto;
+  width: min(36vw, 520px);
+  height: min(52vw, 680px);
+}
+
+/* PRODUCT DETAIL — quiet symbol texture, one image for product/detail pages. */
+.product-page-shell {
+  --elore-page-accent: url("/images/bg/elorebg7.png");
+  --elore-page-accent-position: left 0 top 4rem;
+  --elore-page-accent-size: min(28vw, 380px) auto;
+  --elore-page-accent-opacity: 0.34;
+}
+
+.product-page-shell::before {
+  inset: 0 auto auto 0;
+  width: min(32vw, 460px);
+  height: min(44vw, 620px);
+}
+
+/* ABOUT — one main accent on the existing collage area. */
+.elore-collage--olive {
+  position: relative;
+  isolation: isolate;
+}
+
+.elore-collage--olive::after {
+  content: "";
+  position: absolute;
+  inset: -8% -4% -8% auto;
+  width: min(34vw, 520px);
+  z-index: -1;
+  pointer-events: none;
+  background: url("/images/bg/elorebg1.png") center / contain no-repeat;
+  opacity: 0.46;
+  mix-blend-mode: multiply;
+}
+
+/* ATELIER — botanical/process accent on the top atelier section only. */
+.atelier-opening {
+  --elore-page-accent: url("/images/bg/elorebg4.png");
+  --elore-page-accent-position: right 1% top 2rem;
+  --elore-page-accent-size: min(30vw, 460px) auto;
+  --elore-page-accent-opacity: 0.48;
+}
+
+.atelier-opening::before {
+  inset: 0 0 auto auto;
+  width: min(36vw, 560px);
+  height: min(52vw, 720px);
+}
+
+/* EXPERIENCES — one symbolic accent away from primary hero/photo areas. */
+.experience-page {
+  --elore-page-accent: url("/images/bg/elorebg5.png");
+  --elore-page-accent-position: left 0 top 7rem;
+  --elore-page-accent-size: min(27vw, 410px) auto;
+  --elore-page-accent-opacity: 0.4;
+}
+
+.experience-page::before {
+  inset: 0 auto auto 0;
+  width: min(33vw, 500px);
+  height: min(54vw, 700px);
+}
+
+/* CUSTOM — stronger identity/pattern accent for the custom ordering journey. */
+.custom-page {
+  --elore-page-accent: url("/images/bg/elorebg6.png");
+  --elore-page-accent-position: right 0 top 5rem;
+  --elore-page-accent-size: min(30vw, 460px) auto;
+  --elore-page-accent-opacity: 0.44;
+}
+
+.custom-page::before {
+  inset: 0 0 auto auto;
+  width: min(36vw, 560px);
+  height: min(52vw, 720px);
+}
+
+/* CONTACT — sun/arch accent, soft and welcoming. */
+.contact-page {
+  --elore-page-accent: url("/images/bg/elorebg8.png");
+  --elore-page-accent-position: right 3% top 5rem;
+  --elore-page-accent-size: min(25vw, 360px) auto;
+  --elore-page-accent-opacity: 0.42;
+}
+
+.contact-page::before {
+  inset: 0 0 auto auto;
+  width: min(30vw, 440px);
+  height: min(44vw, 620px);
+}
+
+/* Keep accents away from direct media/product image areas. */
+:is(
+  .shop-opening__image,
+  .home-collection-card,
+  .atelier-opening__image,
+  .atelier-material__image,
+  .experience-materials__frame,
+  .custom-opening__image,
+  .contact-hero__image,
+  .product-gallery,
+  .product-card,
+  .related-product-card
+) {
+  isolation: isolate;
+}
+
+/* Mobile: keep the accents quieter and pushed to edges. */
+@media (max-width: 768px) {
+  :root {
+    --elore-bg-accent-opacity: 0.26;
+  }
+
+  :is(
+    .home-story-section,
+    .shop-page,
+    .product-page-shell,
+    .atelier-opening,
+    .experience-page,
+    .custom-page,
+    .contact-page
+  )::before {
+    background-size: min(58vw, 300px) auto;
+    opacity: min(var(--elore-page-accent-opacity, 0.32), 0.32);
+  }
+
+  .home-story-section::before,
+  .product-page-shell::before,
+  .experience-page::before {
+    width: min(64vw, 340px);
+    height: min(82vw, 460px);
+  }
+
+  .shop-page::before,
+  .atelier-opening::before,
+  .custom-page::before,
+  .contact-page::before {
+    width: min(60vw, 340px);
+    height: min(82vw, 460px);
+  }
+
+  .elore-collage--olive::after {
+    width: min(58vw, 320px);
+    opacity: 0.28;
+  }
+}
+
