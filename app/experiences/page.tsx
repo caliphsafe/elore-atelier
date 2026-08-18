@@ -19,11 +19,11 @@ export default function ExperiencesPage() {
           <div className="experience-opening__content">
             <div className="experience-opening__title">
               <h1 className="serif-display">
-                Learn the craft<br />
-                of hat making<br />
-                inside the<br />
-                atelier.
-              </h1>
+              Learn the craft<br />
+              of hat making<br />
+              inside the<br />
+              atelier.
+            </h1>
             </div>
             <div className="experience-opening__copy">
               <p>
@@ -73,13 +73,13 @@ export default function ExperiencesPage() {
               aria-hidden="true"
             />
 
-            <div className="relative z-10 bg-brand-bone/78 p-5 backdrop-blur-[2px] md:p-6">
-              <h3 className="serif-display font-semibold">What Is Included</h3>
+            <div className="relative z-10">
+              <h3 className="serif-display">What Is Included</h3>
               <div className="experience-included-list">
                 {included.map((item, index) => (
                   <div className="experience-included-item" key={item}>
-                    <span className="serif-display font-semibold">0{index + 1}</span>
-                    <p className="font-semibold text-brand-olive">{item}</p>
+                    <span className="serif-display">0{index + 1}</span>
+                    <p>{item}</p>
                   </div>
                 ))}
               </div>
