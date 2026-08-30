@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const collections = [
-  { title: "Summer Collection", subtitle: "Handcrafted pieces shaped for warm days, movement, and ease.", href: "/shop", image: "/images/home/collections/studio-editions.jpg", alt: "Elöre Atelier summer hat collection", cardClassName: "lg:row-span-2 min-h-[520px] md:min-h-[620px] lg:min-h-[760px]", titleClassName: "text-6xl md:text-7xl lg:text-8xl" },
-  { title: "Signature Collection", subtitle: "Recognizable silhouettes shaped on custom blocks unique to Elöre.", href: "/shop", image: "/images/home/collections/signature.jpg", alt: "Elöre Atelier signature hat collection", cardClassName: "min-h-[430px] md:min-h-[500px] lg:min-h-[360px]", titleClassName: "text-5xl md:text-6xl lg:text-7xl" },
-  { title: "Custom Design", subtitle: "One-of-one pieces guided by material, proportion, and personal story.", href: "/custom", image: "/images/home/collections/custom.jpg", alt: "Elöre Atelier custom hat design", cardClassName: "min-h-[430px] md:min-h-[500px] lg:min-h-[360px]", titleClassName: "text-5xl md:text-6xl lg:text-7xl" }
+  { title: "Summer Collection", subtitle: "Handcrafted pieces shaped for warm days, movement, and ease.", href: "/shop", image: "/images/home/collections/studio-editions.jpg", alt: "ELÖRE ATELIER summer hat collection", cardClassName: "lg:row-span-2 min-h-[520px] md:min-h-[620px] lg:min-h-[760px]", titleClassName: "text-6xl md:text-7xl lg:text-8xl" },
+  { title: "Signature Collection", subtitle: "Recognizable silhouettes shaped on custom blocks unique to Elöre.", href: "/shop", image: "/images/home/collections/signature.jpg", alt: "ELÖRE ATELIER signature hat collection", cardClassName: "min-h-[430px] md:min-h-[500px] lg:min-h-[360px]", titleClassName: "text-5xl md:text-6xl lg:text-7xl" },
+  { title: "Custom Design", subtitle: "One-of-one pieces guided by material, proportion, and personal story.", href: "/custom", image: "/images/home/collections/custom.jpg", alt: "ELÖRE ATELIER custom hat design", cardClassName: "min-h-[430px] md:min-h-[500px] lg:min-h-[360px]", titleClassName: "text-5xl md:text-6xl lg:text-7xl" }
 ];
 
 export function FeaturedCollections() {

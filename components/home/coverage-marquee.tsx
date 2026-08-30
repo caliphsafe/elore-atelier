@@ -30,7 +30,7 @@ export function CoverageMarquee() {
         <div className="overflow-hidden rounded-luxe border thin-border bg-white/82 py-6 shadow-soft backdrop-blur">
           <h2 className="serif-display px-6 text-3xl leading-tight text-brand-ink md:px-8 md:text-4xl">Covered By</h2>
           <div className="mt-5 overflow-hidden border-y thin-border bg-[#f7f1ea]/70 py-4">
-            <div className="coverage-marquee" aria-label="Elöre Atelier media coverage logos">
+            <div className="coverage-marquee" aria-label="ELÖRE ATELIER media coverage logos">
               {marqueeLogos.map((logo, index) => (
                 <div className="coverage-logo" key={`${logo.src}-${index}`}>
                   <Image src={logo.src} alt={index < coverageLogos.length ? logo.alt : ""} fill sizes="180px" className="object-contain" />

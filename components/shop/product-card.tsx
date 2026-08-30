@@ -6,7 +6,7 @@ import { Product } from "@/lib/shopify/types";
 import { AddFeedbackButton } from "@/components/shop/add-feedback-button";
 import { WishlistButton } from "@/components/wishlist/wishlist-button";
 
-export function ProductCard({ product, index }: { product: Product; index: number }) {
+export function ProductCard({ product }: { product: Product; index?: number }) {
   const router = useRouter();
   const unavailable = product.availableForSale === false;
 
@@ -18,7 +18,7 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); router.push(`/shop/${product.handle}`); }
       }}
-      className={`shop-product group shop-product--${(index % 3) + 1}`}
+      className="shop-product group"
       aria-label={`View ${product.title}`}
     >
       <div className="shop-product__media">

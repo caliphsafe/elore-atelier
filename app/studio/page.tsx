@@ -65,26 +65,20 @@ export default function StudioPage() {
   return (
     <>
       <section className="atelier-opening">
-        <div className="editorial-container atelier-opening__inner relative overflow-hidden">
+        <div className="editorial-container atelier-opening__inner relative overflow-hidden grid grid-cols-1 gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:gap-12 lg:px-12">
           <Image
             src="/images/bg/elorebg3.png"
             alt=""
             fill
             sizes="(max-width: 1024px) 70vw, 34vw"
-            className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-50 mix-blend-multiply"
+            className="pointer-events-none absolute inset-y-0 right-0 z-0 object-contain object-right opacity-30 mix-blend-multiply"
             aria-hidden="true"
           />
 
-          <div className="atelier-opening__content relative z-10">
-            <h1 className="serif-display atelier-hero-title">
-              <span>A creative atelier and shop</span>
-              <span>in Downtown Boston where</span>
-              <span>timeless pieces are</span>
-              <span>transformed.</span>
-            </h1>
+          <div className="atelier-opening__content relative z-10 min-w-0">
+            <h1 className="serif-display text-[clamp(3.5rem,6.4vw,7rem)] leading-[0.86] tracking-[-0.055em]">A creative atelier and shop in Downtown Boston where timeless pieces are transformed.</h1>
 
             <div className="atelier-opening__intro">
-              <h2 className="serif-display">The atelier is more than a workspace.</h2>
               <p>
                 Every Elöre hat begins in the atelier where tradition is practiced,
                 materials are transformed, and craftsmanship is given the time it
@@ -147,25 +141,15 @@ export default function StudioPage() {
             <h2 className="serif-display">Timeless Materials</h2>
           </div>
 
-          <div className="atelier-materials__layout">
-            {timelessMaterials.map((material, index) => (
-              <article
-                key={material.title}
-                className={`atelier-material atelier-material--${index + 1}`}
-              >
-                <div className="atelier-material__image">
-                  <Image
-                    src={material.image}
-                    alt={material.alt}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 44vw"
-                    className="object-cover"
-                  />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {timelessMaterials.map((material) => (
+              <article key={material.title} className="flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden border border-black/10">
+                  <Image src={material.image} alt={material.alt} fill sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
                 </div>
-
-                <div className="atelier-material__copy">
-                  <h3 className="serif-display">{material.title}</h3>
-                  <p>{material.text}</p>
+                <div className="pt-4">
+                  <h3 className="serif-display text-3xl leading-tight text-brand-olive">{material.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-brand-olive/75">{material.text}</p>
                 </div>
               </article>
             ))}

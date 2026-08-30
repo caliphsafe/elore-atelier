@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative min-h-[72svh] overflow-hidden bg-brand-ink text-brand-bone md:min-h-[76svh]">
       <Image
         src="/images/home/hero/hero.jpg"
-        alt="Elöre Atelier hat"
+        alt="ELÖRE ATELIER hat"
         fill
         priority
         sizes="100vw"
