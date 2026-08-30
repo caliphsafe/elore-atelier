@@ -28,7 +28,7 @@ export default function CustomPage() {
             <Link href="#custom-process" className="btn-olive">Begin Your Custom Hat</Link>
           </div>
           <div className="custom-opening__image" style={{ clipPath: "none", borderRadius: 0 }}>
-            <Image src="/images/custom/hero.jpg" alt="ELÖRE custom hat design" fill priority sizes="(max-width:1024px) 100vw,46vw" className="object-cover object-top" />
+            <Image src="/images/custom/hero.jpg" alt="ELÖRE custom hat design" fill priority sizes="(max-width:1024px) 100vw,46vw" className="object-cover" style={{ objectPosition: "50% 25%" }} />
           </div>
         </div>
       </section>

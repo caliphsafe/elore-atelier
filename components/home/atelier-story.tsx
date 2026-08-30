@@ -5,17 +5,17 @@ export function AtelierStory() {
   return (
     <section className="home-story-section bg-brand-bone px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
       <div className="home-story-grid editorial-container grid gap-6 lg:grid-cols-[1.05fr_.95fr] lg:items-stretch lg:[&>*]:min-h-0">
-        <div className="home-story-video flex h-full min-h-0">
+        <div className="home-story-video relative min-h-0 lg:self-stretch">
           <iframe
             title="ELÖRE ATELIER film"
             src="https://player.vimeo.com/video/1218122493?h=bb73f54b5a&title=0&byline=0&portrait=0&badge=0&dnt=1"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            className="block h-full min-h-0 w-full flex-1"
+            className="absolute inset-0 block h-full w-full"
           />
         </div>
-        <div className="home-story-copy relative flex h-full min-h-0 flex-col justify-between overflow-hidden bg-brand-ivory p-6 md:p-8 lg:p-10">
+        <div className="home-story-copy relative flex min-h-0 flex-col justify-between overflow-hidden bg-brand-ivory p-6 md:p-8 lg:p-10">
           <Image
             src="/images/bg/elorebg1.png"
             alt=""

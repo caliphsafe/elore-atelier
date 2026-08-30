@@ -28,7 +28,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-bone text-brand-ink">
+      <section className="relative overflow-hidden bg-[#efe3d4] text-brand-ink">
         <div className="editorial-container grid gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16 lg:px-12 lg:py-20">
           <div className="relative z-10">
             <h1 className="serif-display text-[clamp(4rem,7vw,7.5rem)] leading-[.82] tracking-[-.065em] text-brand-olive">About Salome Kopasz</h1>
