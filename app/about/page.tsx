@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="editorial-container grid gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16 lg:px-12 lg:py-20">
           <div className="relative z-10">
             <h1 className="serif-display text-[clamp(4rem,7vw,7.5rem)] leading-[.82] tracking-[-.065em] text-brand-olive">About Salome Kopasz</h1>
-            <p className="mt-6 max-w-xl text-base leading-8 text-brand-ink/70 md:text-lg md:leading-9">Elöre Atelier was founded by designer Salomé Kopasz, whose work is rooted in the belief that traditional craftsmanship has the power to preserve stories, connect generations, and move tradition forward.</p>
+            <p className="mt-6 max-w-xl text-base leading-8 text-brand-ink/70 md:text-lg md:leading-9">A Boston-based handcrafted hat brand redefining modern millinery.</p>
           </div>
           <div className="relative z-10">
             <AboutGalleryCarousel className="aspect-[4/3] w-full" sizes="(max-width: 1024px) 100vw, 58vw" />
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
       <section className="bg-brand-bone text-brand-ink">
         <div className="editorial-container grid gap-10 px-5 py-14 md:px-8 md:py-20 lg:grid-cols-[.82fr_1.18fr] lg:items-start lg:gap-16 lg:px-12 lg:py-24">
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-black/10">
+          <div className="relative h-full min-h-[420px] w-full overflow-hidden border border-black/10">
             <Image src="/images/about/manifesto.jpg" alt="ELÖRE Atelier philosophy" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
           </div>
           <div>
