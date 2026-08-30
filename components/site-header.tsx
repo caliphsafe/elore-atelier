@@ -28,7 +28,7 @@ export function SiteHeader({ onOpenCart }: Props) {
     <>
       <header className="elore-header sticky top-0 z-50 border-b border-black/10 bg-[#F6F0E5]/95 backdrop-blur-xl">
         <div className="editorial-container flex min-h-[68px] items-center justify-between px-4 md:px-8 lg:px-12">
-          <Link href="/" className="serif-display text-2xl font-semibold tracking-[0.2em] text-brand-ink">ELÖRE</Link>
+          <Link href="/" className="serif-display text-2xl font-semibold tracking-[0.2em] text-brand-ink">Elöre Atelier</Link>
 
           <nav className="hidden items-center gap-5 lg:flex" aria-label="Primary navigation">
             {links.map((link) => <Link key={link.href} href={link.href} className="elore-nav-link">{link.label}</Link>)}
@@ -59,7 +59,7 @@ export function SiteHeader({ onOpenCart }: Props) {
         <div className="grid min-h-[100svh] lg:grid-cols-[1.2fr_0.8fr]">
           <div className="flex flex-col px-5 py-5 md:px-8 md:py-7">
             <div className="flex items-center justify-between border-b border-white/20 pb-5">
-              <Link href="/" onClick={() => setMenuOpen(false)} className="serif-display text-2xl font-semibold tracking-[0.2em]">ELÖRE</Link>
+              <Link href="/" onClick={() => setMenuOpen(false)} className="serif-display text-2xl font-semibold tracking-[0.2em]">Elöre Atelier</Link>
               <button type="button" onClick={() => setMenuOpen(false)} className="min-h-[44px] text-[10px] uppercase tracking-[0.26em]">Close</button>
             </div>
 
@@ -78,12 +78,12 @@ export function SiteHeader({ onOpenCart }: Props) {
             </nav>
 
             <div className="flex items-center justify-between border-t border-white/20 pt-5 text-[9px] uppercase tracking-[0.25em] text-white/55">
-              <span>ELÖRE Atelier</span><span>Boston</span>
+              <span>Elöre Atelier</span><span>Boston</span>
             </div>
           </div>
 
           <div className="relative hidden lg:block">
-            <Image src="/images/home/hero/hero.jpg" alt="ELÖRE Atelier hat" fill sizes="40vw" className="object-cover" />
+            <Image src="/images/home/hero/hero.jpg" alt="Elöre Atelier hat" fill sizes="40vw" className="object-cover" />
             <div className="absolute inset-0 bg-black/15" />
           </div>
         </div>

@@ -95,7 +95,7 @@ export default function StudioPage() {
             </div>
           </div>
 
-          <div className="atelier-opening__image relative z-10">
+          <div className="atelier-opening__image relative z-10" style={{ clipPath: "none", borderRadius: 0 }}>
             <Image
               src="/images/studio/workspace.jpg"
               alt="ELÖRE Atelier workspace in Downtown Boston"

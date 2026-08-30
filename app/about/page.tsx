@@ -107,7 +107,7 @@ export default function AboutPage() {
 
       <section className="overflow-hidden bg-brand-bone text-brand-ink">
         <div className="editorial-container grid gap-8 px-5 py-16 md:px-8 lg:grid-cols-12 lg:px-12 lg:py-24">
-          <div className="relative min-h-[420px] overflow-hidden lg:col-span-5 lg:min-h-[720px]">
+          <div className="relative min-h-[420px] overflow-hidden lg:col-span-5 lg:min-h-[720px]" style={{ clipPath: "none", borderRadius: 0 }}>
             <Image
               src="/images/about/manifesto.jpg"
               alt="ELÖRE Atelier philosophy and manifesto"
@@ -157,7 +157,7 @@ export default function AboutPage() {
           <div className="about-principles-grid">
             {principles.map((principle) => (
               <article key={principle.title} className="about-principle-card">
-                <div className="about-principle-card__image">
+                <div className="about-principle-card__image" style={{ clipPath: "none", borderRadius: 0 }}>
                   <Image src={principle.image} alt={principle.alt} fill sizes="(max-width: 767px) 100vw, 33vw" className="object-cover" />
                 </div>
                 <div className="about-principle-card__copy">

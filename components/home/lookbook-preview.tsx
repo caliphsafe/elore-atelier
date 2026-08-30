@@ -4,71 +4,23 @@ import Link from "next/link";
 const images = [
   "/images/home/lookbook/lookbook-1.jpg",
   "/images/home/lookbook/lookbook-2.jpg",
-  "/images/home/lookbook/lookbook-3.jpg",
+  "/images/home/lookbook/lookbook-3.jpg"
 ];
 
 export function LookbookPreview() {
   return (
     <section className="px-5 py-10 md:px-8 md:py-14 lg:px-12">
       <div className="editorial-container">
-        <div className="mb-8 max-w-3xl">
-          <h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">
-            A closer view of Elore’s presence
-          </h2>
-        </div>
-
+        <div className="mb-8 max-w-3xl"><h2 className="serif-display text-4xl leading-tight text-brand-ink md:text-6xl">A closer view of Elore’s presence</h2></div>
         <div className="grid gap-5 lg:grid-cols-[1.35fr_0.65fr]">
-          <div className="relative min-h-[540px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[590px]">
-            <Image
-              src={images[0]}
-              alt="ELÖRE Atelier lookbook"
-              fill
-              sizes="(max-width:1024px) 100vw, 65vw"
-              className="object-cover transition duration-700 hover:scale-[1.02]"
-            />
-
+          <div className="relative min-h-[540px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[590px]" style={{ clipPath: "none", borderRadius: 0 }}>
+            <Image src={images[0]} alt="Elöre Atelier lookbook" fill sizes="(max-width:1024px) 100vw, 65vw" className="object-cover transition duration-700 hover:scale-[1.02]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <h3 className="serif-display max-w-lg text-4xl leading-tight text-white md:text-5xl">
-                Pieces shaped to become part of the person who wears them.
-              </h3>
-            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8"><h3 className="serif-display max-w-lg text-4xl leading-tight text-white md:text-5xl">Pieces shaped to become part of the person who wears them.</h3></div>
           </div>
-
           <div className="grid gap-5">
-            <div className="relative min-h-[260px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[285px]">
-              <Image
-                src={images[1]}
-                alt="ELÖRE Atelier portrait"
-                fill
-                sizes="(max-width:1024px) 100vw, 35vw"
-                className="object-cover transition duration-700 hover:scale-[1.02]"
-              />
-
-              <div className="absolute inset-0 bg-black/15" />
-            </div>
-
-            <div className="relative min-h-[260px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[285px]">
-              <Image
-                src={images[2]}
-                alt="ELÖRE Atelier detail"
-                fill
-                sizes="(max-width:1024px) 100vw, 35vw"
-                className="object-cover transition duration-700 hover:scale-[1.02]"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" />
-
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <Link
-                  href="/lookbook"
-                  className="inline-flex text-[11px] uppercase tracking-[0.26em] text-white transition hover:text-white/80"
-                >
-                  View Lookbook
-                </Link>
-              </div>
-            </div>
+            <div className="relative min-h-[260px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[285px]" style={{ clipPath: "none", borderRadius: 0 }}><Image src={images[1]} alt="Elöre Atelier portrait" fill sizes="(max-width:1024px) 100vw, 35vw" className="object-cover transition duration-700 hover:scale-[1.02]" /><div className="absolute inset-0 bg-black/15" /></div>
+            <div className="relative min-h-[260px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[285px]" style={{ clipPath: "none", borderRadius: 0 }}><Image src={images[2]} alt="Elöre Atelier detail" fill sizes="(max-width:1024px) 100vw, 35vw" className="object-cover transition duration-700 hover:scale-[1.02]" /><div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent" /><div className="absolute bottom-0 left-0 right-0 p-6"><Link href="/lookbook" className="inline-flex text-[11px] uppercase tracking-[0.26em] text-white transition hover:text-white/80">View Lookbook</Link></div></div>
           </div>
         </div>
       </div>

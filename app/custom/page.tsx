@@ -27,7 +27,7 @@ export default function CustomPage() {
             <p>Designed exclusively for you, our custom hats are handcrafted through a collaborative process that honors both authenticity and craftsmanship.</p>
             <Link href="#custom-process" className="btn-olive">Begin Your Custom Hat</Link>
           </div>
-          <div className="custom-opening__image">
+          <div className="custom-opening__image" style={{ clipPath: "none", borderRadius: 0 }}>
             <Image src="/images/custom/hero.jpg" alt="ELÖRE custom hat design" fill priority sizes="(max-width:1024px) 100vw,46vw" className="object-cover" />
           </div>
         </div>

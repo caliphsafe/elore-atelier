@@ -12,48 +12,20 @@ export default function ContactPage() {
               contact Elöre Atelier directly.
             </p>
           </div>
-
-          <div className="contact-hero__image">
-            <Image
-              src="/images/contact/studio.jpg"
-              alt="ELÖRE Atelier studio in Downtown Boston"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 48vw"
-              className="object-cover"
-            />
+          <div className="contact-hero__image" style={{ clipPath: "none", borderRadius: 0 }}>
+            <Image src="/images/contact/studio.jpg" alt="ELÖRE Atelier studio in Downtown Boston" fill priority sizes="(max-width: 900px) 100vw, 48vw" className="object-cover" />
           </div>
         </div>
       </section>
 
       <section className="contact-content relative overflow-hidden">
-        <Image
-          src="/images/bg/elorebg6.png"
-          alt=""
-          fill
-          sizes="(max-width: 1024px) 80vw, 38vw"
-          className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-30 mix-blend-multiply"
-          aria-hidden="true"
-        />
-
+        <Image src="/images/bg/elorebg6.png" alt="" fill sizes="(max-width: 1024px) 80vw, 38vw" className="pointer-events-none absolute inset-y-0 left-0 z-0 object-contain object-left opacity-30 mix-blend-multiply" aria-hidden="true" />
         <div className="editorial-container contact-content__inner relative z-10">
           <aside className="contact-details">
-            <div className="contact-detail">
-              <h2 className="serif-display">Address</h2>
-              <p>One Avenue De Lafayette, Boston MA 02111</p>
-            </div>
-
-            <div className="contact-detail contact-detail--offset">
-              <h2 className="serif-display">Phone</h2>
-              <a href="tel:+17819858868">(781) 985-8868</a>
-            </div>
-
-            <div className="contact-detail">
-              <h2 className="serif-display">Email</h2>
-              <a href="mailto:contact@elore.design">contact@elore.design</a>
-            </div>
+            <div className="contact-detail"><h2 className="serif-display">Address</h2><p>One Avenue De Lafayette, Boston MA 02111</p></div>
+            <div className="contact-detail contact-detail--offset"><h2 className="serif-display">Phone</h2><a href="tel:+17819858868">(781) 985-8868</a></div>
+            <div className="contact-detail"><h2 className="serif-display">Email</h2><a href="mailto:contact@elore.design">contact@elore.design</a></div>
           </aside>
-
           <div className="contact-form-panel">
             <div className="contact-form-panel__accent" aria-hidden="true" />
             <div className="contact-form-panel__form">

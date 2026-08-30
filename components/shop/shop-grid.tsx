@@ -26,7 +26,7 @@ export function ShopGrid({ products }: ShopGridProps) {
   const filteredProducts = useMemo(() => products.filter((product) => {
     const handles = productCollections(product).map((collection) => collection.handle);
     const matchesCollection = query === "all" || handles.includes(query);
-    const searchText = [product.title, product.description, product.category, ...(product.collections?.map((collection) => collection.title) ?? [])].filter(Boolean).join(" ").toLowerCase();
+    const searchText = [product.title, product.category, ...(product.collections?.map((collection) => collection.title) ?? [])].filter(Boolean).join(" ").toLowerCase();
     return matchesCollection && searchText.includes(search.toLowerCase());
   }), [products, query, search]);
 
@@ -34,39 +34,20 @@ export function ShopGrid({ products }: ShopGridProps) {
     <>
       <section className="shop-tools">
         <div className="editorial-container shop-tools__inner">
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search hats..."
-            className="shop-tools__search"
-          />
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search hats..." className="shop-tools__search" />
           <div className="shop-tools__filters">
             {collections.map((collection) => {
               const active = query === collection.value;
-              return (
-                <button
-                  key={collection.value}
-                  type="button"
-                  onClick={() => setQuery(collection.value)}
-                  className={`shop-tools__filter ${active ? "is-active" : ""}`}
-                >
-                  {collection.label}
-                </button>
-              );
+              return <button key={collection.value} type="button" onClick={() => setQuery(collection.value)} className={`shop-tools__filter ${active ? "is-active" : ""}`}>{collection.label}</button>;
             })}
           </div>
         </div>
       </section>
-
       <section className="shop-products">
         <div className="editorial-container shop-products__grid">
-          {filteredProducts.map((product, index) => (
-            <ProductCard key={product.id} product={product} index={index} />
-          ))}
+          {filteredProducts.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}
         </div>
-        {filteredProducts.length === 0 ? (
-          <div className="editorial-container shop-products__empty">No pieces matched your search or filter.</div>
-        ) : null}
+        {filteredProducts.length === 0 ? <div className="editorial-container shop-products__empty">No pieces matched your search or filter.</div> : null}
       </section>
     </>
   );

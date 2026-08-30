@@ -33,7 +33,7 @@ export default function ExperiencesPage() {
             </div>
           </div>
 
-          <div className="experience-opening__image">
+          <div className="experience-opening__image" style={{ clipPath: "none", borderRadius: 0 }}>
             <Image
               src="/images/experiences/hero.jpg"
               alt="ELÖRE hats prepared for an atelier experience"
@@ -89,7 +89,7 @@ export default function ExperiencesPage() {
       </section>
 
       <section className="experience-materials" aria-label="ELÖRE hat-making materials">
-        <div className="experience-materials__frame">
+        <div className="experience-materials__frame" style={{ clipPath: "none", borderRadius: 0 }}>
           <Image
             src="/images/experiences/materials.jpg"
             alt="ELÖRE hat-making materials"

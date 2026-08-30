@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="mt-0 bg-elore-maroon text-[#F6F0E5]">
       <div className="editorial-container px-5 py-14 md:px-8 md:py-20 lg:px-12">
         <p className="serif-display text-[clamp(4rem,12vw,10rem)] leading-[0.72] tracking-[-0.05em]">
-          ELÖRE
+          Elöre Atelier
         </p>
 
         <div className="mt-12 grid gap-10 border-t border-white/25 pt-8 md:grid-cols-[1.1fr_.9fr_.9fr_1fr]">

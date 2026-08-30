@@ -5,16 +5,17 @@ export function AtelierStory() {
   return (
     <section className="home-story-section bg-brand-bone px-5 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
       <div className="home-story-grid editorial-container grid gap-6 lg:grid-cols-[1.05fr_.95fr] lg:items-stretch">
-        <div className="home-story-video">
+        <div className="home-story-video flex min-h-[420px] h-full">
           <iframe
-            title="ELÖRE Atelier film"
+            title="Elöre Atelier film"
             src="https://player.vimeo.com/video/1218122493?h=bb73f54b5a&title=0&byline=0&portrait=0&badge=0&dnt=1"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            className="h-full min-h-[420px] w-full"
           />
         </div>
-        <div className="home-story-copy relative flex flex-col justify-between overflow-hidden bg-brand-ivory p-6 md:p-8 lg:p-10">
+        <div className="home-story-copy relative flex h-full min-h-[420px] flex-col justify-between overflow-hidden bg-brand-ivory p-6 md:p-8 lg:p-10">
           <Image
             src="/images/bg/elorebg1.png"
             alt=""
@@ -29,7 +30,7 @@ export function AtelierStory() {
             <p className="mt-6 text-base leading-8 text-brand-olive/75 md:text-lg">Born in Cameroon and raised in Paris, Salomé&apos;s creative perspective was shaped by a life immersed in culture, fashion, and artistry. As a former model, she experienced the fashion world from within, developing an appreciation for the relationship between clothing, identity, and self-expression…</p>
           </div>
           <div className="relative z-10 mt-8 flex flex-wrap gap-3">
-            <Link href="/about" className="btn-olive">Read About ELÖRE</Link>
+            <Link href="/about" className="btn-olive">Read About Elöre Atelier</Link>
             <Link href="/studio" className="btn-outline-olive">Enter the Atelier</Link>
           </div>
         </div>
