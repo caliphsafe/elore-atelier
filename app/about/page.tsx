@@ -32,6 +32,7 @@ export default function AboutPage() {
         <div className="editorial-container grid gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[.72fr_1.28fr] lg:items-center lg:gap-16 lg:px-12 lg:py-20">
           <div className="relative z-10">
             <h1 className="serif-display text-[clamp(4rem,7vw,7.5rem)] leading-[.82] tracking-[-.065em] text-brand-olive">About Salome Kopasz</h1>
+            <p className="mt-6 max-w-xl text-base leading-8 text-brand-ink/70 md:text-lg md:leading-9">A Boston-based handcrafted hat brand redefining modern millinery.</p>
           </div>
           <div className="relative z-10">
             <AboutGalleryCarousel className="aspect-[4/3] w-full" sizes="(max-width: 1024px) 100vw, 58vw" />
