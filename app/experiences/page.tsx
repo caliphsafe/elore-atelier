@@ -32,7 +32,7 @@ export default function ExperiencesPage() {
           <div className="relative min-h-[460px] overflow-hidden bg-brand-ink md:min-h-[600px]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
-              src="/video/custom.mp4"
+              src="/video/custom1.mp4"
               autoPlay
               muted
               loop
