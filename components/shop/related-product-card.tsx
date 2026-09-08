@@ -21,7 +21,7 @@ export function RelatedProductCard({ product }: RelatedProductCardProps) {
           router.push(`/shop/${product.handle}`);
         }
       }}
-      className="group flex h-full min-h-[390px] flex-col overflow-hidden border border-brand-olive/15 bg-brand-bone shadow-[0_10px_28px_rgba(56,64,42,0.08)]"
+      className="group flex h-full min-h-[390px] flex-col overflow-hidden border border-[#b49a7c] bg-brand-bone shadow-[0_10px_28px_rgba(56,64,42,0.08)]"
       style={{ borderRadius: "24px" }}
       aria-label={`View ${product.title}`}
     >

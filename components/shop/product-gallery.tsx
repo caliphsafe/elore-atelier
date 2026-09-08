@@ -45,7 +45,7 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
   return (
     <div className="grid gap-4">
       <div
-        className="relative flex min-h-[460px] items-center justify-center overflow-hidden border border-brand-olive/15 bg-[#e8e0d3] shadow-[0_12px_32px_rgba(56,64,42,0.08)] md:min-h-[620px]"
+        className="relative flex min-h-[460px] items-center justify-center overflow-hidden border border-[#b49a7c] bg-[#e8e0d3] shadow-[0_12px_32px_rgba(56,64,42,0.08)] md:min-h-[620px]"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         style={{ borderRadius: "32px" }}
@@ -77,7 +77,7 @@ export function ProductGallery({ title, handle, images }: ProductGalleryProps) {
                 key={`${image.src}-${index}`}
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className={`relative aspect-[1.2/1] overflow-hidden border bg-[#e8e0d3] transition ${active ? "border-brand-olive" : "border-brand-olive/15"}`}
+                className={`relative aspect-[1.2/1] overflow-hidden border bg-[#e8e0d3] transition ${active ? "border-brand-olive" : "border-[#b49a7c]"}`}
                 style={{ borderRadius: "18px" }}
                 aria-label={`Select image ${index + 1}`}
               >

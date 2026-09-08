@@ -28,8 +28,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const relatedProducts = await getRelatedProducts(handle, product.category);
 
   return (
-    <main className="product-detail-page">
-      <section className="product-detail">
+    <main className="product-detail-page bg-brand-bone">
+      <section className="product-detail bg-brand-bone">
         <div className="editorial-container product-detail__inner">
           <div className="product-detail__gallery">
             <ProductGallery
@@ -39,7 +39,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             />
           </div>
 
-          <aside className="product-detail__purchase">
+          <aside className="product-detail__purchase bg-brand-bone">
             <div className="product-detail__heading">
               <h1 className="serif-display">{product.title}</h1>
               <p className="product-detail__price">{product.price}</p>

@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product; index?: number }) {
           router.push(`/shop/${product.handle}`);
         }
       }}
-      className="group flex h-full min-h-[430px] flex-col overflow-hidden border border-brand-olive/15 bg-brand-bone shadow-[0_12px_32px_rgba(56,64,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(56,64,42,0.13)]"
+      className="group flex h-full min-h-[430px] flex-col overflow-hidden border border-[#b49a7c] bg-brand-bone shadow-[0_12px_32px_rgba(56,64,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(56,64,42,0.13)]"
       style={{ borderRadius: "28px" }}
       aria-label={`View ${product.title}`}
     >
