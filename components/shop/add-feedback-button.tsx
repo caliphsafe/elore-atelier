@@ -43,12 +43,14 @@ export function AddFeedbackButton({
         unavailable
           ? "cursor-not-allowed border-brand-ink/30 bg-brand-ink/10 text-brand-ink/45"
           : added
-          ? "border-brand-olive bg-brand-olive text-white"
-          : "border-brand-ink bg-brand-ink text-white hover:border-brand-olive hover:bg-brand-olive hover:text-white"
+          ? "border-brand-olive bg-brand-olive"
+          : "border-brand-ink bg-brand-ink hover:border-brand-olive hover:bg-brand-olive"
       }`}
       aria-label={unavailable ? "Unavailable" : "Add to cart"}
     >
-      {unavailable ? "Unavailable" : added ? "Added" : compact ? "Add" : "Add to Cart"}
+      <span style={{ color: unavailable ? "rgba(56,64,42,.45)" : "#ffffff" }}>
+        {unavailable ? "Unavailable" : added ? "Added" : compact ? "Add" : "Add to Cart"}
+      </span>
     </button>
   );
 }

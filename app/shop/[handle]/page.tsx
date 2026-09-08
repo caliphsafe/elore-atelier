@@ -11,6 +11,8 @@ type ProductPageProps = {
   }>;
 };
 
+const productBackground = "#f4ede2";
+
 export default async function ProductDetailPage({ params }: ProductPageProps) {
   const { handle } = await params;
   const product = await getProductByHandle(handle);
@@ -28,10 +30,22 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const relatedProducts = await getRelatedProducts(handle, product.category);
 
   return (
-    <main className="product-detail-page bg-brand-bone">
-      <section className="product-detail bg-brand-bone">
-        <div className="editorial-container product-detail__inner">
-          <div className="product-detail__gallery">
+    <main
+      className="product-detail-page [&::before]:hidden [&::after]:hidden"
+      style={{ background: productBackground }}
+    >
+      <section
+        className="product-detail [&::before]:hidden [&::after]:hidden"
+        style={{ background: productBackground }}
+      >
+        <div
+          className="editorial-container product-detail__inner [&::before]:hidden [&::after]:hidden"
+          style={{ background: productBackground }}
+        >
+          <div
+            className="product-detail__gallery [&::before]:hidden [&::after]:hidden"
+            style={{ background: productBackground }}
+          >
             <ProductGallery
               title={product.title}
               handle={product.handle}
@@ -39,7 +53,10 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             />
           </div>
 
-          <aside className="product-detail__purchase bg-brand-bone">
+          <aside
+            className="product-detail__purchase [&::before]:hidden [&::after]:hidden"
+            style={{ background: productBackground }}
+          >
             <div className="product-detail__heading">
               <h1 className="serif-display">{product.title}</h1>
               <p className="product-detail__price">{product.price}</p>
