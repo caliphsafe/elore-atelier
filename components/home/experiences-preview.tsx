@@ -4,7 +4,7 @@ import Link from "next/link";
 const offerings = [
   { title: "Private Workshop", text: "A guided one-on-one atelier experience for guests who want to create a custom hat with personal direction." },
   { title: "Couples Workshop", text: "A shared creative session for two people, shaped around material, color, silhouette, and the making process." },
-  { title: "Group Workshop", text: "A guided studio experience for groups of 5–10 people. No previous experience is needed." }
+  { title: "Group Workshop", text: "A guided atelier experience for groups of 5–10 people. No previous experience is needed." }
 ];
 
 export function ExperiencesPreview() {
@@ -15,7 +15,7 @@ export function ExperiencesPreview() {
           <div className="relative min-h-[500px] overflow-hidden rounded-luxe border thin-border shadow-soft md:min-h-[620px]" style={{ clipPath: "none", borderRadius: 0 }}>
             <Image src="/images/home/experiences/experience.jpg" alt="ELÖRE ATELIER Experiences" fill priority={false} sizes="(max-width:1024px) 100vw, 58vw" className="object-cover transition duration-700 hover:scale-[1.02]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8"><h2 className="serif-display max-w-lg text-4xl leading-tight text-white md:text-6xl">Learn the craft inside the studio.</h2></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8"><h2 className="serif-display max-w-lg text-4xl leading-tight text-white md:text-6xl">Learn the craft inside the atelier.</h2></div>
           </div>
           <div className="flex flex-col rounded-luxe border thin-border bg-white p-6 shadow-soft md:p-8 lg:p-9">
             <div><h2 className="serif-display text-4xl leading-tight text-brand-olive md:text-5xl">Guided workshops for individuals, couples, and groups.</h2><p className="mt-6 text-base leading-8 text-brand-olive/75 md:text-lg">ELÖRE ATELIER invites guests into the process through hands-on workshops where every hat is shaped with patience, precision, and care. Pricing varies based on custom hat costs and material direction.</p></div>

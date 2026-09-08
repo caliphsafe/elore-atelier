@@ -32,23 +32,8 @@ export function ShopGrid({ products }: ShopGridProps) {
 
   return (
     <>
-      <section className="shop-tools">
-        <div className="editorial-container shop-tools__inner">
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search hats..." className="shop-tools__search" />
-          <div className="shop-tools__filters">
-            {collections.map((collection) => {
-              const active = query === collection.value;
-              return <button key={collection.value} type="button" onClick={() => setQuery(collection.value)} className={`shop-tools__filter ${active ? "is-active" : ""}`}>{collection.label}</button>;
-            })}
-          </div>
-        </div>
-      </section>
-      <section className="shop-products">
-        <div className="editorial-container shop-products__grid">
-          {filteredProducts.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}
-        </div>
-        {filteredProducts.length === 0 ? <div className="editorial-container shop-products__empty">No pieces matched your search or filter.</div> : null}
-      </section>
+      <section className="shop-tools"><div className="editorial-container shop-tools__inner"><input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search hats..." className="shop-tools__search" /><div className="shop-tools__filters">{collections.map((collection) => { const active = query === collection.value; return <button key={collection.value} type="button" onClick={() => setQuery(collection.value)} className={`shop-tools__filter ${active ? "is-active" : ""}`}>{collection.label}</button>; })}</div></div></section>
+      <section className="shop-products"><div className="editorial-container shop-products__grid !grid-cols-1 !gap-5 sm:!grid-cols-2 xl:!grid-cols-4">{filteredProducts.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}</div>{filteredProducts.length === 0 ? <div className="editorial-container shop-products__empty">No pieces matched your search or filter.</div> : null}</section>
     </>
   );
 }

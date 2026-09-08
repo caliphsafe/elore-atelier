@@ -9,30 +9,21 @@ import { WishlistButton } from "@/components/wishlist/wishlist-button";
 export function ProductCard({ product }: { product: Product; index?: number }) {
   const router = useRouter();
   const unavailable = product.availableForSale === false;
+  const collectionLabel = product.collections?.[0]?.title || product.category || "Collection";
 
   return (
-    <article
-      role="link"
-      tabIndex={0}
-      onClick={() => router.push(`/shop/${product.handle}`)}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); router.push(`/shop/${product.handle}`); }
-      }}
-      className="shop-product group"
-      aria-label={`View ${product.title}`}
-    >
-      <div className="shop-product__media">
-        <Image src={product.image} alt={product.title} width={2477} height={1651} sizes="(max-width:640px) 100vw,(max-width:1280px) 50vw,33vw" className="shop-product__image" style={{ objectFit: "contain", clipPath: "none", borderRadius: 0 }} />
-        <div className="shop-product__wishlist"><WishlistButton handle={product.handle} compact /></div>
-        {unavailable ? <div className="shop-product__unavailable">Unavailable</div> : null}
-        <div className="shop-product__desktop-action"><AddFeedbackButton product={product} compact /></div>
+    <article role="link" tabIndex={0} onClick={() => router.push(`/shop/${product.handle}`)} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); router.push(`/shop/${product.handle}`); } }} className="group overflow-hidden border border-black/5 bg-white shadow-[0_12px_32px_rgba(34,31,30,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(34,31,30,0.12)]" style={{ borderRadius: "28px" }} aria-label={`View ${product.title}`}>
+      <div className="relative overflow-hidden bg-[#eef0f1]" style={{ borderRadius: "28px 28px 0 0" }}>
+        <Image src={product.image} alt={product.title} width={2477} height={1651} sizes="(max-width:640px) 100vw,(max-width:1024px) 50vw,25vw" className="aspect-[1.38/1] w-full object-contain transition duration-500 group-hover:scale-[1.02]" style={{ clipPath: "none" }} />
+        <div className="absolute right-3 top-3 z-10"><WishlistButton handle={product.handle} compact /></div>
+        {unavailable ? <div className="absolute left-3 top-3 z-10 rounded-full bg-white px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-brand-olive">Unavailable</div> : null}
+        <div className="absolute bottom-3 left-3 right-3 z-10 translate-y-2 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100"><AddFeedbackButton product={product} compact /></div>
       </div>
-      <div className="shop-product__info">
-        <div className="shop-product__line">
-          <h3 className="serif-display">{product.title}</h3>
-          <span>{product.price}</span>
-        </div>
-        <div className="shop-product__mobile-action"><AddFeedbackButton product={product} compact /></div>
+      <div className="px-5 pb-6 pt-5 md:px-6 md:pb-7">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-mocha/70">{collectionLabel}</p>
+        <h3 className="serif-display mt-3 text-[clamp(2rem,2.4vw,3rem)] leading-[0.98] text-brand-ink">{product.title}</h3>
+        <p className="mt-6 text-sm text-brand-ink">{product.price}</p>
+        <div className="mt-4 md:hidden"><AddFeedbackButton product={product} compact /></div>
       </div>
     </article>
   );
