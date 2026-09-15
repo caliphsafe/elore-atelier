@@ -31,7 +31,7 @@ export default function ExperiencesPage() {
         <div className="editorial-container grid gap-8 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[.8fr_1.2fr] lg:gap-12 lg:px-12 lg:py-20">
           <div className="relative min-h-[460px] overflow-hidden bg-brand-olive md:min-h-[600px]">
             <video
-              className="absolute inset-0 h-full w-full object-cover opacity-45"
+              className="absolute inset-0 h-full w-full object-cover"
               src="/video/custom1.mp4"
               autoPlay
               muted
@@ -39,10 +39,6 @@ export default function ExperiencesPage() {
               playsInline
               preload="metadata"
               aria-label="ELÖRE ATELIER hat-making process"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-brand-olive/45 mix-blend-multiply"
-              aria-hidden="true"
             />
           </div>
 
