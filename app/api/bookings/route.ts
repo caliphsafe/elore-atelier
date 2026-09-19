@@ -1,4 +1,131 @@
-import{NextResponse}from"next/server";import{available,hold,sign}from"@/lib/elore-calendar";import{mail}from"@/lib/elore-mail";export const runtime="nodejs";
-const TZ=process.env.BOOKING_TIME_ZONE||"America/New_York";
-function clock(d:Date){const a=new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(d);const p=Object.fromEntries(a.map(x=>[x.type,x.value]));return{day:p.weekday,min:+p.hour*60+(+p.minute)}}
-export async function POST(r:Request){try{const d=await r.json(),type=d.type,start=new Date(d.start),c=clock(start);if(!["Tue","Wed","Thu","Fri","Sat"].includes(c.day)||c.min%30!==0)return NextResponse.json({error:"Bookings are Tuesday–Saturday on 30-minute start times."},{status:400});const custom=type==="custom";if(c.min<780||c.min>(custom?1020:960))return NextResponse.json({error:custom?"Consultations start between 1:00 PM and 5:00 PM.":"Workshops start between 1:00 PM and 4:00 PM."},{status:400});const duration=custom?30:120,end=new Date(start.getTime()+(duration+30)*60000);if(!await available(start.toISOString(),end.toISOString()))return NextResponse.json({error:"That time is unavailable. Please choose another time."},{status:409});const summary=custom?`Custom Hat Consultation — ${d.name}`:`${d.workshop} — ${d.name}`;const desc=`Customer: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone||""}\n${custom?`Format: ${d.mode}\nHat direction: ${d.hatStyle||""}`:`Workshop: ${d.workshop}\nGuests: ${d.guests||""}`}\n\n${d.notes||""}\n\nAppointment: ${duration} minutes\nProtected block after: 30 minutes`;const e=await hold(summary,start.toISOString(),end.toISOString(),desc);const base=(process.env.NEXT_PUBLIC_SITE_URL||"").replace(/\/$/,""),yes=sign({id:e.id,action:"confirm",email:d.email,summary}),no=sign({id:e.id,action:"decline",email:d.email,summary});await mail(process.env.FORM_TO_EMAIL||"bookingelore@gmail.com","Approval needed — "+summary,`${desc}\n\nCONFIRM: ${base}/api/bookings/action?token=${encodeURIComponent(yes)}\n\nDECLINE: ${base}/api/bookings/action?token=${encodeURIComponent(no)}`,d.email);await mail(d.email,"ELÖRE booking request received","We received your requested time and are holding it for review. If approved, you will receive a Google Calendar invitation.");return NextResponse.json({ok:true})}catch(e){console.error(e);return NextResponse.json({error:"Unable to submit booking."},{status:500})}}
+import { NextResponse } from "next/server";
+import { available, createEvent, removeEvent, sign } from "@/lib/elore-calendar";
+import { customerEnd, formatCustomerTime, protectedEnd, validateStart, BookingKind } from "@/lib/elore-booking";
+import { mail } from "@/lib/elore-mail";
+
+export const runtime = "nodejs";
+
+const ATELIER = "One Avenue De Lafayette, Boston MA 02111";
+
+function clean(value: unknown, max = 4000) {
+  return String(value ?? "").trim().slice(0, max);
+}
+
+function validEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+export async function POST(request: Request) {
+  let appointmentId = "";
+  let bufferId = "";
+
+  try {
+    const data = await request.json();
+
+    if (clean(data.website, 200)) return NextResponse.json({ ok: true });
+
+    const kind: BookingKind | null =
+      data.type === "custom" ? "custom" : data.type === "experience" ? "experience" : null;
+    const name = clean(data.name, 150);
+    const email = clean(data.email, 320);
+    const phone = clean(data.phone, 80);
+    const start = new Date(clean(data.start, 100));
+
+    if (!kind || !name || !validEmail(email) || !validateStart(kind, start)) {
+      return NextResponse.json({ error: "Please choose an available date and time and complete the required fields." }, { status: 400 });
+    }
+
+    const end = customerEnd(kind, start);
+    const blockedUntil = protectedEnd(kind, start);
+
+    // Re-check at submission time so two customers cannot claim the same slot.
+    if (!(await available(start.toISOString(), blockedUntil.toISOString()))) {
+      return NextResponse.json(
+        { error: "That time was just booked. Please choose another available time." },
+        { status: 409 }
+      );
+    }
+
+    const isCustom = kind === "custom";
+    const workshop = clean(data.workshop, 120);
+    const mode = clean(data.mode, 80) || "In person";
+    const summary = isCustom ? "Custom Hat Consultation — ELÖRE ATELIER" : `${workshop} — ELÖRE ATELIER`;
+    const internalSummary = isCustom ? `Custom Hat Consultation — ${name}` : `${workshop} — ${name}`;
+    const customerWhen = formatCustomerTime(start, end);
+    const location = isCustom && mode === "In person" ? ATELIER : undefined;
+
+    const customerDescription = isCustom
+      ? `ELÖRE ATELIER custom hat consultation.\n\nFormat: ${mode}\n${location ? `Location: ${location}\n` : ""}Date & time: ${customerWhen}`
+      : `ELÖRE ATELIER ${workshop}.\n\nDate & time: ${customerWhen}`;
+
+    const internalDescription = [
+      `Customer: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "Not provided"}`,
+      isCustom ? `Format: ${mode}` : `Workshop: ${workshop}`,
+      !isCustom ? `Guests: ${clean(data.guests, 20) || "Not provided"}` : "",
+      !isCustom ? `Occasion: ${clean(data.occasion, 200) || "Not provided"}` : "",
+      isCustom ? `Hat style / direction: ${clean(data.hatStyle, 300) || "Not provided"}` : "",
+      isCustom ? `Head measurement: ${clean(data.headSize, 100) || "Not provided"}` : "",
+      isCustom ? `Budget range: ${clean(data.budget, 100) || "Not provided"}` : "",
+      `Notes: ${clean(data.notes) || "Not provided"}`,
+      `Customer appointment: ${customerWhen}`,
+    ].filter(Boolean).join("\n");
+
+    const appointment = await createEvent({
+      summary: `PENDING — ${internalSummary}`,
+      description: internalDescription,
+      location,
+      start: start.toISOString(),
+      end: end.toISOString(),
+      status: "tentative",
+      transparency: "opaque",
+    });
+    appointmentId = appointment.id;
+
+    const buffer = await createEvent({
+      summary: "ELÖRE — Private",
+      description: "Internal atelier scheduling block.",
+      start: end.toISOString(),
+      end: blockedUntil.toISOString(),
+      status: "tentative",
+      transparency: "opaque",
+      visibility: "private",
+    });
+    bufferId = buffer.id;
+
+    const base = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/$/, "");
+    const tokenBase = {
+      appointmentId,
+      bufferId,
+      email,
+      summary,
+      customerDescription,
+      location: location || "",
+      customerWhen,
+    };
+    const confirmToken = sign({ ...tokenBase, action: "confirm" });
+    const declineToken = sign({ ...tokenBase, action: "decline" });
+
+    await mail(
+      process.env.FORM_TO_EMAIL || "bookingelore@gmail.com",
+      `Approval needed — ${internalSummary}`,
+      `${internalDescription}\n\nCONFIRM: ${base}/api/bookings/action?token=${encodeURIComponent(confirmToken)}\n\nDECLINE: ${base}/api/bookings/action?token=${encodeURIComponent(declineToken)}`,
+      email
+    );
+
+    await mail(
+      email,
+      "ELÖRE booking request received",
+      `Thank you, ${name}. We received your request for ${customerWhen}. ELÖRE ATELIER will contact you to confirm your booking.`
+    );
+
+    return NextResponse.json({ ok: true, redirect: "/thank-you?type=booking" });
+  } catch (error) {
+    console.error("Booking error:", error);
+    // Avoid orphaning a partial hold if creation/email fails.
+    try { await removeEvent(appointmentId); } catch {}
+    try { await removeEvent(bufferId); } catch {}
+    return NextResponse.json({ error: "Unable to submit booking. Please try again." }, { status: 500 });
+  }
+}
