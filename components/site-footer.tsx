@@ -23,7 +23,7 @@ export function SiteFooter() {
             <a href="https://www.instagram.com/elore.atelier/" target="_blank" rel="noreferrer">Instagram</a>
             <Link href="/size-guide">Size Guide</Link><Link href="/refund-policy">Refund Policy</Link><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms">Terms of Service</Link>
           </nav>
-          <div className="text-sm leading-7 text-white/75"><p>One Avenue De Lafayette, Boston MA 02111</p><p>(781) 985-8868</p><p>contact@elore.design</p></div>
+          <div className="text-sm leading-7 text-white/75"><p>One Avenue De Lafayette, Boston MA 02111</p><p>(781) 985-8868</p><p>salome@elore.design</p></div>
         </div>
       </div>
     </footer>
