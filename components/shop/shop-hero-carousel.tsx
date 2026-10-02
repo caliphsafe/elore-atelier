@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 const heroImages = [
   { src: "/images/home/lookbook/lookbook-1.jpg", alt: "ELÖRE ATELIER editorial lookbook" },
   { src: "/images/home/lookbook/lookbook-2.jpg", alt: "ELÖRE ATELIER editorial lookbook" },
-  { src: "/images/home/lookbook/lookbook-3.jpg", alt: "ELÖRE ATELIER editorial lookbook" },
-  { src: "/images/home/lookbook/lookbook-4.jpg", alt: "ELÖRE ATELIER editorial lookbook" }
+  { src: "/images/home/lookbook/lookbook-3.jpg", alt: "ELÖRE ATELIER editorial lookbook" }
 ];
 
 export function ShopHeroCarousel() {
