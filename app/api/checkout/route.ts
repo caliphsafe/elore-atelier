@@ -10,6 +10,29 @@ type CheckoutRequestBody = {
   items?: unknown;
 };
 
+/**
+ * Shopify's cart.checkoutUrl is minted using the Online Store primary domain.
+ * When that hostname now points at Vercel, Shopify cart paths land in Next.js
+ * and produce a 404. Use an explicitly configured Shopify-hosted checkout
+ * hostname instead; retain Shopify's complete signed path and query string.
+ */
+function checkoutDestination(shopifyUrl: string) {
+  const raw = process.env.SHOPIFY_CHECKOUT_DOMAIN?.trim();
+  if (!raw) return shopifyUrl;
+  if (!/^https:\/\//i.test(shopifyUrl)) {
+    throw new Error("Shopify returned an invalid checkout URL.");
+  }
+  if (raw.includes("/") || raw.includes(":") || raw.includes("?") || raw.includes("#") || /\s/.test(raw)) {
+    throw new Error("SHOPIFY_CHECKOUT_DOMAIN must contain only a hostname.");
+  }
+  const target = new URL(shopifyUrl);
+  if (target.protocol !== "https:" || !target.pathname.startsWith("/cart/c/")) {
+    throw new Error("Shopify returned an unexpected checkout URL.");
+  }
+  target.hostname = raw.toLowerCase();
+  return target.toString();
+}
+
 function isCheckoutRequestItem(item: unknown): item is CheckoutRequestItem {
   return typeof item === "object" && item !== null;
 }
@@ -28,7 +51,7 @@ export async function POST(request: Request) {
 
     const checkout = await createCheckout(checkoutItems);
 
-    return NextResponse.json({ checkoutUrl: checkout.checkoutUrl });
+    return NextResponse.json({ checkoutUrl: checkoutDestination(checkout.checkoutUrl) });
   } catch (error) {
     const message =
       error instanceof Error
