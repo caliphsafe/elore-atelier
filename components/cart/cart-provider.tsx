@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  useEffect,
   useContext,
   useMemo,
   useState,
@@ -33,6 +34,7 @@ type CartContextValue = {
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
+const CART_KEY = "elore-atelier-cart-v1";
 
 function parsePrice(price: string) {
   return Number(price.replace(/[^0-9.]/g, "")) || 0;
@@ -40,6 +42,36 @@ function parsePrice(price: string) {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartLine[]>([]);
+  const [restored, setRestored] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      if (Array.isArray(saved)) {
+        setItems(saved.filter((line): line is CartLine =>
+          line && typeof line.id === "string" &&
+          typeof line.handle === "string" &&
+          typeof line.variantId === "string" &&
+          typeof line.productTitle === "string" &&
+          typeof line.price === "string" &&
+          Number.isInteger(line.quantity) && line.quantity > 0 &&
+          line.quantity <= 999
+        ));
+      }
+    } catch {
+      // Storage may be disabled or contain invalid data.
+    }
+    setRestored(true);
+  }, []);
+
+  useEffect(() => {
+    if (!restored) return;
+    try {
+      localStorage.setItem(CART_KEY, JSON.stringify(items));
+    } catch {
+      // Cart remains usable if browser storage is unavailable.
+    }
+  }, [items, restored]);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [cartError, setCartError] = useState("");
 
