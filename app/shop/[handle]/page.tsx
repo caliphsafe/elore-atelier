@@ -108,7 +108,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <h2 className="serif-display">Continue exploring the collection.</h2>
           </div>
 
-          <div className="product-related__grid">
+          <div className="product-related__grid !grid-cols-1 md:!grid-cols-2">
             {relatedProducts.map((related, i) => (
               <RelatedProductCard key={related.id} product={related} index={i} />
             ))}

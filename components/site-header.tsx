@@ -37,7 +37,7 @@ export function SiteHeader({ onOpenCart }: Props) {
           <div className="flex items-center gap-2">
             <div className="hidden md:block"><WishlistLink /></div>
             {onOpenCart ? <CartButton onClick={onOpenCart} /> : null}
-            <Link href="/custom" className="elore-header-cta hidden sm:inline-flex">Commission a Hat</Link>
+            <Link href="/custom" className="elore-header-cta hidden sm:inline-flex">Customize a Hat</Link>
             <button
               type="button"
               className="inline-flex min-h-[44px] items-center justify-center border-l border-black/15 pl-4 text-[10px] uppercase tracking-[0.24em] lg:hidden"

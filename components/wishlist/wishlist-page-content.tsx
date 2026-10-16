@@ -44,7 +44,7 @@ export function WishlistPageContent({ products: allProducts }: WishlistPageConte
             </Link>
           </div>
         ) : (
-          <div className="editorial-container grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 xl:grid-cols-3 2xl:grid-cols-4">
+          <div className="editorial-container grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
             {products.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}

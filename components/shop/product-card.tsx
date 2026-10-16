@@ -22,20 +22,20 @@ export function ProductCard({ product }: { product: Product; index?: number }) {
           router.push(`/shop/${product.handle}`);
         }
       }}
-      className="group flex h-full min-h-[430px] flex-col overflow-hidden border border-[#b49a7c] bg-brand-bone shadow-[0_12px_32px_rgba(56,64,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(56,64,42,0.13)]"
+      className="group flex h-full min-w-0 flex-col overflow-hidden border border-[#b49a7c] bg-brand-bone shadow-[0_12px_32px_rgba(56,64,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(56,64,42,0.13)]"
       style={{ borderRadius: "28px" }}
       aria-label={`View ${product.title}`}
     >
       <div
-        className="relative flex h-[230px] shrink-0 items-center justify-center overflow-hidden bg-[#e8e0d3] sm:h-[240px] xl:h-[225px]"
+        className="relative flex aspect-square w-full shrink-0 items-center justify-center overflow-hidden bg-[#e8e0d3] md:aspect-[4/3]"
         style={{ borderRadius: "28px 28px 0 0" }}
       >
         <Image
           src={product.image}
           alt={product.title}
           fill
-          sizes="(max-width:640px) 100vw,(max-width:1024px) 50vw,25vw"
-          className="object-contain object-center p-4 transition duration-500 group-hover:scale-[1.02]"
+          sizes="(max-width: 767px) calc(100vw - 24px), (max-width: 1536px) calc((100vw - 116px) / 2), 710px"
+          className="object-contain object-center p-2"
           style={{ clipPath: "none" }}
         />
         <div className="absolute right-3 top-3 z-10">
@@ -43,16 +43,16 @@ export function ProductCard({ product }: { product: Product; index?: number }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col px-5 pb-6 pt-5 md:px-6 md:pb-7">
+      <div className="flex flex-1 flex-col px-5 py-4 md:px-6">
         <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-brand-mocha/70">
           {collectionLabel}
         </p>
-        <h3 className="serif-display mt-3 line-clamp-2 min-h-[3.9rem] text-[clamp(1.9rem,2.2vw,2.7rem)] leading-[0.98] text-brand-ink">
+        <h3 className="serif-display mt-2 break-words text-[clamp(1.9rem,2.2vw,2.7rem)] leading-[0.98] text-brand-ink">
           {product.title}
         </h3>
 
-        <div className="mt-auto flex items-end justify-between gap-4 pt-6">
-          <p className="shrink-0 pb-2 text-sm text-brand-ink">{product.price}</p>
+        <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+          <p className="shrink-0 text-sm text-brand-ink">{product.price}</p>
           <div className="ml-auto shrink-0">
             <AddFeedbackButton product={product} compact />
           </div>
